@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tested Product Hunter | REAL Reviews & Verified Offers</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Poppins', 'Impact', 'Arial Black', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at 10% 20%, #0a0c1a, #010101);
+      color: #eee;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* DARK DANGEROUS VIBE + ANIMATED LIGHTNING STRIKES (gif-like effect) */
+    .lightning-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      background: repeating-linear-gradient(45deg, rgba(255, 200, 50, 0.02) 0px, rgba(255, 200, 50, 0.02) 2px, transparent 2px, transparent 8px);
+      animation: thunderFlash 0.3s infinite ease-in-out;
+    }
+
+    @keyframes thunderFlash {
+      0% { opacity: 0.1; background-color: rgba(255, 220, 80, 0); }
+      95% { opacity: 0.1; background-color: rgba(255, 220, 80, 0); }
+      100% { opacity: 0.5; background-color: rgba(255, 220, 80, 0.15); box-shadow: 0 0 30px rgba(255, 200, 0, 0.3); }
+    }
+
+    /* animated lightning bolt */
+    .bolt {
+      position: fixed;
+      top: 0;
+      left: 20%;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, gold, #ff6600, transparent);
+      filter: blur(2px);
+      opacity: 0;
+      animation: boltStrike 4s infinite;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .bolt2 {
+      left: 70%;
+      animation-delay: 1.2s;
+      width: 6px;
+    }
+
+    .bolt3 {
+      left: 45%;
+      animation-delay: 2.5s;
+      height: 70%;
+    }
+
+    @keyframes boltStrike {
+      0% { opacity: 0; transform: scaleY(0);}
+      5% { opacity: 1; transform: scaleY(1); background: #ffcc33; box-shadow: 0 0 20px gold;}
+      10% { opacity: 0; transform: scaleY(0.2);}
+      100% { opacity: 0;}
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero {
+      text-align: center;
+      margin: 1rem 0 1.5rem;
+      border-bottom: 3px solid #ff6600;
+      display: inline-block;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 3.8rem;
+      background: linear-gradient(135deg, #FFD966, #FF8C00, #FF4500);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 8px rgba(255, 100, 0, 0.5);
+      letter-spacing: 2px;
+      word-break: break-word;
+    }
+
+    .tested-claim {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+      background: #000000aa;
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      padding: 0.3rem 1.8rem;
+      border-radius: 60px;
+      border-left: 6px solid #ff5500;
+      border-right: 6px solid #ffaa00;
+      text-transform: uppercase;
+    }
+
+    .tested-claim span {
+      color: #ffaa33;
+      font-size: 2.2rem;
+      text-shadow: 0 0 5px red;
+    }
+
+    .sub {
+      font-size: 1.3rem;
+      margin: 1rem 0 1rem;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 20px;
+      border-radius: 40px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* CAROUSEL BANNER */
+    .carousel-banner {
+      background: #000000aa;
+      backdrop-filter: blur(12px);
+      border-radius: 50px;
+      padding: 1rem 0;
+      margin: 2rem 0 2rem;
+      border: 1px solid #ff9900;
+      box-shadow: 0 0 20px rgba(255, 100, 0, 0.4);
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scrollCarousel 42s linear infinite;
+    }
+
+    .carousel-item {
+      display: inline-block;
+      width: auto;
+      margin: 0 12px;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .carousel-item:hover {
+      transform: scale(1.05);
+    }
+
+    .carousel-item img {
+      height: 130px;
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+      border-radius: 16px;
+      border: 2px solid gold;
+      background: #1e1e2a;
+      box-shadow: 0 4px 12px black;
+    }
+
+    .carousel-caption {
+      color: white;
+      font-weight: bold;
+      font-size: 0.7rem;
+      background: #ff6600aa;
+      margin-top: 5px;
+      border-radius: 20px;
+      padding: 4px 6px;
+    }
+
+    @keyframes scrollCarousel {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-45%); }
+    }
+
+    .click-prompt {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: rgba(0,0,0,0.7);
+      padding: 12px;
+      border-radius: 50px;
+      margin: 10px 0 25px;
+      border: 2px dashed #ffaa33;
+      color: #ffcc77;
+      letter-spacing: 1px;
+    }
+
+    /* PRODUCT GRID - 3 items per row, images keep original proportions */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 4rem;
+    }
+
+    .product-card {
+      background: linear-gradient(145deg, #151e2c, #0b0f17);
+      border-radius: 32px;
+      padding: 1.2rem 1.2rem 1.5rem;
+      text-align: center;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(255, 100, 0, 0.4);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: #ff7700;
+      box-shadow: 0 0 20px #ff9900aa;
+    }
+
+    /* Image container: original size preserved, no cropping */
+    .product-img-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0a0e16;
+      border-radius: 24px;
+      padding: 12px;
+      min-height: 240px;
+    }
+
+    .product-img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px black;
+      transition: 0.2s;
+      display: block;
+    }
+
+    .shimmer-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: linear-gradient(120deg, #ff8800, #ff3300);
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 12px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 0 8px #ff6600, 0 4px 12px black;
+      position: relative;
+      overflow: hidden;
+      width: 85%;
+      text-align: center;
+    }
+
+    .shimmer-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(115deg, rgba(255,255,255,0) 10%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 90%);
+      transform: rotate(25deg);
+      animation: shimmer 2.5s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) rotate(25deg);}
+      100% { transform: translateX(100%) rotate(25deg);}
+    }
+
+    .shimmer-btn:hover {
+      background: linear-gradient(120deg, #ffaa33, #ff4411);
+      transform: scale(1.02);
+      box-shadow: 0 0 18px #ffaa44;
+    }
+
+    /* POPUP MODAL - manipulative */
+    .popup-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .popup-active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup-content {
+      background: radial-gradient(circle at 30% 10%, #1c1f2e, #05070f);
+      max-width: 500px;
+      width: 90%;
+      border-radius: 48px;
+      padding: 2rem 1.8rem;
+      text-align: center;
+      border: 2px solid #ff884d;
+      box-shadow: 0 0 40px #ff5500aa;
+      position: relative;
+      animation: popGlow 0.4s ease;
+    }
+
+    @keyframes popGlow {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1;}
+    }
+
+    .popup-content h2 {
+      font-size: 2rem;
+      color: #ffaa44;
+      margin-bottom: 0.5rem;
+    }
+
+    .popup-content p {
+      font-size: 1.2rem;
+      margin: 0.8rem 0;
+      color: #fdd;
+    }
+
+    .manipulative-text {
+      background: #ff3300aa;
+      padding: 12px;
+      border-radius: 40px;
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin: 15px 0;
+      animation: pulseRed 1s infinite;
+    }
+
+    @keyframes pulseRed {
+      0% { background: #ff3300aa; box-shadow: 0 0 0 0 #ff5500;}
+      100% { background: #cc2200aa; box-shadow: 0 0 0 8px rgba(255,80,0,0);}
+    }
+
+    .popup-form input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 60px;
+      border: none;
+      font-size: 1.1rem;
+      margin: 12px 0;
+      text-align: center;
+      background: #2a2e42;
+      color: white;
+    }
+
+    .popup-form button {
+      background: linear-gradient(90deg, #f90, #f40);
+      border: none;
+      padding: 14px;
+      width: 100%;
+      border-radius: 60px;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .close-popup {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #ffaa66;
+    }
+
+    .small-note {
+      font-size: 0.7rem;
+      margin-top: 12px;
+      opacity: 0.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      border-top: 1px solid #ff8833;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 760px) {
+      .container { padding: 0.8rem; }
+      h1 { font-size: 2.2rem; }
+      .tested-claim { font-size: 1.2rem; }
+      .tested-claim span { font-size: 1.4rem; }
+      .shimmer-btn { font-size: 1.2rem; padding: 10px 20px; width: 95%; }
+      .click-prompt { font-size: 1.2rem; }
+      .product-grid { gap: 1.2rem; }
+      .product-img-wrapper { min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lightning-overlay"></div>
+<div class="bolt"></div>
+<div class="bolt bolt2"></div>
+<div class="bolt bolt3"></div>
+
+<div class="container">
+  <div class="hero">
+    <h1>🔥 TESTED PRODUCT HUNTER 🔥</h1>
+    <div class="tested-claim">
+      ✅ I TEST EVERY PRODUCT MYSELF — <span>ALL VERIFIED & APPROVED! ✅</span>
+    </div>
+    <div class="sub">
+      🧪 No fake reviews • Real hands-on tests • Only working offers
+    </div>
+  </div>
+
+  <!-- BANNER CAROUSEL (sliding product images clickable) -->
+  <div class="carousel-banner">
+    <div class="carousel-track" id="carouselTrack"></div>
+  </div>
+  <div class="click-prompt">
+    ⚡ CLICK ANY IMAGE → INSTANT ACCESS TO REVIEWED OFFER ⚡
+  </div>
+
+  <!-- PRODUCT GRID: 3 per row, original image sizes preserved -->
+  <div class="product-grid" id="productGrid"></div>
+
+  <footer>
+    © 2026 Tested Product Hunter — Real human testing. Results may vary. Affiliate offers inside.
+  </footer>
+</div>
+
+<!-- POPUP MODAL -->
+<div id="popupModal" class="popup-modal">
+  <div class="popup-content">
+    <span class="close-popup" id="closePopupBtn">&times;</span>
+    <h2>⚠️ LAST CHANCE! ⚠️</h2>
+    <p><strong>🔥 EXCLUSIVE UPDATES & SECRET REVIEWS 🔥</strong></p>
+    <div class="manipulative-text">
+      🚨 ONLY 47 SPOTS LEFT FOR EARLY ACCESS! 🚨<br>
+      DON'T MISS NEXT LAUNCH — JOIN VIP LIST NOW!
+    </div>
+    <p style="font-size:1rem">Get notified about new tested products, bonuses & hidden discounts.</p>
+    <form method="post" action="https://www.sendsteed.com/subscribe/" class="popup-form" id="emailFormPopup">
+      <input type="email" name="e123432" required placeholder="Enter your best email... 🔥">
+      <input type="hidden" name="lllid" value="123432">
+      <input type="hidden" name="lluid" value="sandyarta">
+      <input type="hidden" name="redirect" value="">
+      <input type="hidden" name="source" id="popupSource" value="popupwpallthe offers workds">
+      <button type="submit">👉 GET SECRET ACCESS 👈</button>
+    </form>
+    <div class="small-note">We hate spam. Unsubscribe anytime. Manipulative? Maybe. Effective? YES.</div>
+  </div>
+</div>
+
+<script>
+  // --------------------------------------------------------------
+  // PRODUCT DATA: images + warriorplus affiliate links
+  // All warrior links get "/allprodwarrior" appended after the /0
+  // --------------------------------------------------------------
+  const rawData = [
+    { img: "https://warriorplus.com/assets/user/listing_image/o-90225-prod_image.png?v=1773601261", link: "https://warriorplus.com/o2/a/l36z2rb/0" },
+    { img: "https://images.clickfunnels.com/ba/992150943c4f7995d198e1e8bebc9a/ChatGPT-Image-Mar-8-2026-08_01_01-PM-1-.png", link: "https://warriorplus.com/o2/a/ml0gj3t/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-89856-prod_image.png?v=1771757914", link: "https://warriorplus.com/o2/a/yx0rqxh/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-90372-prod_image.png?v=1772739516", link: "https://warriorplus.com/o2/a/rstw6zw/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-90440-prod_image.png?v=1773154600", link: "https://warriorplus.com/o2/a/gc2vhzz/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-89775-prod_image.png?v=1770079205", link: "https://warriorplus.com/o2/a/n3f09lf/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-90664-prod_image.png?v=1773962260", link: "https://warriorplus.com/o2/a/s2dpnmy/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-74722-prod_image.png?v=1709570512", link: "https://warriorplus.com/o2/a/xzvpln0/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-73584-prod_image.png?v=1732600892", link: "https://warriorplus.com/o2/a/x9jvz9/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-84669-prod_image.png?v=1750256280", link: "https://warriorplus.com/o2/a/ht8hcvn/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-58793-prod_image.png?v=1643135198", link: "https://warriorplus.com/o2/a/vggwrz/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-60945-prod_image.png?v=1652240736", link: "https://warriorplus.com/o2/a/b30zsh/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-90187-prod_image.png?v=1771873985", link: "https://warriorplus.com/o2/a/g7r106k/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-89822-prod_image.png?v=1770233675", link: "https://warriorplus.com/o2/a/gkjrtxj/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-66062-prod_image.png?v=1674712861", link: "https://warriorplus.com/o2/a/spkjwg/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-87696-prod_image.png?v=1761415164", link: "https://warriorplus.com/o2/a/lw22p98/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-88244-prod_image.png?v=1764533911", link: "https://warriorplus.com/o2/a/jxwxp06/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-88930-prod_image.png?v=1766515402", link: "https://warriorplus.com/o2/a/bm5vr3x/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-38173-prod_image.jpg?v=1576909849", link: "https://warriorplus.com/o2/a/m4pwvm/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-5877-prod_image.png?v=1432043026", link: "https://warriorplus.com/o2/a/mq097r/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-89180-prod_image.png?v=1767875768", link: "https://warriorplus.com/o2/a/mwwxyql/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-89383-prod_image.png?v=1768647207", link: "https://warriorplus.com/o2/a/vgk39f7/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-73277-prod_image.jpg?v=1703177614", link: "https://warriorplus.com/o2/a/qrdzhpr/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-54137-prod_image.png?v=1626669337", link: "https://warriorplus.com/o2/a/pbh4xm/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-45434-prod_image.png?v=1600200245", link: "https://warriorplus.com/o2/a/xrpwb0/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-78831-prod_image.jpg?v=1727220052", link: "https://warriorplus.com/o2/a/k4j51n4/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-87070-prod_image.png?v=1758646749", link: "https://warriorplus.com/o2/a/qv9qsth/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-40682-prod_image.png?v=1584977470", link: "https://warriorplus.com/o2/a/kr0b9h5/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-78388-prod_image.png?v=1725353806", link: "https://warriorplus.com/o2/a/ypqm582/0" },
+    { img: "https://warriorplus.com/assets/user/listing_image/o-84170-prod_image.png?v=1748994034", link: "https://warriorplus.com/o2/a/pwzfsvr/0" }
+  ];
+
+  // Append /allprodwarrior at the end of each warrior link
+  function getFullAffiliateLink(baseLink) {
+    let cleanLink = baseLink.trim();
+    if (!cleanLink.endsWith('/0')) {
+      return cleanLink + "/allprodwarrior";
+    } else {
+      return cleanLink + "/allprodwarrior";
+    }
+  }
+
+  const productGrid = document.getElementById('productGrid');
+  const carouselTrack = document.getElementById('carouselTrack');
+
+  function buildProductsAndCarousel() {
+    productGrid.innerHTML = '';
+    carouselTrack.innerHTML = '';
+
+    rawData.forEach((item, idx) => {
+      const finalUrl = getFullAffiliateLink(item.link);
+      
+      // PRODUCT CARD - image in original size (max-width 100%, height auto)
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      
+      // Image wrapper to preserve original dimensions
+      const imgWrapper = document.createElement('div');
+      imgWrapper.className = 'product-img-wrapper';
+      const imgEl = document.createElement('img');
+      imgEl.src = item.img;
+      imgEl.alt = `Tested product ${idx+1}`;
+      imgEl.className = 'product-img';
+      imgEl.style.cursor = 'pointer';
+      imgEl.loading = 'lazy';
+      imgEl.onerror = function() { this.src = 'https://placehold.co/400x300?text=Product+Image'; };
+      imgWrapper.appendChild(imgEl);
+      
+      const btn = document.createElement('a');
+      btn.href = finalUrl;
+      btn.target = '_blank';
+      btn.rel = 'nofollow sponsored';
+      btn.className = 'shimmer-btn';
+      btn.textContent = '🔥 GRAB OFFER 🔥';
+      
+      card.appendChild(imgWrapper);
+      card.appendChild(btn);
+      
+      // Make image clickable same as button
+      imgEl.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open(finalUrl, '_blank');
+      });
+      
+      productGrid.appendChild(card);
+      
+      // CAROUSEL ITEM - also original size preserved (height fixed, width auto)
+      const carItem = document.createElement('div');
+      carItem.className = 'carousel-item';
+      const carImg = document.createElement('img');
+      carImg.src = item.img;
+      carImg.alt = "offer banner";
+      carImg.style.height = "130px";
+      carImg.style.width = "auto";
+      carImg.style.maxWidth = "200px";
+      carImg.style.objectFit = "contain";
+      carImg.loading = 'lazy';
+      const caption = document.createElement('div');
+      caption.className = 'carousel-caption';
+      caption.textContent = '⚡ CLICK & BUY ⚡';
+      carItem.appendChild(carImg);
+      carItem.appendChild(caption);
+      carItem.addEventListener('click', () => {
+        window.open(finalUrl, '_blank');
+      });
+      carouselTrack.appendChild(carItem);
+    });
+    
+    // Duplicate items for seamless infinite loop (add extra clones)
+    const clones = rawData.map((item) => {
+      const finalUrl = getFullAffiliateLink(item.link);
+      const cloneDiv = document.createElement('div');
+      cloneDiv.className = 'carousel-item';
+      const cloneImg = document.createElement('img');
+      cloneImg.src = item.img;
+      cloneImg.style.height = "130px";
+      cloneImg.style.width = "auto";
+      cloneImg.style.maxWidth = "200px";
+      cloneImg.style.objectFit = "contain";
+      const cap = document.createElement('div');
+      cap.className = 'carousel-caption';
+      cap.textContent = '⚡ LIMITED ⚡';
+      cloneDiv.appendChild(cloneImg);
+      cloneDiv.appendChild(cap);
+      cloneDiv.addEventListener('click', () => {
+        window.open(finalUrl, '_blank');
+      });
+      return cloneDiv;
+    });
+    clones.forEach(clone => carouselTrack.appendChild(clone));
+  }
+
+  buildProductsAndCarousel();
+
+  // POPUP logic
+  let popupShown = false;
+  const modal = document.getElementById('popupModal');
+  const closeBtn = document.getElementById('closePopupBtn');
+
+  function showPopup() {
+    if (!popupShown) {
+      modal.classList.add('popup-active');
+      popupShown = true;
+    }
+  }
+
+  setTimeout(() => {
+    showPopup();
+  }, 1800);
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('popup-active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('popup-active');
+    }
+  });
+
+  // ensure source field matches requirement
+  const sourceInput = document.getElementById('popupSource');
+  if (sourceInput) sourceInput.value = "popupwpallthe offers workds";
+
+  // scroll trigger for popup
+  window.addEventListener('scroll', function() {
+    if (!popupShown && window.scrollY > 500) {
+      showPopup();
+    }
+  });
+
+  // fix carousel infinite smoothness after images load
+  function restartCarouselAnimation() {
+    const track = document.getElementById('carouselTrack');
+    if(track) {
+      track.style.animation = 'none';
+      track.offsetHeight;
+      track.style.animation = 'scrollCarousel 42s linear infinite';
+    }
+  }
+  window.addEventListener('load', restartCarouselAnimation);
+  setTimeout(restartCarouselAnimation, 1200);
+</script>
+</body>
+</html>
