@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>FINISH HIM/AFFILIATE | $497 + 2% Lifetime OR $10K per Sale — Activate Email</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* dark kombat arena — blood & thunder vibe */
+        body {
+            background: radial-gradient(circle at 20% 30%, #0b0507 0%, #020001 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Apple Color Emoji', sans-serif;
+            padding: 1.5rem;
+            margin: 0;
+            position: relative;
+        }
+
+        /* grunge scratch overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.08"><path d="M30 10 L50 30 L10 50 Z M160 20 L180 45 L145 55 Z M80 170 L110 185 L75 195 Z M190 140 L175 165 L155 150 Z" fill="%23ff3300"/><circle cx="45" cy="160" r="8"/><circle cx="170" cy="85" r="12"/></svg>');
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* MAIN CARD — FIGHT CARD, BLOOD EDGE */
+        .landing-card {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(8, 3, 5, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 2.2rem;
+            border: 1.5px solid #c42a2a;
+            padding: 2.5rem 2.2rem;
+            box-shadow: 0 30px 45px -10px rgba(180, 20, 20, 0.5), 0 0 0 2px rgba(200, 50, 30, 0.2) inset;
+            position: relative;
+            z-index: 2;
+            transition: 0.2s;
+        }
+
+        /* kombat ribbon */
+        .uber-title {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #FF6644;
+            background: #1e0709cc;
+            display: inline-block;
+            padding: 0.35rem 1.3rem;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #ff3a2f;
+            font-family: monospace;
+            backdrop-filter: blur(4px);
+        }
+
+        /* HEADLINE — brutal kombat style */
+        .headline {
+            font-size: clamp(2rem, 7vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: #FFE8E0;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 5px #9a1f1f, 0 0 8px #ff3300;
+        }
+
+        .headline span {
+            background: linear-gradient(135deg, #FF6633, #FF2222);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: none;
+            display: inline-block;
+        }
+
+        /* 2 lines only, removed the previous "no traffic" subheadline. now minimal */
+        .subheadline {
+            font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+            font-weight: 500;
+            color: #FFC4B0;
+            line-height: 1.4;
+            margin-bottom: 1.2rem;
+            border-left: 3px solid #ff4422;
+            padding-left: 1rem;
+            background: rgba(0,0,0,0.35);
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* GIF + BENEFIT SECTION: SIDE BY SIDE (flex) */
+        .gift-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1.8rem 0 1.8rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .gif-container {
+            flex: 1.2;
+            min-width: 180px;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px black, 0 0 0 2px #aa2e2e;
+            background: #00000044;
+        }
+        .gif-container img {
+            width: 100%;
+            display: block;
+            border-radius: 24px;
+            transition: transform 0.2s ease;
+        }
+        .gif-container img:hover {
+            transform: scale(1.02);
+        }
+        .value-badge {
+            flex: 2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: flex-start;
+        }
+        .pill {
+            background: #1f0c0ccc;
+            border: 1px solid #ff5a3a;
+            border-radius: 60px;
+            padding: 0.65rem 1.4rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #FFC8B0;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 3px 0 #5e1a1a;
+            transition: 0.07s linear;
+        }
+        .pill strong {
+            color: #FF7A4A;
+            font-weight: 900;
+        }
+
+        /* FORM SECTION — FIGHT READY */
+        .form-container {
+            background: #0f0306b3;
+            border-radius: 2rem;
+            padding: 0.2rem;
+            margin: 1.5rem 0 1rem;
+            border: 0.5px solid #c9302c;
+        }
+        .email-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            align-items: center;
+            width: 100%;
+        }
+        .email-input {
+            flex: 3;
+            background: #12090c;
+            border: 2px solid #943e36;
+            border-radius: 60px;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #ffe0d4;
+            font-family: inherit;
+            transition: 0.2s;
+            outline: none;
+            box-shadow: inset 0 1px 4px black;
+        }
+        .email-input:focus {
+            border-color: #ff5733;
+            box-shadow: 0 0 0 3px rgba(255, 70, 40, 0.4);
+        }
+        .submit-btn {
+            flex: 1;
+            background: linear-gradient(115deg, #E64B2E 0%, #B52E1A 100%);
+            border: none;
+            border-radius: 60px;
+            padding: 1rem 1.6rem;
+            font-size: 1rem;
+            font-weight: 800;
+            font-family: inherit;
+            color: #FEE3D4;
+            cursor: pointer;
+            transition: 0.12s linear;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 0 #641e12;
+            transform: translateY(-2px);
+            text-transform: uppercase;
+        }
+        .submit-btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #641e12;
+        }
+        .small-note {
+            font-size: 0.7rem;
+            color: #CFA28C;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* ACTIVATION PANEL — KOMBAT STYLE */
+        .activation-message {
+            margin-top: 2rem;
+            background: #17080ce0;
+            border-radius: 1.8rem;
+            padding: 1.2rem 1.5rem;
+            border-left: 7px solid #ff4422;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 12px 28px black;
+        }
+        .activation-title {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #FF7A4C;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            letter-spacing: -0.2px;
+        }
+        .activation-text {
+            color: #FFD9CC;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin-bottom: 16px;
+        }
+        .access-link {
+            display: inline-block;
+            background: #1c0808;
+            padding: 10px 18px;
+            border-radius: 60px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            word-break: break-all;
+            color: #FFAA88;
+            border: 1px solid #ff5533;
+        }
+        .btn-copy {
+            background: #4e1e14;
+            border: 1px solid #ff6644;
+            color: #FFDBCB;
+            border-radius: 40px;
+            padding: 5px 16px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 12px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        .guarantee-line {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #DA9E84;
+            border-top: 1px solid #aa4433;
+            padding-top: 1.4rem;
+        }
+
+        @media (max-width: 700px) {
+            .landing-card {
+                padding: 1.5rem;
+            }
+            .gift-badge-row {
+                flex-direction: column;
+            }
+            .email-group {
+                flex-direction: column;
+            }
+            .submit-btn {
+                width: 100%;
+            }
+        }
+        @keyframes kombatRise {
+            0% { opacity: 0; transform: scale(0.96) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .landing-card, .activation-message {
+            animation: kombatRise 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+        }
+    </style>
+</head>
+<body>
+<div class="landing-card">
+    <div class="uber-title">⚡ FATALITY AFFILIATE | ACTIVATE YOUR EMAIL</div>
+
+    <div class="headline">
+        "FINISH HIM."<br>
+        <span>$497 + 2% Lifetime</span> — or <span>$10K per Sale</span>
+    </div>
+    
+    <!-- removed "One-time email verification..." line, only short aggressive text -->
+    <div class="subheadline">
+        Activate your email → unlock the killer affiliate link.<br>
+        No workers. Only owners.
+    </div>
+
+    <!-- GIF + BENEFITS (Mortal Kombat GIF) -->
+    <div class="gift-badge-row">
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2ZreWtiOTM4amI2d2llc2VjNGRkbmVzcnFham9lOGZ0Ymk1dzZtciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3lIgOk4Gjfptu/giphy.gif" 
+                 alt="Mortal Kombat Finish Him GIF" 
+                 loading="eager"
+                 style="width:100%; border-radius: 20px;">
+        </div>
+        <div class="value-badge">
+            <div class="pill"><strong>🔥 $497 UPFRONT</strong> + 2% forever</div>
+            <div class="pill"><strong>💀 $10K FLAT</strong> per enterprise kill</div>
+            <div class="pill"><strong>⚔️ ZERO TRAFFIC</strong> ready system</div>
+            <div class="pill"><strong>📧 ACTIVATE LINK</strong> → kombat access</div>
+        </div>
+    </div>
+
+    <!-- EMAIL ACTIVATION FORM -->
+    <div class="form-container">
+        <form id="kombatActivationForm">
+            <div class="email-group">
+                <input type="email" id="kombatEmail" required class="email-input" placeholder="your@email.com" autocomplete="email">
+                <button type="submit" class="submit-btn">ACTIVATE & GET LINK →</button>
+            </div>
+            <div class="small-note">
+                ✓ Instant activation simulation • $497 + 2% lifetime OR $10K per sale model
+            </div>
+        </form>
+    </div>
+
+    <!-- DYNAMIC ACTIVATION PANEL (Email activation simulation) -->
+    <div id="activationPanelKombat" class="activation-message hidden">
+        <div class="activation-title">
+            🩸⚡ ACTION REQUIRED — FINISH YOUR VERIFICATION
+        </div>
+        <div class="activation-text" id="activationTextKombat">
+            <strong>Fatality email sent to <span id="displayEmailKombat" style="color:#FF7A4C;"></span>.</strong><br>
+            Click the button below to confirm & unleash your $497 + 2% lifetime affiliate link (or $10K per sale).
+            <span style="color:#FFAA77;">(Simulated Kombat activation — one click = access)</span>
+        </div>
+        <div id="simulatedBlockKombat">
+            <button id="simulateConfirmBtn" class="submit-btn" style="background:#A02F1F; box-shadow:0 5px 0 #5A1C10; padding:0.7rem 1.5rem; font-size:0.9rem;">
+                🔥 CONFIRM EMAIL → REVEAL AFFILIATE LINK
+            </button>
+        </div>
+        <div id="finalLinkKombat" class="hidden" style="margin-top: 18px;">
+            <div class="activation-title" style="color:#FFAA66;">✅ FATALITY — AFFILIATE LINK UNLOCKED</div>
+            <div class="activation-text">
+                Your kombat-ready affiliate link is active. Share it to collect <strong>$497 upfront + 2% lifetime commissions</strong> per referral, or choose the <strong>$10K flat per enterprise sale</strong>.
+            </div>
+            <div style="display:flex; align-items:center; flex-wrap:wrap; gap:10px; background:#1A090C; border-radius: 60px; padding: 8px 16px; border:1px solid #FF6644;">
+                <code id="affiliateLinkKombat" style="word-break:break-all; font-size:0.8rem; color:#FFB085; flex:1;">https://kombataffiliate.io/access/</code>
+                <button id="copyKombatLink" class="btn-copy">📋 COPY LINK</button>
+            </div>
+            <div class="small-note" style="margin-top: 12px; text-align:left;">
+                💀 Share once, earn forever. $497 per sale + 2% lifetime residuals. Or $10K per enterprise deal.
+            </div>
+        </div>
+        <div class="small-note" id="resendKombatHint" style="margin-top: 12px; text-align:left;">
+            ⚡ No email? <span id="resendKombatTrigger" style="color:#FF7A4C; cursor:pointer; text-decoration:underline;">Resend activation</span>
+        </div>
+    </div>
+
+    <div class="guarantee-line">
+        <span>💀 $497 + 2% LIFETIME</span>
+        <span>⚔️ $10K FLAT PER SALE</span>
+        <span>📧 ACTIVATE EMAIL → GET LINK</span>
+        <span>🔥 FINISH HIM. OWN IT.</span>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // DOM elements
+        const form = document.getElementById('kombatActivationForm');
+        const emailInput = document.getElementById('kombatEmail');
+        const activationPanel = document.getElementById('activationPanelKombat');
+        const displaySpan = document.getElementById('displayEmailKombat');
+        const simulateBtn = document.getElementById('simulateConfirmBtn');
+        const finalLinkDiv = document.getElementById('finalLinkKombat');
+        const affiliateCodeSpan = document.getElementById('affiliateLinkKombat');
+        const copyBtn = document.getElementById('copyKombatLink');
+        const resendTriggerSpan = document.getElementById('resendKombatTrigger');
+        const simulatedBlockDiv = document.getElementById('simulatedBlockKombat');
+        
+        let currentEmail = '';
+        let currentAccessLink = '';
+        let isActivated = false;
+        
+        // generate unique kombat affiliate link
+        function generateKombatLink(email) {
+            const clean = email.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const timestamp = Date.now().toString(36);
+            const hash = btoa(clean + timestamp).slice(0, 12).replace(/[^a-zA-Z0-9]/g, '');
+            return `https://kombataffiliate.com/access/${hash}?ref=${email.split('@')[0]}&plan=497_2percent_10k`;
+        }
+        
+        // show activation panel (simulate email sent)
+        function showActivationPanel(email) {
+            currentEmail = email;
+            currentAccessLink = generateKombatLink(email);
+            displaySpan.innerText = email;
+            activationPanel.classList.remove('hidden');
+            isActivated = false;
+            finalLinkDiv.classList.add('hidden');
+            simulatedBlockDiv.classList.remove('hidden');
+            // reset activation text content to default (fresh)
+            const actTextDiv = document.getElementById('activationTextKombat');
+            if (actTextDiv) {
+                actTextDiv.innerHTML = `<strong>Fatality email sent to <span id="displayEmailKombat" style="color:#FF7A4C;">${email}</span>.</strong><br>
+                Click the button below to confirm & unleash your $497 + 2% lifetime affiliate link (or $10K per sale).
+                <span style="color:#FFAA77;">(Simulated Kombat activation — one click = access)</span>`;
+                // re-sync display span after innerHTML
+                const newSpan = document.getElementById('displayEmailKombat');
+                if(newSpan) newSpan.innerText = email;
+            }
+            // reset resend hint to default
+            const resendHintDiv = document.getElementById('resendKombatHint');
+            if (resendHintDiv) {
+                resendHintDiv.innerHTML = `⚡ No email? <span id="resendKombatTrigger" style="color:#FF7A4C; cursor:pointer; text-decoration:underline;">Resend activation</span>`;
+                const newResend = document.getElementById('resendKombatTrigger');
+                if (newResend) {
+                    newResend.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (!currentEmail) return;
+                        if (isActivated) {
+                            alert("Already activated! Your affiliate link is ready.");
+                            return;
+                        }
+                        resendActivation();
+                    });
+                }
+            }
+            activationPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        // resend simulation
+        function resendActivation() {
+            if (!currentEmail) return;
+            if (isActivated) return;
+            const btn = simulateBtn;
+            if (btn) {
+                const original = btn.innerText;
+                btn.innerText = "📨 RESENT! CHECK INBOX";
+                setTimeout(() => { if(btn) btn.innerText = original; }, 1600);
+            }
+            const actDiv = document.getElementById('activationTextKombat');
+            if (actDiv && !isActivated) {
+                actDiv.innerHTML = `<strong>💀 New verification sent to <span id="displayEmailKombat" style="color:#FF7A4C;">${currentEmail}</span>.</strong><br>
+                Hit confirm below to unlock $497 upfront + 2% lifetime affiliate link.<br>
+                <span style="color:#FFAA77;">(One click activation — kombat ready)</span>`;
+                const freshSpan = document.getElementById('displayEmailKombat');
+                if(freshSpan) freshSpan.innerText = currentEmail;
+            }
+        }
+        
+        // final activation: show affiliate link
+        function completeActivation() {
+            if (isActivated) return;
+            if (!currentEmail || !currentAccessLink) return;
+            isActivated = true;
+            simulatedBlockDiv.classList.add('hidden');
+            affiliateCodeSpan.innerText = currentAccessLink;
+            finalLinkDiv.classList.remove('hidden');
+            // update activation panel title/text
+            const titleDiv = document.querySelector('#activationPanelKombat .activation-title');
+            if (titleDiv) titleDiv.innerHTML = "✅ FATALITY! AFFILIATE ACCESS GRANTED";
+            const textDiv = document.getElementById('activationTextKombat');
+            if (textDiv) {
+                textDiv.innerHTML = `Account activated for <strong>${currentEmail}</strong>. Your exclusive kombat link is below. Every referral = <strong>$497 upfront + 2% lifetime commissions</strong> OR <strong>$10K per enterprise sale</strong>.`;
+            }
+            const hintDiv = document.getElementById('resendKombatHint');
+            if (hintDiv) hintDiv.innerHTML = "🔓 Active • Share your link & collect blood money.";
+        }
+        
+        // copy link logic
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                const linkText = affiliateCodeSpan.innerText;
+                if (linkText && linkText !== 'https://kombataffiliate.io/access/') {
+                    navigator.clipboard.writeText(linkText).then(() => {
+                        const original = copyBtn.innerText;
+                        copyBtn.innerText = "✓ COPIED!";
+                        setTimeout(() => { copyBtn.innerText = original; }, 1500);
+                    }).catch(() => alert("Copy manually: " + linkText));
+                }
+            });
+        }
+        
+        // form submit
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            if (!email || !email.includes('@')) {
+                alert("Enter a valid email to get your Kombat affiliate link.");
+                return;
+            }
+            showActivationPanel(email);
+        });
+        
+        // simulate confirm button
+        if (simulateBtn) {
+            simulateBtn.addEventListener('click', () => {
+                if (!currentEmail) return;
+                if (!isActivated) {
+                    completeActivation();
+                } else {
+                    if (finalLinkDiv.classList.contains('hidden')) finalLinkDiv.classList.remove('hidden');
+                }
+            });
+        }
+        
+        // resend trigger handler (initial)
+        if (resendTriggerSpan) {
+            resendTriggerSpan.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (!currentEmail) { alert("Submit your email first."); return; }
+                if (isActivated) { alert("Already activated — your link is ready below."); return; }
+                resendActivation();
+            });
+        }
+        
+        // extra fallback for any dynamic rebind
+        const initialResend = document.getElementById('resendKombatTrigger');
+        if(initialResend && initialResend !== resendTriggerSpan) {
+            initialResend.addEventListener('click', () => {
+                if(!currentEmail) alert("Enter email first.");
+                else if(isActivated) alert("Already activated.");
+                else resendActivation();
+            });
+        }
+    })();
+</script>
+</body>
+</html>
