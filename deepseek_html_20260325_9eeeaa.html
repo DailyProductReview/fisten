@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>EXORCIST AFFILIATE | $497 + 2% Lifetime — UP TO $10K per Sale | Activate Email</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* dark, haunting, demonic vibe — deep shadows + eerie green */
+        body {
+            background: radial-gradient(circle at 30% 20%, #0a0c12 0%, #010101 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            padding: 1rem;
+            margin: 0;
+            position: relative;
+        }
+
+        /* creepy overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0, 255, 100, 0.02) 0px, rgba(0, 255, 100, 0.02) 2px, transparent 2px, transparent 6px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* MAIN CARD — possessed, gothic */
+        .landing-card {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(8, 8, 14, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 2rem;
+            border: 1.5px solid #4a7c59;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 25px 40px -12px rgba(0, 40, 20, 0.5), 0 0 0 1px rgba(74, 124, 89, 0.4) inset, 0 0 15px rgba(0, 255, 100, 0.2);
+            transition: 0.2s;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* HEADLINE — demonic, powerful */
+        .headline {
+            font-size: clamp(1.9rem, 6vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: #e6ffe6;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px #3a9b5a, 0 2px 5px black;
+        }
+
+        .headline span {
+            background: linear-gradient(135deg, #7fff9f, #3acf6a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: none;
+        }
+
+        /* subheadline — ominous */
+        .subheadline {
+            font-size: clamp(0.85rem, 3.2vw, 1.05rem);
+            font-weight: 600;
+            color: #aaffcc;
+            line-height: 1.35;
+            margin-bottom: 1rem;
+            border-left: 4px solid #4a9e6a;
+            padding-left: 0.8rem;
+            background: rgba(74, 158, 106, 0.12);
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* GIF + BENEFIT SECTION */
+        .gift-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 0.8rem 0 1.2rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .gif-container {
+            flex: 1;
+            min-width: 150px;
+            max-width: 210px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.7), 0 0 0 2px #4a9e6a;
+            background: #0a1a0e;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+        .gif-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px #4a9e6a;
+        }
+        .gif-container img {
+            width: 100%;
+            display: block;
+            border-radius: 22px;
+        }
+        .value-badge {
+            flex: 2.5;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            justify-content: flex-start;
+        }
+        .pill {
+            background: #102218cc;
+            border: 1px solid #5ab87a;
+            border-radius: 60px;
+            padding: 0.45rem 1.1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #c8ffd8;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 0 #2a6a3a;
+            white-space: nowrap;
+        }
+        .pill strong {
+            color: #7fff9f;
+            font-weight: 900;
+        }
+
+        /* FORM SECTION — possessed input */
+        .form-container {
+            background: #0a160eb3;
+            border-radius: 1.8rem;
+            padding: 0.2rem;
+            margin: 0.8rem 0 0.8rem;
+            border: 0.5px solid #4a9e6a;
+        }
+        .email-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            align-items: center;
+            width: 100%;
+        }
+        .email-input {
+            flex: 3;
+            background: #0e1a12;
+            border: 2px solid #2e6a3e;
+            border-radius: 60px;
+            padding: 0.9rem 1.4rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #e0ffe6;
+            font-family: inherit;
+            transition: 0.2s;
+            outline: none;
+        }
+        .email-input:focus {
+            border-color: #7fff9f;
+            box-shadow: 0 0 0 3px rgba(74, 158, 106, 0.5);
+        }
+        .submit-btn {
+            flex: 1;
+            background: linear-gradient(115deg, #3f9a5a 0%, #1f6a3a 100%);
+            border: none;
+            border-radius: 60px;
+            padding: 0.9rem 1.4rem;
+            font-size: 0.9rem;
+            font-weight: 800;
+            font-family: inherit;
+            color: #eef9f0;
+            cursor: pointer;
+            transition: 0.1s linear;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 0 #0f421f;
+            transform: translateY(-2px);
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .submit-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 #0f421f;
+        }
+        .small-note {
+            font-size: 0.65rem;
+            color: #9acdab;
+            text-align: center;
+            margin-top: 0.6rem;
+        }
+
+        /* ACTIVATION PANEL — exorcism required */
+        .activation-message {
+            margin-top: 1.2rem;
+            background: #0f1c12e0;
+            border-radius: 1.5rem;
+            padding: 1rem 1.2rem;
+            border-left: 6px solid #4a9e6a;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+        .activation-title {
+            font-weight: 800;
+            font-size: 1rem;
+            color: #9affb5;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        .activation-text {
+            color: #dcffdd;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+        .btn-copy {
+            background: #142812;
+            border: 1px solid #4a9e6a;
+            color: #dcffdd;
+            border-radius: 40px;
+            padding: 4px 14px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 12px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        .guarantee-line {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #b3e6c0;
+            border-top: 1px solid #4a9e6a;
+            padding-top: 1rem;
+        }
+        .guarantee-line span {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 680px) {
+            .landing-card {
+                padding: 1.2rem;
+            }
+            .gift-badge-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .gif-container {
+                max-width: 170px;
+            }
+            .value-badge {
+                width: 100%;
+            }
+            .pill {
+                white-space: normal;
+                font-size: 0.7rem;
+            }
+            .email-group {
+                flex-direction: column;
+            }
+            .submit-btn {
+                width: 100%;
+                white-space: normal;
+            }
+            .guarantee-line span {
+                white-space: normal;
+                font-size: 0.65rem;
+            }
+        }
+
+        @keyframes exorcistRise {
+            0% { opacity: 0; transform: translateY(20px) rotateX(5deg); }
+            100% { opacity: 1; transform: translateY(0) rotateX(0); }
+        }
+        .landing-card, .activation-message {
+            animation: exorcistRise 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) forwards;
+        }
+    </style>
+</head>
+<body>
+<div class="landing-card">
+    <!-- HEADLINE — exorcist / demon slayer theme -->
+    <div class="headline">
+        "THE POWER OF CHRIST <span>COMPELS YOU</span>"<br>
+        <span>$497 + 2% Lifetime</span> — <span>UP TO $10K per Sale</span>
+    </div>
+    
+    <!-- subheadline — exorcism / activation -->
+    <div class="subheadline">
+        One email exorcism (activation) → cast out poverty & unlock your demonic affiliate link. No holy water required.
+    </div>
+
+    <!-- GIF + BENEFITS (The Exorcist GIF) -->
+    <div class="gift-badge-row">
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2Zza2tjMW9rcjNuYzdxOHMyZWVrNHFqMzl6aG81aHcwczYydnRoZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xT9KVHs6I3EfDKnVte/giphy.gif" 
+                 alt="The Exorcist GIF" 
+                 loading="eager"
+                 style="width:100%; border-radius: 22px;">
+        </div>
+        <div class="value-badge">
+            <div class="pill"><strong>💀 $497 UPFRONT</strong> + 2% forever</div>
+            <div class="pill"><strong>⛪ UP TO $10K FLAT</strong> per enterprise exorcism</div>
+            <div class="pill"><strong>🔥 ZERO TRAFFIC</strong> done-for-you system</div>
+            <div class="pill"><strong>📧 ACTIVATE LINK</strong> → cast out the broke</div>
+        </div>
+    </div>
+
+    <!-- EMAIL ACTIVATION FORM — directly visible -->
+    <div class="form-container">
+        <form id="exorcistForm">
+            <div class="email-group">
+                <input type="email" id="exorcistEmail" required class="email-input" placeholder="your@email.com" autocomplete="email">
+                <button type="submit" class="submit-btn">⛪ ACTIVATE & GET LINK →</button>
+            </div>
+            <div class="small-note">
+                ✓ Instant exorcism (activation) • $497 + 2% lifetime • UP TO $10K per sale • The power compels you
+            </div>
+        </form>
+    </div>
+
+    <!-- DYNAMIC ACTIVATION PANEL (Email activation simulation) -->
+    <div id="activationPanelExorcist" class="activation-message hidden">
+        <div class="activation-title">
+            ⛪💀 EXORCISM REQUIRED — VERIFY YOUR EMAIL
+        </div>
+        <div class="activation-text" id="activationTextExorcist">
+            <strong>Holy verification sent to <span id="displayEmailExorcist" style="color:#9affb5;"></span>.</strong><br>
+            Click below to exorcise your doubt & unlock $497 + 2% lifetime (up to $10K per sale).
+        </div>
+        <div id="simulatedBlockExorcist">
+            <button id="simulateConfirmBtn" class="submit-btn" style="background:#2e7a46; box-shadow:0 5px 0 #1a4a2a; padding:0.6rem 1.2rem; font-size:0.85rem; width:auto;">
+                💀 CONFIRM EMAIL → REVEAL LINK
+            </button>
+        </div>
+        <div id="finalLinkExorcist" class="hidden" style="margin-top: 14px;">
+            <div class="activation-title" style="color:#9affb5;">✅ EXORCISM COMPLETE — AFFILIATE LINK UNLOCKED</div>
+            <div class="activation-text">
+                The demon of poverty has been cast out. Your affiliate link is now blessed. Share it to earn <strong>$497 upfront + 2% lifetime commissions</strong> per referral, or claim <strong>up to $10K flat per enterprise sale</strong>.
+            </div>
+            <div style="display:flex; align-items:center; flex-wrap:wrap; gap:8px; background:#142812; border-radius: 60px; padding: 6px 14px; border:1px solid #4a9e6a;">
+                <code id="affiliateLinkExorcist" style="word-break:break-all; font-size:0.75rem; color:#ccffcc; flex:1;">https://exorcist-affiliate.com/access/</code>
+                <button id="copyExorcistLink" class="btn-copy">📋 COPY</button>
+            </div>
+            <div class="small-note" style="margin-top: 8px; text-align:left;">
+                💀 One link = $497 per sale + 2% lifetime residuals. Up to $10K for enterprise. The power of cash compels you.
+            </div>
+        </div>
+        <div class="small-note" id="resendExorcistHint" style="margin-top: 8px; text-align:left;">
+            ⚡ No email? <span id="resendExorcistTrigger" style="color:#9affb5; cursor:pointer; text-decoration:underline;">Resend exorcism (activation)</span>
+        </div>
+    </div>
+
+    <div class="guarantee-line">
+        <span>💀 $497 + 2% LIFETIME</span>
+        <span>⛪ UP TO $10K PER SALE</span>
+        <span>📧 ACTIVATE EMAIL → GET LINK</span>
+        <span>🔥 THE POWER COMPELS YOU</span>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // DOM elements
+        const form = document.getElementById('exorcistForm');
+        const emailInput = document.getElementById('exorcistEmail');
+        const activationPanel = document.getElementById('activationPanelExorcist');
+        const displaySpan = document.getElementById('displayEmailExorcist');
+        const simulateBtn = document.getElementById('simulateConfirmBtn');
+        const finalLinkDiv = document.getElementById('finalLinkExorcist');
+        const affiliateCodeSpan = document.getElementById('affiliateLinkExorcist');
+        const copyBtn = document.getElementById('copyExorcistLink');
+        const resendTriggerSpan = document.getElementById('resendExorcistTrigger');
+        const simulatedBlockDiv = document.getElementById('simulatedBlockExorcist');
+        
+        let currentEmail = '';
+        let currentAccessLink = '';
+        let isActivated = false;
+        
+        // generate unique exorcist affiliate link
+        function generateExorcistLink(email) {
+            const clean = email.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const timestamp = Date.now().toString(36);
+            const hash = btoa(clean + timestamp).slice(0, 12).replace(/[^a-zA-Z0-9]/g, '');
+            return `https://exorcist-cash.com/access/${hash}?ref=${email.split('@')[0]}&plan=497_2percent_upTo10k`;
+        }
+        
+        // show activation panel (simulate email sent)
+        function showActivationPanel(email) {
+            currentEmail = email;
+            currentAccessLink = generateExorcistLink(email);
+            displaySpan.innerText = email;
+            activationPanel.classList.remove('hidden');
+            isActivated = false;
+            finalLinkDiv.classList.add('hidden');
+            simulatedBlockDiv.classList.remove('hidden');
+            // reset activation text content
+            const actTextDiv = document.getElementById('activationTextExorcist');
+            if (actTextDiv) {
+                actTextDiv.innerHTML = `<strong>Holy verification sent to <span id="displayEmailExorcist" style="color:#9affb5;">${email}</span>.</strong><br>
+                Click below to exorcise your doubt & unlock $497 + 2% lifetime (up to $10K per sale).`;
+                const newSpan = document.getElementById('displayEmailExorcist');
+                if(newSpan) newSpan.innerText = email;
+            }
+            // reset resend hint
+            const resendHintDiv = document.getElementById('resendExorcistHint');
+            if (resendHintDiv) {
+                resendHintDiv.innerHTML = `⚡ No email? <span id="resendExorcistTrigger" style="color:#9affb5; cursor:pointer; text-decoration:underline;">Resend exorcism (activation)</span>`;
+                const newResend = document.getElementById('resendExorcistTrigger');
+                if (newResend) {
+                    newResend.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (!currentEmail) return;
+                        if (isActivated) {
+                            alert("Already activated! Your affiliate link is ready.");
+                            return;
+                        }
+                        resendActivation();
+                    });
+                }
+            }
+            activationPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // resend simulation
+        function resendActivation() {
+            if (!currentEmail) return;
+            if (isActivated) return;
+            const btn = simulateBtn;
+            if (btn) {
+                const original = btn.innerText;
+                btn.innerText = "📨 RESENT!";
+                setTimeout(() => { if(btn) btn.innerText = original; }, 1500);
+            }
+            const actDiv = document.getElementById('activationTextExorcist');
+            if (actDiv && !isActivated) {
+                actDiv.innerHTML = `<strong>⛪ New exorcism sent to <span id="displayEmailExorcist" style="color:#9affb5;">${currentEmail}</span>.</strong><br>
+                Hit confirm below to unlock $497 upfront + 2% lifetime (up to $10K per sale). The power compels you.`;
+                const freshSpan = document.getElementById('displayEmailExorcist');
+                if(freshSpan) freshSpan.innerText = currentEmail;
+            }
+        }
+        
+        // final activation: show affiliate link
+        function completeActivation() {
+            if (isActivated) return;
+            if (!currentEmail || !currentAccessLink) return;
+            isActivated = true;
+            simulatedBlockDiv.classList.add('hidden');
+            affiliateCodeSpan.innerText = currentAccessLink;
+            finalLinkDiv.classList.remove('hidden');
+            // update activation panel title/text
+            const titleDiv = document.querySelector('#activationPanelExorcist .activation-title');
+            if (titleDiv) titleDiv.innerHTML = "✅ EXORCISM COMPLETE! AFFILIATE ACCESS GRANTED";
+            const textDiv = document.getElementById('activationTextExorcist');
+            if (textDiv) {
+                textDiv.innerHTML = `Account exorcised & activated for <strong>${currentEmail}</strong>. Your demonic affiliate link is below. Every referral = <strong>$497 upfront + 2% lifetime</strong> — <strong>up to $10K per enterprise sale</strong>.`;
+            }
+            const hintDiv = document.getElementById('resendExorcistHint');
+            if (hintDiv) hintDiv.innerHTML = "🔓 Active • Share your link & banish poverty forever.";
+        }
+        
+        // copy link
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                const linkText = affiliateCodeSpan.innerText;
+                if (linkText && linkText !== 'https://exorcist-cash.com/access/') {
+                    navigator.clipboard.writeText(linkText).then(() => {
+                        const original = copyBtn.innerText;
+                        copyBtn.innerText = "✓ COPIED!";
+                        setTimeout(() => { copyBtn.innerText = original; }, 1500);
+                    }).catch(() => alert("Copy manually: " + linkText));
+                }
+            });
+        }
+        
+        // form submit
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            if (!email || !email.includes('@')) {
+                alert("Enter a valid email to receive your exorcism (activation) link.");
+                return;
+            }
+            showActivationPanel(email);
+        });
+        
+        // simulate confirm button
+        if (simulateBtn) {
+            simulateBtn.addEventListener('click', () => {
+                if (!currentEmail) return;
+                if (!isActivated) {
+                    completeActivation();
+                } else {
+                    if (finalLinkDiv.classList.contains('hidden')) finalLinkDiv.classList.remove('hidden');
+                }
+            });
+        }
+        
+        // resend trigger handler
+        if (resendTriggerSpan) {
+            resendTriggerSpan.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (!currentEmail) { alert("Submit your email first."); return; }
+                if (isActivated) { alert("Already activated — your link is ready below."); return; }
+                resendActivation();
+            });
+        }
+        
+        // fallback for dynamic rebind
+        const initialResend = document.getElementById('resendExorcistTrigger');
+        if(initialResend && initialResend !== resendTriggerSpan) {
+            initialResend.addEventListener('click', () => {
+                if(!currentEmail) alert("Enter email first.");
+                else if(isActivated) alert("Already activated.");
+                else resendActivation();
+            });
+        }
+    })();
+</script>
+</body>
+</html>
