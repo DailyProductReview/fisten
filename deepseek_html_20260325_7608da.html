@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=URL_PLATZHALTER">
+    <title>Rotator</title>
+    <script>
+        // DEINE SEITEN
+        const urls = [
+            "https://dailyproductreview.github.io/fisten/",
+            "https://lllpg.com/v75dp672/",
+            "https://lllpg.com/4j5jn7xm/",
+            "https://lllpg.com/3hc49c8s/",
+            "https://lllpg.com/3hc49c8s/",
+            "https://lllpg.com/krzf4vzw/",
+            "https://lllpg.com/m6hyhysw/",
+            "https://lllpg.com/md3jg48s/",
+            "https://lllpg.com/p2jzjrkz/",
+            "https://lllpg.com/p2jzjrkz/",
+            "https://lllpg.com/7sks9zch/",
+            "https://lllpg.com/gxvf6jw7/",
+            "https://lllpg.com/mtryczy7/",
+            "https://lllpg.com/73t476cg/",
+            "https://lllpg.com/00700700000/",
+            "https://lllpg.com/r8b84rwf/",
+            "https://lllpg.com/r8b84rwf/",
+            "https://leadsleap.com/members/page.manager.php",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_33fd85.html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_db617b.html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_3185c4.html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_f5782d(1).html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_9eeeaa.html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_8012a6.html"
+        ];
+        
+        // ZUFALL
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        const targetUrl = urls[randomIndex];
+        
+        // META-REFRESH setzen (funktioniert immer)
+        document.querySelector('meta[http-equiv="refresh"]').setAttribute('content', '0; url=' + targetUrl);
+    </script>
+</head>
+<body style="background:#000; color:#fff; font-family:monospace; text-align:center; padding-top:20vh;">
+    <div style="font-size:14px;">→ wird weitergeleitet ...</div>
+</body>
+</html>
