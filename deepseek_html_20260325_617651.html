@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rotator</title>
+    <script>
+        // DEINE SEITEN
+        const urls = [
+            "https://dailyproductreview.github.io/fisten/",
+            "https://lllpg.com/v75dp672/",
+            "https://lllpg.com/4j5jn7xm/",
+            "https://lllpg.com/3hc49c8s/",
+            "https://lllpg.com/3hc49c8s/",
+            "https://lllpg.com/krzf4vzw/",
+            "https://lllpg.com/m6hyhysw/",
+            "https://lllpg.com/md3jg48s/",
+            "https://lllpg.com/p2jzjrkz/",
+            "https://lllpg.com/p2jzjrkz/",
+            "https://lllpg.com/7sks9zch/",
+            "https://lllpg.com/gxvf6jw7/",
+            "https://lllpg.com/mtryczy7/",
+            "https://lllpg.com/73t476cg/",
+            "https://lllpg.com/00700700000/",
+            "https://lllpg.com/r8b84rwf/",
+            "https://lllpg.com/r8b84rwf/",
+            "https://leadsleap.com/members/page.manager.php",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_33fd85.html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_db617b.html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_3185c4.html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_f5782d(1).html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_9eeeaa.html",
+            "https://dailyproductreview.github.io/fisten/deepseek_html_20260325_8012a6.html"
+        ];
+        
+        // ZUFÄLLIGE SEITE + CACHE-KILLER (immer unterschiedlich)
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        let targetUrl = urls[randomIndex];
+        
+        // FALLS GLEICHE SEITE, NOCHMAL ZUFALL (optional)
+        // UND CACHE VERHINDERN
+        const cacheKiller = "?r=" + Math.random() + "&t=" + Date.now();
+        
+        // Bei manchen Seiten stört der Parameter, also nur bei eigenen
+        if (targetUrl.includes("dailyproductreview.github.io")) {
+            targetUrl += cacheKiller;
+        }
+        
+        // SOFORT WEITERLEITEN
+        window.location.replace(targetUrl);
+    </script>
+</head>
+<body style="background:#0a0a0a; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; font-family:monospace; color:#0f0;">
+    <div style="text-align:center">
+        ⚡ ROTATOR ACTIVE ⚡<br>
+        → wird weitergeleitet ...
+    </div>
+</body>
+</html>
