@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Limited Access · 1275 Traffic Exchanges & Mailers</title>
+    <!-- Google Fonts + simple reset & modern styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0b0f1c 0%, #070b16 100%);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+
+        /* background subtle glow */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.08), transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* main card */
+        .container {
+            max-width: 680px;
+            width: 100%;
+            background: rgba(12, 18, 30, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 3rem;
+            border: 1px solid rgba(0, 255, 255, 0.25);
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.6), 0 0 0 1px rgba(0, 255, 255, 0.1) inset;
+            padding: 2.2rem 2rem 2.5rem;
+            transition: all 0.2s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* urgent badge */
+        .urgent-badge {
+            display: inline-block;
+            background: #ff3366;
+            color: white;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(255,51,102,0.4);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FFFFFF 20%, #B0F0FF 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.01em;
+        }
+
+        .highlight {
+            color: #2bd6ff;
+            text-shadow: 0 0 6px rgba(43,214,255,0.3);
+            font-weight: 800;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #b9c7d9;
+            margin: 1rem 0 1.8rem 0;
+            border-left: 3px solid #2bd6ff;
+            padding-left: 1rem;
+            font-weight: 400;
+        }
+
+        /* limit counter style */
+        .counter-box {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 1.5rem;
+            padding: 0.9rem 1.2rem;
+            margin: 1.5rem 0 1.2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .spots-left {
+            font-weight: 700;
+            background: #ff336622;
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            color: #ff98b9;
+        }
+
+        .spots-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffdb5b;
+            margin-right: 0.3rem;
+        }
+
+        /* Form styles */
+        .form-group {
+            margin: 2rem 0 1rem;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: 1rem 1.4rem;
+            font-size: 1rem;
+            background: #0f1422;
+            border: 1.5px solid #2a3455;
+            border-radius: 60px;
+            color: white;
+            font-family: 'Inter', monospace;
+            transition: all 0.2s;
+            outline: none;
+        }
+
+        .email-input:focus {
+            border-color: #2bd6ff;
+            box-shadow: 0 0 0 3px rgba(43,214,255,0.2);
+        }
+
+        .email-input::placeholder {
+            color: #5e6f8d;
+            font-weight: 400;
+        }
+
+        /* Button style (popup trigger) */
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(95deg, #0f2c4b, #0a1a33);
+            border: 1px solid rgba(43,214,255,0.6);
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 0.5rem;
+            letter-spacing: 0.5px;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            background-size: 200% auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(95deg, #1a3e62, #0f2542);
+            border-color: #2bd6ff;
+            box-shadow: 0 0 12px rgba(43,214,255,0.5);
+            transform: scale(0.98);
+        }
+
+        /* text unter dem button */
+        .wakeup-text {
+            margin-top: 1.8rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(120deg, #f0e6a0, #ffd966);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.2px;
+            padding: 0.8rem;
+            border-top: 1px dashed rgba(255,255,255,0.2);
+        }
+
+        /* small info */
+        .fine-print {
+            font-size: 0.7rem;
+            color: #6b7a9b;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Popup overlay (hidden by default) */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.2s, opacity 0.2s ease;
+        }
+
+        .popup-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup-card {
+            background: #0d1224;
+            border-radius: 2rem;
+            max-width: 480px;
+            width: 90%;
+            padding: 2rem 1.8rem;
+            border: 1px solid #2bd6ff;
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+        }
+
+        .popup-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-card p {
+            color: #b4c4e0;
+            margin: 1rem 0;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #aaa;
+            transition: color 0.2s;
+        }
+
+        .popup-close:hover {
+            color: #ff6670;
+        }
+
+        .popup-form {
+            margin-top: 1.5rem;
+        }
+
+        .popup-form input {
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 60px;
+            background: #191f30;
+            border: 1px solid #2a3455;
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .popup-form button {
+            width: 100%;
+            background: #2bd6ff;
+            border: none;
+            padding: 0.9rem;
+            font-weight: bold;
+            border-radius: 60px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #0a0e1a;
+            transition: 0.2s;
+        }
+
+        .popup-form button:hover {
+            background: #1db4d9;
+        }
+
+        @media (max-width: 550px) {
+            .container {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .wakeup-text {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="urgent-badge">⚡ LIMITED SLOT ACCESS ⚡</div>
+    <h1>Limited Access:<br> <span class="highlight">1275 Fully Automated Traffic Exchanges & Mailers</span><br>Only 50 Members Will Get This Autopilot Setup.</h1>
+    <div class="subhead">Claim your spot before it's gone — zero manual work, fully automated traffic system.</div>
+    
+    <!-- dynamic counter to show urgency (only 50 spots, we simulate remaining spots) -->
+    <div class="counter-box">
+        <span>🔥 Remaining VIP slots:</span>
+        <span class="spots-left"><span class="spots-number" id="spotsCounter">47</span> / 50 spots left</span>
+    </div>
+
+    <!-- Email form with hidden fields + popup trigger (button will open popup) -->
+    <div class="form-group">
+        <input type="email" id="tempEmailInput" class="email-input" placeholder="your@email.com" autocomplete="email">
+        <button id="popupTriggerBtn" class="btn-submit">🔓 CLAIM MY AUTOPILOT SPOT →</button>
+    </div>
+
+    <!-- Der Text "WAKE UP TO 1275 AUTOMATED TRAFFIC SOURCES...." unter dem Button -->
+    <div class="wakeup-text">
+        ⚡ WAKE UP TO 1275 AUTOMATED TRAFFIC SOURCES — FULLY PRELOADED & READY. NO SETUP, JUST RESULTS. ⚡
+    </div>
+    <div class="fine-print">
+        *Only 50 members will receive the complete autopilot configuration. First come, first served.
+    </div>
+</div>
+
+<!-- POPUP OVERLAY - zeigt das original sendsteed Formular an, inkl. aller hidden Felder -->
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-card">
+        <div class="popup-close" id="closePopupBtn">&times;</div>
+        <h3>⚡ LAST STEP ⚡</h3>
+        <p>Enter your active email below to secure your seat.<br><strong>Only 50 autopilot setups available.</strong></p>
+        <!-- Original form aus der Aufgabenstellung: action, hidden inputs, etc. -->
+        <form method="post" action="https://www.sendsteed.com/subscribe/" id="sendsteedForm" class="popup-form">
+            <input name="e121696" required type="text" placeholder="your@email.com" id="popupEmailInput">
+            <input type="hidden" name="lllid" value="121696">
+            <input type="hidden" name="lluid" value="sandyarta">
+            <input type="hidden" name="redirect" value="">
+            <input type="hidden" name="source" value="">
+            <button type="submit">✅ YES, RESERVE MY AUTOPILOT ACCESS</button>
+        </form>
+        <p style="font-size: 0.7rem; margin-top: 1rem;">We'll send setup details immediately. No spam.</p>
+    </div>
+</div>
+
+<script>
+    // --- DYNAMIC SPOT COUNTER (simulates diminishing spots) ---
+    // Only 50 members total, we start with 47 left for urgency, but each time someone submits (or clicks through)
+    // we decrease spots to give realistic feeling (just frontend simulation, no actual backend limit)
+    // For authenticity: on submit (popup form submit) we decrease spots + also if user clicks main CTA (optional)
+    // but better: store remaining spots in localStorage to persist across page reloads for consistent urgency.
+    let remainingSpots = 47;  // default start
+    
+    // Try to load saved spots from localStorage
+    if (localStorage.getItem('autopilotRemainingSpots')) {
+        let saved = parseInt(localStorage.getItem('autopilotRemainingSpots'), 10);
+        if (!isNaN(saved) && saved >= 0 && saved <= 50) {
+            remainingSpots = saved;
+        } else {
+            remainingSpots = 47;
+        }
+    } else {
+        // initialize with 47 remaining spots out of 50
+        remainingSpots = 47;
+        localStorage.setItem('autopilotRemainingSpots', remainingSpots);
+    }
+    
+    function updateSpotsCounterUI() {
+        const counterSpan = document.getElementById('spotsCounter');
+        if (counterSpan) {
+            counterSpan.innerText = remainingSpots;
+        }
+        // Optional: if spots reach 0, change message
+        if (remainingSpots <= 0) {
+            const box = document.querySelector('.counter-box');
+            if (box && !box.querySelector('.soldout')) {
+                const soldBadge = document.createElement('span');
+                soldBadge.className = 'spots-left soldout';
+                soldBadge.style.background = "#aa2e4e";
+                soldBadge.innerText = "❌ SOLD OUT / WAITLIST";
+                const oldSpan = box.querySelector('.spots-left');
+                if(oldSpan) oldSpan.style.display = 'none';
+                box.appendChild(soldBadge);
+            }
+        }
+    }
+    
+    function decreaseSpot(by = 1) {
+        if (remainingSpots <= 0) return false;
+        let newSpots = remainingSpots - by;
+        if (newSpots < 0) newSpots = 0;
+        remainingSpots = newSpots;
+        localStorage.setItem('autopilotRemainingSpots', remainingSpots);
+        updateSpotsCounterUI();
+        return true;
+    }
+    
+    // initialize counter display
+    updateSpotsCounterUI();
+    
+    // Popup logic
+    const overlay = document.getElementById('popupOverlay');
+    const triggerBtn = document.getElementById('popupTriggerBtn');
+    const closeBtn = document.getElementById('closePopupBtn');
+    const popupEmailField = document.getElementById('popupEmailInput');
+    const mainPageEmailInput = document.getElementById('tempEmailInput');
+    
+    // Helper: open popup, pre-fill email from main input if present
+    function openPopup() {
+        // sync email from main field to popup field
+        if (mainPageEmailInput.value.trim() !== "") {
+            popupEmailField.value = mainPageEmailInput.value.trim();
+        } else {
+            popupEmailField.value = "";
+        }
+        overlay.classList.add('active');
+    }
+    
+    function closePopup() {
+        overlay.classList.remove('active');
+    }
+    
+    // Button click opens popup
+    triggerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // optional: if main email field is empty we can still open popup, no force validation here
+        openPopup();
+    });
+    
+    // close popup with X or clicking overlay background
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closePopup();
+    });
+    
+    // ESC key to close popup
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            closePopup();
+        }
+    });
+    
+    // HANDLE FORM SUBMIT (sendsteed original action) plus decrease spots & show thank you message
+    const form = document.getElementById('sendsteedForm');
+    form.addEventListener('submit', function(event) {
+        // We do NOT prevent default if we want actual POST to sendsteed.com.
+        // But we need to ensure the form is submitted to the original action.
+        // However we also want to decrease spots and maybe show an alert BEFORE submission.
+        // Important: we want to keep the original behavior (POST to sendsteed), but also add client-side effect.
+        // However if we just let it submit normally, the page will navigate away, and the spot decrease might not be visible.
+        // But since we want a seamless user experience, we can submit via AJAX? But the requirement says form method post action to that URL.
+        // We can keep traditional submit BUT we must also handle spot decrease BEFORE submit. And maybe popup success message.
+        // To avoid race conditions, we'll show a small "submitting..." then after submit, the spot decrease remains in localStorage.
+        // However because the page will reload to sendsteed response, we can decrease spots NOW and then let the form go.
+        // But we must also validate email is not empty.
+        const emailVal = popupEmailField.value.trim();
+        if (!emailVal) {
+            alert("Bitte gib deine E-Mail-Adresse ein, um fortzufahren.");
+            event.preventDefault();
+            return false;
+        }
+        
+        // Decrease a spot ONLY if there are spots left > 0
+        if (remainingSpots > 0) {
+            decreaseSpot(1);
+            // Optional: store a flag that user has claimed, but we just reduce spots.
+            // Provide feedback
+            alert(`🎉 Fast geschafft! Dein Platz wurde reserviert. Du wirst zur Sendsteed-Seite weitergeleitet.\nVerbleibende Plätze: ${remainingSpots}`);
+        } else {
+            alert("❌ Es tut uns leid, alle 50 Plätze sind bereits vergeben. Du kannst dich aber auf die Warteliste setzen (trotzdem absenden).");
+            // allow submit anyway? Yes but we don't decrease below zero.
+        }
+        
+        // After this, form submits normally (no e.preventDefault) so it will go to sendsteed.com
+        // The popup will close naturally due to page reload? Better to let it submit.
+        // But to improve experience we could close popup right before submit:
+        closePopup();
+        // Ensure the hidden fields are all there - they are static.
+        // We also want to copy the email from popup input to the form field name="e121696". Already mapped.
+        // Additionally we could add a redirect url? we keep empty as per spec.
+        // Proceed with native submit.
+        return true; // will trigger actual submit
+    });
+    
+    // Additional tweak: Because form has required attribute on email input, modern browsers block empty. That's good.
+    // Also if user closes popup and submits again, we correctly reduce spots only on actual form submit.
+    // But to avoid double counting when user submits multiple times, we could implement a short localStorage token?
+    // But with the decrease logic each time they submit, they will reduce a spot. In real scenario only valid submissions count.
+    // That's fine for frontend urgency simulation.
+    
+    // Optional: sync main page email to popup when popup opens if main input changes (already done in openPopup)
+    // Also if user wants to submit from main CTA without opening popup? The button only opens popup, no direct submission.
+    // So we're consistent: Button triggers popup, then user submits via popup form.
+    
+    // To improve mobile styling, we also add some extra polishing: 
+    // Also for demonstration, if the user clicks 'X' inside popup, it just closes.
+    
+    // Additional requirement: "unter den button soll dan dein text WAKE UP TO 1275 AUTOMATED TRAFFIC SOURCES.... kommen"
+    // That text is already placed exactly after button inside div.wakeup-text (fully visible under the submit button).
+    
+    // bonus: Add focus effect and copy
+    // Also, due to cross-origin redirection after form submit, we cannot control the final landing, but that's expected.
+    
+    // To make spots counter interactive but still honest: We simulate limited membership.
+    // Also we can add feature: When user revisits, they see updated spots based on localStorage.
+    
+    // If spots become zero, we disable button visual feedback? optional.
+    function updateButtonStateIfSoldOut() {
+        if (remainingSpots <= 0) {
+            triggerBtn.style.opacity = "0.7";
+            triggerBtn.style.cursor = "not-allowed";
+            triggerBtn.innerText = "⛔ SOLD OUT · WAITLIST CLOSED ⛔";
+            triggerBtn.disabled = true;
+            // also disable popup trigger if needed
+            triggerBtn.removeEventListener('click', openPopup);
+            triggerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("Alle 50 Autopilot-Lizenzen wurden bereits vergeben. Vielen Dank für dein Interesse!");
+            });
+        } else {
+            triggerBtn.disabled = false;
+            triggerBtn.innerText = "🔓 CLAIM MY AUTOPILOT SPOT →";
+        }
+    }
+    
+    // call initial check
+    updateButtonStateIfSoldOut();
+    // Override decreaseSpot to also call button state update
+    const originalDecrease = decreaseSpot;
+    window.decreaseSpot = function(by) {
+        const result = originalDecrease(by);
+        updateButtonStateIfSoldOut();
+        return result;
+    };
+    // replace decreaseSpot reference
+    decreaseSpot = function(by = 1) {
+        if (remainingSpots <= 0) return false;
+        let newSpots = remainingSpots - by;
+        if (newSpots < 0) newSpots = 0;
+        remainingSpots = newSpots;
+        localStorage.setItem('autopilotRemainingSpots', remainingSpots);
+        updateSpotsCounterUI();
+        updateButtonStateIfSoldOut();
+        return true;
+    };
+    // reattach to global for safety (already)
+    window.decreaseSpot = decreaseSpot;
+    // Re-run sync button state after loading.
+    updateButtonStateIfSoldOut();
+    
+    // Additional improvement: if user submits the popup form but spots were 0, we still let submit but alert.
+    // we also want to make sure the spot counter doesn't go negative.
+    // Already handled in decreaseSpot.
+    
+    // In case the popup gets closed and reopened, maintain sync of email.
+    // we can also listen to input changes on main email field
+    mainPageEmailInput.addEventListener('input', () => {
+        if (overlay.classList.contains('active')) {
+            // if popup open, update live
+            popupEmailField.value = mainPageEmailInput.value;
+        }
+    });
+    
+    // Ensure form has redirect and source optional, already defined.
+    console.log("Landingpage bereit – 1275 Traffic Exclusiv Autopilot Setup");
+</script>
+</body>
+</html>
