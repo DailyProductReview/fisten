@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Random Link Rotator</title>
+    <!-- 
+        RANDOM LINK ROTATOR
+        - Automatically redirects to a random link from the predefined list.
+        - Nothing else: no UI, no content, just instant redirection.
+        - Works on every page visit / refresh.
+    -->
+    <style>
+        /* Ensure absolutely no visible content, no flickering, no layout shifts */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: transparent; /* invisible background */
+            min-height: 100vh;
+            /* No text, no elements, no display whatsoever */
+        }
+        /* hide any potential fallback text */
+        .hidden-fallback {
+            display: none;
+        }
+        /* For extreme speed: prevent any paint or flash of content */
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        // ============================================================
+        // LINK ROTATOR - RANDOM REDIRECT ENGINE
+        // ============================================================
+        // List of target URLs (exactly as provided)
+        const urls = [
+            "https://warriorplus.com/o2/a/vggwrz/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/nv17rw1/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/dm4gckp/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/ml0gj3t/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/b30zsh/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/j3m5j0/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/vgk39f7/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/npfyn0h/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/r2tg9hb/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/ypqm582/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/k4j51n4/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/b7crdc4/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/qdhhd35/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/yxf1kwg/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/q5h67kh/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/jxwxp06/0/twiceweiterleitung",
+            "https://warriorplus.com/o2/a/bc0th0x/0/twiceweiterleitung",
+            "https://www.myleadgensecret.com/sizzle/?rid=28382&src=twiceweiterleitung",
+            "https://llclick.com/kk7hsygz/twiceweiterleitung"
+        ];
+
+        // Ensure the array is not empty (sanity check)
+        if (!urls || urls.length === 0) {
+            // fallback: never happens with given list, but just in case, redirect to a default.
+            window.location.replace("https://www.example.com");
+        } else {
+            // Generate cryptographically strong random index for true randomness
+            // Use Crypto API if available (modern browsers), fallback to Math.random for old ones.
+            let randomIndex;
+            if (window.crypto && window.crypto.getRandomValues) {
+                const randomArray = new Uint32Array(1);
+                window.crypto.getRandomValues(randomArray);
+                randomIndex = randomArray[0] % urls.length;
+            } else {
+                // Fallback for extremely old or non-secure contexts (still random enough)
+                randomIndex = Math.floor(Math.random() * urls.length);
+            }
+            
+            // Pick the random URL
+            const targetUrl = urls[randomIndex];
+            
+            // PERFORM IMMEDIATE REDIRECTION
+            // Using replace() to avoid creating a history entry (clean redirect, no back button to this page)
+            // This ensures the user does not see this intermediate page at all (if network is fast).
+            // For absolute reliability, we also set a meta refresh as backup, but JS redirect is instant.
+            window.location.replace(targetUrl);
+        }
+    </script>
+    <!-- Ultimate fallback: meta refresh with random selection if JavaScript fails or is disabled -->
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=https://warriorplus.com/o2/a/vggwrz/0/twiceweiterleitung">
+    </noscript>
+</head>
+<body>
+    <!-- Absolutely no content displayed, no text, no elements -->
+    <div class="hidden-fallback" aria-hidden="true"></div>
+</body>
+</html>
