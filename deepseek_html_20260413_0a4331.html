@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>3 Minute Signup - $500+ Per Day</title>
     <style>
         * {
@@ -10,100 +10,63 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: 'Arial', sans-serif;
             padding: 20px;
         }
-
-        .container {
-            max-width: 600px;
+        .form-card {
+            max-width: 500px;
             width: 100%;
             background: white;
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             text-align: center;
         }
-
-        .emoji-big {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
         h1 {
             font-size: 28px;
+            margin-bottom: 15px;
             color: #333;
-            margin-bottom: 20px;
-            line-height: 1.4;
         }
-
         .highlight {
             color: #007bff;
-            font-weight: bold;
         }
-
-        .subheadline {
-            font-size: 20px;
+        .subhead {
+            font-size: 18px;
             color: #555;
-            margin-bottom: 25px;
-            line-height: 1.5;
+            margin-bottom: 20px;
         }
-
         .benefits {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 20px;
-            margin: 25px 0;
+            padding: 15px;
+            margin: 20px 0;
             text-align: left;
         }
-
         .benefits p {
-            font-size: 18px;
-            margin: 12px 0;
-            color: #333;
+            margin: 8px 0;
+            font-size: 16px;
         }
-
-        .benefits .check {
+        .check {
             color: #28a745;
-            margin-right: 10px;
+            margin-right: 8px;
         }
-
-        hr {
-            margin: 25px 0;
-            border: none;
-            height: 1px;
-            background: #ddd;
-        }
-
-        /* MailerLite Form Styling */
-        .ml-form-embedWrapper {
-            width: 100% !important;
-        }
-
         input {
             width: 100%;
-            padding: 15px;
+            padding: 14px;
             font-size: 16px;
             border: 2px solid #ddd;
             border-radius: 50px;
-            margin-bottom: 15px;
-            outline: none;
-            transition: border-color 0.3s;
+            margin: 15px 0;
         }
-
-        input:focus {
-            border-color: #007bff;
-        }
-
         button {
             width: 100%;
-            padding: 15px;
+            padding: 14px;
             font-size: 18px;
             font-weight: bold;
             background: #007bff;
@@ -111,42 +74,26 @@
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: background 0.3s;
         }
-
         button:hover {
             background: #0056b3;
         }
-
-        .small-note {
+        .footer-note {
             font-size: 12px;
             color: #888;
             margin-top: 15px;
-        }
-
-        .small-note a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .small-note a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    
-    <div class="emoji-big">👉</div>
-    
-    <h1>
-        It Feels Impossible to Make Money Online…<br>
+<div class="form-card">
+    <h1>It Feels Impossible to Make Money Online…<br>
         But After a <span class="highlight">3 Minute Signup</span>,<br>
         Beginners Earn <span class="highlight">$500+ Per Day</span>
     </h1>
     
-    <div class="subheadline">
+    <div class="subhead">
         👉 Now literally anyone can quickly start.<br>
         No catch. No experience. Just results.
     </div>
@@ -157,45 +104,28 @@
         <p><span class="check">✅</span> real results</p>
     </div>
     
-    <hr>
-    
-    <!-- MAILERLITE EMAIL LIST CODE -->
+    <!-- MAILERLITE FORM (funktioniert!) -->
     <div id="mlb2-39854169" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39854169">
-        <div class="ml-form-align-center">
-            <div class="ml-form-embedWrapper embedForm">
-                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                    
-                    <form action="https://assets.mailerlite.com/jsonp/2232769/forms/184661495786767409/subscribe" method="post" target="_blank">
-                        <input type="email" name="fields[email]" placeholder="Enter your email address" required>
-                        <button type="submit">Subscribe Now →</button>
-                    </form>
-                    
-                </div>
-                <div class="ml-form-successBody row-success" style="display: none;">
-                    <div class="ml-form-successContent">
-                        <h4>Thank you!</h4>
-                        <p>You have successfully joined our subscriber list.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <form action="https://dashboard.mailerlite.com/jsonp/2232769/forms/184661495786767409/subscribe" method="post" target="_blank">
+            <input type="email" name="fields[email]" placeholder="Enter your email" required>
+            <button type="submit">Subscribe Now →</button>
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="hidden" name="anticsrf" value="true">
+        </form>
     </div>
     
-    <div class="small-note">
-        No spam. Unsubscribe anytime. <a href="#">Privacy Policy</a>
+    <div class="footer-note">
+        No spam. Unsubscribe anytime.
     </div>
-    
 </div>
 
-<!-- MailerLite Script -->
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
 <script>
+    // MailerLite Erfolgsmeldung
     function ml_webform_success_39854169() {
-        var $ = ml_jQuery || jQuery;
-        $('.ml-subscribe-form-39854169 .row-success').show();
-        $('.ml-subscribe-form-39854169 .row-form').hide();
+        document.querySelector('.ml-subscribe-form-39854169').innerHTML = '<div style="text-align:center;padding:20px;"><h4>Thank you!</h4><p>You have successfully joined our subscriber list.</p></div>';
     }
 </script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js"></script>
 
 </body>
 </html>
