@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Knight Access | High-Ticket Profit System</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000000;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', 'Impact', 'Arial Black', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      padding: 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* SUBLIMINAL MESSAGE - barely noticeable, flashes quickly but works on subconscious */
+    .subliminal {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      font-size: 1px;
+      color: rgba(0,0,0,0.001);
+      opacity: 0.001;
+      pointer-events: none;
+      z-index: -999;
+      user-select: none;
+      font-family: monospace;
+      white-space: nowrap;
+      animation: subliminalBlink 0.08s infinite;
+    }
+
+    @keyframes subliminalBlink {
+      0% { opacity: 0.001; text-shadow: none; }
+      50% { opacity: 0.003; color: #111; }
+      100% { opacity: 0.001; }
+    }
+
+    /* main container */
+    .hero {
+      max-width: 880px;
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(1px);
+      border-radius: 48px;
+      padding: 2rem 2rem 3rem;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.8), 0 0 0 1px rgba(212, 175, 55, 0.2);
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    /* GOLD ACCENTS FOR MONEY VIBE */
+    .gold-text {
+      background: linear-gradient(135deg, #F5E56B 0%, #D4AF37 40%, #FFDF73 70%, #B8860B 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+    }
+
+    /* MAIN HEADLINE — shorter & punchy + manipulative */
+    .main-title {
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-family: 'Impact', 'Arial Black', 'Poppins', sans-serif;
+    }
+
+    /* first line: "IMPOSSIBLE TO MAKE MONEY ONLINE?" — white with strike/grunge */
+    .title-line1 {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #ccc;
+      text-decoration: line-through;
+      text-decoration-thickness: 3px;
+      text-decoration-color: #ff3333;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+      opacity: 0.9;
+    }
+
+    .title-line2 {
+      display: block;
+      font-size: 2.7rem;
+      font-weight: 900;
+      background: linear-gradient(115deg, #FFD966, #D4AF37, #FFBF00, #F7D44A);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 12px rgba(218,165,32,0.7);
+      margin-top: 0.2rem;
+      word-break: break-word;
+    }
+
+    .title-highlight {
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #F9E076, #E5B73B);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* KNIGHT RIDER LIGHT STYLED CONTAINER */
+    .knight-container {
+      margin: 2rem 0 1.8rem;
+      width: 100%;
+      background: #0a0a0a;
+      border-radius: 60px;
+      padding: 0.25rem;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.8), 0 0 0 2px #1f1a0c;
+    }
+
+    .knight-rider {
+      height: 12px;
+      width: 100%;
+      background: #1a0000;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 3px #ff3300;
+    }
+
+    .light-beam {
+      position: absolute;
+      width: 85px;
+      height: 100%;
+      background: radial-gradient(circle, #ff3c00, #ff0000, #aa2a00);
+      filter: blur(3px);
+      border-radius: 40px;
+      box-shadow: 0 0 18px #ff2a00, 0 0 8px #ff7b2c;
+      animation: knightRide 1.9s ease-in-out infinite alternate;
+    }
+
+    /* additional glow tail effect */
+    .light-beam::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -10px;
+      width: 40px;
+      height: 20px;
+      background: radial-gradient(ellipse, rgba(255,60,0,0.9), transparent);
+      filter: blur(6px);
+      border-radius: 50%;
+    }
+
+    @keyframes knightRide {
+      0% {
+        left: -20px;
+        opacity: 0.9;
+        width: 70px;
+      }
+      45% {
+        width: 95px;
+        background: radial-gradient(circle, #ff4d1a, #ff0000, #c02300);
+      }
+      100% {
+        left: calc(100% - 65px);
+        opacity: 1;
+        width: 80px;
+      }
+    }
+
+    /* audio embed - invisible but tone integrated (subtle beep/pulse when page loads) */
+    .hidden-audio {
+      display: none;
+    }
+
+    /* SUBTITLE */
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #FFD966;
+      background: rgba(0,0,0,0.6);
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+      border-left: 3px solid #D4AF37;
+      border-right: 3px solid #D4AF37;
+      font-family: monospace;
+      text-transform: uppercase;
+    }
+
+    /* form styles */
+    .email-form {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      background: rgba(10,10,10,0.7);
+      padding: 1.5rem 1rem;
+      border-radius: 80px;
+      backdrop-filter: blur(5px);
+    }
+
+    .email-form input[type="text"] {
+      flex: 2;
+      min-width: 220px;
+      background: #111;
+      border: 1px solid #D4AF37;
+      padding: 1rem 1.5rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      color: white;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s;
+      font-family: monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .email-form input[type="text"]:focus {
+      border-color: #FFD966;
+      box-shadow: 0 0 12px rgba(218,165,32,0.6);
+      background: #000000;
+    }
+
+    .email-form input[type="text"]::placeholder {
+      color: #aaa;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .email-form button {
+      background: linear-gradient(95deg, #D4AF37, #FFD966, #E5B73B);
+      border: none;
+      padding: 0.9rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 900;
+      font-size: 1.1rem;
+      font-family: 'Poppins', 'Impact', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #0a0a0a;
+      cursor: pointer;
+      transition: 0.15s linear;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      border-bottom: 2px solid #7a5c1a;
+    }
+
+    .email-form button:hover {
+      transform: scale(1.02);
+      background: linear-gradient(95deg, #FFE484, #F5CB42, #D4AF37);
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.8);
+      color: black;
+    }
+
+    /* small guarantee / fine print */
+    .micro-guarantee {
+      margin-top: 1.8rem;
+      font-size: 0.7rem;
+      color: #888;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .micro-guarantee span {
+      background: #0c0c0c;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+    }
+
+    /* response / success msg */
+    .status-msg {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #D4AF37;
+      background: rgba(0,0,0,0.6);
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+    }
+
+    /* responsive */
+    @media (max-width: 620px) {
+      .hero {
+        padding: 1.5rem;
+      }
+      .main-title .title-line2 {
+        font-size: 1.8rem;
+      }
+      .title-line1 {
+        font-size: 1.2rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+      }
+      .email-form {
+        flex-direction: column;
+        padding: 1.2rem;
+        border-radius: 40px;
+      }
+      .email-form button {
+        width: 100%;
+      }
+    }
+
+    /* manipulative text effect - adds urgency / subliminal motion */
+    .urgency-hint {
+      font-size: 0.75rem;
+      color: #b67f2e;
+      margin-top: 0.8rem;
+      letter-spacing: 0.6px;
+      font-weight: 500;
+      animation: subtlePulse 1.7s infinite;
+    }
+
+    @keyframes subtlePulse {
+      0% { opacity: 0.6; text-shadow: 0 0 0px gold; }
+      100% { opacity: 1; text-shadow: 0 0 3px rgba(212,175,55,0.3);}
+    }
+
+    /* golden glow borders */
+    .hero {
+      animation: borderGlow 3s infinite alternate;
+    }
+
+    @keyframes borderGlow {
+      0% {
+        box-shadow: 0 0 10px rgba(212,175,55,0.2), 0 0 0 1px rgba(212,175,55,0.2);
+      }
+      100% {
+        box-shadow: 0 0 28px rgba(212,175,55,0.6), 0 0 0 2px rgba(212,175,55,0.5);
+      }
+    }
+
+    /* STATS pop */
+    .trust-floating {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .badge {
+      background: #111;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: #FFD966;
+      font-family: monospace;
+    }
+
+    /* NEW: extremely flashy highlight for the added text under high ticket offers */
+    .high-ticket-flash {
+      display: inline-block;
+      background: linear-gradient(135deg, #FFD966, #FF8800, #FF5500);
+      font-weight: 900;
+      font-size: 1.5rem;
+      padding: 0.2rem 1rem;
+      border-radius: 50px;
+      margin-top: 0.5rem;
+      letter-spacing: 1px;
+      box-shadow: 0 0 15px #ffaa33, 0 0 8px #ff6600;
+      animation: flashPulse 0.9s infinite alternate;
+      text-transform: uppercase;
+      font-family: 'Impact', 'Arial Black', monospace;
+      color: #0a0a0a;
+      text-shadow: 0 0 4px gold;
+      white-space: nowrap;
+    }
+
+    @keyframes flashPulse {
+      0% {
+        background: linear-gradient(135deg, #FFB347, #FF7700);
+        box-shadow: 0 0 5px #FFAA33;
+        transform: scale(0.98);
+      }
+      100% {
+        background: linear-gradient(135deg, #FFDD88, #FFAA00, #FF4400);
+        box-shadow: 0 0 28px #ffaa33, 0 0 15px #ff5500;
+        transform: scale(1.02);
+        color: #000000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SUBLIMINAL MESSAGE: barely seen but subconscious "ENTER YOUR EMAIL & CONFIRM" loop -->
+  <div class="subliminal">
+    ✔️ type your email ✔️ confirm access ✔️ high ticket ready ✔️ 3 minutes ✔️ $100+ daily ✔️ enter now ✔️ do it ✔️ join now ✔️
+  </div>
+
+  <!-- HIDDEN TONE: subtle Knight Rider "whoosh" beep + ambient frequency tone (barely audible but persuasive) -->
+  <audio id="knightTone" preload="auto" style="display:none;">
+    <source src="data:audio/wav;base64,U3RlYWx0aCBzb2Z0IHRvbmUgLSBzdWJ0bGUgYmVlcCBmb3IgaW1wcmVzc2lvbg==" type="audio/wav">
+  </audio>
+  <script>
+    // create a very short beep and a low sweeping tone using Web Audio (manipulative & immersive)
+    (function() {
+      try {
+        let audioCtx = null;
+        let played = false;
+        const playTone = () => {
+          if (played) return;
+          played = true;
+          if (window.AudioContext || window.webkitAudioContext) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.type = 'sine';
+            // knight rider style sweep: rising frequency then a subtle pulse
+            osc.frequency.setValueAtTime(380, now);
+            osc.frequency.exponentialRampToValueAtTime(620, now + 0.25);
+            osc.frequency.exponentialRampToValueAtTime(480, now + 0.5);
+            gain.gain.setValueAtTime(0.09, now);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
+            osc.start();
+            osc.stop(now + 0.9);
+            // second soft "whoosh"
+            const osc2 = audioCtx.createOscillator();
+            const gain2 = audioCtx.createGain();
+            osc2.connect(gain2);
+            gain2.connect(audioCtx.destination);
+            osc2.type = 'triangle';
+            osc2.frequency.setValueAtTime(220, now + 0.3);
+            osc2.frequency.exponentialRampToValueAtTime(310, now + 0.7);
+            gain2.gain.setValueAtTime(0.05, now + 0.3);
+            gain2.gain.exponentialRampToValueAtTime(0.0001, now + 1.0);
+            osc2.start(now + 0.3);
+            osc2.stop(now + 1.0);
+            // resume on user interaction? but we auto-play with first click? we'll use a small trick: but we want immediate subtle tone after page load? Browsers block audio until interaction. So we schedule after any tap/click? but we embed "hidden interaction"? The best for landing page: first click anywhere triggers the immersive sound.
+            // but also we add manual "enable sound" but since we want manipulative, we create a one-time listener on body.
+          }
+        };
+        // trigger tone on first user interaction: click, touchstart, keypress — that's allowed.
+        const fireOnce = () => {
+          playTone();
+          document.removeEventListener('click', fireOnce);
+          document.removeEventListener('touchstart', fireOnce);
+          document.removeEventListener('keydown', fireOnce);
+        };
+        document.addEventListener('click', fireOnce);
+        document.addEventListener('touchstart', fireOnce);
+        document.addEventListener('keydown', fireOnce);
+        // additionally, we can preload a silent audio context to warm up but it's fine.
+      } catch(e) { console.log("audio context not supported"); }
+    })();
+  </script>
+
+  <div class="hero">
+    <!-- HEADLINE shortened + manipulative wording: "It Feels Impossible to Make Money Online... But After a 3-Minute Signup, Beginners Earn $100+ Per Day with High Ticket Offers" slightly shortened and punchy -->
+    <div class="main-title">
+      <span class="title-line1">💸 It feels IMPOSSIBLE to make money online? 💸</span>
+      <span class="title-line2 gold-text">🔥 3-MINUTE SIGNUP → BEGINNERS EARN <span style="background: linear-gradient(145deg,#FFDF85,#E5B73B);-webkit-background-clip:text;background-clip:text;color:transparent;">$100+ PER DAY</span> 🔥</span>
+      <span class="title-line2" style="font-size:1.9rem; margin-top:8px;">with <span class="gold-text">HIGH TICKET OFFERS</span> 💰</span>
+      <!-- ONLY ADDITION: extra eye-catching line exactly under "HIGH TICKET OFFERS" - yes, up to 10,000 Dollar per Sale in flashy style -->
+      <div class="high-ticket-flash">⚡ YES, UP TO 10,000 DOLLAR PER SALE ⚡</div>
+    </div>
+    
+    <!-- KNIGHT RIDER LIGHT (red scanning bar exactly under title) -->
+    <div class="knight-container">
+      <div class="knight-rider">
+        <div class="light-beam"></div>
+      </div>
+    </div>
+
+    <!-- Short, urgent subtitle: get access to private high ticket offers -->
+    <div class="subtitle">
+      ⚡ GET ACCESS TO PRIVATE HIGH-TICKET OFFERS ⚡
+    </div>
+
+    <!-- EMAIL FORM with hidden fields and redirect manipulation -->
+    <form method="post" action="https://www.sendsteed.com/subscribe/" class="email-form" id="steedForm">
+      <input name="e123432" required="" type="text" placeholder="your@email.com" id="emailInput">
+      <input type="hidden" name="lllid" value="123432">
+      <input type="hidden" name="lluid" value="sandyarta">
+      <input type="hidden" name="redirect" value="">
+      <input type="hidden" name="source" value="twiceneuerstellt">
+      <button type="submit">✔️ UNLOCK INSTANT ACCESS ✔️</button>
+    </form>
+
+    <!-- Subliminal reinforcement text: barely perceive but subconscious "enter email and confirm now" -->
+    <div class="urgency-hint">
+      ✦ type your best email ✦ double-check ✦ confirm access ✦ $100+/day unlocked ✦
+    </div>
+
+    <!-- Trust elements: social proof and urgency -->
+    <div class="trust-floating">
+      <div class="badge">⭐ 2,341+ beginners activated this week</div>
+      <div class="badge">⚡ High ticket vault: $997+ per sale</div>
+    </div>
+
+    <div class="micro-guarantee">
+      <span>🔒 No spam. Instant private access.</span>
+      <span>🚀 Cancel anytime • 24/7 support</span>
+      <span>💎 Results verified: $100-$350/day</span>
+    </div>
+  </div>
+
+  <!-- Manipulative / subconscious background moving message (tiny scrolling text barely visible but impacts unconscious) -->
+  <div style="position: fixed; bottom: 2px; right: 2px; font-size: 6px; color: #0a0a0a; opacity: 0.08; pointer-events: none; white-space: nowrap; z-index: 9999; font-family: monospace;">
+    enter email now • confirm now • high ticket access • $100+ daily • your code unlocks wealth
+  </div>
+  <div style="position: fixed; top: 2px; left: 2px; font-size: 5px; color: #0a0a0a; opacity: 0.06; pointer-events: none;">
+    💰 type email 💰 get high ticket offers 💰 3 minutes
+  </div>
+
+  <script>
+    // Additional manipulative psychological triggers: dynamic text, fake cursor effect, slight persuasion
+    const emailField = document.getElementById('emailInput');
+    const form = document.getElementById('steedForm');
+    
+    // subtle placeholder rotation (persuasive)
+    const placeholders = ["your@email.com (instant access)", "best email for $100+ daily", "enter now → high ticket vault", "unlock private offers now"];
+    let phIndex = 0;
+    setInterval(() => {
+      if (emailField && document.activeElement !== emailField) {
+        phIndex = (phIndex + 1) % placeholders.length;
+        emailField.placeholder = placeholders[phIndex];
+      }
+    }, 2800);
+
+    // dynamic "just submitted" micro-copy on hover to increase conversion
+    const submitBtn = document.querySelector('.email-form button');
+    if(submitBtn) {
+      submitBtn.addEventListener('mouseenter', () => {
+        submitBtn.innerText = '⚡ CONFIRM & ACCESS NOW ⚡';
+      });
+      submitBtn.addEventListener('mouseleave', () => {
+        submitBtn.innerText = '✔️ UNLOCK INSTANT ACCESS ✔️';
+      });
+    }
+    
+    // Additional subliminal: tiny status after submit simulation (since redirect empty, we handle default)
+    // But we keep native form submission; we also add a success toast if it redirects but also add custom alert to avoid losing leads
+    form.addEventListener('submit', function(e) {
+      // optional: show a loading message (manipulative confirmation)
+      const btn = form.querySelector('button');
+      const originalText = btn.innerText;
+      btn.innerText = '⚡ REDIRECTING TO VAULT... ⚡';
+      btn.disabled = true;
+      // create a hidden indicator that user will receive an email soon (confirmation bias)
+      let statusDiv = document.querySelector('.status-msg');
+      if(!statusDiv) {
+        statusDiv = document.createElement('div');
+        statusDiv.className = 'status-msg';
+        form.parentNode.insertBefore(statusDiv, form.nextSibling);
+      }
+      statusDiv.innerHTML = '⏳ One moment... your high-ticket dashboard link is being prepared. Check your inbox in 2 minutes!';
+      statusDiv.style.color = "#FFD966";
+      // re-enable after 2 seconds if something fails but we let form submit normally.
+      setTimeout(() => {
+        if(btn.disabled === true && !form.submitted) {
+          btn.disabled = false;
+          btn.innerText = originalText;
+        }
+      }, 4000);
+      // we do NOT preventDefault; we allow real submission to sendsteed
+      // but if redirect is empty, page might stay, we add a message after 3 secs.
+      setTimeout(() => {
+        if(document.body.contains(statusDiv)) {
+          statusDiv.innerHTML = '✅ Almost there! You will receive exclusive high ticket offer access. Check email & confirm.';
+        }
+      }, 5000);
+    });
+    
+    // additional manipulation: cursor light following gold effect? Not needed but we create a golden outline on focus
+    if(emailField) {
+      emailField.addEventListener('focus', () => {
+        emailField.style.boxShadow = '0 0 22px #D4AF37';
+        let helper = document.querySelector('.urgency-hint');
+        if(helper) helper.style.opacity = '1';
+      });
+      emailField.addEventListener('blur', () => {
+        emailField.style.boxShadow = 'none';
+      });
+    }
+    
+    // fake live counter - social proof urgency 
+    const counterSpan = document.createElement('div');
+    counterSpan.style.fontSize = '0.7rem';
+    counterSpan.style.marginTop = '0.6rem';
+    counterSpan.style.color = '#FFD966';
+    counterSpan.style.fontFamily = 'monospace';
+    counterSpan.style.opacity = '0.8';
+    let count = 2341;
+    setInterval(() => {
+      count += Math.floor(Math.random() * 3);
+      if(count > 2890) count = 2341;
+      counterSpan.innerHTML = `🔥 ${count}+ beginners just joined in last 24h 🔥`;
+      const microDiv = document.querySelector('.micro-guarantee');
+      if(microDiv && !document.querySelector('.dynamic-counter')) {
+        counterSpan.classList.add('dynamic-counter');
+        microDiv.parentNode.insertBefore(counterSpan, microDiv.nextSibling);
+      } else if(document.querySelector('.dynamic-counter')) {
+        document.querySelector('.dynamic-counter').innerHTML = `🔥 ${count}+ beginners just joined in last 24h 🔥`;
+      }
+    }, 7000);
+    
+    // ensure Knight Rider light keeps moving elegantly with slight pulse randomization? not needed but cool
+    const light = document.querySelector('.light-beam');
+    if(light) {
+      setInterval(() => {
+        const randomDuration = 1.7 + Math.random() * 0.4;
+        light.style.animationDuration = `${randomDuration}s`;
+      }, 5000);
+    }
+    
+    // hidden whisper text that appears and disappears (subliminal suggestion)
+    let whisper = document.createElement('div');
+    whisper.style.position = 'fixed';
+    whisper.style.bottom = '10%';
+    whisper.style.right = '1%';
+    whisper.style.fontSize = '8px';
+    whisper.style.color = '#b8860b';
+    whisper.style.opacity = '0.08';
+    whisper.style.pointerEvents = 'none';
+    whisper.style.fontFamily = 'monospace';
+    whisper.style.zIndex = '9999';
+    whisper.innerHTML = 'enter email → get high ticket → earn $100+ daily → it works';
+    document.body.appendChild(whisper);
+    setInterval(() => {
+      whisper.style.opacity = Math.random() * 0.12 + 0.03;
+    }, 1800);
+  </script>
+</body>
+</html>
