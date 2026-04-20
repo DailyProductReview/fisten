@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Product Page | Exclusive Access</title>
+  <meta name="description" content="Visit the product page for more details.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: #0b1120;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Main card – clean, minimal, focused on image + button */
+    .landing {
+      max-width: 1000px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    /* Image container – smaller image so button is clearly visible */
+    .image-wrapper {
+      width: 100%;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 2rem 0.5rem 2rem;
+    }
+
+    /* The image is intentionally made smaller */
+    .product-img {
+      max-width: 65%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 1.25rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    /* On hover slight scale, but still smaller */
+    .product-img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Button section – super clean, just the button + nothing else */
+    .button-section {
+      padding: 1.8rem 2rem 3rem 2rem;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    /* LOUD, eye-catching button color (vibrant orange-red) */
+    .btn-visit {
+      display: inline-block;
+      background: #f97316;
+      background: linear-gradient(105deg, #ff5e00 0%, #ff2d00 100%);
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 60px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 15px 30px -8px rgba(249, 115, 22, 0.5);
+      transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: inherit;
+      width: auto;
+      min-width: 260px;
+    }
+
+    .btn-visit:hover {
+      background: linear-gradient(105deg, #ff4a00 0%, #f03e00 100%);
+      transform: translateY(-4px);
+      box-shadow: 0 22px 35px -12px rgba(249, 115, 22, 0.6);
+    }
+
+    .btn-visit:active {
+      transform: translateY(2px);
+      transition: 0.05s;
+    }
+
+    /* absolutely no extra text — just image + button */
+    /* but we keep a micro footer optional (only legal minimal, but to avoid clutter? actually the user said "sonst kein text nix" 
+       means no extra text, no description. We remove all headlines, badges, descriptions, feature lists, trust notes. 
+       Only image + button. And image smaller. That's it. 
+       However we need to keep the link working. Also ensure nothing else appears. */
+    
+    /* but to make the layout balanced, we keep only image & button container.
+       The requirement: "das bild kleiner damit man den button auch sieht und in englsch sonst kein text nix button auffällige farbe bitte"
+       -> make image smaller, button visible, in English, no other text. Button color: eye-catching.
+       So page must contain only image + the button (Visit product page). No "badge", no h1, no description, no feature list, no trust note.
+       Clean. */
+    
+    /* optional: remove any extra spacing that could look like text */
+    .empty-space {
+      display: none;
+    }
+
+    /* make sure no accidental text appears */
+    .button-section p, .button-section h2, .button-section span:not(.btn-text) {
+      display: none;
+    }
+
+    /* Just the button text inside anchor */
+    .btn-visit {
+      line-height: 1.2;
+    }
+
+    /* For very small screens, image becomes even more compact */
+    @media (max-width: 700px) {
+      body {
+        padding: 1rem;
+      }
+      .image-wrapper {
+        padding: 1.5rem 1rem 0.25rem 1rem;
+      }
+      .product-img {
+        max-width: 80%;
+      }
+      .btn-visit {
+        font-size: 1.3rem;
+        padding: 0.85rem 1.8rem;
+        min-width: 220px;
+      }
+      .button-section {
+        padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-img {
+        max-width: 90%;
+      }
+      .btn-visit {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+
+    /* to keep design minimal: no footer, no extra text, no legal lines. 
+       However we want to be fully compliant with the spec: 
+       "sonst kein text nix" -> absolutely no other text. 
+       So we remove footer-note, trust, description etc. 
+       The button says "VISIT PRODUCT PAGE" (english). */
+  </style>
+</head>
+<body>
+  <div class="landing">
+    <!-- Image area: product image (smaller so button is prominent) -->
+    <div class="image-wrapper">
+      <img 
+        class="product-img" 
+        src="https://warriorplus.com/assets/user/listing_image/o-90794-prod_image.png?v=1774497557" 
+        alt="Product preview"
+        width="500"
+        height="auto"
+        loading="eager"
+      >
+    </div>
+
+    <!-- Button section: ONLY button, nothing else. No headline, no subtext. -->
+    <div class="button-section">
+      <a 
+        href="https://warriorplus.com/o2/a/b7lslgt/0/medium" 
+        class="btn-visit" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        VISIT PRODUCT PAGE →
+      </a>
+    </div>
+  </div>
+
+  <!-- Simple script for potential error handling / no extra content -->
+  <script>
+    (function() {
+      // ensure image loads gracefully and if fails, no text is added
+      const img = document.querySelector('.product-img');
+      if (img) {
+        img.addEventListener('error', function() {
+          // fallback: just a subtle background but still no text
+          this.style.objectFit = 'contain';
+          this.style.background = '#f3f4f6';
+          this.alt = 'image preview';
+        });
+      }
+      // no extra text insertion
+      console.log('Landing page ready — only image + button (English, eye-catching)');
+    })();
+  </script>
+</body>
+</html>
