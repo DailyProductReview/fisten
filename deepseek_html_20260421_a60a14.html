@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rotator</title>
+    <script>
+        // DEINE LINKS
+        const urls = [
+            "https://www.herculist.com/members/trafficbomb.cgi?naturallyinshape",
+            "https://www.twiceconfirmedtraffic.com/index.php?id=10214",
+            "https://www.herculist.com/members/20deal.cgi?naturallyinshape",
+            "https://herculist.com/members/legends.cgi?naturallyinshape",
+            "https://hop.clickbank.net/?affiliate=verborgene&vendor=ambsador&cbpage=ambassador-trial",
+            "https://aa5efipbeit5ociyzx41sfwvbo.hop.clickbank.net/?cbpage=replay&traffic_source=twice",
+            "https://www.upstride.us/ready?ol=YgDeel",
+            "https://leadsleap.com/?r=sandyarta"
+        ];
+        
+        // ZUFÄLLIGE SEITE AUSWÄHLEN
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        const targetUrl = urls[randomIndex];
+        
+        // SOFORT WEITERLEITEN
+        window.location.replace(targetUrl);
+    </script>
+</head>
+<body style="background:#000; margin:0; height:100vh; display:flex; align-items:center; justify-content:center; font-family:monospace; color:#0f0;">
+    <div style="text-align:center">
+        ⚡ ROTATOR ⚡<br>
+        → wird weitergeleitet ...
+    </div>
+</body>
+</html>
