@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Free Access → Ambassador Loophole</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(125deg, #0b2b22 0%, #0a1f1a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* main card – clean, focused, no distractions */
+        .container {
+            max-width: 560px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 48px;
+            box-shadow: 0 30px 45px -15px rgba(0,0,0,0.4);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .inner {
+            padding: 2.2rem 1.8rem 2.2rem;
+        }
+
+        /* ribbon – simple, benefit-driven */
+        .ribbon {
+            background: #fee2d0;
+            color: #c2410c;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 0.5rem;
+            border-radius: 40px;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 1rem auto;
+            display: table;
+        }
+
+        .ribbon span {
+            display: inline-block;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #0c2e25;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .accent {
+            color: #e5531a;
+            border-bottom: 3px solid #ffc8a2;
+        }
+
+        .sub {
+            font-size: 1rem;
+            color: #2b4a3e;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            border-left: 3px solid #e5531a;
+            padding-left: 0.8rem;
+            background: #fefaf5;
+            border-radius: 12px;
+        }
+
+        /* 3 ultra-clear bullet points – scannable in 1 second */
+        .benefits {
+            background: #fefcf8;
+            border-radius: 28px;
+            padding: 0.8rem 1rem;
+            margin: 1.2rem 0 1.5rem 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0.9rem 0;
+            font-weight: 600;
+            color: #1c3e33;
+            font-size: 0.95rem;
+        }
+
+        .icon-badge {
+            background: #e5531a;
+            width: 26px;
+            height: 26px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* form – big, clear, only one action */
+        .form-card {
+            background: white;
+            border-radius: 80px;
+            border: 1px solid #ecdccf;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0;
+            margin: 1.5rem 0 0.8rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        .form-card input {
+            flex: 3;
+            padding: 1rem 1.2rem;
+            border: none;
+            background: #ffffff;
+            font-size: 1rem;
+            outline: none;
+            font-family: inherit;
+            border-radius: 80px;
+            font-weight: 500;
+        }
+
+        .form-card button {
+            background: #e5531a;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 80px;
+            color: white;
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.15s;
+            white-space: nowrap;
+            margin-right: 0.4rem;
+            box-shadow: 0 8px 18px rgba(229,83,26,0.25);
+            letter-spacing: 0.3px;
+        }
+
+        .form-card button:hover {
+            background: #bf4010;
+            transform: scale(0.97);
+        }
+
+        .guarantee-line {
+            font-size: 0.7rem;
+            color: #7d6b55;
+            text-align: center;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .badge-g {
+            background: #eef3ea;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.7rem;
+            color: #2d6a4f;
+        }
+
+        hr {
+            margin: 1.2rem 0 0.8rem;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #f0e0d0, transparent);
+        }
+
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #5c5243;
+        }
+
+        @media (max-width: 500px) {
+            .inner {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .form-card {
+                flex-direction: column;
+                background: transparent;
+                border: none;
+                gap: 10px;
+            }
+            .form-card input {
+                background: white;
+                border: 1px solid #ecdccf;
+                width: 100%;
+                text-align: center;
+                border-radius: 60px;
+            }
+            .form-card button {
+                width: 100%;
+                margin-right: 0;
+                padding: 1rem;
+            }
+        }
+
+        .flash-message {
+            font-size: 0.75rem;
+            background: #e9f5ef;
+            border-radius: 30px;
+            padding: 0.4rem 1rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .inline-note {
+            font-weight: 500;
+        }
+
+        .video-icon {
+            background: #1e2a24;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="inner">
+        <!-- ribbon : clear benefit, no "cold traffic" spam -->
+        <div style="text-align: center;">
+            <div class="ribbon"><span>🎁 FREE VIDEO TRAINING • LIMITED SPOTS</span></div>
+        </div>
+
+        <!-- main headline : proven conversion pattern -->
+        <h1 style="text-align: center;">The <span class="accent">Ambassador Loophole</span><br>How to Build a $10k/Month Income<br><span style="font-size: 1.3rem;">Without Your Own Product or Ads</span></h1>
+
+        <div class="sub" style="text-align: left; margin-top: 0.7rem;">
+            📺 30-min free training: the exact system that generated $1.7M+
+        </div>
+
+        <!-- 3 core benefits - zero fluff -->
+        <div class="benefits">
+            <div class="benefit-item">
+                <div class="icon-badge">✓</div>
+                <div><strong>Done-for-you funnel</strong> – webinar, emails, offers (copy & paste)</div>
+            </div>
+            <div class="benefit-item">
+                <div class="icon-badge">✓</div>
+                <div><strong>Get paid to build your list</strong> – earn while collecting subscribers</div>
+            </div>
+            <div class="benefit-item">
+                <div class="icon-badge">✓</div>
+                <div><strong>Work 30 min/day</strong> – no tech skills, no previous experience</div>
+            </div>
+        </div>
+
+        <!-- call to action : only email field - max conversion -->
+        <div class="flash-message">
+            ⚡ <strong class="inline-note">7-day free trial included</strong> – $0 to start, cancel anytime
+        </div>
+
+        <!-- EMAIL FORM: direct capture, no redirect clutter -->
+        <div class="form-card">
+            <input type="email" id="emailField" placeholder="Enter your email address" autocomplete="email" value="">
+            <button id="submitButton">▶ Get Free Access Now</button>
+        </div>
+
+        <div class="guarantee-line">
+            <span>🔒 No credit card required</span>
+            <span class="badge-g">✅ 365-day money-back</span>
+            <span>📧 Instant access</span>
+        </div>
+
+        <hr>
+
+        <!-- micro social proof - ultra short -->
+        <div class="social-proof">
+            <span>🔥 47,000+ subscribers joined</span>
+            <span>⭐ 4.98/5 rating (982 reviews)</span>
+        </div>
+        <div style="text-align: center; font-size: 0.7rem; color: #a28f77; margin-top: 1rem;">
+            Trusted by 8,742 members • See results in days
+        </div>
+    </div>
+</div>
+
+<!-- EMAIL CAPTURE SCRIPT - SendSteed integration with ambassador source
+     hidden fields exactly matching your required fields: 
+     lllid, lluid, redirect, source = ambassadronue, e123432 -->
+<script>
+    (function() {
+        const emailInput = document.getElementById('emailField');
+        const btn = document.getElementById('submitButton');
+
+        function validateEmail(email) {
+            return /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email);
+        }
+
+        function submitToSendsteed(email) {
+            if (!email || email.trim() === '') {
+                alert('Please enter your email address.');
+                return false;
+            }
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email (example@domain.com)');
+                return false;
+            }
+
+            // build dynamic form for POST to sendsteed
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'https://www.sendsteed.com/subscribe/';
+            form.style.display = 'none';
+
+            // required email field name = e123432
+            const emailFieldHidden = document.createElement('input');
+            emailFieldHidden.type = 'text';
+            emailFieldHidden.name = 'e123432';
+            emailFieldHidden.value = email.trim();
+            form.appendChild(emailFieldHidden);
+
+            // hidden fields according to initial spec
+            const lllidField = document.createElement('input');
+            lllidField.type = 'hidden';
+            lllidField.name = 'lllid';
+            lllidField.value = '123432';
+            form.appendChild(lllidField);
+
+            const lluidField = document.createElement('input');
+            lluidField.type = 'hidden';
+            lluidField.name = 'lluid';
+            lluidField.value = 'sandyarta';
+            form.appendChild(lluidField);
+
+            const redirectField = document.createElement('input');
+            redirectField.type = 'hidden';
+            redirectField.name = 'redirect';
+            redirectField.value = '';   // keep current or optional thank you page can be added
+            form.appendChild(redirectField);
+
+            const sourceField = document.createElement('input');
+            sourceField.type = 'hidden';
+            sourceField.name = 'source';
+            sourceField.value = 'ambassadronue';
+            form.appendChild(sourceField);
+
+            document.body.appendChild(form);
+            form.submit();
+            return true;
+        }
+
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = emailInput.value;
+            if (submitToSendsteed(email)) {
+                // optional: visual feedback for faster UX
+                btn.innerHTML = '✓ Redirecting...';
+                btn.disabled = true;
+                emailInput.disabled = true;
+            }
+        });
+
+        emailInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                btn.click();
+            }
+        });
+
+        // tiny auto-focus for mobile/desktop
+        setTimeout(() => {
+            emailInput.focus();
+        }, 100);
+    })();
+</script>
+</body>
+</html>
