@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Activate Your $3,000 Cash Machine | Elite Access</title>
+  <!-- Preconnect & optimized font for speed and conversion -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fefefe;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      line-height: 1.4;
+      color: #0a0c12;
+    }
+
+    /* main landing container */
+    .landing {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3.5rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* premium card */
+    .cash-card {
+      background: white;
+      border-radius: 3rem;
+      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0,0,0,0.02);
+      padding: 2.2rem 2rem 2.8rem;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+
+    /* TITLE STYLES - $3000 extra bold */
+    .hero-title {
+      font-size: 2.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(135deg, #0B1E33 0%, #153e6b 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .money-highlight {
+      font-size: 3.6rem;
+      font-weight: 900;
+      display: inline-block;
+      background: linear-gradient(135deg, #0F2B3F, #0057b3);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 12px rgba(0, 87, 179, 0.2);
+      letter-spacing: -0.02em;
+      animation: softGlow 2s infinite alternate;
+    }
+
+    @keyframes softGlow {
+      0% { text-shadow: 0 0 0px rgba(0,87,179,0.1);}
+      100% { text-shadow: 0 0 8px rgba(0,112,243,0.4);}
+    }
+
+    /* persuader subtext */
+    .convincer {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1e40af;
+      background: #EFF6FF;
+      display: inline-block;
+      padding: 0.45rem 1.5rem;
+      border-radius: 60px;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.2px;
+    }
+
+    /* main GIF area (above button) */
+    .gif-main {
+      margin: 1rem 0 1.2rem;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      box-shadow: 0 18px 30px -12px rgba(0,0,0,0.2);
+      background: #f8fafc;
+    }
+    .gif-main img {
+      width: 100%;
+      max-width: 560px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      pointer-events: none;
+    }
+
+    /* benefit pills */
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+      margin: 1.6rem 0 2rem;
+    }
+    .benefit-item {
+      background: #F1F5F9;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0c4e8c;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .benefit-item::before {
+      content: "💎";
+      font-size: 1rem;
+    }
+
+    /* TRUST BLUE BUTTON (triggers popup) */
+    .btn-trigger {
+      background: #1c6ef2;
+      border: none;
+      padding: 1.1rem 1.8rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      font-family: inherit;
+      border-radius: 80px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 12px 24px -10px rgba(28, 110, 242, 0.5);
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
+      display: block;
+      letter-spacing: -0.2px;
+    }
+    .btn-trigger:hover {
+      background: #0a5ad6;
+      transform: scale(1.02);
+      box-shadow: 0 18px 28px -12px #1c6ef2;
+    }
+    .btn-trigger:active {
+      transform: scale(0.98);
+    }
+
+    /* urgency & scarcity */
+    .urgency-text {
+      font-size: 0.85rem;
+      margin-top: 1.4rem;
+      color: #1e2f4e;
+      background: #FEF9E6;
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+    .guarantee {
+      margin-top: 1.6rem;
+      font-size: 0.8rem;
+      color: #4a5568;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ========== MODAL / POPUP STYLES ========== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.2s, opacity 0.2s ease;
+    }
+    .modal-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    .modal-container {
+      background: white;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 2.5rem;
+      box-shadow: 0 25px 50px -12px black;
+      overflow: hidden;
+      transform: scale(0.96);
+      transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      text-align: center;
+    }
+    .modal-overlay.active .modal-container {
+      transform: scale(1);
+    }
+    .modal-gif {
+      background: #f1f5f9;
+      padding: 1rem 0 0.5rem;
+    }
+    .modal-gif img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    .modal-content {
+      padding: 1.8rem 1.8rem 2rem;
+    }
+    .modal-content h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0B2B44, #0057b3);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.6rem;
+    }
+    .modal-sub {
+      font-size: 0.9rem;
+      color: #334155;
+      margin-bottom: 1.4rem;
+      font-weight: 500;
+    }
+    .popup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .popup-email {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 2px solid #e2e8f0;
+      border-radius: 60px;
+      background: white;
+      transition: 0.2s;
+      font-weight: 500;
+      text-align: center;
+    }
+    .popup-email:focus {
+      border-color: #1c6ef2;
+      box-shadow: 0 0 0 3px rgba(28,110,242,0.2);
+      outline: none;
+    }
+    .popup-btn {
+      background: #1c6ef2;
+      border: none;
+      padding: 0.9rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 60px;
+      color: white;
+      cursor: pointer;
+      transition: 0.15s;
+      font-family: inherit;
+      box-shadow: 0 4px 12px rgba(28,110,242,0.3);
+    }
+    .popup-btn:hover {
+      background: #0a58e0;
+      transform: scale(1.01);
+    }
+    .close-modal {
+      margin-top: 1rem;
+      background: none;
+      border: none;
+      color: #5b6e8c;
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .close-modal:hover {
+      color: #1e293b;
+    }
+    .hidden-fields {
+      display: none;
+    }
+    @media (max-width: 550px) {
+      .modal-content {
+        padding: 1.4rem;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .money-highlight {
+        font-size: 2.6rem;
+      }
+      .btn-trigger {
+        font-size: 1.1rem;
+        padding: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="landing">
+  <div class="cash-card">
+    <!-- Title with $3000 extra bold -->
+    <h1 class="hero-title">
+      Activate Your <span class="money-highlight">$3,000</span><br>
+      Cash Machine <span style="font-weight:800">💵💥</span>
+    </h1>
+    <div class="convincer">
+      🔥 ZERO RISK • 100% OPT-IN RATE OPTIMIZED 🔥
+    </div>
+
+    <!-- main gif (the one from first request, remains visible to build desire) -->
+    <div class="gif-main">
+      <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cWNtMWcxaG5kbGo5endyazFzdzI5YnY3ZWZjYmFteDQ2czE0cWpwMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3ofT5RnMByv6D7jEmk/giphy.gif" 
+           alt="Cash machine activation" 
+           loading="eager">
+    </div>
+
+    <!-- benefits (manipulative but persuasive) -->
+    <div class="benefits">
+      <span class="benefit-item">Instant $3k Access</span>
+      <span class="benefit-item">Lifetime License</span>
+      <span class="benefit-item">Daily Payouts</span>
+      <span class="benefit-item">No Hidden Fees</span>
+    </div>
+
+    <!-- Main Call to Action button -> triggers popup with email form + new GIF -->
+    <button class="btn-trigger" id="showPopupBtn">
+      🚀 ACTIVATE MY $3K MACHINE 🚀
+    </button>
+
+    <!-- scarcity + social proof -->
+    <div class="urgency-text">
+      ⚡ Only 247 spots left today • 5,823 members already activated ⚡
+    </div>
+    <div class="guarantee">
+      <span>🔒 100% Secure</span>
+      <span>⭐ 30-Day "Cash Or Refund" Guarantee</span>
+      <span>🏆 #1 Wealth System 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MODAL / POPUP STRUCTURE with email fields + NEW GIF ========== -->
+<div id="emailPopup" class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-gif">
+      <!-- new GIF as requested: slot machine money GIF -->
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3M3bWw0ajZ4dWY4eTJ3eHhjZ3J5NTVlNjgzZGF6a2UyeXBrM25sYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oEduSEc1fmr3C77KU/giphy.gif" 
+           alt="Slot machine money GIF"
+           style="width:100%; max-height:220px; object-fit:contain;">
+    </div>
+    <div class="modal-content">
+      <h3>⚡ FINAL STEP ⚡</h3>
+      <div class="modal-sub">Enter your email to unlock the $3,000 cash machine</div>
+      
+      <!-- EMAIL FORM (exact sendsteed integration) with popup fields -->
+      <form method="post" action="https://www.sendsteed.com/subscribe/" id="popupSubscribeForm">
+        <!-- hidden fields exactly as provided (lllid, lluid, redirect, source) -->
+        <input type="hidden" name="lllid" value="123432">
+        <input type="hidden" name="lluid" value="sandyarta">
+        <input type="hidden" name="redirect" value="">
+        <input type="hidden" name="source" value="gremlingseite">
+        
+        <div class="popup-form">
+          <input type="email" name="e123432" required class="popup-email" 
+                 placeholder="your@bestemail.com" autocomplete="email">
+          <button type="submit" class="popup-btn" id="popupSubmitBtn">
+            ✅ SECURE MY $3K ACCESS NOW ✅
+          </button>
+        </div>
+      </form>
+      <button class="close-modal" id="closeModalBtn">✖️ No thanks, I'll pass on $3k/day</button>
+      <p style="font-size: 0.7rem; margin-top: 12px; color:#6c757d;">100% privacy. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // DOM elements
+    const overlay = document.getElementById('emailPopup');
+    const showBtn = document.getElementById('showPopupBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const popupForm = document.getElementById('popupSubscribeForm');
+    const submitPopupBtn = document.getElementById('popupSubmitBtn');
+
+    // Helper: open popup with smooth background lock
+    function openPopup() {
+      if (overlay) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // optional: autofocus on email field for better UX
+        const emailField = popupForm?.querySelector('input[name="e123432"]');
+        if (emailField) setTimeout(() => emailField.focus(), 80);
+      }
+    }
+
+    function closePopup() {
+      if (overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Event listeners
+    if (showBtn) {
+      showBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openPopup();
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closePopup();
+      });
+    }
+
+    // clicking on overlay background also closes
+    if (overlay) {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closePopup();
+      });
+    }
+
+    // Handle form submission: retain sendsteed post, but show loading + disable double click.
+    // also enhance conversion with manipulation (urgent copy)
+    if (popupForm) {
+      popupForm.addEventListener('submit', function(e) {
+        // No preventDefault -> we want the actual post to sendsteed.
+        // But we add visual feedback to increase perceived "opt-in rate"
+        const emailInput = popupForm.querySelector('input[name="e123432"]');
+        if (emailInput && !emailInput.value.trim()) {
+          e.preventDefault();
+          emailInput.style.borderColor = "#e53e3e";
+          emailInput.placeholder = "⚠️ Required — Claim your machine ⚠️";
+          return;
+        }
+        
+        // Disable button to prevent multiple submissions, and change text for trust
+        if (submitPopupBtn) {
+          submitPopupBtn.disabled = true;
+          submitPopupBtn.innerHTML = "🚀 PROCESSING... ACTIVATING CASH MACHINE 🚀";
+          submitPopupBtn.style.opacity = "0.9";
+        }
+        
+        // show small "almost there" message (optional)
+        const modalSub = document.querySelector('.modal-sub');
+        const originalSubText = modalSub ? modalSub.innerText : '';
+        if (modalSub) {
+          modalSub.innerHTML = "⏳ One moment... redirecting to your cash dashboard ⏳";
+          modalSub.style.color = "#1c6ef2";
+        }
+        
+        // Let the form submit normally to sendsteed. The page will redirect based on sendsteed response.
+        // But we'll add a small timeout to re-enable button just in case of network slow? Not needed.
+        // Because actual redirect will occur. For better experience we keep.
+        // Edge: if there's no redirect within 5 seconds, we restore (but rarely)
+        setTimeout(() => {
+          if (submitPopupBtn && submitPopupBtn.disabled) {
+            // If somehow still on page (network issue), restore but keep form intact.
+            submitPopupBtn.disabled = false;
+            submitPopupBtn.innerHTML = "✅ SECURE MY $3K ACCESS NOW ✅";
+            if(modalSub) modalSub.innerHTML = originalSubText;
+          }
+        }, 8000);
+        
+        // We do not call e.preventDefault() — the form will POST to sendsteed as required.
+        // The popup will stay until the page unloads (desired) OR we close on success? but native POST handles.
+      });
+    }
+    
+    // additional persuation: on load, add micro animation to the main button
+    const mainBtn = document.querySelector('.btn-trigger');
+    if (mainBtn) {
+      setInterval(() => {
+        if (!overlay.classList.contains('active')) {
+          mainBtn.style.transform = 'scale(1.01)';
+          setTimeout(() => { if(mainBtn) mainBtn.style.transform = ''; }, 200);
+        }
+      }, 3800);
+    }
+    
+    // detect escape key to close modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay && overlay.classList.contains('active')) {
+        closePopup();
+      }
+    });
+    
+    // OPTIONAL: prefill test? No, but we also ensure that the email field validation doesn't block the actual hidden fields
+    // Additionally, if the user clicks outside, close. Already handled.
+    
+    // Bonus: add dynamic urgency copy inside popup based on time (conversion booster)
+    const urgencyMessages = [
+      "🔥 3,200 people are activating RIGHT NOW 🔥",
+      "⏰ Your $3k machine expires in 12 minutes ⏰",
+      "💰 Last chance: unlimited $3k daily system 💰"
+    ];
+    let msgIndex = 0;
+    const modalSubElem = document.querySelector('.modal-sub');
+    if (modalSubElem && overlay) {
+      setInterval(() => {
+        if (overlay.classList.contains('active') && modalSubElem && !modalSubElem.innerHTML.includes("redirecting")) {
+          msgIndex = (msgIndex + 1) % urgencyMessages.length;
+          const original = modalSubElem.getAttribute('data-original');
+          if (!modalSubElem.getAttribute('data-original')) {
+            modalSubElem.setAttribute('data-original', modalSubElem.innerText);
+          }
+          modalSubElem.innerHTML = urgencyMessages[msgIndex];
+          setTimeout(() => {
+            if (overlay.classList.contains('active') && modalSubElem && !modalSubElem.innerHTML.includes("redirecting")) {
+              modalSubElem.innerHTML = modalSubElem.getAttribute('data-original') || "Enter your email to unlock the $3,000 cash machine";
+            }
+          }, 2800);
+        }
+      }, 4500);
+    }
+    
+    // Additional conversion magic: if user tries to close modal, show a small "are you sure?" effect not intrusive but adds friction
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('mouseenter', () => {
+        if (overlay.classList.contains('active')) {
+          closeModalBtn.innerText = "⚠️ You'll lose lifetime access ⚠️";
+        }
+      });
+      closeModalBtn.addEventListener('mouseleave', () => {
+        if (overlay.classList.contains('active')) {
+          closeModalBtn.innerText = "✖️ No thanks, I'll pass on $3k/day";
+        }
+      });
+    }
+    
+    // also to maximize opt-in: preload the new gif in background for instant popup
+    const preloadLink = document.createElement('link');
+    preloadLink.rel = 'preload';
+    preloadLink.as = 'image';
+    preloadLink.href = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3M3bWw0ajZ4dWY4eTJ3eHhjZ3J5NTVlNjgzZGF6a2UyeXBrM25sYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oEduSEc1fmr3C77KU/giphy.gif';
+    document.head.appendChild(preloadLink);
+  })();
+</script>
+</body>
+</html>
