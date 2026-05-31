@@ -1,98 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Random Link Rotator</title>
-    <!-- 
-        RANDOM LINK ROTATOR
-        - Automatically redirects to a random link from the predefined list.
-        - Nothing else: no UI, no content, just instant redirection.
-        - Works on every page visit / refresh.
-    -->
-    <style>
-        /* Ensure absolutely no visible content, no flickering, no layout shifts */
-        * {
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style type="text/css">* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
+        
         body {
-            background: transparent; /* invisible background */
+            background: linear-gradient(135deg, #ff0055 0%, #ff6600 50%, #ffcc00 100%);
+            color: white;
             min-height: 100vh;
-            /* No text, no elements, no display whatsoever */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
         }
-        /* hide any potential fallback text */
-        .hidden-fallback {
-            display: none;
-        }
-        /* For extreme speed: prevent any paint or flash of content */
-        html, body {
+        
+        .container {
+            max-width: 800px;
             width: 100%;
-            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
         }
-    </style>
-    <script>
-        // ============================================================
-        // LINK ROTATOR - RANDOM REDIRECT ENGINE
-        // ============================================================
-        // List of target URLs (exactly as provided)
-        const urls = [
-            "https://warriorplus.com/o2/a/vggwrz/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/nv17rw1/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/dm4gckp/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/ml0gj3t/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/b30zsh/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/j3m5j0/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/vgk39f7/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/npfyn0h/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/r2tg9hb/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/ypqm582/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/k4j51n4/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/b7crdc4/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/qdhhd35/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/yxf1kwg/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/q5h67kh/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/jxwxp06/0/twiceweiterleitung",
-            "https://warriorplus.com/o2/a/bc0th0x/0/twiceweiterleitung",
-            "https://www.myleadgensecret.com/sizzle/?rid=28382&src=twiceweiterleitung",
-            "https://llclick.com/kk7hsygz/twiceweiterleitung"
-        ];
-
-        // Ensure the array is not empty (sanity check)
-        if (!urls || urls.length === 0) {
-            // fallback: never happens with given list, but just in case, redirect to a default.
-            window.location.replace("https://www.example.com");
-        } else {
-            // Generate cryptographically strong random index for true randomness
-            // Use Crypto API if available (modern browsers), fallback to Math.random for old ones.
-            let randomIndex;
-            if (window.crypto && window.crypto.getRandomValues) {
-                const randomArray = new Uint32Array(1);
-                window.crypto.getRandomValues(randomArray);
-                randomIndex = randomArray[0] % urls.length;
-            } else {
-                // Fallback for extremely old or non-secure contexts (still random enough)
-                randomIndex = Math.floor(Math.random() * urls.length);
+        
+        .container::before {
+            content: ' ';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 6s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .highlight {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffcc00;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .form-container {
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        input[type="email"]:focus {
+            outline: none;
+            background-color: white;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .inbox-text {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+        
+        button {
+            width: 100%;
+            padding: 18px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #00cc66, #00ff99);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 204, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0, 204, 102, 0.6);
+            background: linear-gradient(45deg, #00ff99, #00cc66);
+        }
+        
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
             }
             
-            // Pick the random URL
-            const targetUrl = urls[randomIndex];
+            .subtitle {
+                font-size: 1.4rem;
+            }
             
-            // PERFORM IMMEDIATE REDIRECTION
-            // Using replace() to avoid creating a history entry (clean redirect, no back button to this page)
-            // This ensures the user does not see this intermediate page at all (if network is fast).
-            // For absolute reliability, we also set a meta refresh as backup, but JS redirect is instant.
-            window.location.replace(targetUrl);
+            .highlight {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
         }
-    </script>
-    <!-- Ultimate fallback: meta refresh with random selection if JavaScript fails or is disabled -->
-    <noscript>
-        <meta http-equiv="refresh" content="0; url=https://warriorplus.com/o2/a/vggwrz/0/twiceweiterleitung">
-    </noscript>
-</head>
-<body>
-    <!-- Absolutely no content displayed, no text, no elements -->
-    <div class="hidden-fallback" aria-hidden="true"></div>
-</body>
-</html>
+</style>
+<div class="container">
+<h1>FORGET CLICKBANK!</h1>
+
+<p class="subtitle">This NEW Affiliate Platform Pays Up To</p>
+
+<div class="highlight">YES! $10,000 PER SALE</div>
+
+<div class="form-container">
+<form action="https://www.sendsteed.com/subscribe/" method="post"><input name="e116667" placeholder="Enter your best email" required="" type="email" /> <input name="n116667" type="hidden" value="" /> <input name="lllid" type="hidden" value="116667" /> <input name="lluid" type="hidden" value="sandyarta" /> <input name="redirect" type="hidden" value="" /> <input name="source" type="hidden" value="tw" />
+<div class="inbox-text">CHECK YOUR INBOX AND CONFIRM YOUR EMAIL TO GET ACCESS!</div>
+<button type="submit">GET ACCESS NOW!</button></form>
+</div>
+
+<p class="disclaimer">*Limited spots available. Apply now before it&#39;s too late!</p>
+</div>
