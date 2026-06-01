@@ -1,200 +1,706 @@
-
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">  
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>twiceseite | Twice-Confirmed Buyer Rotator</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #f0f4f8;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-        }
-
-        .container {
-            max-width: 720px;
-            width: 100%;
-            background: #ffffff;
-            border-radius: 28px;
-            padding: 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
-            border: 1px solid #e4edf2;
-            transition: all 0.2s;
-        }
-
-        /* main title style */
-        .title {
-            font-size: 1.75rem;
-            font-weight: 800;
-            line-height: 1.3;
-            color: #0a2b3e;
-            margin-bottom: 1rem;
-        }
-
-        /* Blue color for the main benefit part (after "But") */
-        .blue-highlight {
-            color: #1e5f9e;
-            background: none;
-            font-weight: 800;
-        }
-
-        /* Smaller text for the last part (if any) but we don't need extra here */
-        /* first subtitle styling — clean and compact */
-        .subtitle-short {
-            font-size: 1rem;
-            line-height: 1.45;
-            color: #2c5a6e;
-            margin-bottom: 2rem;
-            border-left: 3px solid #2b7a4b;
-            padding-left: 1rem;
-            background: #fafefc;
-            border-radius: 0 12px 12px 0;
-            font-weight: 500;
-        }
-
-        .form-group {
-            margin-top: 0.5rem;
-        }
-
-        .email-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .email-input {
-            flex: 3;
-            min-width: 200px;
-        }
-
-        .email-input input {
-            width: 100%;
-            padding: 0.85rem 1.2rem;
-            font-size: 1rem;
-            border: 1.5px solid #cbdde6;
-            border-radius: 60px;
-            outline: none;
-            transition: all 0.2s;
-            font-family: inherit;
-            background: #fff;
-        }
-
-        .email-input input:focus {
-            border-color: #2b7a4b;
-            box-shadow: 0 0 0 3px rgba(43, 122, 75, 0.1);
-        }
-
-        .submit-btn button {
-            background: #2b7a4b;
-            border: none;
-            padding: 0.85rem 1.8rem;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1rem;
-            color: white;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-            font-family: inherit;
-            white-space: nowrap;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .submit-btn button:hover {
-            background: #1f5e3a;
-            transform: scale(0.98);
-        }
-
-        .small-footer {
-            margin-top: 1.3rem;
-            font-size: 0.7rem;
-            color: #6f8f9f;
-            text-align: center;
-            border-top: 1px solid #e2edf2;
-            padding-top: 1rem;
-        }
-
-        @media (max-width: 550px) {
-            .container {
-                padding: 1.5rem;
-            }
-            .title {
-                font-size: 1.4rem;
-            }
-            .email-wrapper {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .submit-btn button {
-                width: 100%;
-            }
-            .subtitle-short {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .title {
-                font-size: 1.25rem;
-            }
-            .blue-highlight {
-                display: inline;
-            }
-        }
-    </style>
+  <meta name="google-site-verification" content="-MXEHVXZdXMAdMQlwwyf20T0BRplZ72BPk7YYerjpHI" />   
+  <title>MyLeadGenSecret - Free Leads & Traffic Generation</title>
+  <meta name="description" content="Discover how MyLeadGenSecret delivers 100+ free leads per day. Build your email list with our proven system - perfect for beginners and marketers." />
+  <meta name="keywords" content="myleadgensecret, free leads, traffic generation, email marketing, affiliate leads, online business, passive income" />
+  <meta name="robots" content="NOFOLLOW">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta property="og:image" content="https://imgallery.llsvr.com/mobileriche.68527b9cb4c6f.jpg" />
+  <meta property="og:title" content="MyLeadGenSecret - Free Leads & Traffic Generation" />
+  <link rel="icon" type="image/x-icon" href="">
+  <link id="mainStyle" rel="stylesheet" href="https://llpgpro.com/styl.css?v=50">
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One:400,700|Oswald:400,700|Caveat:400,700|Caveat+Brush:400,700|Poppins:400,700|Hammersmith+One:400,700|Roboto:400,700|Kalam:400,700|Allura:400,700|Acme:400,700|Cabin:400,700|Anton:400,700|Abhaya+Libre:400,700|Courier+Prime:400,700|Cutive+Mono:400,700|Nunito:400,700|Ranchers:400,700|Permanent+Marker:400,700|Audiowide:400,700' rel='stylesheet'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/v4-shims.css">
+  <link rel="stylesheet" href="https://llpgpro.com/animate.min.css?v=2" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script id="jc" type="text/javascript">var llcv_dm = "llpgpro.com", llver = "2", llcv_d = "248500", llcv_c = "226550", llcv_r = "0", llcv_i = "mobileriche", statid = 237261, tableid = 21, adbaron = "1", listid = "110385", listurl = "", listurlnew = "", thisip = "178.165.202.40", adbarcounton = 0; $("#jc").html("");
+  </script>
+  <script src="https://llpgpro.com/js.js?v=36"></script>
+  <script src="https://llpgpro.com/cd.js?v=1"></script>
+  <style>
+    #abartop {
+        background: #000000;
+    }
+    #abararrow {
+                    animation: blinker 4s cubic-bezier(.68,-0.55,.27,1.55) infinite;
+    }
+    img {  
+       user-select: none;
+       -moz-user-select: none;
+       -webkit-user-drag: none;
+       -webkit-user-select: none;
+       -ms-user-select: none;
+    }
+    .divCtn {
+            height: auto !important;
+            display: grid !important;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(1000, min-content) 1fr;
+    }
+    .elemCtn {
+            position: relative !important;
+            grid-column: 1;
+            top: 0 !important;
+            margin-left: 0px !important;
+    }
+    [data-ll="ic"] {
+        text-align: left !important;
+            width: fit-content !important;
+    }
+    .review-badge {
+        background: #ff0000;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+    .review-stars {
+        color: #FFD700;
+        font-size: 24px;
+        margin: 5px 0;
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "MyLeadGenSecret",
+      "image": "https://imgallery.llsvr.com/mobileriche.67db552cb6374.jpg",
+      "description": "Automated system that delivers 100+ high-quality leads daily to grow your email list and affiliate business.",
+      "brand": {
+        "@type": "Brand",
+        "name": "MLGS"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "199555",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.myleadgensecret.com/sizzle/?rid=28382&src=myleadseitegeklaut",
+        "priceCurrency": "USD",
+        "price": "30",
+        "priceValidUntil": "2025-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  </script>
 </head>
 <body>
-<div class="container">
-    <!-- NEW TITLE exactly as requested:
-         👉 *It Feels Impossible to Make Money Online… But After a 3 Minute Signup, Beginners Earn $500+ Per Day*
-         Adding blue color to the "But After a 3 Minute Signup, Beginners Earn $500+ Per Day" part for trust.
-    -->
-    <div class="title">
-        👉 *It Feels Impossible to Make Money Online… <span class="blue-highlight">But After a 3 Minute Signup, Beginners Earn $500+ Per Day</span>*
-    </div>
-
-    <!-- NEW SUBTITLE exactly as requested:
-         👉 Now literally anyone can quickly start. No catch. No experience. Just results.
-    -->
-    <div class="subtitle-short">
-        👉 Now literally anyone can quickly start. No catch. No experience. Just results.
-    </div>
-
-    <!-- Email signup form with source="twice500+" as requested -->
-    <div class="form-group">
-        <form method="post" action="https://www.sendsteed.com/subscribe/">
-            <div class="email-wrapper">
-                <div class="email-input">
-                    <input name="e123771" required="" type="email" placeholder="your@email.com">
-                </div>
-                <div class="submit-btn">
-                    <button type="submit">Submit</button>
-                </div>
+  <div class='previewimgctr'>
+    <img src="" style="width: 600px; height: 315px;">
+  </div>
+  <div id="abartop">
+    <table style="width: 100%" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr><td style="height: 30px;"><span id="abartxt" class="arrow"><img id="abararrow" src="https://lllpg.com/images/trackrarrow.png">VIDEO BELOW REVEALS ALL!</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="pageBackground" style="background: url('https://imgallery.llsvr.com/5edfb2a5d079d.jpeg') 0% 0% / cover no-repeat rgb(255, 255, 255); opacity: 1; filter: blur(0px);" data-position="0% 0%"> 
+    <div class="pageBackgroundOverlay" style="background: rgba(0, 0, 0, 0);" data-bright="0"></div>
+  </div>
+  
+  <div class="formctr" style="padding-left: 0px; padding-right: 0px;"> 
+    <form autocomplete="off" action="" id="" name="" method="post"> 
+      <div class="contentBackground" style="width: 700px; margin-top: 0vw; background: rgb(255, 255, 255); border: medium none; border-radius: 10px; box-shadow: none; margin-bottom: 0vw; min-height: 100px;"> 
+        <!-- First Row - Member Earnings -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 64px; min-height: 64px;" data-rowtype="fs" data-bottom="0">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 10px; left: 20px; background: transparent; font-family: 'Fjalla One'; font-size: 45px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 640px; height: auto; grid-row: 1 / 2; margin: 10px 0px 0px;" data-lk="0" data-top="10" data-bottom="64">
+            <article>
+              <p style="text-align: center;"><span style="background-color: transparent; font-weight: bold;">One of the Members has earned</span></p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Second Row - Earnings Amount -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 190px; min-height: 190px;" data-rowtype="fs" data-bottom="0">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="t" class="elemCtn elemDrp  animate__animated animate__repeat-1 animate__delay-1s animate__headShake " style="box-sizing: border-box; position: absolute; top: 0px; left: 30px; background: transparent; font-family: Anton; font-size: 158px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 640px; height: auto; grid-row: 1 / 2; margin: 0px;" data-lk="0" data-top="0" data-bottom="190">
+            <article style="border: none; box-shadow: rgb(0, 0, 0) 0px 0px 10px 2px;">
+              <p style="text-align: center;"><span style="color: rgb(250, 11, 11);">$195,706</span></p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Third Row - Video Embed -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 388px; min-height: 388px;" data-rowtype="fs" data-bottom="25">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="c" class="elemCtn elemDrp  " style="box-sizing: border-box; color: rgb(153, 153, 153); position: absolute; top: 3px; left: 30px; z-index: 1; width: 640px; height: 360px; grid-row: 1 / 2; margin: 3px 0px 25px;" data-lk="0" data-top="3" data-bottom="363">
+            <article>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/XPAvGqj4sI0?enablejsapi=1&controls=0&modestbranding=1&rel=0&autoplay=1&mute=1&loop=1" frameborder="0" allowfullscreen="" allow="autoplay" llclickoff="0"></iframe>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Fourth Row - Main Image -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 472px; min-height: 472px;" data-rowtype="fs" data-bottom="0">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="i" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 0px; left: 15px; width: 670px; height: 472px; z-index: 1; grid-row: 1 / 2; font-size: 0px; margin: 0px;" data-lk="0" data-top="0" data-bottom="472">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.67afeef683cf8.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px);" data-tab="7">
+              <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Fifth Row - Second Video -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 395px; min-height: 395px;" data-rowtype="fs" data-bottom="55">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="c" class="elemCtn elemDrp  " style="box-sizing: border-box; color: rgb(153, 153, 153); position: absolute; top: 5px; left: 50px; z-index: 1; width: 600px; height: 335px; grid-row: 1 / 2; margin: 5px 0px 55px;" data-lk="0" data-top="5" data-bottom="340">
+            <article style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.7) 4px 4px 12px 0px;">
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/mh9qhgCllE8?enablejsapi=1&controls=0&modestbranding=1&rel=0&autoplay=0&mute=0&loop=1" frameborder="0" allowfullscreen="" allow="autoplay" llclickoff="0"></iframe>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Sixth Row - Join Buttons -->
+        <div class="rowCtn  ee" data-rowtype="col" style=" ">
+          <p class="rowBgOverlay" style="border: 3px solid rgb(67, 65, 65);"></p>
+          <p class="rowBgBright"></p>
+          <div class="divCtn divDrp colCtn " style="height: 153px; min-height: 153px;" data-colht="137" data-bottom="25">
+            <div data-ll="fb" class="elemCtn elemDrp  " style="box-sizing: border-box; padding: 0px; position: absolute; top: 40px; left: 65px; z-index: 1; width: 220px; height: 40px; grid-row: 2 / 3; margin: 1px 0px 0px;" data-lk="0" data-top="40" data-bottom="80">
+              <article>
+                <button type="button" style="box-sizing: border-box; padding: 6px 12px; width: 100%; height: 100%; font-size: 32px; line-height: 0.6; border-radius: 4px; border: none; background-color: rgb(255, 0, 0); font-weight: bold; color: rgb(255, 255, 255); font-family: Roboto;" name="" onclick="window.parent.location.href='https://www.myleadgensecret.com/sizzle/?rid=28382&src=myleadseitegeklaut';">Join Now...</button>
+              </article>
             </div>
-            <input type="hidden" name="lllid" value="123771">
-            <input type="hidden" name="lluid" value="sandyarta">
-            <input type="hidden" name="redirect" value="">
-            <!-- SOURCE updated to "leads+" exactly as requested -->
-            <input type="hidden" name="source" value="mylead+">
-        </form>
-    </div>
+            <div data-ll="t" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 10px; left: 30px; background: transparent; font-family: Roboto; font-size: 24px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 290px; height: auto; grid-row: 1 / 2; margin: 10px 0px 0px;" data-lk="0" data-top="10" data-bottom="39">
+              <article>
+                <p style="text-align: center;"><span style="font-weight: bold;">Step #1:</span> Join MLGS</p>
+              </article>
+            </div>
+            <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 90px; left: 45px; background: transparent; font-family: Roboto; font-size: 18px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 290px; height: auto; grid-row: 3 / 4; margin: 10px 0px 25px;" data-lk="0" data-top="90" data-bottom="112">
+              <article>
+                <p style="text-align: center;">$30 Setup + Plus $30 P/Mth</p>
+              </article>
+            </div>
+          </div>
+          <div class="divCtn divDrp colCtn " style="height: 153px; min-height: 153px;" data-colht="153" data-bottom="20">
+            <div data-ll="fb" class="elemCtn elemDrp  " style="box-sizing: border-box; padding: 0px; position: absolute; top: 40px; left: 65px; z-index: 1; width: 220px; height: 40px; grid-row: 2 / 3; margin: 1px 0px 0px;" data-lk="0" data-top="40" data-bottom="80">
+              <article>
+                <button type="button" style="box-sizing: border-box; padding: 6px 12px; width: 100%; height: 100%; font-size: 32px; line-height: 0.6; border-radius: 4px; border: none; background-color: rgb(255, 0, 0); font-weight: bold; color: rgb(255, 255, 255); font-family: Roboto;" name="" onclick="showPopup();">Get It Now!</button>
+              </article>
+            </div>
+            <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 10px; left: 30px; background: transparent; font-family: Roboto; font-size: 24px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 290px; height: auto; grid-row: 1 / 2; margin: 10px 0px 0px;" data-lk="0" data-top="10" data-bottom="39">
+              <article>
+                <p style="text-align: center;"><span style="font-weight: bold;">Step #2:</span> Get This Funnel</p>
+              </article>
+            </div>
+            <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 90px; left: 30px; background: transparent; font-family: Roboto; font-size: 18px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 290px; height: auto; grid-row: 3 / 4; margin: 10px 0px 20px;" data-lk="0" data-top="90" data-bottom="133">
+              <article>
+                <p style="text-align: center;">Earn residual income giving away this funnel</p>
+              </article>
+            </div>
+          </div>
+          <div class="colCtnClear"></div>
+        </div>
+        
+        <!-- Seventh Row - Tai Lopez Section -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 359px; min-height: 359px;" data-rowtype="fs" data-bottom="20">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="i" class="elemCtn elemDrp lllk  " style="box-sizing: border-box; position: absolute; top: 100px; left: 20px; width: 360px; height: 239px; z-index: 1; font-size: 0px; grid-row: 4 / 5; margin: -231px 0px 20px;" data-lk="0" data-rotate="-6" data-top="100" data-bottom="339">
+            <article style="transform: rotate(-6deg) skew(0deg, 0deg);">
+              <img src="https://imgallery.llsvr.com/mobileriche.67afeaaf6c6ee.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px); border: 6px solid rgb(255, 0, 0);" data-tab="7">
+              <p style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; border: 6px solid rgb(255, 0, 0);" data-bright="0"></p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp lllk  " style="box-sizing: border-box; position: absolute; top: 40px; left: 0px; background: transparent; font-family: Roboto; font-size: 37px; z-index: 1; line-height: 1; color: rgb(74, 82, 87); width: 685px; height: auto; grid-row: 1 / 2; margin: 40px 0px 0px;" data-lk="0" data-top="40" data-bottom="77">
+            <article>
+              <p style="text-align: center;"><span style="color: #ff0000;"><strong>Tai Lopez Makes $20,000 P/day</strong></span></p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp lllk  " style="box-sizing: border-box; position: absolute; top: 75px; left: 370px; background: transparent; font-family: Roboto; font-size: 24px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 325px; height: auto; grid-row: 2 / 3; margin: -2px 0px 0px;" data-lk="0" data-top="75" data-bottom="104">
+            <article>
+              <p style="text-align: center;">Sending Emails To His List…</p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp lllk  " style="box-sizing: border-box; position: absolute; top: 115px; left: 395px; background: transparent; font-family: Roboto; font-size: 18px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 295px; height: auto; grid-row: 3 / 4; margin: 11px 0px 0px;" data-lk="0" data-top="115" data-bottom="331">
+            <article>
+              <p><strong>And big corporations like Amazon, Disney and Coca Cola add Millions in revenue by sending promotional emails to their list of subscribers!</strong></p>
+              <p><br>It's a HUGE and profitable industry…</p>
+              <p><br>So I knew, if I am ever gonna make money, it's gonna start with the email marketing industry.</p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Eighth Row - Email Marketing Section -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 349px; min-height: 349px;" data-rowtype="fs" data-bottom="25">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="t" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 25px; left: 25px; background: transparent; font-family: Roboto; font-size: 18px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 325px; height: auto; grid-row: 2 / 3; margin: -207px 0px 0px;" data-lk="0" data-top="25" data-bottom="263">
+            <article>
+              <p>They all use email to make a lion share of their income.</p>
+              <p> </p>
+              <p><span style="color: #ff0000;"><strong>Are You Surprised?</strong></span> I was, I thought Emailing was dead... Doh</p>
+              <p> </p>
+              <p>The key to financial success for most online  Retailers and entrepreneurs is "EMAIL".</p>
+              <p><br><br></p>
+            </article>
+          </div>
+          <div data-ll="i" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 10px; left: 365px; width: 330px; height: 222px; z-index: 1; font-size: 0px; grid-row: 1 / 2; margin: 10px 0px 0px;" data-lk="0" data-top="10" data-bottom="232">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.6742805954be0.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px);" data-tab="7">
+              <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+            </article>
+          </div>
+          <div data-ll="i" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 240px; left: 15px; width: 150px; height: 84px; z-index: 1; font-size: 0px; grid-row: 3 / 4; margin: -23px 0px 25px;" data-lk="0" data-top="240" data-bottom="324">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.6742817c40db2.png" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px); border-radius: 10px;" data-tab="7">
+              <p style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; border-radius: 10px;" data-bright="0"></p>
+            </article>
+          </div>
+          <div data-ll="i" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 240px; left: 355px; width: 150px; height: 84px; z-index: 1; font-size: 0px; grid-row: 3 / 4; margin: -23px 0px 0px;" data-lk="0" data-top="240" data-bottom="324">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.6742822849034.png" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px); border-radius: 10px;" data-tab="7">
+              <p style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; border-radius: 10px;" data-bright="0"></p>
+            </article>
+          </div>
+          <div data-ll="i" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 240px; left: 525px; width: 150px; height: 84px; z-index: 1; font-size: 0px; grid-row: 3 / 4; margin: -23px 0px 0px;" data-lk="0" data-top="240" data-bottom="324">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.6742821238a7a.png" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px); border-radius: 10px;" data-tab="7">
+              <p style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; border-radius: 10px;" data-bright="0"></p>
+            </article>
+          </div>
+          <div data-ll="i" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 240px; left: 185px; width: 150px; height: 84px; z-index: 1; font-size: 0px; grid-row: 3 / 4; margin: -23px 0px 0px;" data-lk="0" data-top="240" data-bottom="324">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.674281d5e5742.png" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px); border-radius: 10px;" data-tab="7">
+              <p style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; border-radius: 10px;" data-bright="0"></p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Ninth Row - What You Get Section -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 66px; min-height: 66px;" data-rowtype="fs" data-bottom="15">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 1px; left: 30px; background: transparent; font-family: Roboto; font-size: 50px; z-index: 1; line-height: 1; color: rgb(0, 0, 0); width: 640px; height: auto; grid-row: 1 / 2; margin: 1px 0px 15px;" data-lk="0" data-top="1" data-bottom="51">
+            <article>
+              <p style="text-align: center;"><span style="color: #ff0000;"><strong>Here's What You Get</strong></span></p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Tenth Row - Benefits List -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 536px; min-height: 536px;" data-rowtype="fs" data-bottom="35">
+          <p class="rowBgOverlay" style="background: rgba(0, 0, 0, 0.11);"></p>
+          <p class="rowBgBright" style="background: rgba(0, 0, 0, 0);"></p>
+          <div data-ll="i" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 276px; left: 33px; width: 630px; height: 52px; z-index: 1; font-size: 0px; grid-row: 2 / 3; margin: -5px 0px 0px;" data-lk="0" data-top="276" data-bottom="328">
+            <article>
+              <img src="https://imgallery.llsvr.com/5ee5b5c5d4c28.png" style="width: 100%; height: 100%; object-fit: fill; object-position: 50% 50%; filter: blur(0px);" data-tab="6">
+              <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 277px; left: 30px; background: transparent; font-family: Roboto; font-size: 45px; z-index: 1; line-height: 1.2; color: rgb(255, 0, 0); width: 640px; height: auto; grid-row: 3 / 4; margin: -51px 0px 0px;" data-lk="0" data-top="277" data-bottom="331">
+            <article>
+              <p style="text-align: center;"><span style="color: #000000;"><strong>FAST ACTION TAKERS BONUS:</strong></span></p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 405px; left: 25px; background: transparent; font-family: Roboto; font-size: 34px; z-index: 1; line-height: 1.2; color: rgb(255, 0, 0); width: 640px; height: auto; grid-row: 5 / 6; margin: 20px 0px 0px;" data-lk="0" data-top="405" data-bottom="446">
+            <article>
+              <p style="text-align: center;"><strong>Get 200 Leads Instead of 100</strong></p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 327px; left: 30px; background: transparent; font-family: Roboto; font-size: 24px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 640px; height: auto; grid-row: 4 / 5; margin: -4px 0px 0px;" data-lk="0" data-top="327" data-bottom="385">
+            <article>
+              <p style="text-align: center;">If You Join MyLeadGenSecret Right Now </p>
+              <p style="text-align: center;">They Will PAY YOU on <b>4</b> Additional Levels...</p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 15px; left: 35px; background: transparent; font-family: Roboto; font-size: 22px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 640px; height: auto; grid-row: 1 / 2; margin: 15px 0px 0px;" data-lk="0" data-top="15" data-bottom="281">
+            <article>
+              <ul>
+                <li style="text-align: left;"><strong>100 to 200</strong> drip fed "Business Opportunity" email subscribers into your contact list EVERY 24-Hours...</li>
+                <li style="text-align: left;"><strong>Done-for-you</strong> emailing platform (CAN-SPAM Compliant)...</li>
+                <li style="text-align: left;"><strong>5 Level</strong> Affiliate PayPlan can easily cover costs...</li>
+                <li style="text-align: left;">​<strong>Earn $100 BONUSES</strong> for EVERY 5 customers you refer...</li>
+                <li style="text-align: left;">​​Pays by Check, PayPal or Bitcoin... <br> <br><span style="color: #ff0000;"><strong>​PLUS...</strong></span></li>
+              </ul>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 443px; left: 30px; background: transparent; font-family: Roboto; font-size: 24px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 640px; height: auto; grid-row: 6 / 7; margin: -3px 0px 35px;" data-lk="0" data-top="443" data-bottom="501">
+            <article>
+              <p style="text-align: center;"><strong><span style="color: #000000;">After You Join, Just Refer One Person</span></strong></p>
+              <p style="text-align: center;">Then You Will Start Receiving 200 leads A Day!</p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Eleventh Row - More Leads Section -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 141px; min-height: 141px;" data-rowtype="fs" data-bottom="10">
+          <p class="rowBgOverlay" style="background: rgba(0, 0, 0, 0.08);"></p>
+          <p class="rowBgBright" style="background: rgba(0, 0, 0, 0);"></p>
+          <div data-ll="i" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 4px; left: 90px; width: 500px; height: 42px; z-index: 1; font-size: 0px; grid-row: 1 / 2; margin: 4px 0px 0px;" data-lk="0" data-top="4" data-bottom="46">
+            <article>
+              <img src="https://imgallery.llsvr.com/5ee5b5c5d4c28.png" style="width: 100%; height: 100%; object-fit: fill; object-position: 50% 50%; filter: blur(0px);" data-tab="6">
+              <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 10px; left: 20px; background: transparent; font-family: Roboto; font-size: 30px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 640px; height: auto; grid-row: 2 / 3; margin: -36px 0px 0px;" data-lk="0" data-top="10" data-bottom="46">
+            <article>
+              <p style="text-align: center;"><span style="color: #ff0000;"><strong>Want More Than 200 Leads A Day?</strong></span></p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 45px; left: 30px; background: transparent; font-family: Roboto; font-size: 24px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 640px; height: auto; grid-row: 3 / 4; margin: -1px 0px 10px;" data-lk="0" data-top="45" data-bottom="131">
+            <article>
+              <p style="text-align: center;">The System Lets You Stack Positions</p>
+              <p style="text-align: center;"><strong>Get The System Even Cheaper & Self-Funding</strong></p>
+              <p style="text-align: center;">When You Leverage The Referral Program.</p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Twelfth Row - Results Section -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 110px; min-height: 110px;" data-rowtype="fs" data-bottom="9">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 5px; left: 25px; background: transparent; font-family: Roboto; font-size: 48px; z-index: 1; line-height: 1; color: rgb(74, 82, 87); width: 640px; height: auto; grid-row: 1 / 2; margin: 5px 0px 9px;" data-lk="0" data-top="5" data-bottom="101">
+            <article>
+              <p style="text-align: center;"><strong style="color: rgb(255, 0, 0);">Here Are a Few Results From </strong></p>
+              <p style="text-align: center;"><strong style="color: rgb(255, 0, 0);">Our MLGS Team Members...</strong></p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Thirteenth Row - Results Images 1 -->
+        <div class="rowCtn  ee" data-rowtype="col" style=" ">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div class="divCtn divDrp colCtn " style="height: 271px; min-height: 271px;" data-bottom="10" data-colht="246">
+            <div data-ll="i" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 10px; left: 5px; width: 335px; height: 226px; z-index: 1; font-size: 0px; grid-row: 1 / 2; margin: 10px 0px;" data-lk="0" data-top="10" data-bottom="236">
+              <article>
+                <img src="https://imgallery.llsvr.com/mobileriche.661b8d4675876.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px); border-radius: 10px;" data-tab="7">
+                <p style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; border-radius: 10px;" data-bright="0"></p>
+              </article>
+            </div>
+          </div>
+          <div class="divCtn divDrp colCtn " style="height: 271px; min-height: 271px;" data-bottom="25" data-colht="296">
+            <div data-ll="i" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 10px; left: 10px; width: 335px; height: 261px; z-index: 1; font-size: 0px; grid-row: 1 / 2; margin: 10px 0px 25px;" data-lk="0" data-top="10" data-bottom="271">
+              <article>
+                <img src="https://imgallery.llsvr.com/mobileriche.661b8d758abfc.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px);" data-tab="7">
+                <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+              </article>
+            </div>
+          </div>
+          <div class="colCtnClear"></div>
+        </div>
+        
+        <!-- Fourteenth Row - Results Images 2 -->
+        <div class="rowCtn  ee" data-rowtype="colr" style=" ">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div class="divCtn divDrp colCtn colCtnR " style="height: 260px; min-height: 260px;" data-colht="260" data-bottom="25">
+            <div data-ll="i" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 16px; left: 47px; width: 265px; height: 219px; z-index: 1; font-size: 0px; grid-row: 1 / 2; margin: 16px 0px 25px;" data-lk="0" data-top="16" data-bottom="235">
+              <article>
+                <img src="https://imgallery.llsvr.com/mobileriche.661b926d555ec.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px);" data-tab="7">
+                <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+              </article>
+            </div>
+          </div>
+          <div class="divCtn divDrp colCtn colCtnR " style="height: 260px; min-height: 260px;" data-colht="284" data-bottom="25">
+            <div data-ll="i" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 5px; left: 80px; width: 220px; height: 254px; z-index: 1; font-size: 0px; grid-row: 1 / 2; margin: 5px 0px 25px;" data-lk="0" data-top="5" data-bottom="259">
+              <article>
+                <img src="https://imgallery.llsvr.com/mobileriche.661b91f246d23.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px);" data-tab="7">
+                <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+              </article>
+            </div>
+          </div>
+          <div class="colCtnClear"></div>
+        </div>
+        
+        <!-- Fifteenth Row - Results Image 3 -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 259px; min-height: 259px;" data-rowtype="fs" data-bottom="25">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="i" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 10px; left: 120px; width: 455px; height: 224px; z-index: 1; font-size: 0px; grid-row: 1 / 2; margin: 10px 0px 25px;" data-lk="0" data-top="10" data-bottom="234">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.661b929a8febc.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px); border-radius: 12px;" data-tab="7">
+              <p style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; border-radius: 12px;" data-bright="0"></p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Sixteenth Row - Results Images 4 -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 336px; min-height: 336px;" data-rowtype="fs" data-bottom="15">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="i" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 25px; left: 35px; width: 364px; height: 290px; z-index: 1; grid-row: 1 / 2; font-size: 0px; margin: 25px 0px 0px;" data-lk="0" data-top="25" data-bottom="315">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.683bd5f383f4a.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px);" data-tab="7">
+              <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+            </article>
+          </div>
+          <div data-ll="i" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 12px; left: 433px; width: 230px; height: 309px; z-index: 1; font-size: 0px; grid-row: 1 / 2; margin: 12px 0px 15px;" data-lk="0" data-top="12" data-bottom="321">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.661b91c53e00f.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px);" data-tab="7">
+              <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Seventeenth Row - Seen Enough Section -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 178px; min-height: 178px;" data-rowtype="fs" data-bottom="5">
+          <p class="rowBgOverlay" style=""></p>
+          <p class="rowBgBright" style="background: rgba(0, 0, 0, 0);" data-bright="0"></p>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 48px; left: 180px; background: transparent; font-family: Anton; font-size: 80px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 495px; height: auto; text-shadow: rgb(0, 0, 0) 2px 2px 0px; grid-row: 1 / 2; margin: 48px 0px 0px;" data-lk="0" data-top="48" data-bottom="144">
+            <article>
+              <p style="text-align: center;"><span style="color: #ff0000;"><strong>Seen Enough?</strong></span></p>
+            </article>
+          </div>
+          <div data-ll="t" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 142px; left: 190px; background: transparent; font-family: Roboto; font-size: 24px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 455px; height: auto; text-shadow: none; grid-row: 2 / 3; margin: -2px 0px 0px;" data-lk="0" data-top="142" data-bottom="171">
+            <article>
+              <p style="text-align: center;"><strong style="color: rgb(0, 0, 0);">So All Up It's </strong><strong style="color: rgb(250, 11, 11);">$1</strong><strong style="color: rgb(0, 0, 0);"> a Day Plus </strong><strong style="color: rgb(250, 11, 11);">$30</strong><strong style="color: rgb(0, 0, 0);"> Setup</strong></p>
+            </article>
+          </div>
+          <div data-ll="i" class="elemCtn elemDrp  " style="box-sizing: border-box; position: absolute; top: 3px; left: 30px; width: 170px; height: 170px; z-index: 1; font-size: 0px; grid-row: 3 / 4; margin: -168px 0px 5px;" data-lk="0" data-top="3" data-bottom="173">
+            <article>
+              <img src="https://imgallery.llsvr.com/mobileriche.66358ffda2c45.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: blur(0px);" data-tab="7">
+              <p style="width:100%; height:100%; position: absolute; top: 0; left: 0;" data-bright="0"></p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Eighteenth Row - Final CTA Buttons -->
+        <div class="rowCtn  ee" data-rowtype="col" style=" ">
+          <p class="rowBgOverlay" style="border: 3px solid rgb(67, 65, 65);"></p>
+          <p class="rowBgBright"></p>
+          <div class="divCtn divDrp colCtn " style="height: 135px; min-height: 135px;" data-colht="140" data-bottom="25">
+            <div data-ll="fb" class="elemCtn elemDrp lllk " style="box-sizing: border-box; padding: 0px; position: absolute; top: 43px; left: 75px; z-index: 1; width: 220px; height: 40px; grid-row: 2 / 3; margin: 1px 0px 0px;" data-lk="0" data-top="43" data-bottom="83">
+              <article>
+                <button type="button" style="box-sizing: border-box; padding: 6px 12px; width: 100%; height: 100%; font-size: 32px; line-height: 0.6; border-radius: 4px; border: none; background-color: rgb(255, 0, 0); font-weight: bold; color: rgb(255, 255, 255); font-family: Roboto;" name="" onclick="window.parent.location.href='https://www.myleadgensecret.com/sizzle/?rid=28382&src=myleadseitegeklaut';">Join Now...</button>
+              </article>
+            </div>
+            <div data-ll="t" class="elemCtn elemDrp lllk " style="box-sizing: border-box; position: absolute; top: 13px; left: 35px; background: transparent; font-family: Roboto; font-size: 24px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 290px; height: auto; grid-row: 1 / 2; margin: 13px 0px 0px;" data-lk="0" data-top="13" data-bottom="42">
+              <article>
+                <p style="text-align: center;"><span style="font-weight: bold;">Step #1:</span> Join MLGS</p>
+              </article>
+            </div>
+            <div data-ll="t" class="elemCtn elemDrp lllk " style="box-sizing: border-box; position: absolute; top: 93px; left: 40px; background: transparent; font-family: Roboto; font-size: 18px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 290px; height: auto; grid-row: 3 / 4; margin: 10px 0px 25px;" data-lk="0" data-top="93" data-bottom="115">
+              <article>
+                <p style="text-align: center;">$30 Setup + Plus $30 P/Mth</p>
+              </article>
+            </div>
+          </div>
+          <div class="divCtn divDrp colCtn " style="height: 135px; min-height: 135px;" data-colht="135" data-bottom="5">
+            <div data-ll="fb" class="elemCtn elemDrp lllk  " style="box-sizing: border-box; padding: 0px; position: absolute; top: 42px; left: 60px; z-index: 1; width: 220px; height: 40px; grid-row: 2 / 3; margin: 1px 0px 0px;" data-lk="0" data-top="42" data-bottom="82">
+              <article>
+                <button type="button" style="box-sizing: border-box; padding: 6px 12px; width: 100%; height: 100%; font-size: 32px; line-height: 0.6; border-radius: 4px; border: none; background-color: rgb(255, 0, 0); font-weight: bold; color: rgb(255, 255, 255); font-family: Roboto;" name="" onclick="showPopup();">Get It Now!</button>
+              </article>
+            </div>
+            <div data-ll="t" class="elemCtn elemDrp lllk  " style="box-sizing: border-box; position: absolute; top: 12px; left: 25px; background: transparent; font-family: Roboto; font-size: 24px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 290px; height: auto; grid-row: 1 / 2; margin: 12px 0px 0px;" data-lk="0" data-top="12" data-bottom="41">
+              <article>
+                <p style="text-align: center;"><span style="font-weight: bold;">Step #2:</span> Get This Funnel</p>
+              </article>
+            </div>
+            <div data-ll="t" class="elemCtn elemDrp lllk " style="box-sizing: border-box; position: absolute; top: 87px; left: 20px; background: transparent; font-family: Roboto; font-size: 18px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 290px; height: auto; grid-row: 3 / 4; margin: 5px 0px;" data-lk="0" data-top="87" data-bottom="130">
+              <article>
+                <p style="text-align: center;">Earn residual income giving away this funnel</p>
+              </article>
+            </div>
+          </div>
+          <div class="colCtnClear"></div>
+        </div>
+        
+        <!-- Nineteenth Row - Empty Section -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 184px; min-height: 184px;" data-rowtype="fs" data-bottom="0">
+          <p class="rowBgOverlay" style=""></p>
+          <p class="rowBgBright" style="background: rgba(0, 0, 0, 0);" data-bright="0"></p>
+          <div data-ll="c" class="elemCtn elemDrp " style="box-sizing: border-box; color: rgb(153, 153, 153); position: absolute; top: 10px; left: 155px; z-index: 1; width: 400px; height: 174px; grid-row: 1 / 2; margin: 10px 0px 0px;" data-lk="0" data-top="10" data-bottom="184">
+            <article>
+              <table border="0" cellpadding="1" cellspacing="1" style="width:400px"> <tbody> <tr> <td></td>  </tr> </tbody></table>
+              <p> </p>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Twentieth Row - Footer Links -->
+        <div class="rowCtn divCtn divDrp fsRow  ee " style="height: 66px; min-height: 66px;" data-rowtype="fs" data-bottom="25">
+          <p class="rowBgOverlay"></p>
+          <p class="rowBgBright"></p>
+          <div data-ll="t" class="elemCtn elemDrp " style="box-sizing: border-box; position: absolute; top: 25px; left: 30px; background: transparent; font-family: Roboto; font-size: 13px; z-index: 1; line-height: 1.2; color: rgb(74, 82, 87); width: 640px; height: auto; grid-row: 1 / 2; margin: 25px 0px;" data-lk="0" data-top="25" data-bottom="41">
+            <article>
+              <p style="text-align: center;"><a href="https://www.myleadgensecret.com/sizzle/?rid=28382&src=myleadseitegeklaut" target="_blank" rel="noopener">Privacy Policy | Terms of Service | Available on Main Site</a></p>
+            </article>
+          </div>
+        </div>
+      </div> 
+      <div id="hinput" style="display: none;"></div> 
+      <input type='hidden' name='srce' value='lllpg.com' />
+      <input type='hidden' name='pgid' value='248500' />
+      <input type='hidden' name='pgcid' value='226550' />
+      <input type='hidden' name='tktb' value='21' />
+      <input type='hidden' name='tkid' value='237261' />
+      <input type='hidden' name='lluid' value='mobileriche'>
+      <input type='hidden' name='rotatorid' value='0'>
+    </form> 
+  </div>
+  
+  <div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  </div>
+  <div id="c"></div>
 
-    <!-- optional fine print for credibility (matches the new messaging) -->
-    <div class="small-footer">
-        ✅ instant access • 3 minute setup • real results
+  <!-- Review Badge Section -->
+  <div style="background: #f8f9fa; padding: 20px; text-align: center; border-top: 1px solid #ddd;">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div class="review-badge">
+        TRUSTED BY OVER 199,555 MEMBERS WORLDWIDE
+      </div>
+      <div class="review-stars">
+        ★★★★★
+      </div>
+      <p style="font-size: 18px; margin: 10px 0;">
+        Join thousands of satisfied members who are growing their businesses with our proven lead generation system.
+      </p>
     </div>
-</div>
+  </div>
+
+  <!-- Footer Section -->
+  <div style="background: #f8f9fa; padding: 40px 20px; margin-top: 20px; text-align: center; border-top: 1px solid #ddd;">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <h2>Why Use MyLeadGenSecret?</h2>
+      <p>MyLeadGenSecret helps you build your email list fast using real leads delivered daily. You can promote any offer, earn affiliate commissions, and build long-term passive income with a simple copy-and-paste system.</p>
+
+      <h3>What You Get:</h3>
+      <ul style="text-align: left; display: inline-block;">
+        <li>100 new leads per day</li>
+        <li>Built-in email platform</li>
+        <li>Affiliate commissions</li>
+        <li>Viral bonus system</li>
+        <li>Traffic for any business or offer</li>
+      </ul>
+      
+      <div style="margin-top: 30px;">
+        <img src="https://imgallery.llsvr.com/mobileriche.67db552cb6374.jpg" alt="High-Quality Leads Offer" style="max-width: 100%; height: auto; border: 3px solid #e60000; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute; display: none; width: 1px; height: 1px; overflow: hidden;">
+  </div>
+  <div id="popvideo_base">
+    <div id="popvideo_bg">
+      <div id="popvideo_ctr">
+        <div id="popvideo_frame">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup with Image and Email Form -->
+  <style>
+    #popup-form {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+    }
+    #popup-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      width: 95%;
+      max-width: 500px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    #popup-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    #popup-content input[type="text"],
+    #popup-content input[type="email"] {
+      background-color: #e0f0ff;
+      border: 1px solid #999;
+      color: #000;
+      margin: 10px 0;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+    #popup-content input::placeholder {
+      color: #333;
+    }
+    #popup-content button {
+      margin: 10px 0;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      background-color: #e60000;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+    #popup-content button:hover {
+      background-color: #cc0000;
+    }
+  </style>
+
+  <div id="popup-form">
+    <div id="popup-content">
+      <img src="https://imgallery.llsvr.com/mobileriche.67db552cb6374.jpg" alt="High-Quality Leads Offer" style="max-width: 100%; height: auto; border: 3px solid #e60000; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+      <div class="review-badge">
+        TRUSTED BY 199,555+ MEMBERS
+      </div>
+      <div class="review-stars">
+        ★★★★★
+      </div>
+      <p style="font-size: 20px; font-weight: bold; color: #e60000; margin-top: 15px;">Find Out Why There Are "195,000" Reasons to Take A Look!</p>
+      <form method="post" action="https://www.sendsteed.com/subscribe/">
+        <input name="n110385" required type="text" placeholder="Your Name">
+        <input name="e110385" required type="email" placeholder="Your Email">
+        <input type="hidden" name="lllid" value="110385">
+        <input type="hidden" name="lluid" value="sandyarta">
+        <input type="hidden" name="redirect" value="">
+        <input type="hidden" name="source" value="myleadgekauftleadsleapcodes">
+        <button type="submit">Get Instant Access</button>
+      </form>
+      <button onclick="document.getElementById('popup-form').style.display='none'" style="background-color: #333; margin-top: 10px;">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById('popup-form').style.display = 'block';
+    }
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById('popup-form').style.display = 'block';
+      }, 5000);
+    };
+  </script>
+
+  <script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <div id="jsbtm"><script src="https://llpgpro.com/jsbottom.js?v=45"></script></div>
 </body>
 </html>
- 
