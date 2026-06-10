@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>The Ambassador Program – Get Paid to Build Your List | 7-Day Free Trial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fefcf7;
+      color: #1a1f2c;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .problem-badge {
+      background: #ffebe6;
+      color: #c72a1f;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 40px;
+      display: inline-block;
+      font-size: 0.85rem;
+      letter-spacing: 0.3px;
+      margin-bottom: 20px;
+    }
+
+    .solution-badge {
+      background: #e3f7ec;
+      color: #1e7b48;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 40px;
+      display: inline-block;
+      font-size: 0.85rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #f7b32b;
+      color: #1e1f2c;
+      font-weight: 800;
+      font-size: 1.2rem;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 6px 0 #b4621a;
+    }
+
+    .btn-primary:hover {
+      background: #ffa41c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 0 #b4621a;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #f7b32b;
+      color: #1e1f2c;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #f7b32b20;
+    }
+
+    .card {
+      background: white;
+      border-radius: 32px;
+      padding: 28px 24px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.05);
+      border: 1px solid #f0e6da;
+    }
+
+    .value-tag {
+      font-size: 0.8rem;
+      background: #f0f3f8;
+      padding: 4px 12px;
+      border-radius: 60px;
+      font-weight: 700;
+    }
+
+    .price-box {
+      background: #fff7ef;
+      border-radius: 28px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: 0.2s;
+      border: 2px solid #ffe0b5;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 40px 0 30px;
+    }
+
+    .hero-left {
+      flex: 1.2;
+    }
+
+    .hero-right {
+      flex: 0.9;
+      background: #fff3e0;
+      border-radius: 32px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero-grid { flex-direction: column; }
+      .hero-left, .hero-right { width: 100%; }
+    }
+
+    .guarantee-badge {
+      background: #eef7f0;
+      border-left: 6px solid #3ba845;
+      padding: 20px 24px;
+      border-radius: 20px;
+    }
+
+    .trial-highlight {
+      background: #2c3e50;
+      color: #ffd966;
+      border-radius: 60px;
+      padding: 8px 20px;
+      display: inline-block;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s;
+    }
+
+    .modal-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-card {
+      background: white;
+      max-width: 480px;
+      width: 90%;
+      border-radius: 40px;
+      padding: 32px 28px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .modal-email-form input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 60px;
+      border: 1px solid #ddd4c8;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .modal-email-form button {
+      background: #f7b32b;
+      width: 100%;
+      padding: 14px;
+      font-weight: 800;
+      font-size: 1rem;
+      border: none;
+      border-radius: 60px;
+      cursor: pointer;
+    }
+
+    .footer-links {
+      border-top: 1px solid #e2ded5;
+      padding: 36px 0 28px;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+    .sticky-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #f7b32b;
+      padding: 10px 22px;
+      border-radius: 60px;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 99;
+      cursor: pointer;
+      border: none;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) { .sticky-cta { display: none; } }
+    .cancel-note {
+      font-size: 0.8rem;
+      color: #4b5563;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- SHORT & PUNCHY: PROBLEM + SOLUTION HERO -->
+  <div class="hero-grid">
+    <div class="hero-left">
+      <span class="problem-badge">😫 THE REAL PROBLEM</span>
+      <h1 style="font-size: 2.8rem; margin: 12px 0 16px;">Struggling to <span style="color:#c2410c;">build your list & earn consistent commissions?</span></h1>
+      <p style="font-size: 1.3rem; font-weight: 500; color: #2c3e50; margin-bottom: 20px;">❌ No funnel? ❌ No traffic? ❌ No automated emails?</p>
+      <p style="font-size: 1.1rem; margin-bottom: 24px;">You waste months building funnels, writing emails, chasing affiliates – and still see zero results.</p>
+      <span class="solution-badge">⚡ THE INSTANT SOLUTION</span>
+      <h2 style="font-size: 2rem; margin: 14px 0 10px;">Get Paid to Build Your List <span style="color:#e67e22;">In The Next 7 Minutes</span></h2>
+      <p style="font-size: 1.2rem;">Complete done‑for‑you 7‑figure webinar funnel, 99 days of automated emails, plus hands‑free traffic from a 127k+ list. Start generating leads & commissions TODAY.</p>
+      
+      <!-- NEW: 7-DAY FREE TRIAL + CANCEL ANYTIME -->
+      <div style="margin-top: 28px;">
+        <div class="trial-highlight">✨ 7-DAY FREE TRIAL – CANCEL ANYTIME ✨</div>
+        <button class="btn-primary js-trigger-modal" style="max-width: 360px;">🚀 START MY FREE TRIAL → GET INSTANT ACCESS</button>
+        <p class="cancel-note">✅ No risk – try the full system for 7 days. Cancel online in 1 click. No questions asked.</p>
+      </div>
+      <p style="margin-top: 16px; font-size: 0.85rem;">🔒 365-day action taker guarantee · 256-bit encryption · Cancel anytime during trial</p>
+    </div>
+    <div class="hero-right">
+      <div style="font-size: 2rem;">🔥 🔥 🔥</div>
+      <h3 style="margin: 8px 0;">"Your funnel, your leads, your commissions – starting now"</h3>
+      <div style="background:#2c3e50; border-radius: 20px; padding: 12px; margin: 18px 0; color:white;">
+        <p style="font-weight:700;">⚡ Includes Component #8:</p>
+        <p>🚀 99 days of done‑for‑you email traffic from John’s list of 127,000+ subscribers</p>
+      </div>
+      <div class="value-tag" style="background:#ffd966;">🎁 BONUS: 2nd webinar funnel + 99‑day email sequence (free during trial & beyond)</div>
+    </div>
+  </div>
+
+  <!-- WOW – what you get (short & massive value) -->
+  <div style="text-align: center; margin: 50px 0 20px;">
+    <h2 style="font-size: 2rem;">💎 Here's What Makes You Say "WOW, That Helps Me"</h2>
+    <p style="font-size: 1.2rem; max-width: 700px; margin: 12px auto;">Everything is pre‑built. You just plug in & profit. Test it FREE for 7 days.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><span class="value-tag">$5997 VALUE</span><h3>🎥 7‑Figure Webinar Funnel</h3><p>Setup in 7 min: registration, webinar, replay pages. Earn up to $3,493 per sale – no selling required.</p></div>
+    <div class="card"><span class="value-tag">$9990 VALUE</span><h3>📧 99 Days of Automated Emails</h3><p>Written by $100M copywriter. Converts on autopilot – zero writing.</p></div>
+    <div class="card"><span class="value-tag">$997 VALUE</span><h3>🔄 Recurring Subscription Offers</h3><p>$99/month per member – passive income while you sleep.</p></div>
+    <div class="card"><span class="value-tag">$997 VALUE</span><h3>🚀 Traffic Trifecta Training</h3><p>1,000 visitors in 30 days – simple roadmap.</p></div>
+    <div class="card"><span class="value-tag">$4997 VALUE</span><h3>🤝 Done‑For‑You Affiliate Program</h3><p>JV page recruits affiliates – earn 50% of their profits.</p></div>
+    <div class="card"><span class="value-tag">$1997 VALUE</span><h3>🏆 2‑Tier Commissions (Lifetime)</h3><p>Get 50% from your referrals’ efforts – hands‑free income.</p></div>
+    <div class="card"><span class="value-tag">$1997 VALUE</span><h3>🔗 Hard Coded Members Area</h3><p>Earn commissions on future offers up to $2,498 per upsell.</p></div>
+    <div class="card"><span class="value-tag">$997 VALUE</span><h3>📨 Done‑For‑You Email Traffic</h3><p>First 99 days: traffic from 127k+ list – leads without ads.</p></div>
+  </div>
+
+  <!-- ACTION TAKER BONUS (urgent) -->
+  <div class="card" style="background: linear-gradient(115deg, #fff0e0, #ffffff); border: 2px solid #f7b32b; text-align: center;">
+    <span class="badge" style="background:#e63946; color:white; padding:6px 16px; border-radius:40px;">🎁 ACT NOW – FREE BONUS</span>
+    <h3 style="margin: 12px 0;">2nd Done‑For‑You Webinar Funnel + Full 99‑Day Follow‑Up</h3>
+    <p>Content-packed 4‑day workshop ready to run → collect leads & earn more. <strong>Value $5,000+ – Yours FREE during trial & if you continue.</strong></p>
+  </div>
+
+  <!-- GUARANTEE + mission short -->
+  <div class="guarantee-badge" style="margin: 28px 0;">
+    <h3>✅ 365 DAY ACTION TAKER GUARANTEE + FREE TRIAL</h3>
+    <p>Try the entire system for 7 days – zero cost. Cancel anytime with one click. If you continue and don't get results within 365 days, full refund. The only way to lose is to do nothing.</p>
+    <p style="margin-top: 10px;"><strong>— John Thornhill, 8-Time ClickBank Platinum Award Vendor</strong></p>
+  </div>
+
+  <!-- simple mission statement -->
+  <div style="background:#1a2a3a; border-radius: 28px; padding: 28px; color: white; margin: 20px 0;">
+    <h3 style="color:#ffd966;">🤝 My Mission: Your Success = My Success</h3>
+    <p>You are not buying a program – you're stepping into a real partnership. I guide you, support you, and give you proven systems. Let’s win together.</p>
+  </div>
+
+  <!-- PRICING: FREE TRIAL + THEN SIMPLE PRICE -->
+  <h2 style="text-align: center; margin: 48px 0 20px;">Start FREE. Continue Only If You Love It. 👇</h2>
+  <div style="max-width: 700px; margin: 0 auto;">
+    <div class="price-box" style="background: #fff7ef;">
+      <span class="trial-highlight" style="background:#e67e22; color:white;">🔥 7 DAYS COMPLETELY FREE – NO HIDDEN FEES 🔥</span>
+      <h3 style="font-size: 2rem; margin: 16px 0 8px;">$0 for the first 7 days</h3>
+      <p style="font-size: 1.1rem;">Then just <strong>$497 one-time</strong> (or $97/month payment plan available after trial).</p>
+      <p style="margin: 12px 0; font-weight: 500;">✅ Cancel online anytime during trial – you pay $0.</p>
+      <button class="btn-primary js-trigger-modal" style="max-width: 320px; margin: 16px auto 0;">🎯 START MY 7-DAY FREE TRIAL →</button>
+      <p class="cancel-note">✔️ No commitment ✔️ Full access for 7 days ✔️ Cancel with 1 click</p>
+    </div>
+  </div>
+
+  <!-- Short FAQ (no overwhelm) + final reminder -->
+  <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; margin: 50px 0 20px;">
+    <div style="flex:1;"><strong>❓ Can I really cancel anytime?</strong><br>Yes. During trial or later, one-click cancellation. No hassle.</div>
+    <div style="flex:1;"><strong>❓ What happens after the free trial?</strong><br>You get charged only if you decide to continue – $497 one-time or payment plan.</div>
+    <div style="flex:1;"><strong>❓ Do I need tech skills?</strong><br>7-minute setup, no coding. Everything done-for-you.</div>
+    <div style="flex:1;"><strong>❓ Is there traffic included?</strong><br>Yes – 99 days of email traffic from 127k+ list + training.</div>
+  </div>
+
+  <!-- final quote from john -->
+  <div class="card" style="background:#fef2e6; text-align: center;">
+    <p style="font-size: 1.2rem; font-weight: 600;">“Stop struggling with funnels, emails, and traffic. I’ve built the entire system for you. Try it 7 days FREE – you have nothing to lose and a real income stream to gain.”</p>
+    <p>— John Thornhill</p>
+    <button class="btn-primary js-trigger-modal" style="margin-top: 18px; max-width: 280px;">🔥 Claim My Free Trial Now</button>
+  </div>
+
+  <div class="footer-links">
+    <p>© The Ambassador Program. All Rights Reserved. | ClickBank is the retailer. Earnings disclaimer: results vary based on effort.</p>
+    <p>This site is not part of Google/Facebook. 256-bit secure encryption. Cancel anytime during free trial or after – no questions.</p>
+    <p><a href="#" style="color:#4a5b6e;">Support</a> | <a href="#" style="color:#4a5b6e;">Terms</a> | <a href="#" style="color:#4a5b6e;">Privacy</a> | <a href="#" style="color:#4a5b6e;">Cancel Policy</a></p>
+  </div>
+</div>
+
+<!-- MODAL (EMAIL COLLECTION POPUP FOR FREE TRIAL) -->
+<div id="emailModal" class="modal-overlay">
+  <div class="modal-card">
+    <button class="close-modal" id="closeModalBtn">&times;</button>
+    <h3>🎁 Start Your 7-Day Free Trial</h3>
+    <p>Enter your email below to unlock instant access to The Ambassador Program – including the funnel, emails, traffic & bonuses. No charge for 7 days.</p>
+    <form method="post" action="https://www.sendsteed.com/subscribe/" class="modal-email-form" id="ambassadorEmailForm">
+      <input type="email" name="e123432" placeholder="your@email.com" required autocomplete="email">
+      <input type="hidden" name="lllid" value="123432">
+      <input type="hidden" name="lluid" value="sandyarta">
+      <input type="hidden" name="redirect" value="">
+      <input type="hidden" name="source" value="ambassadornew">
+      <button type="submit" id="submitEmailBtn">✅ START MY FREE TRIAL →</button>
+    </form>
+    <p style="font-size: 0.75rem; margin-top: 16px;">We'll send login details & funnel links immediately. Cancel anytime – you won't be charged a cent during trial.</p>
+    <p style="font-size: 0.7rem;">🔒 Your data is safe. 365-day guarantee after trial.</p>
+  </div>
+</div>
+
+<!-- sticky CTA for mobile/desktop -->
+<button class="sticky-cta js-trigger-modal">⚡ 7-Day Free Trial →</button>
+
+<script>
+  // MODAL LOGIC
+  const modal = document.getElementById('emailModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const triggerBtns = document.querySelectorAll('.js-trigger-modal');
+
+  function openModal() {
+    modal.classList.add('active');
+  }
+
+  triggerBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.remove('active');
+  });
+
+  // HANDLE EMAIL SUBMISSION WITH FETCH (smooth, no redirect)
+  const emailForm = document.getElementById('ambassadorEmailForm');
+  if (emailForm) {
+    emailForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailInput = emailForm.querySelector('input[name="e123432"]');
+      const email = emailInput.value.trim();
+      if (!email) return;
+
+      const formData = new FormData(emailForm);
+      try {
+        await fetch('https://www.sendsteed.com/subscribe/', {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        });
+        modal.classList.remove('active');
+        // success message
+        const successMsg = document.createElement('div');
+        successMsg.innerText = '🎉 Welcome! Check your email for instant access & trial details.';
+        successMsg.style.position = 'fixed';
+        successMsg.style.bottom = '30px';
+        successMsg.style.left = '50%';
+        successMsg.style.transform = 'translateX(-50%)';
+        successMsg.style.backgroundColor = '#1e7b48';
+        successMsg.style.color = 'white';
+        successMsg.style.padding = '14px 28px';
+        successMsg.style.borderRadius = '60px';
+        successMsg.style.fontWeight = 'bold';
+        successMsg.style.zIndex = '9999';
+        document.body.appendChild(successMsg);
+        setTimeout(() => successMsg.remove(), 5000);
+        emailForm.reset();
+      } catch (err) {
+        // fallback submit if fetch fails
+        emailForm.submit();
+      }
+    });
+  }
+</script>
+</body>
+</html>
