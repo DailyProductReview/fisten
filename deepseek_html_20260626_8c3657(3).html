@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watching – Start Earning $100/Day</title>
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a0f1e;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* ===== MAIN CARD ===== */
+        .container {
+            background: linear-gradient(145deg, #111827, #0f1629);
+            max-width: 720px;
+            width: 100%;
+            padding: 50px 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(239, 68, 68, 0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== ROTER AKZENT-STREIFEN (PSYCHO-EFFEKT) ===== */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ef4444, #dc2626, #ef4444);
+            background-size: 200% 100%;
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* ===== BADGE ===== */
+        .badge {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 50px;
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* ===== H1 ===== */
+        h1 {
+            font-size: 38px;
+            font-weight: 900;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .h1-highlight {
+            color: #f87171;
+            background: linear-gradient(135deg, #ef4444, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== UNTERZEILE ===== */
+        .subtitle {
+            font-size: 18px;
+            color: #94a3b8;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .subtitle strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* ===== BULLETS ===== */
+        .bullets {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+            text-align: left;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bullet {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #e2e8f0;
+            font-size: 15px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px 18px;
+            border-radius: 12px;
+            border-left: 3px solid #ef4444;
+            transition: all 0.3s ease;
+        }
+
+        .bullet:hover {
+            background: rgba(239, 68, 68, 0.08);
+            border-left-color: #f97316;
+            transform: translateX(4px);
+        }
+
+        .bullet-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* ===== SOZIALER BEWEIS (FOMO) ===== */
+        .social-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .social-proof .avatars {
+            display: flex;
+        }
+
+        .social-proof .avatars span {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 2px solid #111827;
+            margin-right: -8px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .social-proof .avatars span:last-child {
+            margin-right: 0;
+        }
+
+        .social-proof .avatars .more {
+            background: #475569;
+            font-size: 12px;
+        }
+
+        .social-proof .text {
+            color: #94a3b8;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .social-proof .text strong {
+            color: #f87171;
+        }
+
+        /* ===== FORMULAR (AUSGETAUSCHT) ===== */
+        .form-wrapper {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-wrapper:focus-within {
+            border-color: rgba(239, 68, 68, 0.5);
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.08);
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* NEU: input type="text" (wie im Wunsch-Code) */
+        form input[type="text"] {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            min-width: 0;
+        }
+
+        form input[type="text"]::placeholder {
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        form input[type="text"]:focus {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Button bleibt im Stil */
+        form button {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: #ffffff;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 20px rgba(239, 68, 68, 0.35);
+            flex-shrink: 0;
+        }
+
+        form button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 35px rgba(239, 68, 68, 0.5);
+            background: linear-gradient(135deg, #f97316, #ef4444);
+        }
+
+        form button:active {
+            transform: scale(0.97);
+        }
+
+        /* ===== SICHERHEITSTEXT ===== */
+        .security {
+            font-size: 12px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .security span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .security .icon {
+            font-size: 14px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+
+            .bullet {
+                font-size: 13px;
+                padding: 10px 14px;
+            }
+
+            form {
+                flex-direction: column;
+            }
+
+            form input[type="text"] {
+                width: 100%;
+                text-align: center;
+                padding: 14px 16px;
+                font-size: 15px;
+            }
+
+            form button {
+                width: 100%;
+                justify-content: center;
+                padding: 14px;
+                font-size: 15px;
+            }
+
+            .form-wrapper {
+                padding: 4px;
+            }
+
+            .social-proof .text {
+                font-size: 12px;
+            }
+
+            .security {
+                font-size: 10px;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 20px 14px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .badge {
+                font-size: 10px;
+                padding: 4px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HAUPT-CONTAINER ===== -->
+    <div class="container">
+
+        <!-- Badge -->
+        <div class="badge">🔥 LIMITED SPOTS</div>
+
+        <!-- H1 -->
+        <h1>
+            Stop Watching – <br>
+            <span class="h1-highlight">Get Your First $100</span><br>
+            Within 24 Hours
+        </h1>
+
+        <!-- Unterzeile -->
+        <p class="subtitle">
+            <strong>Zero followers. Zero tech skills. Zero cost.</strong><br>
+            Just high-converting affiliate offers that pay beginners instantly.
+        </p>
+
+        <!-- Bullets -->
+        <div class="bullets">
+            <div class="bullet">
+                <span class="bullet-icon">⚡</span>
+                Copy & paste links – start in <strong>5 minutes</strong>
+            </div>
+            <div class="bullet">
+                <span class="bullet-icon">💰</span>
+                $100+ per day – <strong>real proof</strong> inside
+            </div>
+            <div class="bullet">
+                <span class="bullet-icon">🧠</span>
+                No experience? <strong>We hold your hand</strong>
+            </div>
+        </div>
+
+        <!-- Sozialer Beweis -->
+        <div class="social-proof">
+            <div class="avatars">
+                <span>M</span>
+                <span>S</span>
+                <span>J</span>
+                <span>L</span>
+                <span class="more">+</span>
+            </div>
+            <div class="text">
+                <strong>1.200+ beginners</strong> already pocketed $100+ today
+            </div>
+        </div>
+
+        <!-- ===== FORMULAR (AUSGETAUSCHT) ===== -->
+        <div class="form-wrapper">
+            <form method="post" action="https://www.sendsteed.com/subscribe/">
+                <input name="e127564" required="" type="text" placeholder="your@email.com">
+                <input type="hidden" name="lllid" value="127564">
+                <input type="hidden" name="lluid" value="sandyarta">
+                <input type="hidden" name="redirect" value="">
+                <input type="hidden" name="source" value="">
+                <button type="submit">👉 SEND ME THE SYSTEM</button>
+            </form>
+        </div>
+
+        <!-- Sicherheitstext -->
+        <div class="security">
+            <span><span class="icon">🔒</span> No spam</span>
+            <span><span class="icon">✉️</span> Unsubscribe anytime</span>
+            <span><span class="icon">✅</span> 24h commission guarantee</span>
+        </div>
+    </div>
+
+</body>
+</html>
