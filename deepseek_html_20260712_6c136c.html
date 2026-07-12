@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Leads Easy · Best Lead Generation Offers</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(ellipse at 50% 0%, #0f2b3d 0%, #05131f 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            padding: 1.5rem;
+        }
+
+        .landing-card {
+            max-width: 1400px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+            border-radius: 3.5rem;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 215, 0, 0.06);
+        }
+
+        /* header */
+        .main-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .main-header h1 {
+            font-size: 3.6rem;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+            line-height: 1.1;
+        }
+
+        .main-header h1 .highlight {
+            background: linear-gradient(135deg, #f6d365, #fda085, #f6d365);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .sub-headline {
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            margin-top: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .sub-headline i {
+            margin-right: 10px;
+            color: #fbbf24;
+        }
+
+        .sub-headline .badge {
+            background: rgba(251, 191, 36, 0.15);
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #fbbf24;
+            margin-left: 8px;
+            border: 1px solid rgba(251, 191, 36, 0.15);
+        }
+
+        /* three columns */
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .program-item {
+            background: rgba(10, 25, 40, 0.7);
+            backdrop-filter: blur(6px);
+            border-radius: 2.2rem;
+            padding: 2rem 1.5rem 2.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 12px 30px -8px rgba(0,0,0,0.6);
+            height: 100%;
+        }
+
+        .program-item:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+            border-color: rgba(255, 215, 0, 0.2);
+            background: rgba(15, 35, 55, 0.8);
+        }
+
+        /* image wrapper – fixed 125x125 but responsive */
+        .image-wrapper {
+            width: 100%;
+            max-width: 160px;
+            aspect-ratio: 1 / 1;
+            background: #0a1a2a;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            margin-bottom: 1.4rem;
+            border: 2px solid rgba(255, 215, 0, 0.08);
+            transition: border-color 0.3s;
+        }
+
+        .program-item:hover .image-wrapper {
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            background: #0d1f30;
+            padding: 2px;
+        }
+
+        .program-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            background: rgba(255, 215, 100, 0.12);
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            color: #fcd34d;
+            margin-bottom: 0.4rem;
+            border: 1px solid rgba(255, 215, 100, 0.08);
+            font-weight: 600;
+        }
+
+        .program-title {
+            color: #f1f5f9;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.2px;
+        }
+
+        .program-desc {
+            color: #b3c7e0;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+            opacity: 0.9;
+            padding: 0 0.2rem;
+            min-height: 2.8rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #f6b868, #f58a4c);
+            border: none;
+            padding: 0.85rem 2rem;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #0b1a2a;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 24px rgba(245, 138, 76, 0.3);
+            transition: all 0.25s ease;
+            margin-top: 0.2rem;
+            width: 100%;
+            max-width: 210px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cta-button i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #fcc47a, #f97c3f);
+            box-shadow: 0 10px 32px #f58a4ccc;
+            transform: scale(1.04);
+            color: #05131f;
+        }
+
+        .cta-button:active {
+            transform: scale(0.96);
+        }
+
+        /* Trust / passive income row */
+        .passive-note {
+            margin-top: 2.8rem;
+            text-align: center;
+            color: #a3bbd6;
+            font-size: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem 2rem;
+        }
+
+        .passive-note i {
+            color: #fbbf24;
+            margin-right: 6px;
+        }
+
+        .passive-note strong {
+            color: #fcd34d;
+            font-weight: 700;
+        }
+
+        .badge-pill {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.3rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 215, 0, 0.08);
+        }
+
+        .badge-pill i {
+            color: #4ade80;
+        }
+
+        @media (max-width: 850px) {
+            .landing-card {
+                padding: 2rem 1.2rem;
+            }
+            .program-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-header h1 {
+                font-size: 2.5rem;
+            }
+            .image-wrapper {
+                max-width: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-header h1 {
+                font-size: 2rem;
+            }
+            .sub-headline {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+            }
+            .cta-button {
+                font-size: 1rem;
+                padding: 0.7rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="landing-card">
+
+    <!-- HEADER -->
+    <div class="main-header">
+        <h1>
+            <span class="highlight">Get Leads Easy</span> · Best <span class="highlight">Lead Generation</span> Offers
+        </h1>
+        <div class="sub-headline">
+            <i class="fas fa-bolt"></i> Turn visitors into buyers · Beginner friendly
+            <span class="badge"><i class="fas fa-rocket"></i> passive income</span>
+        </div>
+    </div>
+
+    <!-- 3 OFFERS -->
+    <div class="program-grid">
+
+        <!-- Offer 1: Twice Confirmed Traffic -->
+        <div class="program-item">
+            <div class="program-badge"><i class="fas fa-check-circle"></i>  #1 TRAFFIC</div>
+            <div class="program-title">Twice Confirmed</div>
+            <div class="program-desc">High-intent buyer traffic · double opt-in leads</div>
+            <div class="image-wrapper">
+                <img src="http://www.twiceconfirmedtraffic.com/img/banners/125x125-1.gif" alt="Twice Confirmed Traffic" loading="lazy">
+            </div>
+            <a href="https://www.twiceconfirmedtraffic.com/index.php?id=10214" target="_blank" rel="noopener noreferrer" class="cta-button">
+                <i class="fas fa-arrow-right"></i> Get Leads Now
+            </a>
+        </div>
+
+        <!-- Offer 2: Organic Prospects -->
+        <div class="program-item">
+            <div class="program-badge"><i class="fas fa-leaf"></i>  #2 ORGANIC</div>
+            <div class="program-title">Organic Prospects</div>
+            <div class="program-desc">Real organic traffic · high conversion rates</div>
+            <div class="image-wrapper">
+                <img src="http://www.organicprospects.com/design/images/banners/banner125x125.gif" alt="Organic Prospects" loading="lazy">
+            </div>
+            <a href="https://www.organicprospects.com/?ref=naturallyinshape" target="_blank" rel="noopener noreferrer" class="cta-button">
+                <i class="fas fa-arrow-right"></i> Get Leads Now
+            </a>
+        </div>
+
+        <!-- Offer 3: My Lead Gen Secret -->
+        <div class="program-item">
+            <div class="program-badge"><i class="fas fa-gem"></i>  #3 SECRET</div>
+            <div class="program-title">My Lead Gen Secret</div>
+            <div class="program-desc">Proven system · generate leads on autopilot</div>
+            <div class="image-wrapper">
+                <img src="https://www.myleadgensecret.com/design/banners/125x125.gif" alt="My Lead Gen Secret" loading="lazy">
+            </div>
+            <a href="https://www.myleadgensecret.com/sizzle/?rid=28382&src=new3erpage" target="_blank" rel="noopener noreferrer" class="cta-button">
+                <i class="fas fa-arrow-right"></i> Get Leads Now
+            </a>
+        </div>
+    </div>
+
+    <!-- TRUST / PASSIVE INCOME ROW -->
+    <div class="passive-note">
+        <span><i class="fas fa-check-circle"></i> 100% buyer traffic</span>
+        <span><i class="fas fa-users"></i> beginner → advanced</span>
+        <span class="badge-pill"><i class="fas fa-coins"></i> <strong>passive income</strong> · affiliate ready</span>
+        <span><i class="fas fa-external-link-alt"></i> all links open new tab</span>
+        <span><i class="fas fa-clock"></i> start earning today</span>
+    </div>
+
+</div>
+
+</body>
+</html>
