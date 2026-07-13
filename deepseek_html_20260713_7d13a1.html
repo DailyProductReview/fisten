@@ -150,7 +150,7 @@
       <i>⚡</i> Beim Laden der Seite wird automatisch ein zufälliger Link geöffnet.
     </div>
     <div style="margin-top: 0.7rem;">
-      <span class="badge">🔗 alle Links aus deiner Liste</span>
+      <span class="badge">🔗 alle Links aus deiner Liste (ohne WarriorPlus)</span>
     </div>
   </div>
   <div class="footer">
@@ -160,7 +160,7 @@
   <script>
     (function() {
       // --------------------------------------------------------------
-      // HIER DEINE LINKS – exakt so wie übergeben
+      // LINKS – OHNE WARRIORPLUS (nur die übrigen)
       // --------------------------------------------------------------
       const linkList = [
         "https://hop.clickbank.net/?affiliate=verborgene&vendor=ambsador&cbpage=ambassador-trial&traffic_source=sendsharkrotator",
@@ -176,22 +176,6 @@
         "https://1f18dnnprh4buim6o2q97osa2w.hop.clickbank.net/?&traffic_source=sendshark",
         "https://herculist.com/members/trafficbomb.cgi?naturallyinshape",
         "https://www.herculist.com/members/legends.cgi?naturallyinshape",
-        "https://warriorplus.com/o2/a/x9jvz9/0/sendshark",
-        "https://warriorplus.com/o2/a/vggwrz/0/sendshark",
-        "https://warriorplus.com/o2/a/j3m5j0/0/sendshark",
-        "https://warriorplus.com/o2/a/nv17rw1/0/sendshark",
-        "https://warriorplus.com/o2/a/b30zsh/0/sendshark",
-        "https://warriorplus.com/o2/a/q5h67kh/0/sendshark",
-        "https://warriorplus.com/o2/a/ml0gj3t/0/sendshark",
-        "https://warriorplus.com/o2/a/npfyn0h/0/sendshark",
-        "https://warriorplus.com/o2/a/k4j51n4/0/sendshark",
-        "https://warriorplus.com/o2/a/lkw88q0/0/sendshark",
-        "https://warriorplus.com/o2/a/pwzfsvr/0/sendshark",
-        "https://warriorplus.com/o2/a/yxf1kwg/0/sendshark",
-        "https://warriorplus.com/o2/a/mc0qk6w/0/sendshark",
-        "https://warriorplus.com/o2/a/sv9xxmw/0/sendshark",
-        "https://warriorplus.com/o2/a/pvkx6gb/0/sendshark",
-        "https://warriorplus.com/o2/a/qdhhd35/0/sendshark",
         "https://8e5ecfsqflv1kju1of-o48-92p.hop.clickbank.net/?&traffic_source=sendshark",
         "https://779d1qjdia02p7ta0gg66n4oba.hop.clickbank.net/?&traffic_source=sendshark"
       ];
@@ -223,7 +207,6 @@
         if (link) {
           window.location.href = link;
         } else {
-          // Fallback: falls keine Links vorhanden (sollte nicht passieren)
           alert('⚠️ Keine Links im Rotator. Bitte Liste prüfen.');
         }
       }
@@ -231,18 +214,14 @@
       // --------------------------------------------------------------
       // AUTOMATISCHER START: beim Seitenbesuch sofort weiterleiten
       // --------------------------------------------------------------
-      // kleines Delay, damit die Seite sich kurz aufbaut (optional)
-      // aber "sofort" im Sinne der Aufgabe: beim Laden wird weitergeleitet
       window.addEventListener('load', function() {
-        // kurzer Timeout (0ms) um sicherzustellen, dass der Browser 
-        // den Seiteninhalt nicht blockiert – aber es passiert quasi sofort.
         setTimeout(function() {
           redirectToRandomLink();
         }, 0);
       });
 
       // --------------------------------------------------------------
-      // MANUELLER BUTTON (für Tests / falls jemand klickt)
+      // MANUELLER BUTTON
       // --------------------------------------------------------------
       const manualBtn = document.getElementById('manualRotateBtn');
       if (manualBtn) {
@@ -252,12 +231,7 @@
         });
       }
 
-      // --------------------------------------------------------------
-      // (OPTIONAL) falls der Benutzer die Seite mit Zurück-Taste 
-      // wieder erreicht, kann erneut ein zufälliger Link geöffnet werden.
-      // Aber das ist bereits durch das load-Event abgedeckt.
-      // --------------------------------------------------------------
-      console.log('✅ Link-Rotator initialisiert – ' + linkList.length + ' Links geladen.');
+      console.log('✅ Link-Rotator ohne WarriorPlus – ' + linkList.length + ' Links geladen.');
     })();
   </script>
 </body>
