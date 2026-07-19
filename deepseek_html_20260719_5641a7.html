@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Traffic Bomb · Build your Buyers List</title>
+  <style>
+    /* global reset & typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #0a0f1a 0%, #1a0a2e 100%);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* main container – centered, fits viewport */
+    .landing {
+      max-width: 1200px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 56px 56px 48px 48px;
+      padding: 28px 24px 30px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.9), inset 0 1px 2px rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-height: 98vh;
+      max-height: 98dvh;
+      overflow: hidden;
+    }
+
+    /* headline – centered, new title color: explosive orange-red */
+    .headline {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .headline h1 {
+      font-size: clamp(2.2rem, 8vw, 3.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ff6b35, #ff2e63, #ff6b35);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 4px 30px rgba(255, 43, 43, 0.3);
+      line-height: 1.1;
+      margin-bottom: 6px;
+      animation: shimmer 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 30%; }
+      100% { background-position: 100% 70%; }
+    }
+
+    .subhead {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 500;
+      color: #c4b0e6;
+      letter-spacing: 0.4px;
+      background: rgba(10, 5, 20, 0.6);
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 80px;
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255, 107, 53, 0.25);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      margin-top: 4px;
+    }
+
+    .subhead span {
+      color: #ff6b35;
+      font-weight: 600;
+    }
+
+    /* grid – 3 columns, equal height, centered */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-content: center;
+      align-items: stretch;
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    /* cards – uniform, fully visible images */
+    .card {
+      background: rgba(20, 10, 35, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 32px;
+      padding: 20px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 1px solid rgba(255, 107, 53, 0.08);
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.8);
+      transition: transform 0.15s ease, box-shadow 0.2s;
+      height: 100%;
+      min-height: 260px;
+      justify-content: flex-start;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 32px -12px #000000cc;
+      border-color: rgba(255, 107, 53, 0.3);
+    }
+
+    /* images – exactly same size, fully visible, object-fit: contain */
+    .card img {
+      width: 100%;
+      max-width: 200px;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #0a0515;
+      border-radius: 20px;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.8), 0 8px 16px -6px #00000088;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: filter 0.2s;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .card img:hover {
+      filter: brightness(1.08) contrast(1.02);
+    }
+
+    /* NEW BUTTON STYLE – explosive gradient, neon glow */
+    .card .btn {
+      margin-top: 18px;
+      width: 100%;
+      padding: 12px 8px;
+      background: linear-gradient(135deg, #ff2e63, #ff6b35);
+      border: none;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      letter-spacing: 0.5px;
+      box-shadow: 0 6px 0 #991f3a, 0 0 20px rgba(255, 43, 43, 0.3);
+      transition: all 0.08s linear;
+      cursor: pointer;
+      border: 1px solid rgba(255, 200, 100, 0.2);
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+      font-family: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card .btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .card .btn:hover::after {
+      opacity: 1;
+    }
+
+    .card .btn:active {
+      transform: translateY(6px);
+      box-shadow: 0 1px 0 #991f3a, 0 0 30px rgba(255, 43, 43, 0.5);
+    }
+
+    .card .btn:hover {
+      background: linear-gradient(135deg, #ff4757, #ff7a45);
+      box-shadow: 0 6px 0 #991f3a, 0 0 30px rgba(255, 43, 43, 0.4);
+      transform: scale(1.02);
+    }
+
+    /* footer note – centered */
+    .footer-note {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 0.7rem;
+      color: #7a6b8f;
+      letter-spacing: 0.3px;
+      opacity: 0.6;
+      border-top: 1px solid rgba(255, 107, 53, 0.05);
+      padding-top: 12px;
+    }
+
+    /* responsive adjustments */
+    @media (max-width: 780px) {
+      .landing {
+        padding: 18px 12px 20px;
+        border-radius: 32px;
+      }
+      .grid {
+        gap: 14px;
+      }
+      .card {
+        padding: 14px 10px 16px;
+        min-height: 200px;
+      }
+      .card img {
+        max-width: 140px;
+      }
+      .card .btn {
+        font-size: 0.9rem;
+        padding: 10px 6px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .grid {
+        gap: 8px;
+      }
+      .card img {
+        max-width: 100px;
+      }
+      .card .btn {
+        font-size: 0.7rem;
+        padding: 8px 4px;
+        margin-top: 12px;
+      }
+      .headline h1 {
+        font-size: 1.9rem;
+      }
+      .subhead {
+        font-size: 0.7rem;
+        padding: 4px 14px;
+      }
+      .landing {
+        padding: 14px 6px 16px;
+        border-radius: 28px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .grid {
+        gap: 6px;
+      }
+      .card {
+        padding: 10px 4px 12px;
+        border-radius: 20px;
+        min-height: 140px;
+      }
+      .card img {
+        max-width: 70px;
+        border-radius: 14px;
+      }
+      .card .btn {
+        font-size: 0.6rem;
+        padding: 6px 2px;
+        margin-top: 8px;
+        border-radius: 40px;
+      }
+      .headline h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    html, body {
+      overflow: hidden;
+      height: 100%;
+      height: 100dvh;
+    }
+
+    .landing {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="landing">
+    <!-- Headline – new title: Traffic Bomb -->
+    <div class="headline">
+      <h1>💥 Traffic Bomb<br>Build your Buyers List</h1>
+      <div class="subhead">
+        <span>·</span> For beginners &amp; advanced <span>·</span> Affiliate <span>·</span> passive income
+      </div>
+    </div>
+
+    <!-- Grid with 3 cards – new products -->
+    <div class="grid">
+      <!-- Card 1 – WarriorPlus product -->
+      <div class="card">
+        <img src="https://warriorplus.com/assets/user/listing_image/o-74742-prod_image.jpg?v=1720610974" alt="Traffic Bomb 1" loading="lazy" />
+        <a href="https://warriorplus.com/o2/a/bc0th0x/0" target="_blank" rel="noopener noreferrer" class="btn">💣 Grab Now</a>
+      </div>
+      <!-- Card 2 – Herculist product (webp image) -->
+      <div class="card">
+        <img src="https://herculist.com/images/bomb3.webp" alt="Traffic Bomb 2" loading="lazy" />
+        <a href="https://herculist.com/members/trafficbomb.cgi?naturallyinshape" target="_blank" rel="noopener noreferrer" class="btn">💣 Grab Now</a>
+      </div>
+      <!-- Card 3 – WarriorPlus product (PNG) -->
+      <div class="card">
+        <img src="https://warriorplus.com/assets/user/listing_image/o-88244-prod_image.png?v=1764533911" alt="Traffic Bomb 3" loading="lazy" />
+        <a href="https://warriorplus.com/o2/a/jxwxp06/0" target="_blank" rel="noopener noreferrer" class="btn">💣 Grab Now</a>
+      </div>
+    </div>
+
+    <!-- footer note -->
+    <div class="footer-note">
+      <span>⚡️ All products at a glance – no scrolling needed</span>
+    </div>
+  </div>
+</body>
+</html>
