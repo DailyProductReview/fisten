@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Rotator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 550px;
+            width: 90%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            margin-top: 5px;
+        }
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .url-list {
+            margin-top: 20px;
+            text-align: left;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #555;
+            max-height: 220px;
+            overflow-y: auto;
+        }
+        .url-list li {
+            margin: 4px 0;
+            word-break: break-all;
+            padding: 2px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .url-list li:last-child {
+            border-bottom: none;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .count {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .badge {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #1a73e8;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Link Rotator</h1>
+        <div class="spinner"></div>
+        <p>Sie werden in Kürze zu einer zufälligen Seite weitergeleitet...</p>
+        <div class="url-list">
+            <strong>Verfügbare Links (<span class="count" id="linkCount">6</span>):</strong>
+            <ul id="linkList">
+                <!-- wird per JavaScript befüllt -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // -------------------------------------------------------------
+        // DEINE LINKS (exakt wie vorgegeben)
+        // -------------------------------------------------------------
+        const urls = [
+            "https://freeads4life.com/index.php?r=fister",
+            "https://mailthislist.com/?rid=30605",
+            "https://trafficzest.com/?rft1=d485d4b7-8a1d-468e-a797-b155d76e8f74",
+            "https://udimi.com/a/jtnuq",
+            "https://mastersafelistblaster.com/5598",
+            "https://sendsteed.com/?r=sandyarta"
+        ];
+
+        // -------------------------------------------------------------
+        // 1. Link-Liste im HTML anzeigen (für Transparenz)
+        // -------------------------------------------------------------
+        const linkList = document.getElementById('linkList');
+        const linkCount = document.getElementById('linkCount');
+
+        if (linkList) {
+            linkList.innerHTML = '';
+            urls.forEach((url, index) => {
+                const li = document.createElement('li');
+                // Kurze Darstellung: nur Hostname + kurzer Pfad
+                let displayName = url;
+                try {
+                    const urlObj = new URL(url);
+                    let path = urlObj.pathname;
+                    if (path.length > 20) {
+                        path = path.slice(0, 18) + '…';
+                    }
+                    displayName = urlObj.hostname + path;
+                    // Bei zu langen Hostnamen kürzen
+                    if (displayName.length > 45) {
+                        displayName = displayName.slice(0, 42) + '…';
+                    }
+                } catch (e) {
+                    displayName = url.slice(0, 45) + '…';
+                }
+                li.textContent = `${index+1}. ${displayName}`;
+                li.title = url; // vollständige URL als Tooltip
+                linkList.appendChild(li);
+            });
+        }
+
+        if (linkCount) {
+            linkCount.textContent = urls.length;
+        }
+
+        // -------------------------------------------------------------
+        // 2. Sofortige Zufalls-Weiterleitung
+        // -------------------------------------------------------------
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        const targetUrl = urls[randomIndex];
+
+        // Kurze Verzögerung (800ms) damit der Spinner sichtbar wird
+        setTimeout(() => {
+            window.location.href = targetUrl;
+        }, 800);
+    </script>
+</body>
+</html>
