@@ -5,70 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>⚡ Rotator · Dark Redirect</title>
   <style>
-    /* DARK MODE – sofortige Dunkelheit */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
     html, body {
-      width: 100%;
-      height: 100%;
-      background: #0a0b0e;
-      color: #eee;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width:100%; height:100%;
+      background:#0a0b0e;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
-    body {
-      background: radial-gradient(circle at 30% 40%, #14161c, #08090c 90%);
-    }
+    body { background:radial-gradient(circle at 30% 40%, #14161c, #08090c 90%); }
     .loader {
-      text-align: center;
-      padding: 2rem;
-      border-radius: 2rem;
-      backdrop-filter: blur(2px);
-      background: rgba(12, 14, 18, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.03);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-      max-width: 90vw;
-      pointer-events: none;
-      user-select: none;
+      text-align:center;
+      padding:2rem;
+      border-radius:2rem;
+      backdrop-filter:blur(2px);
+      background:rgba(12,14,18,0.5);
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 20px 50px rgba(0,0,0,0.8);
+      pointer-events:none;
+      user-select:none;
     }
     .spinner {
-      display: inline-block;
-      width: 48px;
-      height: 48px;
-      border: 4px solid rgba(255, 255, 255, 0.06);
-      border-top: 4px solid #8a8aff;
-      border-radius: 50%;
-      animation: spin 0.9s cubic-bezier(0.6, 0.0, 0.4, 1.0) infinite;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 0 20px rgba(100, 100, 255, 0.15);
+      width:48px; height:48px;
+      border:4px solid rgba(255,255,255,0.06);
+      border-top:4px solid #8a8aff;
+      border-radius:50%;
+      animation:spin 0.9s cubic-bezier(0.6,0,0.4,1) infinite;
+      margin:0 auto 1.2rem;
+      box-shadow:0 0 20px rgba(100,100,255,0.15);
     }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+    @keyframes spin { to { transform:rotate(360deg); } }
     .loader p {
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      opacity: 0.7;
-      font-size: 1.1rem;
-      background: linear-gradient(135deg, #b0b0ff, #e0e0ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 20px rgba(100, 100, 255, 0.2);
+      font-weight:300;
+      letter-spacing:0.04em;
+      opacity:0.7;
+      font-size:1.1rem;
+      background:linear-gradient(135deg,#b0b0ff,#e0e0ff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
     .loader small {
-      display: block;
-      margin-top: 0.7rem;
-      font-size: 0.7rem;
-      opacity: 0.2;
-      letter-spacing: 0.1em;
-      color: #aaa;
+      display:block;
+      margin-top:0.7rem;
+      font-size:0.7rem;
+      opacity:0.2;
+      letter-spacing:0.1em;
+      color:#aaa;
     }
   </style>
 </head>
@@ -78,37 +62,23 @@
     <p>weiterleitung …</p>
     <small>⚡ zufällige zielseite</small>
   </div>
-
   <script>
     (function(){
-      // ---------- NUR DIESE WARRIORPLUS-LINKS ----------
       const urls = [
         "https://warriorplus.com/o2/a/s36n37m/0",
         "https://warriorplus.com/o2/a/gps60c9/0",
         "https://warriorplus.com/o2/a/shnbv11/0",
         "https://warriorplus.com/o2/a/rjvdpfw/0",
-        "https://warriorplus.com/o2/a/rjvdpfw/0",   // Duplikat – bleibt wie gewünscht
+        "https://warriorplus.com/o2/a/rjvdpfw/0",
         "https://warriorplus.com/o2/a/bc6nqqs/0",
         "https://warriorplus.com/o2/a/bdk1g7x/0",
         "https://warriorplus.com/o2/a/x4mthn2/0",
         "https://warriorplus.com/o2/a/zbsq0gt/0"
       ];
-
-      // Zufälligen Index wählen
-      const randomIndex = Math.floor(Math.random() * urls.length);
-      const targetUrl = urls[randomIndex];
-
-      // Hintergrund sofort schwarz erzwingen (zusätzlich zu CSS)
+      const target = urls[Math.floor(Math.random() * urls.length)];
       document.documentElement.style.backgroundColor = '#08090c';
       document.body.style.backgroundColor = '#08090c';
-      document.body.style.background = '#08090c';
-
-      // Sofortige Weiterleitung (ohne Verzögerung)
-      window.location.replace(targetUrl);
-
-      // Fallback (falls replace aus irgendeinem Grund nicht feuert)
-      // wird in der Praxis nicht benötigt, aber sicherheitshalber
-      console.log('🔀 Rotator: Weiterleitung zu ', targetUrl);
+      window.location.replace(target);
     })();
   </script>
 </body>
