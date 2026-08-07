@@ -1,115 +1,561 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ Rotator · Dark Redirect</title>
-  <style>
-    /* DARK MODE – sofortige Dunkelheit */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-      width: 100%;
-      height: 100%;
-      background: #0a0b0e;
-      color: #eee;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    body {
-      background: radial-gradient(circle at 30% 40%, #14161c, #08090c 90%);
-    }
-    .loader {
-      text-align: center;
-      padding: 2rem;
-      border-radius: 2rem;
-      backdrop-filter: blur(2px);
-      background: rgba(12, 14, 18, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.03);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-      max-width: 90vw;
-      pointer-events: none;
-      user-select: none;
-    }
-    .spinner {
-      display: inline-block;
-      width: 48px;
-      height: 48px;
-      border: 4px solid rgba(255, 255, 255, 0.06);
-      border-top: 4px solid #8a8aff;
-      border-radius: 50%;
-      animation: spin 0.9s cubic-bezier(0.6, 0.0, 0.4, 1.0) infinite;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 0 20px rgba(100, 100, 255, 0.15);
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    .loader p {
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      opacity: 0.7;
-      font-size: 1.1rem;
-      background: linear-gradient(135deg, #b0b0ff, #e0e0ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 20px rgba(100, 100, 255, 0.2);
-    }
-    .loader small {
-      display: block;
-      margin-top: 0.7rem;
-      font-size: 0.7rem;
-      opacity: 0.2;
-      letter-spacing: 0.1em;
-      color: #aaa;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREE TRAINING - List Building</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: background 0.8s ease;
+        }
+
+        body {
+            background: #0b0e14;
+        }
+
+        .container {
+            max-width: 760px;
+            width: 100%;
+            padding: 50px 40px;
+            border-radius: 28px;
+            text-align: center;
+            transition: all 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-block;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 7px 22px;
+            border-radius: 50px;
+            margin-bottom: 22px;
+            transition: all 0.5s ease;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 14px;
+            transition: all 0.5s ease;
+        }
+
+        h1 .highlight {
+            transition: all 0.5s ease;
+        }
+
+        h2 {
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 32px;
+            padding: 0 10px;
+            opacity: 0.92;
+            transition: all 0.5s ease;
+        }
+
+        .timer-box {
+            border-radius: 16px;
+            padding: 16px 24px;
+            margin-bottom: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .timer-box .label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .timer-box .time {
+            font-size: 36px;
+            font-weight: 900;
+            transition: all 0.5s ease;
+        }
+
+        .form-box {
+            border-radius: 18px;
+            padding: 30px 24px 24px;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(6px);
+        }
+
+        .form-box table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .form-box td {
+            padding: 8px 6px;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: left;
+            transition: all 0.5s ease;
+        }
+
+        .form-box input[type="text"] {
+            width: 100%;
+            padding: 15px 18px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.15);
+            background: rgba(0,0,0,0.3);
+            font-size: 16px;
+            transition: all 0.4s ease;
+            color: #fff;
+        }
+
+        .form-box input[type="text"]:focus {
+            border-color: currentColor;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(255,255,255,0.08);
+            background: rgba(0,0,0,0.5);
+        }
+
+        .form-box input[type="text"]::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .form-box input[type="submit"] {
+            border: none;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            letter-spacing: 0.5px;
+            width: 100%;
+            margin-top: 8px;
+            text-transform: uppercase;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-box input[type="submit"]:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+
+        .form-box input[type="submit"]::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .host-section {
+            margin-top: 30px;
+            padding-top: 28px;
+            border-top: 2px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: left;
+            transition: all 0.5s ease;
+        }
+
+        .host-section .avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            flex-shrink: 0;
+            transition: all 0.5s ease;
+            color: #fff;
+        }
+
+        .host-section .info h4 {
+            font-size: 17px;
+            font-weight: 700;
+            transition: all 0.5s ease;
+        }
+
+        .host-section .info p {
+            font-size: 14px;
+            max-width: 440px;
+            line-height: 1.6;
+            opacity: 0.8;
+            transition: all 0.5s ease;
+        }
+
+        .host-section .info .highlight-text {
+            font-weight: 700;
+            transition: all 0.5s ease;
+        }
+
+        .footnote {
+            font-size: 13px;
+            margin-top: 22px;
+            opacity: 0.5;
+            letter-spacing: 0.5px;
+            transition: all 0.5s ease;
+        }
+
+        @media (max-width: 550px) {
+            .container {
+                padding: 28px 18px;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 16px;
+            }
+            .timer-box {
+                font-size: 20px;
+                padding: 12px 18px;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .timer-box .time {
+                font-size: 28px;
+            }
+            .form-box {
+                padding: 20px 12px 18px;
+            }
+            .form-box input[type="submit"] {
+                font-size: 18px;
+                padding: 15px 20px;
+            }
+            .host-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 20px;
+            }
+            .timer-box .time {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="loader">
-    <div class="spinner"></div>
-    <p>weiterleitung …</p>
-    <small>⚡ zufällige zielseite</small>
-  </div>
 
-  <script>
-    (function(){
-      // ---------- NUR DIESE WARRIORPLUS-LINKS ----------
-      const urls = [
-        "https://warriorplus.com/o2/a/s36n37m/0",
-        "https://warriorplus.com/o2/a/gps60c9/0",
-        "https://warriorplus.com/o2/a/shnbv11/0",
-        "https://warriorplus.com/o2/a/rjvdpfw/0",
-        "https://warriorplus.com/o2/a/rjvdpfw/0",   // Duplikat – bleibt wie gewünscht
-        "https://warriorplus.com/o2/a/bc6nqqs/0",
-        "https://warriorplus.com/o2/a/bdk1g7x/0",
-        "https://warriorplus.com/o2/a/x4mthn2/0",
-        "https://warriorplus.com/o2/a/zbsq0gt/0"
-      ];
+<div class="container" id="mainContainer">
 
-      // Zufälligen Index wählen
-      const randomIndex = Math.floor(Math.random() * urls.length);
-      const targetUrl = urls[randomIndex];
+    <div class="badge" id="badge">🔥 FREE TRAINING</div>
 
-      // Hintergrund sofort schwarz erzwingen (zusätzlich zu CSS)
-      document.documentElement.style.backgroundColor = '#08090c';
-      document.body.style.backgroundColor = '#08090c';
-      document.body.style.background = '#08090c';
+    <h1 id="headline">FREE TRAINING REVEALS...</h1>
+    <h2 id="subheadline">How To Get Paid To Build a List Fast - Even If You're Starting From Scratch</h2>
 
-      // Sofortige Weiterleitung (ohne Verzögerung)
-      window.location.replace(targetUrl);
+    <div class="timer-box" id="timerBox">
+        <span class="label">⏳ TIME LEFT</span>
+        <span class="time" id="timerDisplay">13:12</span>
+    </div>
 
-      // Fallback (falls replace aus irgendeinem Grund nicht feuert)
-      // wird in der Praxis nicht benötigt, aber sicherheitshalber
-      console.log('🔀 Rotator: Weiterleitung zu ', targetUrl);
-    })();
-  </script>
+    <!-- FORMULAR - NUR E-MAIL -->
+    <div class="form-box" id="formBox">
+        <form method="POST" action="https://gogvo.com/subscribe.php">
+            <input type="hidden" name="AffiliateName" value="natur1984NLS">
+            <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+            <input type="hidden" name="TrackParam" value="new_form">
+            <input type="hidden" name="FormId" value="25235157">
+
+            <table>
+                <tr>
+                    <td style="width:30%;"><label for="email">📧 Email</label></td>
+                    <td style="width:70%;"><input type="text" name="Email" id="email" placeholder="best@email.com" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center; padding-top:16px;">
+                        <input type="submit" value="👉 Register Now" id="submitBtn">
+                    </td>
+                </tr>
+            </table>
+            <img src="https://gogvo.com/show_form.php?id=25235157&TrackParam=new_form" alt="" style="display:none;">
+        </form>
+    </div>
+
+    <div class="host-section" id="hostSection">
+        <div class="avatar" id="avatar">JT</div>
+        <div class="info">
+            <h4 id="hostName">MEET YOUR HOST — <span class="highlight-text" id="hostHighlight">John Thornhill</span></h4>
+            <p id="hostBio">
+                <span class="highlight-text" id="bioHighlight1">ClickBank Platinum</span> seller with over 
+                <span class="highlight-text" id="bioHighlight2">$5 million</span> in personal profits. 
+                Since 2006, he's helped <span class="highlight-text" id="bioHighlight3">3,000+</span> entrepreneurs 
+                start or grow their online businesses.
+            </p>
+        </div>
+    </div>
+
+    <div class="footnote" id="footnote">⚡ Space is strictly limited. Each session fills up fast.</div>
+</div>
+
+<script>
+    // ============================================================
+    // 90 TITEL & UNTERTITEL
+    // ============================================================
+    const headlines = [
+        { titel: "Stop Wasting Months Chasing Freebie Seekers...", untertitel: "...And discover the \"Reverse Funnel\" that pays you high-ticket commissions before you even build your list." },
+        { titel: "Why Your Current List-Building Strategy Is Keeping You Broke.", untertitel: "Learn the 7-Minute Setup that flips the script to generate $1,000s in profit from day one." },
+        { titel: "Tired of Building a List for Free?", untertitel: "How to get paid high-ticket commissions *while* your email list grows on autopilot." },
+        { titel: "The \"Set & Forget\" List-Building Method.", untertitel: "How to bank $100s per sale without spending hours on funnels or social media." },
+        { titel: "Stop Struggling with Complicated Funnels.", untertitel: "Discover the done-for-you webinar system that converts viewers into buyers instantly." },
+        { titel: "Why Working Harder Isn't the Answer.", untertitel: "The secret to building a massive buyers list by working just 5-10 minutes a day." },
+        { titel: "Eliminate the \"Trial & Error\" Phase Forever.", untertitel: "Follow the exact blueprint that generated $500K for a complete beginner." },
+        { titel: "Don't Build a List Until You Watch This.", untertitel: "How to flip the model so you profit from day one instead of going broke." },
+        { titel: "The Lazy Way to Build a 6-Figure List.", untertitel: "Generate sales as an affiliate without creating products or writing emails." },
+        { titel: "No Time? No Problem.", untertitel: "How to set up a high-ticket affiliate system in around 7 minutes flat." },
+        { titel: "Broke Affiliate Marketers Do This One Thing Wrong...", untertitel: "...And how flipping your focus to \"Profit First\" can make you $1,000s per sale." },
+        { titel: "How To Get Paid to Build a List... Fast.", untertitel: "Even if you're starting from zero, bank your first high-ticket commission this week." },
+        { titel: "Free Training Reveals the \"$5 Million Blueprint\".", untertitel: "How John Thornhill used this system to net over $5M in personal profits." },
+        { titel: "Why 95% of Marketers Never See a Dime.", untertitel: "Avoid the \"Freebie Seeker\" trap and start attracting high-ticket buyers immediately." },
+        { titel: "Turn Your Inbox Into an ATM.", untertitel: "The surprising reason creating a product is the last thing you should do right now." },
+        { titel: "The $50,000 Facebook Post Strategy.", untertitel: "Case study: How one affiliate generated $50k with just 5 minutes of posting per week." },
+        { titel: "Stop Giving Away Your Value for Free.", untertitel: "Learn how to attract buyers who are ready to pay you $100s to $1,000s." },
+        { titel: "The \"Zero Ad Spend\" List Building Hack.", untertitel: "How to build a massive list and generate sales without wasting money on ads." },
+        { titel: "From Zero to $500K in Commissions.", untertitel: "The real-world case study you need to see before you build another funnel." },
+        { titel: "Why Most People Go Broke Building a List.", untertitel: "The 7-minute fix that ensures you profit from day one, not year three." },
+        { titel: "Is Affiliate Marketing Really Dead?", untertitel: "No. Discover the \"Platinum Seller\" secret that proves you can still bank $1,000s per sale." },
+        { titel: "Don't Buy Another Tool or Software.", untertitel: "See how we automate the high-ticket webinar process so you don't have to be a tech guru." },
+        { titel: "\"I Thought I Was Too Late...\"", untertitel: "How to start from scratch and get paid to build a list in 2026 (without a product)." },
+        { titel: "Forget Everything You Know About Funnels.", untertitel: "This \"Reverse\" model allows you to build a list while banking cash immediately." },
+        { titel: "Why Your Freebie Isn't Attracting Buyers.", untertitel: "The exact framework to use if you want high-ticket commissions on autopilot." },
+        { titel: "\"Can I Really Do This?\"", untertitel: "Yes. Even if you're a complete beginner, set this up in 7 minutes and get results." },
+        { titel: "The \"Too Good To Be True\" List Building Method.", untertitel: "It's not. See the ClickBank Platinum proof and the case studies." },
+        { titel: "Stop Guessing. Start Profiting.", untertitel: "Use the exact system that generated over $500K for a top affiliate." },
+        { titel: "The Worst Advice in Affiliate Marketing.", untertitel: "Why you should stop trying to sell cheap products and start selling high-ticket." },
+        { titel: "Revealed: The Secret That ClickBank Platinum Sellers Use.", untertitel: "How to build a list of buyers without creating a single product." },
+        { titel: "Get Paid TODAY Building Your List.", untertitel: "Learn the \"Day One\" profit model that flips the traditional list-building timeline." },
+        { titel: "The \"7-Minute\" List Building Setup.", untertitel: "Stop spending weeks on funnels. Start generating sales in hours." },
+        { titel: "Speed Up Your Success by 10x.", untertitel: "How to get high-ticket webinars done *for* you so you can sell faster." },
+        { titel: "Why Wait 6 Months to See Results?", untertitel: "Flip the model to see commissions in your first week—even with zero experience." },
+        { titel: "The Fastest Way to Build a Buyers List.", untertitel: "Use our done-for-you system to automate sales while you sleep." },
+        { titel: "Bank $1,000s in Your First Week.", untertitel: "The shocking reason most affiliates fail, and how this approach turns the tables." },
+        { titel: "Instant Access to a $5 Million Strategy.", untertitel: "Discover how to profit from day one instead of waiting for the \"long game.\"" },
+        { titel: "No More \"Months of Free Work\".", untertitel: "How to set up high-ticket commissions in 7 minutes and see cash flow immediately." },
+        { titel: "The \"Rapid Launch\" List Method.", untertitel: "Build your list while banking high-ticket commissions on autopilot." },
+        { titel: "Stop Dreaming, Start Earning.", untertitel: "The simple framework to get paid to build a list starting right now." },
+        { titel: "Learn From a 5x ClickBank Platinum Award Winner.", untertitel: "Join John Thornhill and discover how to build a list without the guesswork." },
+        { titel: "The $5 Million Dollar Question...", untertitel: "...Is your list building strategy actually costing you money? Find out here." },
+        { titel: "Trusted by 3,000+ Entrepreneurs Worldwide.", untertitel: "Use the blueprint that has helped others start their online businesses the right way." },
+        { titel: "Stop Buying \"Guru\" Courses.", untertitel: "Watch this free training and see how real affiliates generated $500K in commissions." },
+        { titel: "The \"No-Fail\" List Building Framework.", untertitel: "A guaranteed method to attract buyers (not freebie seekers) taught by a pro." },
+        { titel: "Why the \"Old\" Methods Are Dead.", untertitel: "Get the updated framework from a Platinum seller who's been winning since 2006." },
+        { titel: "The Science of High-Ticket Commissions.", untertitel: "How John Thornhill's system turns casual viewers into paying customers." },
+        { titel: "Avoid the \"Shiny Object\" Trap.", untertitel: "Follow the exact strategy that generated $50k with 5 minutes of work per week." },
+        { titel: "The Ultimate \"Done-For-You\" System.", untertitel: "How to leverage done-for-you webinars to sell as an affiliate with zero overhead." },
+        { titel: "Your Business Partner in a Box.", untertitel: "Get the training that shows you how to build a list while earning on autopilot." },
+        { titel: "Space Is Strictly Limited...", untertitel: "Register now before the session fills up and you miss this $5M list-building secret." },
+        { titel: "Last Chance to Register for the Live Session.", untertitel: "Learn the \"Profit First\" model before we close the doors to this free training." },
+        { titel: "13 Minutes Left to Register.", untertitel: "Don't miss the reveal of the \"Reverse Funnel\" that banks $1,000s per sale." },
+        { titel: "Exclusive Training Closing Soon.", untertitel: "How to get paid to build a list fast—even if you're starting from scratch." },
+        { titel: "Only 12 Seconds Left to Act...", untertitel: "Secure your spot to discover how to attract buyers without ads." },
+        { titel: "The Session Is Almost Full.", untertitel: "Register now to see the case study showing $500K in commissions." },
+        { titel: "Don't Be Late to the Session.", untertitel: "Capacity is limited. Learn the high-ticket secret before it's gone." },
+        { titel: "Thursday, 23rd July: The Date That Changes Everything.", untertitel: "Reserve your spot now for the training that pays for itself immediately." },
+        { titel: "4:45 PM MESZ: Your New Business Starts Here.", untertitel: "Don't miss the free training that reveals the \"7-Minute\" profit system." },
+        { titel: "One Session. One Opportunity.", untertitel: "Click register now to learn how to build a list and earn on autopilot." },
+        { titel: "Sick of Complicated Tech Setup?", untertitel: "How to get high-ticket webinars done *for* you in just 7 minutes." },
+        { titel: "The \"Plug & Play\" Affiliate System.", untertitel: "Build your list while banking commissions without the tech headaches." },
+        { titel: "Too Many Tools? Too Little Time?", untertitel: "Discover the simple framework to build a buyers list without the fuss." },
+        { titel: "The \"Keep It Simple\" List Building Strategy.", untertitel: "How to profit from day one without creating funnels or writing copy." },
+        { titel: "Overwhelmed by Affiliate Marketing?", untertitel: "Use this \"Reverse Model\" to start earning without the usual stress." },
+        { titel: "The Stupidly Simple Way to Get Paid.", untertitel: "Build your list while the system handles the selling for you." },
+        { titel: "No Tech Skills? No Problem.", untertitel: "How to set up this automated high-ticket system even if you're a newbie." },
+        { titel: "Clear the Clutter. Start Earning.", untertitel: "The exact blueprint to use when you don't have time for complicated funnels." },
+        { titel: "From Chaos to Cash in 7 Minutes.", untertitel: "Stop wasting time and start building a list that actually pays you." },
+        { titel: "The \"Straight Line\" to Profit.", untertitel: "Skip the fluff and learn the direct path to high-ticket commissions." },
+        { titel: "How to Make Money While You Sleep.", untertitel: "Build your list and bank $100s to $1,000s on autopilot with this system." },
+        { titel: "The \"Set It and Forget It\" Affiliate Strategy.", untertitel: "How my top affiliate generated $500K in commissions without daily work." },
+        { titel: "Stop Trading Time for Pennies.", untertitel: "Automate your list building and high-ticket sales with this \"Reverse\" model." },
+        { titel: "Your First Automated Paycheck.", untertitel: "How to get paid to build a list without the constant hustle." },
+        { titel: "The \"Lazy\" Marketer's Guide to $1,000 Sales.", untertitel: "Leverage done-for-you webinars to build your list while you relax." },
+        { titel: "Autopilot List Building Revealed.", untertitel: "Discover how to bank commissions even when you're not online." },
+        { titel: "Why You Need a \"List that Pays\".", untertitel: "Turn your email list into a profit center that runs itself." },
+        { titel: "The 5-Minute Work Week Strategy.", untertitel: "Case study: How a real affiliate made $50k with this autopilot system." },
+        { titel: "Build a Business, Not a Job.", untertitel: "Automate the high-ticket process and build your list on autopilot." },
+        { titel: "Passive Income on Demand.", untertitel: "The exact framework to get paid for building a list, forever." },
+        { titel: "The \"Reverse Funnel\" Advantage.", untertitel: "Why this model makes you money from day one instead of going broke." },
+        { titel: "Outsmart Your Competition in 7 Minutes.", untertitel: "The high-ticket strategy that turns freebie seekers into buyers." },
+        { titel: "The Strategic Shift to High-Ticket Profits.", untertitel: "Why creating a product is the last thing you should do right now." },
+        { titel: "The \"Buyer Magnet\" Formula.", untertitel: "How to attract high-ticket buyers without wasting money on ads." },
+        { titel: "The 2026 List-Building Advantage.", untertitel: "Stay ahead of the curve with the strategy that banks $1,000s per sale." },
+        { titel: "Why the \"Chase\" is Over.", untertitel: "Learn the strategy that makes buyers come to you while you build your list." },
+        { titel: "The Silver Bullet for Affiliates.", untertitel: "How to turn a simple email list into a high-ticket sales engine." },
+        { titel: "The \"Inside Out\" List Building Method.", untertitel: "Profit first, list second. The strategy that works now." },
+        { titel: "Join the Top 1% of Affiliates.", untertitel: "Use the ClickBank Platinum framework to build your list the right way." },
+        { titel: "The Ultimate Cheat Code for 2026.", untertitel: "Discover the secret to getting paid to build a list fast, starting from scratch." }
+    ];
+
+    // ============================================================
+    // FARBSCHEMATA
+    // ============================================================
+    const colorSchemes = [
+        { bg: '#0b0e14', container: 'rgba(20, 26, 36, 0.92)', accent: '#eab308', text: '#ffffff', text2: '#cbd5e1', button: '#eab308', badge: '#eab308', border: 'rgba(234, 179, 8, 0.2)' },
+        { bg: '#0a0f0f', container: 'rgba(16, 30, 30, 0.92)', accent: '#10b981', text: '#ffffff', text2: '#a7f3d0', button: '#10b981', badge: '#10b981', border: 'rgba(16, 185, 129, 0.2)' },
+        { bg: '#0f0a12', container: 'rgba(30, 16, 40, 0.92)', accent: '#a855f7', text: '#ffffff', text2: '#e9d5ff', button: '#a855f7', badge: '#a855f7', border: 'rgba(168, 85, 247, 0.2)' },
+        { bg: '#120b0b', container: 'rgba(40, 20, 20, 0.92)', accent: '#ef4444', text: '#ffffff', text2: '#fca5a5', button: '#ef4444', badge: '#ef4444', border: 'rgba(239, 68, 68, 0.2)' },
+        { bg: '#0b0f1a', container: 'rgba(20, 30, 60, 0.92)', accent: '#3b82f6', text: '#ffffff', text2: '#93c5fd', button: '#3b82f6', badge: '#3b82f6', border: 'rgba(59, 130, 246, 0.2)' },
+        { bg: '#0f0f0a', container: 'rgba(40, 35, 15, 0.92)', accent: '#f59e0b', text: '#ffffff', text2: '#fde68a', button: '#f59e0b', badge: '#f59e0b', border: 'rgba(245, 158, 11, 0.2)' },
+        { bg: '#0a0a12', container: 'rgba(25, 20, 50, 0.92)', accent: '#8b5cf6', text: '#ffffff', text2: '#c4b5fd', button: '#8b5cf6', badge: '#8b5cf6', border: 'rgba(139, 92, 246, 0.2)' },
+        { bg: '#100a0a', container: 'rgba(50, 20, 20, 0.92)', accent: '#f43f5e', text: '#ffffff', text2: '#fda4af', button: '#f43f5e', badge: '#f43f5e', border: 'rgba(244, 63, 94, 0.2)' },
+        { bg: '#0a0f0a', container: 'rgba(15, 35, 20, 0.92)', accent: '#22c55e', text: '#ffffff', text2: '#86efac', button: '#22c55e', badge: '#22c55e', border: 'rgba(34, 197, 94, 0.2)' },
+        { bg: '#0f0a0a', container: 'rgba(50, 25, 15, 0.92)', accent: '#f97316', text: '#ffffff', text2: '#fdba74', button: '#f97316', badge: '#f97316', border: 'rgba(249, 115, 22, 0.2)' }
+    ];
+
+    // ============================================================
+    // HILFSFUNKTIONEN
+    // ============================================================
+    function getRandom(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // ============================================================
+    // SEITE BEIM LADEN INITIALISIEREN
+    // ============================================================
+    window.addEventListener('DOMContentLoaded', function() {
+        // 1. Zufälligen Titel & Untertitel
+        const randomHeadline = getRandom(headlines);
+        document.getElementById('headline').innerHTML = randomHeadline.titel;
+        document.getElementById('subheadline').innerHTML = randomHeadline.untertitel;
+
+        // 2. Zufälliges Farbschema
+        const colors = getRandom(colorSchemes);
+
+        // Body
+        document.body.style.background = colors.bg;
+
+        // Container
+        const container = document.getElementById('mainContainer');
+        container.style.background = colors.container;
+        container.style.border = '1px solid ' + colors.border;
+
+        // Badge
+        const badge = document.getElementById('badge');
+        badge.style.background = colors.accent;
+        badge.style.color = '#000';
+
+        // Headline
+        document.getElementById('headline').style.color = colors.text;
+
+        // Subheadline
+        document.getElementById('subheadline').style.color = colors.text2;
+
+        // Timer Box
+        const timerBox = document.getElementById('timerBox');
+        timerBox.style.background = colors.accent + '22';
+        timerBox.style.border = '1px solid ' + colors.accent + '44';
+        timerBox.style.color = colors.text;
+
+        const timerDisplay = document.getElementById('timerDisplay');
+        timerDisplay.style.color = colors.accent;
+
+        // Form Box
+        const formBox = document.getElementById('formBox');
+        formBox.style.background = 'rgba(0,0,0,0.25)';
+        formBox.style.border = '1px solid ' + colors.border;
+
+        // Form Labels
+        const labels = document.querySelectorAll('.form-box td label');
+        labels.forEach(label => {
+            label.style.color = colors.text2;
+        });
+
+        // Submit Button
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.style.background = colors.accent;
+        submitBtn.style.color = '#000';
+        submitBtn.style.boxShadow = '0 8px 30px ' + colors.accent + '44';
+
+        // Host Section
+        const hostSection = document.getElementById('hostSection');
+        hostSection.style.borderTopColor = colors.border;
+
+        // Avatar
+        const avatar = document.getElementById('avatar');
+        avatar.style.background = colors.accent;
+        avatar.style.color = '#000';
+
+        // Host Name
+        document.getElementById('hostName').style.color = colors.text;
+        document.getElementById('hostHighlight').style.color = colors.accent;
+
+        // Host Bio
+        document.getElementById('hostBio').style.color = colors.text2;
+        document.getElementById('bioHighlight1').style.color = colors.accent;
+        document.getElementById('bioHighlight2').style.color = colors.accent;
+        document.getElementById('bioHighlight3').style.color = colors.accent;
+
+        // Footnote
+        document.getElementById('footnote').style.color = colors.text2;
+    });
+
+    // ============================================================
+    // COUNTDOWN-TIMER (13:12 Minuten)
+    // ============================================================
+    let totalSeconds = 13 * 60 + 12;
+
+    function updateTimer() {
+        const mins = Math.floor(totalSeconds / 60);
+        const secs = totalSeconds % 60;
+        document.getElementById('timerDisplay').textContent = 
+            String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+
+        if (totalSeconds > 0) {
+            totalSeconds--;
+        } else {
+            clearInterval(timerInterval);
+        }
+    }
+
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000);
+</script>
+
 </body>
 </html>
