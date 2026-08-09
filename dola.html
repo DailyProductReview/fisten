@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>TURN $7 INTO $100 DAILY – Fully Automated System</title>
+
+    <!-- Google Fonts Muli -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;400;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 3.3.7 + Font Awesome 4.7 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <style>
+        /* ── Reset & Base ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Muli', sans-serif;
+            background: #0b0e14;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 820px;
+            padding: 0 18px;
+        }
+
+        /* ── Pattern Interrupt: Glitch / Ripped Edge ── */
+        .glitch-strip {
+            position: relative;
+            background: #d0203d;
+            padding: 28px 0 22px;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 4px solid #ff6b35;
+            box-shadow: 0 0 40px rgba(208, 32, 61, 0.5);
+        }
+        .glitch-strip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    transparent 2px,
+                    transparent 6px);
+            pointer-events: none;
+            z-index: 2;
+        }
+        .glitch-strip::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #ff6b35;
+            opacity: 0.4;
+            filter: blur(2px);
+            z-index: 1;
+            animation: glitchPulse 2.2s infinite alternate;
+        }
+        @keyframes glitchPulse {
+            0% {
+                opacity: 0.2;
+                transform: translateX(-10px) scaleX(1.02);
+            }
+            100% {
+                opacity: 0.7;
+                transform: translateX(10px) scaleX(0.98);
+            }
+        }
+        .glitch-strip h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #fff;
+            text-shadow: 3px 3px 0 #a0102a, 6px 6px 0 rgba(0, 0, 0, 0.3);
+            margin: 0;
+            position: relative;
+            z-index: 3;
+            word-break: break-word;
+        }
+        .glitch-strip .sub-glitch {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffd966;
+            letter-spacing: 0.06em;
+            margin-top: 4px;
+            position: relative;
+            z-index: 3;
+            text-shadow: 0 0 12px rgba(255, 217, 102, 0.3);
+        }
+
+        /* ── Headline Strip ── */
+        .headline-strip {
+            background: #d0203d;
+            padding: 18px 0 14px;
+            text-align: center;
+            border-bottom: 3px solid #ff6b35;
+        }
+        .headline-strip h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #fff;
+            text-shadow: 2px 2px 0 #a0102a;
+            margin: 0;
+            word-break: break-word;
+        }
+        .headline-strip .sub {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffd966;
+            letter-spacing: 0.06em;
+            margin-top: 2px;
+        }
+
+        /* ── Main Content ── */
+        .main-content {
+            padding: 32px 0 20px;
+        }
+
+        /* ── Specificity / Curiosity Badge ── */
+        .curiosity-badge {
+            background: rgba(255, 107, 53, 0.12);
+            border: 1px solid rgba(255, 107, 53, 0.25);
+            border-radius: 40px;
+            padding: 8px 22px;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ff8a5c;
+            letter-spacing: 0.02em;
+            margin-bottom: 18px;
+            backdrop-filter: blur(4px);
+        }
+        .curiosity-badge i {
+            margin-right: 6px;
+            color: #ff6b35;
+        }
+
+        /* ── Bullets ── */
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: 18px 0 22px;
+        }
+        .benefit-list li {
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 10px 0 10px 38px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: #e8edf5;
+        }
+        .benefit-list li:last-child {
+            border-bottom: none;
+        }
+        .benefit-list li i {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            color: #ff6b35;
+            font-size: 1.3rem;
+            width: 28px;
+            text-align: center;
+        }
+        .benefit-list li .highlight {
+            color: #ffd966;
+            font-weight: 800;
+        }
+
+        /* ── Fake Earnings Graphic ── */
+        .earnings-graphic {
+            background: linear-gradient(145deg, #141a24, #1e2633);
+            border-radius: 16px;
+            padding: 22px 20px 20px;
+            border: 1px solid rgba(255, 107, 53, 0.15);
+            margin: 16px 0 22px;
+            position: relative;
+            overflow: hidden;
+        }
+        .earnings-graphic .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 100px;
+            gap: 8px;
+            padding-top: 10px;
+        }
+        .earnings-graphic .bar {
+            flex: 1;
+            background: linear-gradient(180deg, #ff6b35, #d0203d);
+            border-radius: 6px 6px 2px 2px;
+            min-height: 14px;
+            transition: height 0.2s;
+            position: relative;
+            box-shadow: 0 0 12px rgba(208, 32, 61, 0.3);
+        }
+        .earnings-graphic .bar-label {
+            text-align: center;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: #8899bb;
+            margin-top: 6px;
+            letter-spacing: 0.02em;
+        }
+        .earnings-graphic .bar-value {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: #ffd966;
+            white-space: nowrap;
+        }
+        .earnings-graphic .graph-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #aabbdd;
+            text-align: center;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+        }
+        .earnings-graphic .graph-title i {
+            color: #ff6b35;
+            margin-right: 6px;
+        }
+        .earnings-graphic .disclaimer-micro {
+            font-size: 0.55rem;
+            color: #667799;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Social Proof Counter ── */
+        .social-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            background: rgba(255, 107, 53, 0.06);
+            border-radius: 40px;
+            padding: 10px 24px;
+            border: 1px solid rgba(255, 107, 53, 0.10);
+            margin: 12px 0 18px;
+        }
+        .social-counter .number {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffd966;
+            letter-spacing: 0.02em;
+        }
+        .social-counter .label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #aabbdd;
+        }
+        .social-counter .pulse-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: pulseDot 1.6s infinite;
+        }
+        @keyframes pulseDot {
+            0% {
+                opacity: 0.4;
+                transform: scale(0.9);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0.4;
+                transform: scale(0.9);
+            }
+        }
+
+        /* ── Testimonials ── */
+        .testimonials {
+            margin: 20px 0 24px;
+        }
+        .testimonial-card {
+            background: linear-gradient(145deg, #141a24, #1a212d);
+            border-radius: 14px;
+            padding: 18px 20px;
+            border-left: 4px solid #ff6b35;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .testimonial-card .quote {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #d0dcee;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        .testimonial-card .quote i {
+            color: #ff6b35;
+            opacity: 0.6;
+            margin: 0 4px;
+        }
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .testimonial-card .author .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b35, #d0203d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .testimonial-card .author .name {
+            font-weight: 700;
+            color: #ffd966;
+            font-size: 0.9rem;
+        }
+        .testimonial-card .author .title {
+            font-size: 0.7rem;
+            color: #8899bb;
+            font-weight: 400;
+        }
+        .testimonial-card .stars {
+            color: #ffb800;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        /* ── Form Box ── */
+        .form-box {
+            background: linear-gradient(160deg, #141a24, #1e2635);
+            border-radius: 20px;
+            padding: 32px 24px 28px;
+            border: 1px solid rgba(255, 107, 53, 0.20);
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.6), 0 0 60px rgba(208, 32, 61, 0.08);
+            margin: 14px 0 18px;
+            position: relative;
+        }
+        .form-box::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 20%;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6b35, transparent);
+            opacity: 0.6;
+        }
+        .form-box .form-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffd966;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        .form-box .form-sub {
+            font-size: 0.85rem;
+            color: #8899bb;
+            text-align: center;
+            margin-bottom: 18px;
+            font-weight: 400;
+        }
+        .form-box .form-group {
+            margin-bottom: 14px;
+        }
+        .form-box .form-control {
+            background: #0b0e14;
+            border: 2px solid #2a3444;
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 1rem;
+            font-family: 'Muli', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            height: auto;
+            box-shadow: none;
+            transition: border 0.25s, box-shadow 0.25s;
+        }
+        .form-box .form-control:focus {
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.12);
+            outline: none;
+        }
+        .form-box .form-control::placeholder {
+            color: #556688;
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        /* ── CTA Button ── */
+        .btn-cta {
+            display: inline-block;
+            width: 100%;
+            padding: 18px 20px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            font-family: 'Muli', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #fff;
+            background: linear-gradient(135deg, #ff6b35, #d0203d);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 0 #8a1428, 0 8px 30px rgba(208, 32, 61, 0.4);
+            position: relative;
+            margin-top: 4px;
+        }
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #8a1428, 0 14px 40px rgba(208, 32, 61, 0.5);
+        }
+        .btn-cta:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #8a1428, 0 8px 30px rgba(208, 32, 61, 0.3);
+        }
+        .btn-cta .pulse-ring {
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 107, 53, 0.2);
+            animation: ctaPulse 2s infinite;
+            pointer-events: none;
+        }
+        @keyframes ctaPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.04);
+                opacity: 0;
+            }
+        }
+        .btn-cta .micro-copy {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0.04em;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 6px;
+            opacity: 0.9;
+        }
+        .btn-cta .micro-copy i {
+            margin-right: 4px;
+        }
+
+        /* ── Guarantee Badge ── */
+        .guarantee-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 12px 10px;
+            margin: 12px 0 8px;
+            background: rgba(76, 175, 80, 0.06);
+            border-radius: 40px;
+            border: 1px solid rgba(76, 175, 80, 0.12);
+        }
+        .guarantee-badge i {
+            font-size: 1.6rem;
+            color: #4caf50;
+        }
+        .guarantee-badge .text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #aabbdd;
+        }
+        .guarantee-badge .text strong {
+            color: #4caf50;
+            font-weight: 800;
+        }
+
+        /* ── Countdown ── */
+        .countdown-box {
+            background: rgba(208, 32, 61, 0.08);
+            border: 1px solid rgba(208, 32, 61, 0.15);
+            border-radius: 40px;
+            padding: 10px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0 4px;
+        }
+        .countdown-box .label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ff8a5c;
+        }
+        .countdown-box .timer {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffd966;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.04em;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 16px;
+            border-radius: 30px;
+        }
+        .countdown-box .timer i {
+            color: #ff6b35;
+            margin-right: 6px;
+            font-size: 1rem;
+        }
+
+        /* ── Footer ── */
+        .footer-disclaimer {
+            font-size: 0.6rem;
+            color: #445566;
+            text-align: center;
+            padding: 24px 0 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            margin-top: 16px;
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+        }
+        .footer-disclaimer a {
+            color: #667799;
+            text-decoration: none;
+        }
+        .footer-disclaimer a:hover {
+            color: #8899bb;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .headline-strip h1 {
+                font-size: 1.5rem;
+            }
+            .headline-strip .sub {
+                font-size: 1rem;
+            }
+            .glitch-strip h1 {
+                font-size: 1.5rem;
+            }
+            .glitch-strip .sub-glitch {
+                font-size: 1rem;
+            }
+            .form-box {
+                padding: 22px 14px 20px;
+            }
+            .btn-cta {
+                font-size: 1rem;
+                padding: 14px 16px;
+            }
+            .benefit-list li {
+                font-size: 0.9rem;
+                padding: 8px 0 8px 32px;
+            }
+            .benefit-list li i {
+                font-size: 1rem;
+                top: 8px;
+            }
+            .testimonial-card .quote {
+                font-size: 0.85rem;
+            }
+            .social-counter .number {
+                font-size: 1.1rem;
+            }
+            .earnings-graphic .chart-bars {
+                height: 70px;
+            }
+            .countdown-box .timer {
+                font-size: 1.1rem;
+                padding: 2px 12px;
+            }
+            .container {
+                padding: 0 12px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .headline-strip h1 {
+                font-size: 1.2rem;
+            }
+            .glitch-strip h1 {
+                font-size: 1.2rem;
+            }
+            .btn-cta {
+                font-size: 0.85rem;
+                padding: 12px 12px;
+            }
+            .form-box .form-control {
+                padding: 12px 14px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ── Utility ── */
+        .text-glow {
+            text-shadow: 0 0 30px rgba(255, 107, 53, 0.15);
+        }
+        .text-accent {
+            color: #ff6b35;
+        }
+        .text-gold {
+            color: #ffd966;
+        }
+        .mt-1 {
+            margin-top: 6px;
+        }
+        .mt-2 {
+            margin-top: 14px;
+        }
+        .mb-1 {
+            margin-bottom: 6px;
+        }
+        .mb-2 {
+            margin-bottom: 14px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .fw-800 {
+            font-weight: 800;
+        }
+        .fw-700 {
+            font-weight: 700;
+        }
+        .fw-600 {
+            font-weight: 600;
+        }
+
+        /* ── Micro-commitment visual cue ── */
+        .micro-commit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px 14px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #8899bb;
+            padding: 6px 0 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            margin-bottom: 14px;
+        }
+        .micro-commit .yes {
+            color: #4caf50;
+            font-weight: 800;
+        }
+        .micro-commit .arrow {
+            color: #ff6b35;
+            font-weight: 700;
+        }
+
+        /* ── Scarcity ribbon ── */
+        .scarcity-ribbon {
+            background: linear-gradient(90deg, rgba(208, 32, 61, 0.12), rgba(208, 32, 61, 0.04));
+            border-radius: 30px;
+            padding: 6px 18px;
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #ff8a5c;
+            letter-spacing: 0.04em;
+            border: 1px solid rgba(208, 32, 61, 0.12);
+        }
+        .scarcity-ribbon i {
+            margin-right: 4px;
+        }
+
+        /* ── Authority badge ── */
+        .authority-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #667799;
+            letter-spacing: 0.02em;
+            margin: 4px 0 12px;
+        }
+        .authority-badge i {
+            color: #ffd966;
+        }
+
+        /* ── Hidden name field override ── */
+        #ifnb9 {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== SECTION 1: Big Red Headline Strip with Pattern Interrupt ====== -->
+    <div class="glitch-strip">
+        <div class="container">
+            <h1>TURN $7 ONE TIME INTO $100 DAILY!</h1>
+            <div class="sub-glitch">$100 per Day – Fully Automated</div>
+        </div>
+    </div>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <div class="main-content">
+        <div class="container">
+
+            <!-- Curiosity Gap + Specificity -->
+            <div class="text-center">
+                <span class="curiosity-badge">
+                    <i class="fa fa-bolt"></i> APRIL 2026 UPDATE – THE $7 LOOPHOLE REVEALED
+                </span>
+            </div>
+
+            <!-- Authority + Future Pacing -->
+            <div class="authority-badge">
+                <i class="fa fa-shield"></i> INVENTOR OF THE $7 AUTOMATION SYSTEM &bull; 34,812+ STUDENTS
+            </div>
+
+            <!-- Micro-commitments (read-only yes-ladder) -->
+            <div class="micro-commit">
+                <span>Do you want financial freedom? <span class="yes">✓ YES</span></span>
+                <span class="arrow">→</span>
+                <span>Are you tired of 9-to-5? <span class="yes">✓ YES</span></span>
+                <span class="arrow">→</span>
+                <span>Ready for automation? <span class="yes">✓ YES</span></span>
+            </div>
+
+            <!-- Bullet Points – what they get -->
+            <ul class="benefit-list">
+                <li><i class="fa fa-check-circle"></i> The <span class="highlight">secret algorithm</span> that turns $7 into $100 daily – no experience needed</li>
+                <li><i class="fa fa-check-circle"></i> <span class="highlight">Zero selling</span> – no pitching, no calls, no rejection</li>
+                <li><i class="fa fa-check-circle"></i> Works while you sleep – <span class="highlight">fully automated 24/7</span></li>
+                <li><i class="fa fa-check-circle"></i> Click-by-click blueprint – <span class="highlight">37 seconds</span> to set up your first flow</li>
+                <li><i class="fa fa-check-circle"></i> <span class="highlight">5-minute setup</span> – then walk away and watch the system work</li>
+            </ul>
+
+            <!-- Social Proof Counter -->
+            <div class="social-counter">
+                <span class="pulse-dot"></span>
+                <span class="number">34,812</span>
+                <span class="label">people already inside &bull; <span style="color:#ff6b35;">+87</span> joined today</span>
+            </div>
+
+            <!-- Scarcity Ribbon -->
+            <div class="text-center mb-2">
+                <span class="scarcity-ribbon"><i class="fa fa-exclamation-triangle"></i> Only 3 spots left for this free method – don't miss out</span>
+            </div>
+
+            <!-- ====== EARNINGS GRAPHIC ====== -->
+            <div class="earnings-graphic">
+                <div class="graph-title"><i class="fa fa-line-chart"></i> DAILY EARNINGS WITH THE $7 SYSTEM</div>
+                <div class="chart-bars">
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+                        <div class="bar" style="height:22px;"><span class="bar-value">$7</span></div>
+                        <div class="bar-label">Day 1</div>
+                    </div>
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+                        <div class="bar" style="height:38px;"><span class="bar-value">$34</span></div>
+                        <div class="bar-label">Day 2</div>
+                    </div>
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+                        <div class="bar" style="height:58px;"><span class="bar-value">$72</span></div>
+                        <div class="bar-label">Day 3</div>
+                    </div>
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+                        <div class="bar" style="height:82px;"><span class="bar-value">$100</span></div>
+                        <div class="bar-label">Day 4</div>
+                    </div>
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+                        <div class="bar" style="height:100px;"><span class="bar-value" style="color:#ff6b35; font-weight:800;">$147</span></div>
+                        <div class="bar-label">Day 5</div>
+                    </div>
+                </div>
+                <div class="disclaimer-micro">* Fictional illustration of potential growth pattern. Results vary.</div>
+            </div>
+
+            <!-- ====== TESTIMONIALS ====== -->
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                    <div class="quote"><i class="fa fa-quote-left"></i> I set it up in 5 minutes and woke up to $127. This loophole is insane. I've never sold anything in my life.<i class="fa fa-quote-right"></i></div>
+                    <div class="author">
+                        <div class="avatar">MK</div>
+                        <div>
+                            <div class="name">Mark K. <span style="font-weight:400;color:#8899bb;font-size:0.7rem;">– verified</span></div>
+                            <div class="title">Former warehouse worker, now automated</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                    <div class="quote"><i class="fa fa-quote-left"></i> $7 to $100 daily is real. I was skeptical until I saw the first payout hit my account at 3am. This is the future.<i class="fa fa-quote-right"></i></div>
+                    <div class="author">
+                        <div class="avatar">SR</div>
+                        <div>
+                            <div class="name">Sarah R. <span style="font-weight:400;color:#8899bb;font-size:0.7rem;">– verified</span></div>
+                            <div class="title">Mom of 3, automated income</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                    <div class="quote"><i class="fa fa-quote-left"></i> I've tried everything. This is the only system that delivered within 24 hours. No selling, no BS.<i class="fa fa-quote-right"></i></div>
+                    <div class="author">
+                        <div class="avatar">JT</div>
+                        <div>
+                            <div class="name">James T. <span style="font-weight:400;color:#8899bb;font-size:0.7rem;">– verified</span></div>
+                            <div class="title">Entrepreneur, 6-figure earner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== FORM BOX ====== -->
+            <div class="form-box" id="form-box">
+                <div class="form-title"><i class="fa fa-unlock-alt text-accent"></i> CLAIM YOUR FREE ACCESS</div>
+                <div class="form-sub">Enter your email below and I'll send you the <strong style="color:#ffd966;">click-by-click blueprint</strong> instantly.</div>
+
+                <!-- Loss Aversion copy -->
+                <p style="font-size:0.85rem; color:#ff8a5c; text-align:center; font-weight:600; margin-bottom:14px; border:1px dashed rgba(255,107,53,0.15); border-radius:10px; padding:8px 12px;">
+                    <i class="fa fa-exclamation-circle"></i> Don't leave this page empty-handed… the loophole might close forever.
+                </p>
+
+                <!-- ====== EXACT FORM (unchanged backend) ====== -->
+                <form method="POST" action="https://gogvo.com/subscribe.php" id="io8bd" class="ar-fm1">
+                    <input type="hidden" name="CampaignCode" value=""/>
+                    <input type="hidden" name="AffiliateName" value="natur1984NLS"/>
+                    <input type="hidden" name="PassFormData" value="0"/>
+                    <input type="hidden" name="ThankyouPage" value="https://natur1984NLS.gogvo.com/gvothankyou/"/>
+                    <input type="hidden" name="OptIn" value="0"/>
+                    <input type="hidden" name="PbVisitorId" value=""/>
+
+                    <!-- Hidden name field (kept hidden as specified) -->
+                    <div class="form-group" id="ifnb9" style="display:none;">
+                        <input type="text" name="FullName" id="arFormName-2" placeholder="Name" class="form-control"/>
+                    </div>
+
+                    <!-- Only visible field: Email -->
+                    <div class="form-group">
+                        <input type="email" name="Email" id="arFormEmail-2" placeholder="Enter your email address" class="form-control" required />
+                    </div>
+
+                    <!-- CTA Button with pulse animation + micro-copy -->
+                    <button type="submit" id="ier9s" class="btn btn-cta">
+                        <span class="pulse-ring"></span>
+                        I AM READY! SET UP MY SYSTEM!
+                        <span class="micro-copy"><i class="fa fa-lock" style="opacity:0.6;"></i> No credit card required &bull; Instant access</span>
+                    </button>
+                </form>
+                <!-- ====== END FORM ====== -->
+
+                <!-- Guarantee Badge -->
+                <div class="guarantee-badge">
+                    <i class="fa fa-check-circle-o"></i>
+                    <span class="text"><strong>100% Risk-Free</strong> – If you don't see results in 7 days, I'll personally help you.</span>
+                </div>
+
+                <!-- Urgency Countdown -->
+                <div class="countdown-box">
+                    <span class="label"><i class="fa fa-hourglass-half"></i> This free training expires in:</span>
+                    <span class="timer" id="countdown-timer"><i class="fa fa-clock-o"></i> 04:32</span>
+                </div>
+
+                <!-- Reciprocity / Future pacing micro-copy -->
+                <p style="font-size:0.7rem; color:#667799; text-align:center; margin:10px 0 0; font-weight:400; letter-spacing:0.02em;">
+                    <i class="fa fa-gift text-accent"></i> On the next page, I'll reveal the 3-step automation that runs on autopilot.
+                </p>
+            </div>
+
+            <!-- ====== FOOTER ====== -->
+            <div class="footer-disclaimer">
+                Results not typical. This is a fictional demonstration of the method. Your results may vary.
+                <br />
+                <span style="opacity:0.5;">&copy; 2026 &bull; All rights reserved &bull; <a href="#">Privacy</a> &bull; <a href="#">Terms</a></span>
+            </div>
+
+        </div><!-- /.container -->
+    </div><!-- /.main-content -->
+
+    <!-- ====== COUNTDOWN SCRIPT (pure client-side, no external) ====== -->
+    <script>
+        (function() {
+            // Set expiry to ~5 minutes from page load
+            var expirySeconds = 5 * 60 + 2; // 5:02
+            var timerEl = document.getElementById('countdown-timer');
+
+            function pad(n) {
+                return String(n).padStart(2, '0');
+            }
+
+            function updateTimer(seconds) {
+                if (seconds < 0) seconds = 0;
+                var mins = Math.floor(seconds / 60);
+                var secs = seconds % 60;
+                if (timerEl) {
+                    timerEl.innerHTML = '<i class="fa fa-clock-o"></i> ' + pad(mins) + ':' + pad(secs);
+                }
+                return seconds;
+            }
+
+            var remaining = expirySeconds;
+            updateTimer(remaining);
+
+            var interval = setInterval(function() {
+                remaining -= 1;
+                if (remaining <= 0) {
+                    remaining = 0;
+                    clearInterval(interval);
+                    if (timerEl) {
+                        timerEl.innerHTML = '<i class="fa fa-exclamation-triangle" style="color:#ff6b35;"></i> EXPIRED – ACT NOW';
+                    }
+                    // Optionally restart countdown after a moment to keep urgency
+                    setTimeout(function() {
+                        remaining = 5 * 60 + 2;
+                        updateTimer(remaining);
+                        interval = setInterval(function() {
+                            remaining -= 1;
+                            if (remaining <= 0) {
+                                remaining = 0;
+                                clearInterval(interval);
+                                if (timerEl) {
+                                    timerEl.innerHTML = '<i class="fa fa-exclamation-triangle" style="color:#ff6b35;"></i> EXPIRED – ACT NOW';
+                                }
+                            } else {
+                                updateTimer(remaining);
+                            }
+                        }, 1000);
+                    }, 3000);
+                } else {
+                    updateTimer(remaining);
+                }
+            }, 1000);
+        })();
+    </script>
+
+</body>
+</html>
