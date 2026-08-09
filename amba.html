@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>$104K/MONTH AUTOPILOT – Ambassador Program</title>
+
+    <!-- Google Fonts Muli -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;400;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 3.3.7 + Font Awesome 4.7 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <style>
+        /* ── Reset & Base ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Muli', sans-serif;
+            background: #0b0e14;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 880px;
+            padding: 0 18px;
+        }
+
+        /* ── Pattern Interrupt: Glitch / Ripped Edge ── */
+        .glitch-strip {
+            position: relative;
+            background: #d0203d;
+            padding: 30px 0 24px;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 4px solid #f5a623;
+            box-shadow: 0 0 50px rgba(208, 32, 61, 0.5);
+        }
+        .glitch-strip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    transparent 2px,
+                    transparent 6px);
+            pointer-events: none;
+            z-index: 2;
+        }
+        .glitch-strip::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #f5a623;
+            opacity: 0.5;
+            filter: blur(3px);
+            z-index: 1;
+            animation: glitchPulse 2.4s infinite alternate;
+        }
+        @keyframes glitchPulse {
+            0% {
+                opacity: 0.2;
+                transform: translateX(-12px) scaleX(1.02);
+            }
+            100% {
+                opacity: 0.7;
+                transform: translateX(12px) scaleX(0.98);
+            }
+        }
+        .glitch-strip h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #fff;
+            text-shadow: 3px 3px 0 #8a1428, 6px 6px 0 rgba(0, 0, 0, 0.3);
+            margin: 0;
+            position: relative;
+            z-index: 3;
+            word-break: break-word;
+        }
+        .glitch-strip .sub-glitch {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffd966;
+            letter-spacing: 0.04em;
+            margin-top: 6px;
+            position: relative;
+            z-index: 3;
+            text-shadow: 0 0 20px rgba(255, 217, 102, 0.2);
+        }
+        .glitch-strip .badge-ribbon {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 30px;
+            padding: 4px 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #ffd966;
+            margin-top: 10px;
+            letter-spacing: 0.06em;
+            border: 1px solid rgba(255, 217, 102, 0.15);
+            position: relative;
+            z-index: 3;
+        }
+
+        /* ── Main Content ── */
+        .main-content {
+            padding: 32px 0 20px;
+        }
+
+        /* ── Curiosity / Authority Badge ── */
+        .curiosity-badge {
+            background: rgba(245, 166, 35, 0.10);
+            border: 1px solid rgba(245, 166, 35, 0.20);
+            border-radius: 40px;
+            padding: 8px 22px;
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #f5a623;
+            letter-spacing: 0.02em;
+            margin-bottom: 16px;
+            backdrop-filter: blur(4px);
+        }
+        .curiosity-badge i {
+            margin-right: 6px;
+            color: #f5a623;
+        }
+
+        /* ── Feature Grid ── */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 16px 0 20px;
+        }
+        .feature-item {
+            background: linear-gradient(145deg, #141a24, #1a212d);
+            border-radius: 12px;
+            padding: 16px 14px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: border 0.2s;
+        }
+        .feature-item i {
+            font-size: 1.6rem;
+            color: #f5a623;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .feature-item .label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #e8edf5;
+        }
+        .feature-item .sub {
+            font-size: 0.7rem;
+            color: #8899bb;
+            font-weight: 400;
+        }
+
+        /* ── Success Stats ── */
+        .stat-banner {
+            background: linear-gradient(135deg, #1a212d, #141a24);
+            border-radius: 16px;
+            padding: 20px 18px;
+            border: 1px solid rgba(245, 166, 35, 0.12);
+            margin: 16px 0 20px;
+            text-align: center;
+        }
+        .stat-banner .big-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffd966;
+            letter-spacing: 0.02em;
+        }
+        .stat-banner .desc {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e8edf5;
+            margin-top: 2px;
+        }
+        .stat-banner .sub-desc {
+            font-size: 0.75rem;
+            color: #8899bb;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        /* ── Student Proof Grid ── */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 10px;
+            margin: 16px 0 20px;
+        }
+        .proof-item {
+            background: linear-gradient(145deg, #141a24, #1e2635);
+            border-radius: 10px;
+            padding: 12px 8px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: transform 0.15s;
+        }
+        .proof-item:hover {
+            transform: scale(1.04);
+        }
+        .proof-item .avatar {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        .proof-item .name {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: #aabbdd;
+            margin-top: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .proof-item .earnings {
+            font-size: 0.55rem;
+            color: #ffd966;
+            font-weight: 700;
+        }
+
+        /* ── Testimonial ── */
+        .testimonial-featured {
+            background: linear-gradient(145deg, #141a24, #1a212d);
+            border-radius: 16px;
+            padding: 24px 22px;
+            border-left: 5px solid #f5a623;
+            margin: 18px 0 22px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .testimonial-featured::before {
+            content: '\201C';
+            font-size: 3.5rem;
+            color: rgba(245, 166, 35, 0.12);
+            position: absolute;
+            top: 4px;
+            left: 16px;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .testimonial-featured .quote {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #d0dcee;
+            font-style: italic;
+            line-height: 1.6;
+            padding-left: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-featured .author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 16px;
+            padding-left: 12px;
+        }
+        .testimonial-featured .author .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f5a623, #d0203d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .testimonial-featured .author .name {
+            font-weight: 700;
+            color: #ffd966;
+            font-size: 0.95rem;
+        }
+        .testimonial-featured .author .title {
+            font-size: 0.7rem;
+            color: #8899bb;
+            font-weight: 400;
+        }
+        .testimonial-featured .stars {
+            color: #ffb800;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-top: 4px;
+            padding-left: 12px;
+        }
+
+        /* ── Social Proof Counter ── */
+        .social-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            background: rgba(245, 166, 35, 0.06);
+            border-radius: 40px;
+            padding: 10px 24px;
+            border: 1px solid rgba(245, 166, 35, 0.10);
+            margin: 12px 0 18px;
+        }
+        .social-counter .number {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffd966;
+            letter-spacing: 0.02em;
+        }
+        .social-counter .label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #aabbdd;
+        }
+        .social-counter .pulse-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: pulseDot 1.6s infinite;
+        }
+        @keyframes pulseDot {
+            0% {
+                opacity: 0.4;
+                transform: scale(0.9);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0.4;
+                transform: scale(0.9);
+            }
+        }
+
+        /* ── Form Box ── */
+        .form-box {
+            background: linear-gradient(160deg, #141a24, #1e2635);
+            border-radius: 20px;
+            padding: 32px 24px 28px;
+            border: 1px solid rgba(245, 166, 35, 0.15);
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.6), 0 0 60px rgba(208, 32, 61, 0.06);
+            margin: 14px 0 18px;
+            position: relative;
+        }
+        .form-box::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 20%;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f5a623, transparent);
+            opacity: 0.6;
+        }
+        .form-box .form-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffd966;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        .form-box .form-sub {
+            font-size: 0.85rem;
+            color: #8899bb;
+            text-align: center;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+        .form-box .form-sub strong {
+            color: #ffd966;
+            font-weight: 700;
+        }
+        .form-box .form-group {
+            margin-bottom: 14px;
+        }
+        .form-box .form-control {
+            background: #0b0e14;
+            border: 2px solid #2a3444;
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 1rem;
+            font-family: 'Muli', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            height: auto;
+            box-shadow: none;
+            transition: border 0.25s, box-shadow 0.25s;
+        }
+        .form-box .form-control:focus {
+            border-color: #f5a623;
+            box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.12);
+            outline: none;
+        }
+        .form-box .form-control::placeholder {
+            color: #556688;
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        /* ── CTA Button ── */
+        .btn-cta {
+            display: inline-block;
+            width: 100%;
+            padding: 18px 20px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            font-family: 'Muli', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #fff;
+            background: linear-gradient(135deg, #f5a623, #d0203d);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 0 #8a1428, 0 8px 30px rgba(208, 32, 61, 0.35);
+            position: relative;
+            margin-top: 4px;
+        }
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #8a1428, 0 14px 40px rgba(208, 32, 61, 0.45);
+        }
+        .btn-cta:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #8a1428, 0 8px 30px rgba(208, 32, 61, 0.25);
+        }
+        .btn-cta .pulse-ring {
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 16px;
+            border: 2px solid rgba(245, 166, 35, 0.2);
+            animation: ctaPulse 2s infinite;
+            pointer-events: none;
+        }
+        @keyframes ctaPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.04);
+                opacity: 0;
+            }
+        }
+        .btn-cta .micro-copy {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0.04em;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 6px;
+            opacity: 0.9;
+        }
+        .btn-cta .micro-copy i {
+            margin-right: 4px;
+        }
+
+        /* ── Guarantee / Trust Badge ── */
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px 20px;
+            flex-wrap: wrap;
+            padding: 12px 10px;
+            margin: 12px 0 8px;
+            background: rgba(76, 175, 80, 0.05);
+            border-radius: 40px;
+            border: 1px solid rgba(76, 175, 80, 0.10);
+        }
+        .trust-badge i {
+            font-size: 1.4rem;
+            color: #4caf50;
+        }
+        .trust-badge .text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #aabbdd;
+        }
+        .trust-badge .text strong {
+            color: #4caf50;
+            font-weight: 800;
+        }
+
+        /* ── Countdown + Scarcity ── */
+        .countdown-box {
+            background: rgba(208, 32, 61, 0.07);
+            border: 1px solid rgba(208, 32, 61, 0.12);
+            border-radius: 40px;
+            padding: 10px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px 18px;
+            flex-wrap: wrap;
+            margin: 10px 0 4px;
+        }
+        .countdown-box .label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #f5a623;
+        }
+        .countdown-box .timer {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffd966;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.04em;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 16px;
+            border-radius: 30px;
+        }
+        .countdown-box .timer i {
+            color: #f5a623;
+            margin-right: 6px;
+            font-size: 1rem;
+        }
+        .countdown-box .scarcity-badge {
+            background: #d0203d;
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 2px 14px;
+            border-radius: 30px;
+            letter-spacing: 0.04em;
+            animation: pulseBadge 1.8s infinite;
+        }
+        @keyframes pulseBadge {
+            0% {
+                opacity: 0.7;
+                transform: scale(0.96);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.04);
+            }
+            100% {
+                opacity: 0.7;
+                transform: scale(0.96);
+            }
+        }
+
+        /* ── Footer ── */
+        .footer-disclaimer {
+            font-size: 0.6rem;
+            color: #445566;
+            text-align: center;
+            padding: 24px 0 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            margin-top: 16px;
+            letter-spacing: 0.02em;
+            line-height: 1.8;
+        }
+        .footer-disclaimer a {
+            color: #667799;
+            text-decoration: none;
+        }
+        .footer-disclaimer a:hover {
+            color: #8899bb;
+        }
+        .footer-disclaimer .clickbank-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            padding: 4px 16px;
+            font-size: 0.65rem;
+            color: #667799;
+            margin-top: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .glitch-strip h1 {
+                font-size: 1.6rem;
+            }
+            .glitch-strip .sub-glitch {
+                font-size: 0.95rem;
+            }
+            .form-box {
+                padding: 22px 14px 20px;
+            }
+            .btn-cta {
+                font-size: 1rem;
+                padding: 14px 16px;
+            }
+            .stat-banner .big-number {
+                font-size: 1.6rem;
+            }
+            .testimonial-featured .quote {
+                font-size: 0.9rem;
+            }
+            .social-counter .number {
+                font-size: 1.1rem;
+            }
+            .countdown-box .timer {
+                font-size: 1.1rem;
+                padding: 2px 12px;
+            }
+            .container {
+                padding: 0 12px;
+            }
+            .feature-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 8px;
+            }
+            .proof-grid {
+                grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+                gap: 8px;
+            }
+            .glitch-strip .badge-ribbon {
+                font-size: 0.65rem;
+                padding: 3px 14px;
+            }
+            .countdown-box .scarcity-badge {
+                font-size: 0.65rem;
+                padding: 2px 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .glitch-strip h1 {
+                font-size: 1.2rem;
+            }
+            .btn-cta {
+                font-size: 0.85rem;
+                padding: 12px 12px;
+            }
+            .form-box .form-control {
+                padding: 12px 14px;
+                font-size: 0.9rem;
+            }
+            .stat-banner .big-number {
+                font-size: 1.3rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ── Utility ── */
+        .text-glow {
+            text-shadow: 0 0 30px rgba(245, 166, 35, 0.12);
+        }
+        .text-accent {
+            color: #f5a623;
+        }
+        .text-gold {
+            color: #ffd966;
+        }
+        .mt-1 {
+            margin-top: 6px;
+        }
+        .mt-2 {
+            margin-top: 14px;
+        }
+        .mb-1 {
+            margin-bottom: 6px;
+        }
+        .mb-2 {
+            margin-bottom: 14px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .fw-800 {
+            font-weight: 800;
+        }
+        .fw-700 {
+            font-weight: 700;
+        }
+        .fw-600 {
+            font-weight: 600;
+        }
+
+        /* ── Micro-commitment visual cue ── */
+        .micro-commit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px 14px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #8899bb;
+            padding: 6px 0 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            margin-bottom: 14px;
+        }
+        .micro-commit .yes {
+            color: #4caf50;
+            font-weight: 800;
+        }
+        .micro-commit .arrow {
+            color: #f5a623;
+            font-weight: 700;
+        }
+
+        /* ── Scarcity ribbon inline ── */
+        .scarcity-ribbon {
+            background: linear-gradient(90deg, rgba(208, 32, 61, 0.10), rgba(208, 32, 61, 0.03));
+            border-radius: 30px;
+            padding: 6px 18px;
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #f5a623;
+            letter-spacing: 0.04em;
+            border: 1px solid rgba(208, 32, 61, 0.10);
+        }
+        .scarcity-ribbon i {
+            margin-right: 4px;
+        }
+
+        /* ── Hidden name field override ── */
+        #ifnb9 {
+            display: none !important;
+        }
+
+        /* ── Two-column proof layout ── */
+        .proof-grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 14px;
+            margin: 12px 0 16px;
+        }
+        .proof-grid-2col .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(145deg, #141a24, #1e2635);
+            border-radius: 10px;
+            padding: 10px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .proof-grid-2col .proof-item .avatar {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+        .proof-grid-2col .proof-item .info {
+            flex: 1;
+            min-width: 0;
+        }
+        .proof-grid-2col .proof-item .info .name {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #aabbdd;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .proof-grid-2col .proof-item .info .earnings {
+            font-size: 0.65rem;
+            color: #ffd966;
+            font-weight: 700;
+        }
+        .proof-grid-2col .proof-item .info .sub {
+            font-size: 0.55rem;
+            color: #667799;
+        }
+
+        @media (max-width: 500px) {
+            .proof-grid-2col {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+            .proof-grid-2col .proof-item {
+                padding: 8px 12px;
+            }
+        }
+
+        /* ── Floating urgency badge ── */
+        .urgency-float {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 14, 20, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(245, 166, 35, 0.10);
+            padding: 6px 0;
+            display: none;
+            text-align: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #f5a623;
+            letter-spacing: 0.04em;
+        }
+        .urgency-float i {
+            margin-right: 6px;
+            color: #d0203d;
+        }
+        .urgency-float .num {
+            color: #ffd966;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .urgency-float {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== FLOATING URGENCY BAR (desktop) ====== -->
+    <div class="urgency-float" id="urgencyFloat">
+        <i class="fa fa-exclamation-triangle"></i> ⏱️ Limited trial access · <span class="num" id="floatCount">47</span> left — claim yours now
+    </div>
+
+    <!-- ====== SECTION 1: Big Red Headline Strip ====== -->
+    <div class="glitch-strip">
+        <div class="container">
+            <h1>$104,170.53 <span style="font-size:0.6em;display:inline-block;">per month</span></h1>
+            <div class="sub-glitch">generated on autopilot</div>
+            <div class="badge-ribbon"><i class="fa fa-bolt"></i> OFFICIAL AMBASSADOR PROGRAM</div>
+        </div>
+    </div>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <div class="main-content">
+        <div class="container">
+
+            <!-- Curiosity Gap + Specificity -->
+            <div class="text-center">
+                <span class="curiosity-badge">
+                    <i class="fa fa-rocket"></i> PROVEN SALES MACHINE · LEADS, SALES &amp; COMMISSIONS 24/7
+                </span>
+            </div>
+
+            <!-- Micro-commitments (read-only yes-ladder) -->
+            <div class="micro-commit">
+                <span>Want automated income? <span class="yes">✓ YES</span></span>
+                <span class="arrow">→</span>
+                <span>Ready to escape the rat race? <span class="yes">✓ YES</span></span>
+                <span class="arrow">→</span>
+                <span>7 days free sounds good? <span class="yes">✓ YES</span></span>
+            </div>
+
+            <!-- Feature Grid -->
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fa fa-clock-o"></i>
+                    <div class="label">7 Days Free</div>
+                    <div class="sub">No payment required</div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa fa-credit-card"></i>
+                    <div class="label">$0 Today</div>
+                    <div class="sub">Cancel anytime</div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa fa-gears"></i>
+                    <div class="label">Fully Automated</div>
+                    <div class="sub">Runs 24/7 on autopilot</div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa fa-users"></i>
+                    <div class="label">Proven System</div>
+                    <div class="sub">Trusted by thousands</div>
+                </div>
+            </div>
+
+            <!-- ====== STUDENT SUCCESS STATS ====== -->
+            <div class="stat-banner">
+                <div class="big-number">$23 MILLION+</div>
+                <div class="desc">in sales generated by my students</div>
+                <div class="sub-desc"><i class="fa fa-check-circle" style="color:#4caf50;"></i> Verified earnings · Real people · Real results</div>
+            </div>
+
+            <!-- ====== 13 STUDENT PROOF GRID (2 columns) ====== -->
+            <div style="font-size:0.75rem; font-weight:700; color:#8899bb; margin-bottom:8px; letter-spacing:0.04em; text-align:center;">
+                <i class="fa fa-trophy" style="color:#f5a623;"></i> REAL STUDENT SUCCESS STORIES
+            </div>
+            <div class="proof-grid-2col">
+                <div class="proof-item">
+                    <div class="avatar">👨‍💼</div>
+                    <div class="info">
+                        <div class="name">Marcus T.</div>
+                        <div class="earnings">+$47,230</div>
+                        <div class="sub">in 4 months</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">👩‍💻</div>
+                    <div class="info">
+                        <div class="name">Elena R.</div>
+                        <div class="earnings">+$62,410</div>
+                        <div class="sub">in 6 weeks</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">🧑‍🏫</div>
+                    <div class="info">
+                        <div class="name">David K.</div>
+                        <div class="earnings">+$38,900</div>
+                        <div class="sub">in 3 months</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">👩‍🎓</div>
+                    <div class="info">
+                        <div class="name">Sophia L.</div>
+                        <div class="earnings">+$51,200</div>
+                        <div class="sub">in 8 weeks</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">👨‍🔧</div>
+                    <div class="info">
+                        <div class="name">James W.</div>
+                        <div class="earnings">+$29,875</div>
+                        <div class="sub">in 2 months</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">👩‍💼</div>
+                    <div class="info">
+                        <div class="name">Amanda C.</div>
+                        <div class="earnings">+$43,560</div>
+                        <div class="sub">in 5 months</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">🧑‍💻</div>
+                    <div class="info">
+                        <div class="name">Robert M.</div>
+                        <div class="earnings">+$56,780</div>
+                        <div class="sub">in 7 weeks</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">👩‍🌾</div>
+                    <div class="info">
+                        <div class="name">Linda P.</div>
+                        <div class="earnings">+$34,200</div>
+                        <div class="sub">in 3 months</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">👨‍🎨</div>
+                    <div class="info">
+                        <div class="name">Carlos G.</div>
+                        <div class="earnings">+$71,450</div>
+                        <div class="sub">in 9 weeks</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">👩‍🔬</div>
+                    <div class="info">
+                        <div class="name">Natalie S.</div>
+                        <div class="earnings">+$41,300</div>
+                        <div class="sub">in 4 months</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">🧑‍✈️</div>
+                    <div class="info">
+                        <div class="name">Andrei B.</div>
+                        <div class="earnings">+$53,900</div>
+                        <div class="sub">in 6 months</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">👩‍💼</div>
+                    <div class="info">
+                        <div class="name">Monica D.</div>
+                        <div class="earnings">+$37,620</div>
+                        <div class="sub">in 2 months</div>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <div class="avatar">🧑‍🎤</div>
+                    <div class="info">
+                        <div class="name">Trevor J.</div>
+                        <div class="earnings">+$49,880</div>
+                        <div class="sub">in 5 weeks</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Proof Counter -->
+            <div class="social-counter">
+                <span class="pulse-dot"></span>
+                <span class="number">12,847</span>
+                <span class="label">affiliates &amp; students already inside · <span style="color:#f5a623;">+214</span> joined today</span>
+            </div>
+
+            <!-- Scarcity Ribbon -->
+            <div class="text-center mb-2">
+                <span class="scarcity-ribbon"><i class="fa fa-exclamation-triangle"></i> Only <strong style="color:#d0203d;">47</strong> free trial spots remaining — act now</span>
+            </div>
+
+            <!-- ====== FEATURED TESTIMONIAL ====== -->
+            <div class="testimonial-featured">
+                <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <div class="quote">
+                    "Under 3 years ago, I launched my first product with John and Randy — 2 years and 10 months since then — I am THRILLED to report a MILESTONE half million USD! I reached this life-changing moment because I decided early on to follow the course, no matter what, even if some things felt not meant for me. The only way is through action."
+                </div>
+                <div class="author">
+                    <div class="avatar">SP</div>
+                    <div>
+                        <div class="name">Shelley Penney</div>
+                        <div class="title">19 October ★ Ambassador Graduate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== FORM BOX ====== -->
+            <div class="form-box" id="form-box">
+                <div class="form-title"><i class="fa fa-unlock-alt" style="color:#f5a623;"></i> START YOUR 7-DAY RISK-FREE TRIAL</div>
+                <div class="form-sub">The sign-up process only takes a <strong>few seconds</strong> ⚡ Enter your email to get instant access.</div>
+
+                <!-- Loss Aversion copy -->
+                <p style="font-size:0.85rem; color:#f5a623; text-align:center; font-weight:600; margin-bottom:14px; border:1px dashed rgba(245,166,35,0.15); border-radius:10px; padding:8px 12px;">
+                    <i class="fa fa-exclamation-circle"></i> Don't leave this page empty-handed… this trial offer might close forever.
+                </p>
+
+                <!-- ====== EXACT FORM (unchanged backend) ====== -->
+                <form method="POST" action="https://gogvo.com/subscribe.php" id="io8bd" class="ar-fm1">
+                    <input type="hidden" name="CampaignCode" value=""/>
+                    <input type="hidden" name="AffiliateName" value="natur1984NLS"/>
+                    <input type="hidden" name="PassFormData" value="0"/>
+                    <input type="hidden" name="ThankyouPage" value="https://natur1984NLS.gogvo.com/gvothankyou/"/>
+                    <input type="hidden" name="OptIn" value="0"/>
+                    <input type="hidden" name="PbVisitorId" value=""/>
+
+                    <!-- Hidden name field (kept hidden as specified) -->
+                    <div class="form-group" id="ifnb9" style="display:none;">
+                        <input type="text" name="FullName" id="arFormName-2" placeholder="Name" class="form-control"/>
+                    </div>
+
+                    <!-- Only visible field: Email -->
+                    <div class="form-group">
+                        <input type="email" name="Email" id="arFormEmail-2" placeholder="Enter your email address" class="form-control" required />
+                    </div>
+
+                    <!-- CTA Button with pulse animation + micro-copy -->
+                    <button type="submit" id="ier9s" class="btn btn-cta">
+                        <span class="pulse-ring"></span>
+                        I AM READY! SET UP MY SYSTEM!
+                        <span class="micro-copy"><i class="fa fa-lock" style="opacity:0.6;"></i> 7 days free · No payment required · Cancel anytime</span>
+                    </button>
+                </form>
+                <!-- ====== END FORM ====== -->
+
+                <!-- Trust Badge -->
+                <div class="trust-badge">
+                    <i class="fa fa-shield"></i>
+                    <span class="text"><strong>100% Risk-Free</strong> – 7-day free trial · No credit card charged today</span>
+                    <i class="fa fa-credit-card" style="color:#f5a623;"></i>
+                </div>
+
+                <!-- Countdown + Scarcity -->
+                <div class="countdown-box">
+                    <span class="label"><i class="fa fa-hourglass-half"></i> Trial access expires in:</span>
+                    <span class="timer" id="countdown-timer"><i class="fa fa-clock-o"></i> 05:00</span>
+                    <span class="scarcity-badge" id="scarcityBadge"><i class="fa fa-users"></i> 47 left</span>
+                </div>
+
+                <!-- Reciprocity / Future pacing micro-copy -->
+                <p style="font-size:0.7rem; color:#667799; text-align:center; margin:12px 0 0; font-weight:400; letter-spacing:0.02em;">
+                    <i class="fa fa-gift" style="color:#f5a623;"></i> On the next page, you'll get instant access to the full Ambassador Program system.
+                </p>
+            </div>
+
+            <!-- ====== FOOTER ====== -->
+            <div class="footer-disclaimer">
+                <span class="clickbank-badge"><i class="fa fa-lock"></i> Secure ClickBank checkout · 7-day free trial then low monthly investment</span>
+                <br /><br />
+                © 2025 Ambassador Program — Proven Sales Machine | Results may vary based on individual effort. The $104k/month represents top performer case study based on automated systems. Full terms apply.
+                <br />
+                <span style="opacity:0.5; font-size:0.55rem;"><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+            </div>
+
+        </div><!-- /.container -->
+    </div><!-- /.main-content -->
+
+    <!-- ====== COUNTDOWN + SCARCITY SCRIPT ====== -->
+    <script>
+        (function() {
+            // Scarcity: 47 spots left, decrement slowly
+            var spotsLeft = 47;
+            var scarcityBadge = document.getElementById('scarcityBadge');
+            var floatCount = document.getElementById('floatCount');
+
+            function updateScarcity() {
+                if (scarcityBadge) {
+                    scarcityBadge.innerHTML = '<i class="fa fa-users"></i> ' + spotsLeft + ' left';
+                }
+                if (floatCount) {
+                    floatCount.textContent = spotsLeft;
+                }
+            }
+
+            // Decrease spots randomly every 8-15 seconds to simulate urgency
+            setInterval(function() {
+                if (spotsLeft > 2) {
+                    var drop = Math.floor(Math.random() * 2) + 1;
+                    spotsLeft = Math.max(1, spotsLeft - drop);
+                    updateScarcity();
+                }
+            }, 8000 + Math.random() * 7000);
+
+            // Countdown: ~5 minutes
+            var expirySeconds = 5 * 60 + 0;
+            var timerEl = document.getElementById('countdown-timer');
+
+            function pad(n) {
+                return String(n).padStart(2, '0');
+            }
+
+            function updateTimer(seconds) {
+                if (seconds < 0) seconds = 0;
+                var mins = Math.floor(seconds / 60);
+                var secs = seconds % 60;
+                if (timerEl) {
+                    timerEl.innerHTML = '<i class="fa fa-clock-o"></i> ' + pad(mins) + ':' + pad(secs);
+                }
+                return seconds;
+            }
+
+            var remaining = expirySeconds;
+            updateTimer(remaining);
+
+            var interval = setInterval(function() {
+                remaining -= 1;
+                if (remaining <= 0) {
+                    remaining = 0;
+                    clearInterval(interval);
+                    if (timerEl) {
+                        timerEl.innerHTML = '<i class="fa fa-exclamation-triangle" style="color:#d0203d;"></i> EXPIRED – ACT NOW';
+                    }
+                    // Auto-reset after 4 seconds to keep the loop going
+                    setTimeout(function() {
+                        remaining = 5 * 60 + 0;
+                        updateTimer(remaining);
+                        interval = setInterval(function() {
+                            remaining -= 1;
+                            if (remaining <= 0) {
+                                remaining = 0;
+                                clearInterval(interval);
+                                if (timerEl) {
+                                    timerEl.innerHTML = '<i class="fa fa-exclamation-triangle" style="color:#d0203d;"></i> EXPIRED – ACT NOW';
+                                }
+                            } else {
+                                updateTimer(remaining);
+                            }
+                        }, 1000);
+                    }, 4000);
+                } else {
+                    updateTimer(remaining);
+                }
+            }, 1000);
+
+            // Initial update
+            updateScarcity();
+
+            // Also update float count periodically
+            setInterval(function() {
+                if (floatCount) {
+                    floatCount.textContent = spotsLeft;
+                }
+            }, 3000);
+        })();
+    </script>
+
+</body>
+</html>
