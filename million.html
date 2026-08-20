@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page – See How It Works</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .landing-container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .main-image {
+            width: 60%;           /* Bild auf 60% der Containerbreite verkleinert */
+            max-width: 300px;     /* maximale Breite 300px */
+            height: auto;
+            border-radius: 8px;
+            margin: 0 auto 20px;  /* zentriert und Abstand nach unten */
+            display: block;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .email-form table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .email-form td {
+            padding: 8px 5px;
+            text-align: left;
+        }
+
+        .email-form label {
+            font-size: 1rem;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .email-form input[type="text"] {
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            width: 250px;
+            max-width: 100%;
+        }
+
+        .email-form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .email-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .tracking-image {
+            margin-top: 15px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Dein Bild – jetzt kleiner -->
+        <img class="main-image" 
+             src="https://imgallery.llsvr.com/sandyarta.6a871f357610a.webp" 
+             alt="Landing Page Bild">
+
+        <!-- Untertitel -->
+        <h2 class="subtitle">See How It Works</h2>
+
+        <!-- E-Mail-Formular -->
+        <div class="email-form">
+            <form method="POST" action="https://gogvo.com/subscribe.php">
+                <input type="hidden" name="AffiliateName" value="natur1984NLS">
+                <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+                <input type="hidden" name="TrackParam" value="new_form">
+                <input type="hidden" name="FormId" value="25235157">
+                <table align="center">
+                    <tr>
+                        <td>
+                            <label for="email">Please enter your email:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="Email" id="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2">
+                            <input type="submit" value="Submit">
+                        </td>
+                    </tr>
+                </table>
+                <img src="https://gogvo.com/show_form.php?id=25235157&TrackParam=new_form" alt="Tracking" class="tracking-image">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
