@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Landing Page</title>
+    <style>
+        /* ── Reset & Base ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f9fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem 1rem;
+            color: #1e1e2f;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(145deg, #0b1a3a, #1d3b6f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.15rem;
+            color: #4a4a6a;
+            margin-top: 0.4rem;
+        }
+
+        /* ── Grid ── */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2.2rem 1.8rem;
+        }
+
+        /* ── Card ── */
+        .product-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+            padding: 1.4rem 1.4rem 1.8rem;
+            transition: transform 0.2s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09), 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        /* ── Image ── */
+        .product-card .image-wrapper {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafbff;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+            padding: 0.6rem;
+            border: 1px solid #f0f2f8;
+        }
+
+        .product-card .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .image-wrapper img {
+            transform: scale(1.02);
+        }
+
+        /* ── Button ── */
+        .product-card .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: linear-gradient(135deg, #1d3b6f, #2b5797);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 60px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px rgba(27, 55, 100, 0.25);
+            letter-spacing: 0.3px;
+        }
+
+        .product-card .btn:hover {
+            background: linear-gradient(135deg, #142d55, #1f4a7e);
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(27, 55, 100, 0.35);
+        }
+
+        .product-card .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* ── Responsive tweaks ── */
+        @media (max-width: 600px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .product-grid {
+                gap: 1.5rem;
+            }
+
+            .product-card {
+                padding: 1rem 1rem 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="page-header">
+            <h1>🔥 Exclusive Offers</h1>
+            <p>Explore our top products — click the button below each image to learn more</p>
+        </header>
+
+        <!-- PRODUCT GRID -->
+        <div class="product-grid">
+
+            <!-- 1 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://epcworkshop.com/cb/new/images/WFS%20HARDBOOK.png" alt="WFS Hardbook" loading="lazy" />
+                </div>
+                <a href="https://hop.clickbank.net/?affiliate=verborgene&vendor=waterfs&tid=mylead" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 2 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://epcworkshop.com/cb/new/images/HPSCOVER.png" alt="HPS Cover" loading="lazy" />
+                </div>
+                <a href="https://hop.clickbank.net/?affiliate=verborgene&vendor=homepsh&tid=mylead" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 3 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://epcworkshop.com/cb/new/images/ERS-COVER-BOOK-2.png" alt="ERS Cover Book" loading="lazy" />
+                </div>
+                <a href="https://hop.clickbank.net/?affiliate=verborgene&vendor=enrev&tid=mylead" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 4 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://d2h8hiv6zzm73v.cloudfront.net/legacy/vendors/prodentim/prodentim_21702971708025.jpg" alt="ProDentim" loading="lazy" />
+                </div>
+                <a href="https://ce87aukpf9t2jbkhtbe4xhwl4w.hop.clickbank.net/?&traffic_source=mylead" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 5 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://d2h8hiv6zzm73v.cloudfront.net/legacy/vendors/provive/6vive-3001747944566183.png" alt="ProVive" loading="lazy" />
+                </div>
+                <a href="https://156ccrrpfcucjgg90eacz53v04.hop.clickbank.net/?&traffic_source=mylead" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 6 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://d2h8hiv6zzm73v.cloudfront.net/legacy/vendors/visiflora/cb_21765446974638.png" alt="Visiflora" loading="lazy" />
+                </div>
+                <a href="https://1c9d5fgoleu7rmprspmaxhw366.hop.clickbank.net/?&traffic_source=mylead" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 7 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://geniusswitchoriginal.com/images/vsls2prd.png" alt="Genius Switch" loading="lazy" />
+                </div>
+                <a href="https://6ef0ciofoh69ldgdxch7u7yj5a.hop.clickbank.net/?&traffic_source=mylead" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 8 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://d2h8hiv6zzm73v.cloudfront.net/legacy/vendors/tedsplans/tednewbox160s1754066390299.jpg" alt="Ted's Plans" loading="lazy" />
+                </div>
+                <a href="https://d2b09hnklb18ffqmt24hxyvmec.hop.clickbank.net/?&traffic_source=mylead" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 9 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://d2h8hiv6zzm73v.cloudfront.net/legacy/vendors/dubaiws/DWSFEBundle1761544671535.jpg" alt="Dubai WS" loading="lazy" />
+                </div>
+                <a href="https://9f11aqogde2dghfa12p75o5p8y.hop.clickbank.net/?&traffic_source=myleadmix" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 10 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://d2h8hiv6zzm73v.cloudfront.net/legacy/vendors/absolutex/TokencoversquarewithUSAflag1768921840529.png" alt="Absolutex" loading="lazy" />
+                </div>
+                <a href="https://8c625pokphxchmi-drs9-lsr3l.hop.clickbank.net/?&traffic_source=myleadmix" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+            <!-- 11 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://d2h8hiv6zzm73v.cloudfront.net/legacy/vendors/gluco6/Gluco66botsnew1738925326261.png" alt="Gluco6" loading="lazy" />
+                </div>
+                <a href="https://64ac1rkpoixarcmcymjfgublc8.hop.clickbank.net/?&traffic_source=myleadmix" target="_blank" rel="noopener noreferrer" class="btn">
+                    View Product →
+                </a>
+            </div>
+
+        </div>
+        <!-- end grid -->
+
+        <!-- tiny footer note (optional) -->
+        <footer style="text-align:center; margin-top:3.5rem; font-size:0.85rem; color:#8888aa; border-top:1px solid #e6e8f0; padding-top:1.8rem;">
+            &copy; 2026 &bull; All product links open in a new window
+        </footer>
+
+    </div>
+    <!-- end container -->
+
+</body>
+</html>
