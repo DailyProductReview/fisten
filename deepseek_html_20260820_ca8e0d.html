@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jets · Dark Landing</title>
+    <style>
+        /* ── Reset & Base ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0b0b0b;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2.5rem 1.5rem;
+            color: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #b0ff70, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 100, 0.15);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #bbbbdd;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* ── Grid ── */
+        .jets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem 1.8rem;
+        }
+
+        /* ── Card (dark) ── */
+        .jet-card {
+            background: #18181e;
+            border-radius: 24px;
+            padding: 2rem 1.6rem 2rem;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 255, 100, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #2a2a32;
+        }
+
+        .jet-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 255, 100, 0.25);
+            border-color: #3a3a4a;
+        }
+
+        /* ── Text content ── */
+        .jet-card .jet-text {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 1.8rem;
+            color: #f0f4ff;
+            letter-spacing: 0.2px;
+            word-break: break-word;
+            min-height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* ── Neon button ── */
+        .jet-card .btn-neon {
+            display: inline-block;
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: #00ff5e;
+            color: #0b0b0b;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            border-radius: 60px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.25s ease;
+            box-shadow: 0 0 16px rgba(0, 255, 94, 0.35);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .jet-card .btn-neon:hover {
+            background: #66ff99;
+            transform: scale(1.02);
+            box-shadow: 0 0 28px rgba(0, 255, 94, 0.6);
+        }
+
+        .jet-card .btn-neon:active {
+            transform: scale(0.97);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #28283a;
+            font-size: 0.9rem;
+            color: #666688;
+            width: 100%;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .jets-grid {
+                gap: 1.5rem;
+            }
+            .jet-card {
+                padding: 1.6rem 1.2rem 1.8rem;
+            }
+            .jet-card .jet-text {
+                font-size: 1.1rem;
+                min-height: 3.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="page-header">
+            <h1>⚡ JETS · high‑impact offers</h1>
+            <p>No images, just pure value. Click any neon button to launch the offer in a new tab.</p>
+        </header>
+
+        <!-- JETS GRID -->
+        <div class="jets-grid">
+
+            <!-- 1 -->
+            <div class="jet-card">
+                <div class="jet-text">Create Your First $1,000 Online</div>
+                <a href="https://natur1984.sendshark.com/pb/ambassador" target="_blank" rel="noopener noreferrer" class="btn-neon">
+                    Get Started →
+                </a>
+            </div>
+
+            <!-- 2 -->
+            <div class="jet-card">
+                <div class="jet-text">Make Money Online from Anywhere in the World</div>
+                <a href="https://natur1984.sendshark.com/pb/ambassadoranywhere" target="_blank" rel="noopener noreferrer" class="btn-neon">
+                    Get Started →
+                </a>
+            </div>
+
+            <!-- 3 -->
+            <div class="jet-card">
+                <div class="jet-text">FREE WEBINAR · 9 Secrets</div>
+                <a href="https://natur1984.sendshark.com/pb/ambassadorsecretsnew" target="_blank" rel="noopener noreferrer" class="btn-neon">
+                    Get Started →
+                </a>
+            </div>
+
+            <!-- 4 -->
+            <div class="jet-card">
+                <div class="jet-text">In Just 29 Days: 1,904 New Subscribers And $5,557 In Commissions</div>
+                <a href="https://natur1984.sendshark.com/pb/leadsok" target="_blank" rel="noopener noreferrer" class="btn-neon">
+                    Get Started →
+                </a>
+            </div>
+
+            <!-- 5 -->
+            <div class="jet-card">
+                <div class="jet-text">Launch High Profit Products in Days With AI</div>
+                <a href="https://e38fekikcl5dfkf9y0z8r6rksc.hop.clickbank.net/?&traffic_source=mylead" target="_blank" rel="noopener noreferrer" class="btn-neon">
+                    Get Started →
+                </a>
+            </div>
+
+        </div>
+        <!-- end grid -->
+
+        <footer class="footer">
+            &copy; 2026 &bull; All offers open in a new window
+        </footer>
+
+    </div>
+    <!-- end container -->
+
+</body>
+</html>
