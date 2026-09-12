@@ -204,6 +204,134 @@
     <img height="1" width="1" style="display:none" src="https://www.illuminatural6i.com/ct/958361">
     <img height="1" width="1" style="display:none" src="https://www.skinception.com/ct/958361">
     <img height="1" width="1" style="display:none" src="https://www.kollagenintensiv.com/ct/958361">
-    
+    <!-- ===== Sendshark Overlay mit 1-Stunden-Sperre ===== -->
+<style>
+  #ssOverlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center; justify-content: center;
+    z-index: 999999;
+    font-family: Verdana, sans-serif;
+  }
+  #ssOverlay.show { display: flex; }
+
+  #ssBox {
+    background: #fff;
+    border: 1px solid #0000ff;
+    max-width: 340px; width: 92%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    position: relative;
+  }
+
+  #ssHeader {
+    background: #0000ff; color: #fff;
+    padding: 8px 10px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 12pt; font-weight: bold;
+  }
+  #ssClose {
+    background: red; color: #fff;
+    border: none; cursor: pointer;
+    padding: 3px 8px;
+    font-family: Verdana, sans-serif;
+    font-size: 10pt; font-weight: bold;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    border-bottom: 2px solid #696969;
+    border-right: 2px solid #696969;
+  }
+  #ssClose:hover { background: #cc0000; }
+
+  #ssBody {
+    padding: 12px;
+    text-align: center;
+  }
+  #ssBody label {
+    display: block;
+    font-size: 10pt;
+    margin-bottom: 6px;
+  }
+  #ssBody input[type="text"] {
+    padding: 5px 8px;
+    font-size: 10pt;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  #ssBody input[type="submit"] {
+    padding: 6px 20px;
+    font-size: 10pt;
+    cursor: pointer;
+  }
+</style>
+
+<div id="ssOverlay" role="dialog" aria-modal="true">
+  <div id="ssBox">
+    <div id="ssHeader">
+      <span>FREE Webinar - Learn How to earn 6 Figures this Year!</span>
+      <button id="ssClose" aria-label="Schließen">X</button>
+    </div>
+    <div id="ssBody">
+      <form method="post" action="https://gogvo.com/subscribe.php">
+        <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv" />
+        <input type="hidden" name="FormId" value="25235157" />
+        <input type="hidden" name="ThankyouPage" value="https://natur1984.sendshark.com/pb/thxpagenew" />
+        <input type="hidden" name="AffiliateName" value="natur1984NLS" />
+
+        <label for="ssEmail">Please enter your email:</label>
+        <input type="text" id="ssEmail" name="Email" />
+        <br>
+        <input type="submit" value="Submit" />
+        <img src="https://gogvo.com/show_form.php?id=25235157" alt="" />
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const COOKIE_NAME = 'ssPopupLastShown';
+  const HOURS       = 1;       // 1 Stunde Sperre
+  const DELAY_MS    = 3000;    // 3s nach Seitenaufruf anzeigen
+
+  const overlay = document.getElementById('ssOverlay');
+  const closeB  = document.getElementById('ssClose');
+  const emailEl = document.getElementById('ssEmail');
+
+  function getCookie(name) {
+    const m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]+)'));
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function setCookie(name, val, hours) {
+    const d = new Date();
+    d.setTime(d.getTime() + hours * 60 * 60 * 1000);
+    document.cookie = name + '=' + encodeURIComponent(val)
+                    + '; expires=' + d.toUTCString()
+                    + '; path=/; SameSite=Lax';
+  }
+  function show() {
+    overlay.classList.add('show');
+    setTimeout(() => emailEl && emailEl.focus(), 200);
+  }
+  function hide() {
+    overlay.classList.remove('show');
+    setCookie(COOKIE_NAME, Date.now(), HOURS);
+  }
+
+  // Prüfen: schon gezeigt in der letzten Stunde?
+  const last = parseInt(getCookie(COOKIE_NAME) || '0', 10);
+  const now  = Date.now();
+  if (!last || (now - last) >= HOURS * 60 * 60 * 1000) {
+    setTimeout(show, DELAY_MS);
+  }
+
+  closeB.addEventListener('click', hide);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) hide(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('show')) hide();
+  });
+})();
+</script>
+<!-- ===== /Sendshark Overlay ===== -->
 </body>
 </html>
