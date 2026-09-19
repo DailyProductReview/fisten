@@ -1,500 +1,376 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLGS Affiliate — Earn $100 Weekly Bonuses + 5-Level Residual Income</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0b0e14;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background: radial-gradient(circle at top, #1a1f2e, #0b0e14);
-            border-bottom: 2px solid #ffd700;
-        }
-        .hero h1 {
-            font-size: 2.8rem;
-            color: #ffffff;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .hero h1 span {
-            color: #ffd700;
-            display: block;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #cccccc;
-        }
-        .cta-button {
-            display: inline-block;
-            background: #ffd700;
-            color: #0b0e14;
-            padding: 15px 40px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
-            border: none;
-            cursor: pointer;
-        }
-        .cta-button:hover {
-            background: #ffea70;
-            transform: translateY(-2px);
-        }
-        .urgent-bar {
-            background: #b00020;
-            color: #ffffff;
-            text-align: center;
-            padding: 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        .urgent-bar .timer {
-            background: #00000033;
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 2px;
-        }
-        .section {
-            padding: 50px 20px;
-            border-bottom: 1px solid #1f2533;
-        }
-        .section h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #ffd700;
-            text-transform: uppercase;
-        }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        .card {
-            background: #151a24;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #2a3442;
-            transition: border-color 0.3s;
-        }
-        .card:hover {
-            border-color: #ffd700;
-        }
-        .card h3 {
-            color: #ffffff;
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-        }
-        .card p {
-            color: #bbbbbb;
-        }
-        .level-table {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            border-collapse: collapse;
-            background: #151a24;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .level-table th, .level-table td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #2a3442;
-        }
-        .level-table th {
-            background: #1f2533;
-            color: #ffd700;
-        }
-        .testimonial {
-            background: #151a24;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 700px;
-            margin: 20px auto;
-            text-align: center;
-            font-style: italic;
-            border-left: 5px solid #ffd700;
-        }
-        .testimonial .author {
-            margin-top: 15px;
-            font-weight: bold;
-            color: #ffd700;
-            font-style: normal;
-        }
-        .steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .step {
-            background: #151a24;
-            padding: 25px;
-            border-radius: 10px;
-            flex: 1 1 200px;
-            text-align: center;
-            border: 1px solid #2a3442;
-        }
-        .step-number {
-            font-size: 2.5rem;
-            color: #ffd700;
-            font-weight: bold;
-        }
-        .faq {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            margin-bottom: 15px;
-            background: #151a24;
-            border-radius: 8px;
-            padding: 15px 20px;
-        }
-        .faq-item strong {
-            color: #ffd700;
-            display: block;
-            margin-bottom: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #0b0e14;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        .highlight {
-            color: #ffd700;
-            font-weight: bold;
-        }
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 1.1rem;
-            }
-        }
-        /* Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-overlay.active {
-            display: flex;
-        }
-        .modal-content {
-            background: #151a24;
-            border: 2px solid #ffd700;
-            border-radius: 10px;
-            padding: 30px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            text-align: center;
-        }
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: none;
-            border: none;
-            color: #ffd700;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-        .modal-content h2 {
-            color: #ffd700;
-            margin-bottom: 15px;
-        }
-        .modal-content p {
-            color: #cccccc;
-            margin-bottom: 20px;
-        }
-        .modal-content form table {
-            margin: 0 auto;
-        }
-        .modal-content form label {
-            color: #ffffff;
-            margin-right: 10px;
-        }
-        .modal-content form input[type="text"] {
-            padding: 8px 12px;
-            border: 1px solid #2a3442;
-            border-radius: 4px;
-            background: #0b0e14;
-            color: #ffffff;
-            width: 220px;
-        }
-        .modal-content form input[type="submit"] {
-            background: #ffd700;
-            color: #0b0e14;
-            padding: 10px 25px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-            font-size: 1rem;
-        }
-        .modal-content form input[type="submit"]:hover {
-            background: #ffea70;
-        }
-        .modal-content form img {
-            display: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Tested Income Machines</title>
 </head>
-<body>
+<body style="margin:0; padding:0; background-color:#0f0f0f; font-family:Arial, Helvetica, sans-serif; -webkit-text-size-adjust:100%;">
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <h1>Your $100 Weekly Bonus Is Waiting<br><span>But Only If You Act Before Sunday</span></h1>
-            <p>Join MLGS as an affiliate and unlock unlimited earning potential with 5-level residual commissions, plus a no-cap weekly cash bonus for every 5 referrals. Hesitation is costing you real money.</p>
-            <button class="cta-button" onclick="openModal()">Get My Affiliate Link Now</button>
-        </div>
-    </div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#0f0f0f;">
+  <tr>
+    <td align="center" style="padding:20px 10px;">
 
-    <!-- Urgency Bar with Live Countdown -->
-    <div class="urgent-bar">
-        ⏰ Weekly contest ends Sunday 11:59 PM ET. Time remaining:
-        <span class="timer" id="countdown">00:00:00:00</span>
-    </div>
+      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width:100%; max-width:600px; background-color:#1a1a1a;">
 
-    <!-- The Math Section -->
-    <div class="section">
-        <div class="container">
-            <h2>The Math That Makes You Money</h2>
-            <p style="text-align:center; max-width:700px; margin:0 auto 20px;">You earn monthly commissions on 5 levels of your downline. It starts small — but compounds fast when your referrals start referring.</p>
-            <table class="level-table">
-                <tr><th>Level</th><th>Monthly Commission per Sale</th></tr>
-                <tr><td>Level 1 (Personal Sales)</td><td>$5 / month</td></tr>
-                <tr><td>Level 2 (Your Affiliates' Sales)</td><td>$4 / month</td></tr>
-                <tr><td>Level 3</td><td>$3 / month</td></tr>
-                <tr><td>Level 4</td><td>$2 / month</td></tr>
-                <tr><td>Level 5</td><td>$1 / month</td></tr>
+        <!-- HEADER -->
+        <tr>
+          <td align="center" bgcolor="#ff2d2d" style="padding:30px 20px;">
+            <h1 style="margin:0; color:#ffffff; font-size:24px; line-height:1.3; font-family:Arial, sans-serif;">
+              BEST TESTED INCOME MACHINES
+            </h1>
+            <p style="margin:10px 0 0; color:#ffe0b2; font-size:14px; font-family:Arial, sans-serif;">
+              Let OTHERS Build Your List &amp; YOU Earn As a Referral!
+            </p>
+          </td>
+        </tr>
+
+        <!-- INTRO -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:20px; line-height:1.3; font-family:Arial, sans-serif;">
+              Let OTHER PEOPLE Build Your Email List &amp; YOU Build a Great Passive Income!
+            </h2>
+            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              Without Selling or Explaining. Collect <strong style="color:#ff8a00;">200% Commissions!</strong>
+            </p>
+            <p style="margin:0; color:#999999; font-size:13px; line-height:1.5; font-family:Arial, sans-serif;">
+              Discover The Automated Business That Has Made Me Over $250 Million in Online Sales.
+            </p>
+          </td>
+        </tr>
+
+        <!-- BUTTON 1 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#ff2d2d" style="border-radius:4px;">
+                  <a href="https://mylistelevate.com/launch/start_now?id=natur1984&amp;tr=mylead"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    START NOW – BUILD YOUR LIST
+                  </a>
+                </td>
+              </tr>
             </table>
-            <p style="text-align:center; color:#bbbbbb;">Plus, one-time commissions on master swipes: $5-$1 down 5 levels on $29.95, and $10-$2 on $59.95.</p>
-        </div>
-    </div>
+          </td>
+        </tr>
 
-    <!-- Weekly Bonus Section -->
-    <div class="section" style="background:#0f131c;">
-        <div class="container">
-            <h2>Weekly Superstars Bonus — No Cap</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Refer 5 Members</h3>
-                    <p>Earn a <span class="highlight">$100 cash bonus</span> every week.</p>
-                </div>
-                <div class="card">
-                    <h3>Refer 10 Members</h3>
-                    <p>That's <span class="highlight">$200</span> in bonuses.</p>
-                </div>
-                <div class="card">
-                    <h3>Refer 25 Members</h3>
-                    <p>You pocket <span class="highlight">$500</span> — in one week alone.</p>
-                </div>
-            </div>
-            <p style="text-align:center; margin-top:20px; color:#ffd700; font-weight:bold;">There is no limit. Every 5 referrals = another $100.</p>
-        </div>
-    </div>
+        <!-- SECTION 2 -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
+              GET PAID Using The Phone Already IN YOUR POCKET!
+            </h2>
+            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              Discover the One Secret Code You Need To Make <strong style="color:#ff8a00;">$1000/DAY!</strong>
+            </p>
+            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
+              WE MAKE $1,000 PER DAY – JOIN US!
+            </p>
+          </td>
+        </tr>
 
-    <!-- Double Leads Section -->
-    <div class="section">
-        <div class="container">
-            <h2>Double Your Leads Forever</h2>
-            <p style="text-align:center; max-width:700px; margin:0 auto;">As an MLGS affiliate, you already get <strong>100 leads per day</strong>. But refer just <strong>one confirmed active member</strong> and that number jumps to <strong>200 leads per day for life</strong>. That's an extra 3,000 leads every month, just for making one referral.</p>
-            <p style="text-align:center; margin-top:20px;"><button class="cta-button" onclick="openModal()">Unlock 200 Leads/Day</button></p>
-        </div>
-    </div>
+        <!-- BUTTON 2 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#00c853" style="border-radius:4px;">
+                  <a href="https://1secretcode.com/launch/secret?id=natur1984&amp;tr=mylead"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#0f0f0f; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    REVEAL THE SECRET CODE
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
 
-    <!-- Testimonial Placeholder (Social Proof) -->
-    <div class="section" style="background:#0f131c;">
-        <div class="container">
-            <h2>What Other Affiliates Are Saying</h2>
-            <div class="testimonial">
-                "I was skeptical at first, but after my third week I hit the $100 bonus three times. The recurring commissions are building up nicely. I wish I had started sooner."
-                <div class="author">— [Insert Real Testimonial Here]</div>
-            </div>
-        </div>
-    </div>
+        <!-- SECTION 3 -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
+              Make Money With Your Phone – From Anywhere In The World!
+            </h2>
+            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              Learn the one secret code to building a massive email list that pays you.
+            </p>
+            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
+              <strong style="color:#ff8a00;">$1000.00 a day or more</strong> – fully automated.
+            </p>
+          </td>
+        </tr>
 
-    <!-- Steps Section -->
-    <div class="section">
-        <div class="container">
-            <h2>Start Earning in 3 Simple Steps</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Enter Your Email</h3>
-                    <p>Click any button to enter your email and get your unique affiliate link.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Share Anywhere</h3>
-                    <p>Promote on social media, email, or wherever you like.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Collect Commissions</h3>
-                    <p>Earn monthly residuals and weekly bonuses paid via PayPal, check, or Bitcoin.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- BUTTON 3 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#ff8a00" style="border-radius:4px;">
+                  <a href="https://1secretcode.com/launch/secret2?id=natur1984&amp;tr=mylead"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    WATCH THE SECRET VIDEO
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
 
-    <!-- FAQ Section (Objection Handling) -->
-    <div class="section" style="background:#0f131c;">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq">
-                <div class="faq-item">
-                    <strong>Is this a pyramid scheme?</strong>
-                    No. MLGS is a legitimate affiliate program where you earn commissions from product sales and membership referrals. There is no requirement to recruit to earn — you can earn purely from personal sales.
-                </div>
-                <div class="faq-item">
-                    <strong>How do I get paid?</strong>
-                    Commissions accumulate until they reach $30, then you can request payout via PayPal, check, or Bitcoin.
-                </div>
-                <div class="faq-item">
-                    <strong>What if I don't have a big list?</strong>
-                    MLGS provides you with 100 free leads per day. Refer just one active member and you get 200 leads per day — that's your list built for you.
-                </div>
-                <div class="faq-item">
-                    <strong>When does the weekly bonus reset?</strong>
-                    Every Monday at 12:00 AM Eastern Time. The current week ends Sunday at 11:59 PM ET, so every referral counts now.
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- SECTION 4 -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
+              FREE VIDEO: 100 Leads Every Day – No Website, No Paid Traffic!
+            </h2>
+            <p style="margin:0; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              Only <strong style="color:#ff8a00;">$1.00 per day</strong> – it’s that simple.
+            </p>
+          </td>
+        </tr>
 
-    <!-- Final CTA -->
-    <div class="section" style="text-align:center; background:#b00020; color:#ffffff;">
-        <div class="container">
-            <h2 style="color:#ffffff;">Your Future Self Will Thank You</h2>
-            <p style="font-size:1.3rem; max-width:700px; margin:0 auto 20px;">Every day you wait is another $100 bonus you didn't earn, another 100 leads you didn't get, another month of residual income you let slip away.</p>
-            <button class="cta-button" style="background:#ffffff; color:#b00020;" onclick="openModal()">Claim Your Affiliate Link Now</button>
-        </div>
-    </div>
+        <!-- BUTTON 4 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#2962ff" style="border-radius:4px;">
+                  <a href="https://www.myleadgensecret.com/sizzle/?rid=28382&amp;src=mylead"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    START FREE VIDEO
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
 
-    <footer>
-        <p>MLGS Affiliate Program — Commissions paid via PayPal, check, or Bitcoin. You must be at least 18 years old and comply with all program terms.</p>
-        <p style="margin-top:10px;">This page is not an official MLGS property but an affiliate promotional landing page.</p>
-    </footer>
+        <!-- SECTION 5 -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
+              This Disabled Vet Proved Me Wrong [VIDEO]
+            </h2>
+            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              $400 in his first weekend – promoting just 1 product.
+            </p>
+            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
+              100% White-Hat. Newbie-Friendly. Guaranteed Profitable.
+            </p>
+          </td>
+        </tr>
 
-    <!-- Modal Overlay with Email Form -->
-    <div class="modal-overlay" id="emailModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <h2>Enter Your Email to Get Started</h2>
-            <p>Your affiliate link and instructions will be sent to your inbox.</p>
-            <form method="POST" action="https://gogvo.com/subscribe.php">
-                <input type="hidden" name="AffiliateName" value="natur1984NLS">
-                <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
-                <input type="hidden" name="TrackParam" value="new_form">
-                <input type="hidden" name="FormId" value="25235157">
-                <table align="center">
-                    <tr>
-                        <td><label for="email">Please enter your email:</label></td>
-                        <td><input type="text" name="Email"></td>
-                    </tr>
-                    <tr>
-                        <td align="center" colspan="2">
-                            <input type="submit" value="Submit">
-                        </td>
-                    </tr>
-                </table>
-                <img src="https://gogvo.com/show_form.php?id=25235157&TrackParam=new_form">
-            </form>
-        </div>
-    </div>
+        <!-- BUTTON 5 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#ff2d2d" style="border-radius:4px;">
+                  <a href="https://www.twiceconfirmedtraffic.com/index.php?id=10214"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    WATCH VIDEO NOW
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
 
-    <script>
-        // Countdown to next Sunday 11:59 PM Eastern Time
-        function updateCountdown() {
-            const now = new Date();
-            const etOffset = -4; // Eastern Daylight Time (EDT) offset from UTC in hours (adjust if needed)
-            // Convert current UTC to ET
-            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const etNow = new Date(utc + (3600000 * etOffset));
-            
-            // Calculate next Sunday 23:59:59 ET
-            const day = etNow.getDay(); // 0=Sun, 1=Mon, ...
-            let daysUntilSunday = (7 - day) % 7;
-            if (daysUntilSunday === 0 && etNow.getHours() >= 23 && etNow.getMinutes() >= 59 && etNow.getSeconds() >= 59) {
-                daysUntilSunday = 7; // If we're at or past Sunday 11:59:59 PM, target next Sunday
-            }
-            const nextSunday = new Date(etNow);
-            nextSunday.setDate(etNow.getDate() + daysUntilSunday);
-            nextSunday.setHours(23, 59, 59, 0);
-            
-            const diff = nextSunday - etNow;
-            if (diff <= 0) {
-                document.getElementById('countdown').innerText = "Contest Ended — New Week Started!";
-                return;
-            }
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('countdown').innerText = 
-                `${days.toString().padStart(2,'0')}:${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-        }
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        <!-- SECTION 6 -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
+              70 Organic Prospects – Every Day!
+            </h2>
+            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              Real prospects with <strong style="color:#ff8a00;">75–100% Genuine Interest</strong>.
+            </p>
+            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
+              Download them or contact them with the complimentary mailer.
+            </p>
+          </td>
+        </tr>
 
-        // Modal functions
-        function openModal() {
-            document.getElementById('emailModal').classList.add('active');
-        }
-        function closeModal() {
-            document.getElementById('emailModal').classList.remove('active');
-        }
-        // Close modal when clicking outside
-        document.getElementById('emailModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-    </script>
+        <!-- BUTTON 6 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#00c853" style="border-radius:4px;">
+                  <a href="https://www.organicprospects.com/?ref=naturallyinshape"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#0f0f0f; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    GET YOUR PROSPECTS
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- SECTION 7 -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
+              Turbo3CashMachine – Copy, Paste, Cash!
+            </h2>
+            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              Post a few ads each day = <strong style="color:#ff8a00;">$300+ per week</strong>.
+            </p>
+            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
+              100% Instant Commissions – paid direct to your PayPal.
+            </p>
+          </td>
+        </tr>
+
+        <!-- BUTTON 7 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#ff8a00" style="border-radius:4px;">
+                  <a href="http://hruz.site/prog/turbo/index.php?r=natur1984"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    START TURBO NOW
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- SECTION 8 -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
+              Affiliate Marketing Made Simple: Beginner to Advanced
+            </h2>
+            <p style="margin:0; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              Learn how to build an online income from home – no experience needed.
+            </p>
+          </td>
+        </tr>
+
+        <!-- BUTTON 8 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#2962ff" style="border-radius:4px;">
+                  <a href="https://natur1984.sendshark.com/pb/wellness"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    START FREE TRAINING
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- SECTION 9 -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
+              Free Webinar: 6 Figures This Year!
+            </h2>
+            <p style="margin:0; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              Be Your Own Boss – activate your new income stream now.
+            </p>
+          </td>
+        </tr>
+
+        <!-- BUTTON 9 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#ff2d2d" style="border-radius:4px;">
+                  <a href="https://natur1984.sendshark.com/pb/landing"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    SAVE YOUR WEBINAR SPOT
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- SECTION 10 -->
+        <tr>
+          <td style="padding:30px 25px 10px;">
+            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
+              Tested Working FREE &amp; Paid Offers
+            </h2>
+            <p style="margin:0; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
+              All offers tested – they actually work. No fluff.
+            </p>
+          </td>
+        </tr>
+
+        <!-- BUTTON 10 -->
+        <tr>
+          <td align="center" style="padding:20px 25px 5px;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#00c853" style="border-radius:4px;">
+                  <a href="https://natur1984.sendshark.com/pb/newthxpage"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#0f0f0f; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
+                    VIEW OFFERS NOW
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- FINAL CTA -->
+        <tr>
+          <td align="center" style="padding:35px 25px 20px;">
+            <p style="margin:0 0 18px; color:#ffffff; font-size:16px; font-weight:bold; font-family:Arial, sans-serif;">
+              Don’t Wait – Take Action Now!
+            </p>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr>
+                <td align="center" bgcolor="#ff2d2d" style="border-radius:4px;">
+                  <a href="https://mylistelevate.com/launch/start_now?id=natur1984&amp;tr=mylead"
+                     target="_blank" rel="noopener noreferrer"
+                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:17px; font-weight:bold; padding:16px 36px; font-family:Arial, sans-serif;">
+                    START YOUR PASSIVE INCOME NOW
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+          <td align="center" style="padding:25px 25px 35px; border-top:1px solid #2a2a2a;">
+            <p style="margin:0 0 6px; color:#666666; font-size:11px; line-height:1.5; font-family:Arial, sans-serif;">
+              You are receiving this email because you opted in to our offers.
+            </p>
+            <p style="margin:0; color:#444444; font-size:11px; font-family:Arial, sans-serif;">
+              &copy; 2025 Income Machines · All Rights Reserved.
+            </p>
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+
 </body>
 </html>
