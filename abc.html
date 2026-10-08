@@ -1,376 +1,424 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Best Tested Income Machines</title>
+<title>The 3-Pillar Empire | Full-Time Income on Autopilot</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #05010f;
+    color: #e8e0ff;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* ===== MYTHICAL BACKGROUND ===== */
+  .stars, .twinkling, .clouds {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+  }
+
+  .stars {
+    background: #05010f url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><circle cx="20" cy="30" r="1" fill="white"/><circle cx="120" cy="80" r="1.2" fill="white"/><circle cx="250" cy="40" r="0.8" fill="white"/><circle cx="340" cy="150" r="1" fill="white"/><circle cx="80" cy="220" r="1.1" fill="white"/><circle cx="200" cy="300" r="0.9" fill="white"/><circle cx="320" cy="350" r="1.3" fill="white"/><circle cx="380" cy="260" r="1" fill="white"/><circle cx="40" cy="360" r="0.7" fill="white"/><circle cx="160" cy="180" r="1" fill="white"/></svg>');
+  }
+
+  .twinkling {
+    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><circle cx="50" cy="60" r="1.5" fill="%23ffe9a8"/><circle cx="220" cy="120" r="1.8" fill="%23c9a8ff"/><circle cx="150" cy="250" r="1.4" fill="white"/><circle cx="280" cy="200" r="1.6" fill="%23ffe9a8"/></svg>');
+    animation: twinkle 6s infinite ease-in-out;
+    opacity: 0.85;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .clouds {
+    background: radial-gradient(circle at 20% 30%, rgba(120, 40, 200, 0.35), transparent 45%),
+                radial-gradient(circle at 80% 20%, rgba(200, 140, 40, 0.20), transparent 50%),
+                radial-gradient(circle at 60% 80%, rgba(60, 20, 120, 0.45), transparent 55%),
+                radial-gradient(circle at 10% 90%, rgba(180, 60, 200, 0.20), transparent 50%);
+    animation: drift 30s infinite alternate ease-in-out;
+  }
+
+  @keyframes drift {
+    from { transform: translateX(0) translateY(0); }
+    to   { transform: translateX(-40px) translateY(-20px); }
+  }
+
+  /* ===== CONTENT WRAPPER ===== */
+  .wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 60px 22px 80px;
+  }
+
+  /* ===== HERO ===== */
+  .sigil {
+    display: block;
+    margin: 0 auto 18px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 215, 120, 0.6);
+    box-shadow: 0 0 30px rgba(200, 150, 255, 0.4), inset 0 0 20px rgba(200, 150, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    animation: pulse 4s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 25px rgba(200,150,255,0.35), inset 0 0 15px rgba(200,150,255,0.2); }
+    50%      { box-shadow: 0 0 55px rgba(255,215,120,0.55), inset 0 0 25px rgba(255,215,120,0.3); }
+  }
+
+  .kicker {
+    text-align: center;
+    letter-spacing: 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #c9a8ff;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: clamp(30px, 5.5vw, 54px);
+    line-height: 1.15;
+    background: linear-gradient(180deg, #fff6d5 0%, #ffd977 45%, #c58bff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(255, 215, 120, 0.15);
+    margin-bottom: 18px;
+  }
+
+  .sub {
+    text-align: center;
+    font-size: clamp(15px, 2vw, 19px);
+    color: #d8cff5;
+    max-width: 720px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+  }
+
+  .sub strong { color: #ffe9a8; }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 30px 0 40px;
+    color: #c9a8ff;
+  }
+
+  .divider::before, .divider::after {
+    content: "";
+    height: 1px;
+    width: 90px;
+    background: linear-gradient(90deg, transparent, #c9a8ff, transparent);
+  }
+
+  /* ===== CARDS ===== */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    margin-bottom: 46px;
+  }
+
+  .card {
+    position: relative;
+    background: linear-gradient(160deg, rgba(30, 12, 60, 0.85), rgba(10, 4, 24, 0.9));
+    border: 1px solid rgba(200, 150, 255, 0.28);
+    border-radius: 18px;
+    padding: 30px 24px 26px;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    backdrop-filter: blur(6px);
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 215, 120, 0.65);
+    box-shadow: 0 18px 50px rgba(140, 80, 220, 0.35);
+  }
+
+  .card .rune {
+    font-size: 30px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .card h2 {
+    font-size: 21px;
+    color: #ffe9a8;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .card .tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #9d7fff;
+    margin-bottom: 14px;
+  }
+
+  .card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #d3c9ef;
+    margin-bottom: 22px;
+  }
+
+  .card p strong { color: #fff2c2; }
+
+  .btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    color: #1a0b2e;
+    background: linear-gradient(135deg, #ffe9a8, #ffc84d);
+    box-shadow: 0 8px 25px rgba(255, 200, 80, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: Arial, sans-serif;
+  }
+
+  .btn:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 35px rgba(255, 200, 80, 0.6);
+  }
+
+  /* ===== BENEFITS ===== */
+  .benefits {
+    background: linear-gradient(160deg, rgba(40, 15, 75, 0.7), rgba(10, 4, 24, 0.85));
+    border: 1px solid rgba(200, 150, 255, 0.25);
+    border-radius: 18px;
+    padding: 34px 28px;
+    margin-bottom: 46px;
+  }
+
+  .benefits h3 {
+    text-align: center;
+    font-size: 22px;
+    color: #ffe9a8;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+
+  .benefits ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px 26px;
+  }
+
+  .benefits li {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: #e2d9ff;
+    padding-left: 6px;
+    font-family: Arial, sans-serif;
+  }
+
+  .benefits li strong { color: #fff2c2; }
+
+  /* ===== FINAL CTA ===== */
+  .final {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(200, 150, 255, 0.25);
+    border-bottom: 1px solid rgba(200, 150, 255, 0.25);
+  }
+
+  .final h3 {
+    font-size: clamp(22px, 3.5vw, 32px);
+    background: linear-gradient(180deg, #fff6d5, #ffd977);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 14px;
+  }
+
+  .final p {
+    color: #d3c9ef;
+    font-size: 16px;
+    margin-bottom: 26px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .final p strong { color: #ffe9a8; }
+
+  .cta-main {
+    display: inline-block;
+    text-decoration: none;
+    padding: 18px 46px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    color: #1a0b2e;
+    background: linear-gradient(135deg, #ffe9a8, #ffc84d);
+    box-shadow: 0 10px 35px rgba(255, 200, 80, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: Arial, sans-serif;
+  }
+
+  .cta-main:hover {
+    transform: scale(1.05);
+    box-shadow: 0 14px 45px rgba(255, 200, 80, 0.7);
+  }
+
+  /* ===== SIGNATURE ===== */
+  .signature {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 15px;
+    color: #b7a9e0;
+    line-height: 1.9;
+  }
+
+  .signature .name {
+    font-size: 26px;
+    color: #ffe9a8;
+    font-style: italic;
+    display: block;
+    margin-top: 6px;
+    text-shadow: 0 0 25px rgba(255, 215, 120, 0.4);
+  }
+
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: #6a5a92;
+    margin-top: 40px;
+    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+  }
+</style>
 </head>
-<body style="margin:0; padding:0; background-color:#0f0f0f; font-family:Arial, Helvetica, sans-serif; -webkit-text-size-adjust:100%;">
+<body>
 
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#0f0f0f;">
-  <tr>
-    <td align="center" style="padding:20px 10px;">
+  <!-- MYTHICAL BACKGROUND LAYERS -->
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="clouds"></div>
 
-      <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width:100%; max-width:600px; background-color:#1a1a1a;">
+  <div class="wrap">
 
-        <!-- HEADER -->
-        <tr>
-          <td align="center" bgcolor="#ff2d2d" style="padding:30px 20px;">
-            <h1 style="margin:0; color:#ffffff; font-size:24px; line-height:1.3; font-family:Arial, sans-serif;">
-              BEST TESTED INCOME MACHINES
-            </h1>
-            <p style="margin:10px 0 0; color:#ffe0b2; font-size:14px; font-family:Arial, sans-serif;">
-              Let OTHERS Build Your List &amp; YOU Earn As a Referral!
-            </p>
-          </td>
-        </tr>
+    <!-- HERO -->
+    <div class="sigil">✦</div>
+    <div class="kicker">The Ancient Path · Reborn</div>
+    <h1>Forge Your <strong>Full-Time Income</strong><br>on 24/7 Autopilot</h1>
+    <p class="sub">
+      Three legendary pillars. One endless stream. With these <strong>3 program memberships</strong>
+      you generate a <strong>full-time income</strong> — <strong>24/7 on autopilot</strong>,
+      powered by <strong>auto follow-ups</strong>. We <strong>build your downline</strong>, and you
+      earn from your referrals, <strong>their referrals</strong>, and <strong>endlessly deep</strong>.
+    </p>
 
-        <!-- INTRO -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:20px; line-height:1.3; font-family:Arial, sans-serif;">
-              Let OTHER PEOPLE Build Your Email List &amp; YOU Build a Great Passive Income!
-            </h2>
-            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              Without Selling or Explaining. Collect <strong style="color:#ff8a00;">200% Commissions!</strong>
-            </p>
-            <p style="margin:0; color:#999999; font-size:13px; line-height:1.5; font-family:Arial, sans-serif;">
-              Discover The Automated Business That Has Made Me Over $250 Million in Online Sales.
-            </p>
-          </td>
-        </tr>
+    <div class="divider">✦ ✦ ✦</div>
 
-        <!-- BUTTON 1 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#ff2d2d" style="border-radius:4px;">
-                  <a href="https://mylistelevate.com/launch/start_now?id=natur1984&amp;tr=mylead"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    START NOW – BUILD YOUR LIST
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
+    <!-- CARDS -->
+    <div class="cards">
 
-        <!-- SECTION 2 -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
-              GET PAID Using The Phone Already IN YOUR POCKET!
-            </h2>
-            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              Discover the One Secret Code You Need To Make <strong style="color:#ff8a00;">$1000/DAY!</strong>
-            </p>
-            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
-              WE MAKE $1,000 PER DAY – JOIN US!
-            </p>
-          </td>
-        </tr>
+      <div class="card">
+        <span class="rune">🛡️</span>
+        <div class="tag">Pillar I · The Matrix</div>
+        <h2>Lock My Position</h2>
+        <p>
+          Lock in your <strong>top position</strong> before the masses. A <strong>2x14 forced matrix</strong>
+          that pays <strong>endlessly deep</strong> — from your referrals and <strong>their referrals</strong>.
+        </p>
+        <a class="btn" href="https://lockmyposition.com/ref/natur/2152" target="_blank" rel="noopener">
+          ✅ Lock In My Position Now
+        </a>
+      </div>
 
-        <!-- BUTTON 2 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#00c853" style="border-radius:4px;">
-                  <a href="https://1secretcode.com/launch/secret?id=natur1984&amp;tr=mylead"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#0f0f0f; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    REVEAL THE SECRET CODE
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
+      <div class="card">
+        <span class="rune">⚡</span>
+        <div class="tag">Pillar II · The Flow</div>
+        <h2>List Elevate</h2>
+        <p>
+          The traffic engine. It builds your list on <strong>autopilot</strong> so your downline
+          grows — day and night — while <strong>auto follow-ups</strong> do the selling.
+        </p>
+        <a class="btn" href="https://listelevate.com/?id=natur1984&tr=mylead" target="_blank" rel="noopener">
+          ✅ Activate The Traffic Flow
+        </a>
+      </div>
 
-        <!-- SECTION 3 -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
-              Make Money With Your Phone – From Anywhere In The World!
-            </h2>
-            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              Learn the one secret code to building a massive email list that pays you.
-            </p>
-            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
-              <strong style="color:#ff8a00;">$1000.00 a day or more</strong> – fully automated.
-            </p>
-          </td>
-        </tr>
+      <div class="card">
+        <span class="rune">🔮</span>
+        <div class="tag">Pillar III · The Vault</div>
+        <h2>Secure Your Data</h2>
+        <p>
+          The passive engine. Daily payouts, <strong>auto follow-ups</strong> and a rock-solid
+          <strong>24/7 autopilot</strong> income that never sleeps — <strong>endlessly deep</strong>.
+        </p>
+        <a class="btn" href="https://secureyourdata.gotbackuptour.com/?tr=mylead" target="_blank" rel="noopener">
+          ✅ Secure My Future Now
+        </a>
+      </div>
 
-        <!-- BUTTON 3 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#ff8a00" style="border-radius:4px;">
-                  <a href="https://1secretcode.com/launch/secret2?id=natur1984&amp;tr=mylead"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    WATCH THE SECRET VIDEO
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
+    </div>
 
-        <!-- SECTION 4 -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
-              FREE VIDEO: 100 Leads Every Day – No Website, No Paid Traffic!
-            </h2>
-            <p style="margin:0; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              Only <strong style="color:#ff8a00;">$1.00 per day</strong> – it’s that simple.
-            </p>
-          </td>
-        </tr>
+    <!-- BENEFITS -->
+    <div class="benefits">
+      <h3>✦ Why The Three Pillars Work ✦</h3>
+      <ul>
+        <li>✅ <strong>Full-time income</strong> potential with 3 memberships</li>
+        <li>✅ <strong>24/7 autopilot</strong> — earn while you sleep</li>
+        <li>✅ <strong>Auto follow-ups</strong> do the heavy lifting</li>
+        <li>✅ <strong>We build your downline</strong> for you</li>
+        <li>✅ Earn from your referrals &amp; <strong>their referrals</strong></li>
+        <li>✅ <strong>Endlessly deep</strong> — referrals of referrals, forever</li>
+        <li>✅ No experience needed — anyone can do this</li>
+        <li>✅ Global rollout — get in before the masses</li>
+      </ul>
+    </div>
 
-        <!-- BUTTON 4 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#2962ff" style="border-radius:4px;">
-                  <a href="https://www.myleadgensecret.com/sizzle/?rid=28382&amp;src=mylead"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    START FREE VIDEO
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
+    <!-- FINAL CTA -->
+    <div class="final">
+      <h3>Three Links. Infinite Depth.</h3>
+      <p>
+        Build your downline once. Earn <strong>endlessly deep</strong>. Let
+        <strong>auto follow-ups</strong> and the <strong>24/7 autopilot</strong> system
+        work for you — a true <strong>full-time income</strong> without the full-time hours.
+      </p>
+      <a class="cta-main" href="https://lockmyposition.com/ref/natur/2152" target="_blank" rel="noopener">
+        ✅ Start My Full-Time Income Now
+      </a>
+    </div>
 
-        <!-- SECTION 5 -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
-              This Disabled Vet Proved Me Wrong [VIDEO]
-            </h2>
-            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              $400 in his first weekend – promoting just 1 product.
-            </p>
-            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
-              100% White-Hat. Newbie-Friendly. Guaranteed Profitable.
-            </p>
-          </td>
-        </tr>
+    <!-- SIGNATURE -->
+    <div class="signature">
+      To your success,<br>
+      <span class="name">Cassy</span>
+    </div>
 
-        <!-- BUTTON 5 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#ff2d2d" style="border-radius:4px;">
-                  <a href="https://www.twiceconfirmedtraffic.com/index.php?id=10214"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    WATCH VIDEO NOW
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
+    <footer>© The Three Pillars · Endless Depth · 24/7 Autopilot</footer>
 
-        <!-- SECTION 6 -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
-              70 Organic Prospects – Every Day!
-            </h2>
-            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              Real prospects with <strong style="color:#ff8a00;">75–100% Genuine Interest</strong>.
-            </p>
-            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
-              Download them or contact them with the complimentary mailer.
-            </p>
-          </td>
-        </tr>
-
-        <!-- BUTTON 6 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#00c853" style="border-radius:4px;">
-                  <a href="https://www.organicprospects.com/?ref=naturallyinshape"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#0f0f0f; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    GET YOUR PROSPECTS
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-
-        <!-- SECTION 7 -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
-              Turbo3CashMachine – Copy, Paste, Cash!
-            </h2>
-            <p style="margin:0 0 10px; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              Post a few ads each day = <strong style="color:#ff8a00;">$300+ per week</strong>.
-            </p>
-            <p style="margin:0; color:#999999; font-size:13px; font-family:Arial, sans-serif;">
-              100% Instant Commissions – paid direct to your PayPal.
-            </p>
-          </td>
-        </tr>
-
-        <!-- BUTTON 7 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#ff8a00" style="border-radius:4px;">
-                  <a href="http://hruz.site/prog/turbo/index.php?r=natur1984"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    START TURBO NOW
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-
-        <!-- SECTION 8 -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
-              Affiliate Marketing Made Simple: Beginner to Advanced
-            </h2>
-            <p style="margin:0; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              Learn how to build an online income from home – no experience needed.
-            </p>
-          </td>
-        </tr>
-
-        <!-- BUTTON 8 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#2962ff" style="border-radius:4px;">
-                  <a href="https://natur1984.sendshark.com/pb/wellness"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    START FREE TRAINING
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-
-        <!-- SECTION 9 -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
-              Free Webinar: 6 Figures This Year!
-            </h2>
-            <p style="margin:0; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              Be Your Own Boss – activate your new income stream now.
-            </p>
-          </td>
-        </tr>
-
-        <!-- BUTTON 9 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#ff2d2d" style="border-radius:4px;">
-                  <a href="https://natur1984.sendshark.com/pb/landing"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    SAVE YOUR WEBINAR SPOT
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-
-        <!-- SECTION 10 -->
-        <tr>
-          <td style="padding:30px 25px 10px;">
-            <h2 style="margin:0 0 12px; color:#ffffff; font-size:18px; line-height:1.3; font-family:Arial, sans-serif;">
-              Tested Working FREE &amp; Paid Offers
-            </h2>
-            <p style="margin:0; color:#cccccc; font-size:15px; line-height:1.5; font-family:Arial, sans-serif;">
-              All offers tested – they actually work. No fluff.
-            </p>
-          </td>
-        </tr>
-
-        <!-- BUTTON 10 -->
-        <tr>
-          <td align="center" style="padding:20px 25px 5px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#00c853" style="border-radius:4px;">
-                  <a href="https://natur1984.sendshark.com/pb/newthxpage"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#0f0f0f; text-decoration:none; font-size:16px; font-weight:bold; padding:14px 30px; font-family:Arial, sans-serif;">
-                    VIEW OFFERS NOW
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-
-        <!-- FINAL CTA -->
-        <tr>
-          <td align="center" style="padding:35px 25px 20px;">
-            <p style="margin:0 0 18px; color:#ffffff; font-size:16px; font-weight:bold; font-family:Arial, sans-serif;">
-              Don’t Wait – Take Action Now!
-            </p>
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-              <tr>
-                <td align="center" bgcolor="#ff2d2d" style="border-radius:4px;">
-                  <a href="https://mylistelevate.com/launch/start_now?id=natur1984&amp;tr=mylead"
-                     target="_blank" rel="noopener noreferrer"
-                     style="display:inline-block; color:#ffffff; text-decoration:none; font-size:17px; font-weight:bold; padding:16px 36px; font-family:Arial, sans-serif;">
-                    START YOUR PASSIVE INCOME NOW
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-
-        <!-- FOOTER -->
-        <tr>
-          <td align="center" style="padding:25px 25px 35px; border-top:1px solid #2a2a2a;">
-            <p style="margin:0 0 6px; color:#666666; font-size:11px; line-height:1.5; font-family:Arial, sans-serif;">
-              You are receiving this email because you opted in to our offers.
-            </p>
-            <p style="margin:0; color:#444444; font-size:11px; font-family:Arial, sans-serif;">
-              &copy; 2025 Income Machines · All Rights Reserved.
-            </p>
-          </td>
-        </tr>
-
-      </table>
-
-    </td>
-  </tr>
-</table>
+  </div>
 
 </body>
 </html>
