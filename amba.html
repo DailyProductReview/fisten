@@ -421,4 +421,427 @@
   </div>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 3-Pillar Empire | Full-Time Income on Autopilot</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #05010f;
+    color: #e8e0ff;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* ===== MYTHICAL BACKGROUND ===== */
+  .stars, .twinkling, .clouds {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+  }
+
+  .stars {
+    background: #05010f url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><circle cx="20" cy="30" r="1" fill="white"/><circle cx="120" cy="80" r="1.2" fill="white"/><circle cx="250" cy="40" r="0.8" fill="white"/><circle cx="340" cy="150" r="1" fill="white"/><circle cx="80" cy="220" r="1.1" fill="white"/><circle cx="200" cy="300" r="0.9" fill="white"/><circle cx="320" cy="350" r="1.3" fill="white"/><circle cx="380" cy="260" r="1" fill="white"/><circle cx="40" cy="360" r="0.7" fill="white"/><circle cx="160" cy="180" r="1" fill="white"/></svg>');
+  }
+
+  .twinkling {
+    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><circle cx="50" cy="60" r="1.5" fill="%23ffe9a8"/><circle cx="220" cy="120" r="1.8" fill="%23c9a8ff"/><circle cx="150" cy="250" r="1.4" fill="white"/><circle cx="280" cy="200" r="1.6" fill="%23ffe9a8"/></svg>');
+    animation: twinkle 6s infinite ease-in-out;
+    opacity: 0.85;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .clouds {
+    background: radial-gradient(circle at 20% 30%, rgba(120, 40, 200, 0.35), transparent 45%),
+                radial-gradient(circle at 80% 20%, rgba(200, 140, 40, 0.20), transparent 50%),
+                radial-gradient(circle at 60% 80%, rgba(60, 20, 120, 0.45), transparent 55%),
+                radial-gradient(circle at 10% 90%, rgba(180, 60, 200, 0.20), transparent 50%);
+    animation: drift 30s infinite alternate ease-in-out;
+  }
+
+  @keyframes drift {
+    from { transform: translateX(0) translateY(0); }
+    to   { transform: translateX(-40px) translateY(-20px); }
+  }
+
+  /* ===== CONTENT WRAPPER ===== */
+  .wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 60px 22px 80px;
+  }
+
+  /* ===== HERO ===== */
+  .sigil {
+    display: block;
+    margin: 0 auto 18px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 215, 120, 0.6);
+    box-shadow: 0 0 30px rgba(200, 150, 255, 0.4), inset 0 0 20px rgba(200, 150, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    animation: pulse 4s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 25px rgba(200,150,255,0.35), inset 0 0 15px rgba(200,150,255,0.2); }
+    50%      { box-shadow: 0 0 55px rgba(255,215,120,0.55), inset 0 0 25px rgba(255,215,120,0.3); }
+  }
+
+  .kicker {
+    text-align: center;
+    letter-spacing: 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #c9a8ff;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: clamp(30px, 5.5vw, 54px);
+    line-height: 1.15;
+    background: linear-gradient(180deg, #fff6d5 0%, #ffd977 45%, #c58bff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(255, 215, 120, 0.15);
+    margin-bottom: 18px;
+  }
+
+  .sub {
+    text-align: center;
+    font-size: clamp(15px, 2vw, 19px);
+    color: #d8cff5;
+    max-width: 720px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+  }
+
+  .sub strong { color: #ffe9a8; }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 30px 0 40px;
+    color: #c9a8ff;
+  }
+
+  .divider::before, .divider::after {
+    content: "";
+    height: 1px;
+    width: 90px;
+    background: linear-gradient(90deg, transparent, #c9a8ff, transparent);
+  }
+
+  /* ===== CARDS ===== */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    margin-bottom: 46px;
+  }
+
+  .card {
+    position: relative;
+    background: linear-gradient(160deg, rgba(30, 12, 60, 0.85), rgba(10, 4, 24, 0.9));
+    border: 1px solid rgba(200, 150, 255, 0.28);
+    border-radius: 18px;
+    padding: 30px 24px 26px;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    backdrop-filter: blur(6px);
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 215, 120, 0.65);
+    box-shadow: 0 18px 50px rgba(140, 80, 220, 0.35);
+  }
+
+  .card .rune {
+    font-size: 30px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .card h2 {
+    font-size: 21px;
+    color: #ffe9a8;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .card .tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #9d7fff;
+    margin-bottom: 14px;
+  }
+
+  .card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #d3c9ef;
+    margin-bottom: 22px;
+  }
+
+  .card p strong { color: #fff2c2; }
+
+  .btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    color: #1a0b2e;
+    background: linear-gradient(135deg, #ffe9a8, #ffc84d);
+    box-shadow: 0 8px 25px rgba(255, 200, 80, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: Arial, sans-serif;
+  }
+
+  .btn:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 35px rgba(255, 200, 80, 0.6);
+  }
+
+  /* ===== BENEFITS ===== */
+  .benefits {
+    background: linear-gradient(160deg, rgba(40, 15, 75, 0.7), rgba(10, 4, 24, 0.85));
+    border: 1px solid rgba(200, 150, 255, 0.25);
+    border-radius: 18px;
+    padding: 34px 28px;
+    margin-bottom: 46px;
+  }
+
+  .benefits h3 {
+    text-align: center;
+    font-size: 22px;
+    color: #ffe9a8;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+
+  .benefits ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px 26px;
+  }
+
+  .benefits li {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: #e2d9ff;
+    padding-left: 6px;
+    font-family: Arial, sans-serif;
+  }
+
+  .benefits li strong { color: #fff2c2; }
+
+  /* ===== FINAL CTA ===== */
+  .final {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(200, 150, 255, 0.25);
+    border-bottom: 1px solid rgba(200, 150, 255, 0.25);
+  }
+
+  .final h3 {
+    font-size: clamp(22px, 3.5vw, 32px);
+    background: linear-gradient(180deg, #fff6d5, #ffd977);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 14px;
+  }
+
+  .final p {
+    color: #d3c9ef;
+    font-size: 16px;
+    margin-bottom: 26px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .final p strong { color: #ffe9a8; }
+
+  .cta-main {
+    display: inline-block;
+    text-decoration: none;
+    padding: 18px 46px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    color: #1a0b2e;
+    background: linear-gradient(135deg, #ffe9a8, #ffc84d);
+    box-shadow: 0 10px 35px rgba(255, 200, 80, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: Arial, sans-serif;
+  }
+
+  .cta-main:hover {
+    transform: scale(1.05);
+    box-shadow: 0 14px 45px rgba(255, 200, 80, 0.7);
+  }
+
+  /* ===== SIGNATURE ===== */
+  .signature {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 15px;
+    color: #b7a9e0;
+    line-height: 1.9;
+  }
+
+  .signature .name {
+    font-size: 26px;
+    color: #ffe9a8;
+    font-style: italic;
+    display: block;
+    margin-top: 6px;
+    text-shadow: 0 0 25px rgba(255, 215, 120, 0.4);
+  }
+
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: #6a5a92;
+    margin-top: 40px;
+    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+
+  <!-- MYTHICAL BACKGROUND LAYERS -->
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="clouds"></div>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <div class="sigil">✦</div>
+    <div class="kicker">The Ancient Path · Reborn</div>
+    <h1>Forge Your <strong>Full-Time Income</strong><br>on 24/7 Autopilot</h1>
+    <p class="sub">
+      Three legendary pillars. One endless stream. With these <strong>3 program memberships</strong>
+      you generate a <strong>full-time income</strong> — <strong>24/7 on autopilot</strong>,
+      powered by <strong>auto follow-ups</strong>. We <strong>build your downline</strong>, and you
+      earn from your referrals, <strong>their referrals</strong>, and <strong>endlessly deep</strong>.
+    </p>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- CARDS -->
+    <div class="cards">
+
+      <div class="card">
+        <span class="rune">🛡️</span>
+        <div class="tag">Pillar I · The Matrix</div>
+        <h2>Lock My Position</h2>
+        <p>
+          Lock in your <strong>top position</strong> before the masses. A <strong>2x14 forced matrix</strong>
+          that pays <strong>endlessly deep</strong> — from your referrals and <strong>their referrals</strong>.
+        </p>
+        <a class="btn" href="https://lockmyposition.com/ref/natur/2152" target="_blank" rel="noopener">
+          ✅ Lock In My Position Now
+        </a>
+      </div>
+
+      <div class="card">
+        <span class="rune">⚡</span>
+        <div class="tag">Pillar II · The Flow</div>
+        <h2>List Elevate</h2>
+        <p>
+          The traffic engine. It builds your list on <strong>autopilot</strong> so your downline
+          grows — day and night — while <strong>auto follow-ups</strong> do the selling.
+        </p>
+        <a class="btn" href="https://listelevate.com/?id=natur1984&tr=mylead" target="_blank" rel="noopener">
+          ✅ Activate The Traffic Flow
+        </a>
+      </div>
+
+      <div class="card">
+        <span class="rune">🔮</span>
+        <div class="tag">Pillar III · The Vault</div>
+        <h2>Secure Your Data</h2>
+        <p>
+          The passive engine. Daily payouts, <strong>auto follow-ups</strong> and a rock-solid
+          <strong>24/7 autopilot</strong> income that never sleeps — <strong>endlessly deep</strong>.
+        </p>
+        <a class="btn" href="https://secureyourdata.gotbackuptour.com/?tr=mylead" target="_blank" rel="noopener">
+          ✅ Secure My Future Now
+        </a>
+      </div>
+
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="benefits">
+      <h3>✦ Why The Three Pillars Work ✦</h3>
+      <ul>
+        <li>✅ <strong>Full-time income</strong> potential with 3 memberships</li>
+        <li>✅ <strong>24/7 autopilot</strong> — earn while you sleep</li>
+        <li>✅ <strong>Auto follow-ups</strong> do the heavy lifting</li>
+        <li>✅ <strong>We build your downline</strong> for you</li>
+        <li>✅ Earn from your referrals &amp; <strong>their referrals</strong></li>
+        <li>✅ <strong>Endlessly deep</strong> — referrals of referrals, forever</li>
+        <li>✅ No experience needed — anyone can do this</li>
+        <li>✅ Global rollout — get in before the masses</li>
+      </ul>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="final">
+      <h3>Three Links. Infinite Depth.</h3>
+      <p>
+        Build your downline once. Earn <strong>endlessly deep</strong>. Let
+        <strong>auto follow-ups</strong> and the <strong>24/7 autopilot</strong> system
+        work for you — a true <strong>full-time income</strong> without the full-time hours.
+      </p>
+      <a class="cta-main" href="https://lockmyposition.com/ref/natur/2152" target="_blank" rel="noopener">
+        ✅ Start My Full-Time Income Now
+      </a>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+      To your success,<br>
+      <span class="name">Cassy</span>
+    </div>
+
+    <footer>© The Three Pillars · Endless Depth · 24/7 Autopilot</footer>
+
+  </div>
+
+</body>
 </html>
