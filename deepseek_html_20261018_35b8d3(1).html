@@ -236,11 +236,12 @@
        src="https://images.nowlifestyle.com/images/affiliate/1664026/pb/assets/02ad45164ba3ac6aedff2edd8957bd5d.png"
        alt="Preview">
 
-  <form method="POST" action="https://gogvo.com/subscribe.php" class="optin-form">
+  <form method="POST" action="https://gogvo.com/subscribe.php" class="optin-form" id="leadForm">
     <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
     <input type="hidden" name="AffiliateName" value="natur1984NLS">
     <input type="hidden" name="PassFormData" value="0">
-    <input type="hidden" name="ThankyouPage" value="https://natur1984.sendshark.com/pb/thxpagenew">
+    <!-- ✅ NEW thank-you / redirect URL -->
+    <input type="hidden" name="ThankyouPage" value="https://listelevate.com/?id=natur1984&tr=twiceconfirmed">
     <input type="hidden" name="OptIn" value="0">
     <input type="hidden" name="PbVisitorId" value="">
 
@@ -271,6 +272,7 @@
   var close1   = document.getElementById('puClose1');
   var close2   = document.getElementById('puClose2');
   var fallback2 = document.getElementById('puFallback2');
+  var form     = document.getElementById('leadForm');
 
   var popup1Shown = false;
   var popup2Shown = false;
@@ -341,6 +343,31 @@
     }
     lastScrollTop = st;
   }, { passive: true });
+
+  /* ============================================================ */
+  /* FORM SUBMIT → redirect to ListElevate URL                    */
+  /* ============================================================ */
+  form.addEventListener('submit', function(e){
+    e.preventDefault();                                    // stop normal POST
+    var emailField = form.querySelector('input[name="Email"]');
+    var email = emailField ? emailField.value.trim() : '';
+
+    if (!email) {
+      emailField.focus();
+      return;
+    }
+
+    // Send the data to gogvo via fetch (so the lead is still captured)
+    var formData = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'                                      // cross-origin, fire & forget
+    }).catch(function(){});
+
+    // Redirect the user to the new confirmation page
+    window.location.href = "https://listelevate.com/?id=natur1984&tr=twiceconfirmed";
+  });
 
 })();
 </script>
