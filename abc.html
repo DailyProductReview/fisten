@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>Willkommen</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NLS</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 100%; height: 100%; overflow: hidden; font-family: sans-serif; background:#000; }
+  html, body { width: 100%; min-height: 100%; font-family: Roboto, Arial, sans-serif; background: rgba(250,246,246,0.7); }
 
-  iframe#mainFrame {
-    position: fixed; inset: 0;
-    width: 100%; height: 100%;
-    border: none;
+  .page { max-width: 720px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+
+  .page img { max-width: 100%; height: auto; border-radius: 8px; }
+
+  .page h2 { font-size: 18px; margin: 24px 0 12px; line-height: 1.4; }
+
+  form.ar-fm15 { margin: 24px auto; max-width: 480px; }
+  form.ar-fm15 .form-group { margin-bottom: 12px; }
+  form.ar-fm15 input[type="email"] {
+    width: 100%; padding: 14px 16px; font-size: 16px;
+    border: 2px solid #ddd; border-radius: 6px; outline: none;
   }
-
-  #exitZone {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 60px;
-    z-index: 5000;
-    background: transparent;
+  form.ar-fm15 input[type="email"]:focus { border-color: #c0392b; }
+  form.ar-fm15 button {
+    width: 100%; padding: 16px; font-size: 18px; font-weight: 700;
+    background: #c0392b; color: #fff; border: none; border-radius: 6px;
+    cursor: pointer; text-transform: uppercase;
   }
+  form.ar-fm15 button:hover { background: #a93226; }
 
+  .important { color: #c0392b; font-size: 18px; line-height: 1.5; margin-top: 24px; }
+  .important strong { font-weight: 700; }
+
+  /* ===== Pop-up-Kette ===== */
   #overlay {
     position: fixed; inset: 0;
     background: rgba(0,0,0,0.85);
@@ -32,8 +43,7 @@
 
   #overlay iframe {
     width: 92vw; height: 90vh;
-    border: none; background: #fff;
-    border-radius: 8px;
+    border: none; background: #fff; border-radius: 8px;
   }
 
   #closeBtn {
@@ -47,12 +57,43 @@
     box-shadow: 0 0 12px rgba(0,0,0,0.6);
   }
   #closeBtn:hover { background: #d40000; }
+
+  /* Exit-Zone oben */
+  #exitZone {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 60px; z-index: 5000;
+    background: transparent;
+  }
 </style>
 </head>
 <body>
 
-<iframe id="mainFrame" src="https://natur1984.sendshark.com/pb/ambassador"></iframe>
 <div id="exitZone"></div>
+
+<div class="page">
+  <img src="https://images.nowlifestyle.com/images/affiliate/1664026/pb/assets/cdac10cebcbca1b006042d4130428da9.png" alt="">
+
+  <h2>The Exciting Part? Complete Newbies On My Team Are Earning Big Commissions Too...</h2>
+
+  <form class="ar-fm15" method="POST" action="https://gogvo.com/subscribe.php">
+    <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+    <input type="hidden" name="AffiliateName" value="natur1984NLS">
+    <input type="hidden" name="PassFormData" value="0">
+    <input type="hidden" name="ThankyouPage" value="https://listelevate.com/?id=natur1984&tr=mancacewebsite">
+    <input type="hidden" name="OptIn" value="0">
+
+    <div class="form-group">
+      <input type="email" name="Email" id="arFormEmail" placeholder="Email" required>
+    </div>
+    <button type="submit">yes, i wanna earn</button>
+  </form>
+
+  <div class="important">
+    <p><strong>*Important:</strong> <strong>Use the email address you check most often.</strong></p>
+    <p>Some of my best traffic strategies, exclusive tips, and bonuses are shared <strong>only via email.</strong></p>
+    <p>And don’t worry — you can unsubscribe anytime if it’s not for you. 😊</p>
+  </div>
+</div>
 
 <div id="overlay">
   <button id="closeBtn" title="Schließen">×</button>
@@ -93,22 +134,18 @@
 
   closeBtn.addEventListener('click', closePopup);
 
-  // 1) Exit-Intent: Maus fährt in die obere 60-px-Zone
+  // Exit-Intent: Maus fährt oben in die 60-px-Zone
   exitZone.addEventListener('mouseenter', showPopup);
 
-  // 2) Maus verlässt das Fenster nach oben
+  // Maus verlässt Fenster nach oben
   document.addEventListener('mouseleave', (e) => {
     if (e.clientY <= 0) showPopup();
   });
 
-  // 3) Fokus verloren – aber nur wenn das Dokument wirklich den Fokus verliert
-  //    (nicht wenn der iframe den Fokus bekommt!)
+  // Fenster/Tab wirklich inaktiv (nicht bei Klick ins Formular)
   window.addEventListener('blur', () => {
-    // kurz warten und prüfen, ob das Fenster wirklich inaktiv ist
     setTimeout(() => {
-      if (!document.hasFocus()) {
-        showPopup();
-      }
+      if (!document.hasFocus()) showPopup();
     }, 300);
   });
 </script>
