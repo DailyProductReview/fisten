@@ -13,11 +13,10 @@
     border: none;
   }
 
-  /* Nur oben ein schmaler Streifen, der Mausbewegungen abfängt */
   #exitZone {
     position: fixed;
     top: 0; left: 0; right: 0;
-    height: 80px;
+    height: 60px;
     z-index: 5000;
     background: transparent;
   }
@@ -94,25 +93,23 @@
 
   closeBtn.addEventListener('click', closePopup);
 
-  // Exit-Intent im oberen 80px-Streifen
+  // 1) Exit-Intent: Maus fährt in die obere 60-px-Zone
   exitZone.addEventListener('mouseenter', showPopup);
 
-  // Maus verlässt Fenster nach oben
+  // 2) Maus verlässt das Fenster nach oben
   document.addEventListener('mouseleave', (e) => {
     if (e.clientY <= 0) showPopup();
   });
 
-  // Tab/Fenster-Fokus weg
-  window.addEventListener('blur', () => showPopup());
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) showPopup();
-  });
-
-  // Tastatur-Kürzel
-  document.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey && e.key.toLowerCase() === 'w') || (e.altKey && e.key === 'F4')) {
-      showPopup();
-    }
+  // 3) Fokus verloren – aber nur wenn das Dokument wirklich den Fokus verliert
+  //    (nicht wenn der iframe den Fokus bekommt!)
+  window.addEventListener('blur', () => {
+    // kurz warten und prüfen, ob das Fenster wirklich inaktiv ist
+    setTimeout(() => {
+      if (!document.hasFocus()) {
+        showPopup();
+      }
+    }, 300);
   });
 </script>
 
