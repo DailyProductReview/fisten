@@ -1,408 +1,423 @@
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>100% Buyers · Build your List</title>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    body {
-      background: linear-gradient(145deg, #0b1a2e 0%, #1a2f44 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-      padding: 1.5rem;
-    }
+<title>NLS</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta property="og:image" content="https://gvonls-storage.com/images/pb/pb_thumbnails/1664026/55202.jpeg">
+<meta property="og:title" content="NLS">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://natur1984.sendshark.com/pb/ambassador">
+<meta property="og:type" content="website">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"></link>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous"></link>
+<link href="https://anijs.github.io/lib/anicollection/anicollection.css" rel="stylesheet" crossorigin="anonymous"></link>
+<link href="https://nowlifestyle.com/css/admin/pb/ar-forms.css" rel="stylesheet" crossorigin="anonymous"></link>
+<link href="https://nowlifestyle.com/css/admin/pb/nls-counter.css" rel="stylesheet" crossorigin="anonymous"></link>
+<link href="https://nowlifestyle.com/css/admin/pb/section-blocks.css" rel="stylesheet" crossorigin="anonymous"></link>
+<link href="https://nowlifestyle.com/css/admin/pb/optin-forms.css" rel="stylesheet" crossorigin="anonymous"></link>
+<link href="https://nowlifestyle.com/css/admin/pb/modal-dialog.css" rel="stylesheet" crossorigin="anonymous"></link>
+<link href="https://nowlifestyle.com/css/admin/pb/gjs-comp-video-extended.css" rel="stylesheet" crossorigin="anonymous"></link>
+<link href="https://nowlifestyle.com/css/admin/pb/0.16.45/grapes-tmg-link.css" rel="stylesheet" crossorigin="anonymous"></link>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone.js" crossorigin="anonymous"></script>
+<script src="https://anijs.github.io/lib/anijs/anijs-min.js" crossorigin="anonymous"></script>
+<script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom-min.js" crossorigin="anonymous"></script>
+<script src="https://nowlifestyle.com/js/admin/pb/popup-button-opener.js" crossorigin="anonymous"></script>
+<script src="https://nowlifestyle.com/js/admin/pb/common-render.js" crossorigin="anonymous"></script>
+<script src='/js/pb_track.js' defer></script><script src="/js/pb_track_resolver.js" defer ></script>
+            <style type="text/css">* { box-sizing: border-box; } body {margin: 0;}body{font-family:Roboto, sans-serif;}body{background-color:rgba(250,246,246,0.7);}body:active{background-color:rgba(250,246,246,0.7);}#iohwj:active{height:400px;width:400px;}#clockdiv > div{padding-top:5px;padding-right:5px;padding-bottom:5px;padding-left:5px;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;background-color:rgb(255, 255, 255);background-position-x:0%;background-position-y:0%;background-repeat:repeat;background-attachment:scroll;background-image:none;background-size:auto;background-origin:padding-box;background-clip:border-box;display:inline-block;}#clockdiv div > span{padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;background-color:rgb(255, 255, 255);background-position-x:0%;background-position-y:0%;background-repeat:repeat;background-attachment:scroll;background-image:none;background-size:auto;background-origin:padding-box;background-clip:border-box;display:inline-block;}#i6ar6{padding:20px;}#ip7fg{display:none;}#irs69{display:none;}#iprg9{padding:10px 10px 0 10px;}#iu1b5{padding:0 0 0 0;}#ib4zo{color:black;max-width:100%;margin:0 0 0;height:240px;width:1197px;}</style>
 
-    .landing-card {
-      max-width: 1400px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(2px);
-      border-radius: 3.5rem;
-      padding: 3rem 2.5rem;
-      box-shadow: 0 25px 50px -8px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.03);
-      transition: all 0.2s ease;
-    }
+<!-- ============================================================ -->
+<!-- POPUP STYLES (neu hinzugefügt)                                -->
+<!-- ============================================================ -->
+<style type="text/css">
+.pu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.78);
+  z-index: 99998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+.pu-overlay.pu-active { display: flex; }
 
-    /* header */
-    .main-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
+.pu-box {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 85vh;
+  max-height: 700px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: puFadeIn .35s ease;
+}
+@keyframes puFadeIn {
+  from { opacity: 0; transform: scale(.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
 
-    .main-header h1 {
-      font-size: 3.3rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #ffffff;
-      text-shadow: 0 4px 12px rgba(0, 20, 30, 0.6);
-      line-height: 1.2;
-    }
+.pu-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  transition: transform .2s, background .2s;
+}
+.pu-close:hover { background: #c0392b; transform: rotate(90deg) scale(1.1); }
 
-    .main-header h1 span {
-      background: linear-gradient(135deg, #f6d365, #fda085);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      display: inline-block;
-    }
+.pu-box iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
 
-    .sub-headline {
-      font-size: 1.25rem;
-      color: #cbd5e1;
-      margin-top: 0.5rem;
-      font-weight: 400;
-      letter-spacing: 0.3px;
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 0.7rem 1.5rem;
-      border-radius: 60px;
-      backdrop-filter: blur(4px);
-      display: inline-block;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
+/* Fallback-Button, falls iframe blockiert wird */
+.pu-fallback {
+  display: none;
+  padding: 40px 25px;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+}
+.pu-fallback h2 { margin-top: 0; color: #222; }
+.pu-fallback p  { color: #555; margin-bottom: 20px; }
+.pu-fallback a.pu-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #27ae60;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.pu-fallback a.pu-btn:hover { background: #219150; }
+</style>
+        </head><body>
 
-    .sub-headline i {
-      margin-right: 8px;
-      color: #fbbf24;
-    }
+<!-- ============================================================ -->
+<!-- POPUP 1 – LockMyPosition (Exit-Intent)                        -->
+<!-- ============================================================ -->
+<div class="pu-overlay" id="puOverlay1">
+  <div class="pu-box">
+    <button class="pu-close" id="puClose1" aria-label="Schließen">&times;</button>
+    <iframe id="puIframe1" src="about:blank" title="Lock My Position" allow="clipboard-write"></iframe>
+    <div class="pu-fallback" id="puFallback1">
+      <h2>Warte! Sichere dir deinen Platz</h2>
+      <p>Klicke unten, um fortzufahren.</p>
+      <a class="pu-btn" id="puGo1" href="https://lockmyposition.com/ref/natur/2152" target="_blank" rel="noopener">Weiter zu LockMyPosition</a>
+    </div>
+  </div>
+</div>
 
-    /* three columns – equal height, no scroll */
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
+<!-- ============================================================ -->
+<!-- POPUP 2 – SecureYourData (nach Schließen von Popup 1)         -->
+<!-- ============================================================ -->
+<div class="pu-overlay" id="puOverlay2">
+  <div class="pu-box">
+    <button class="pu-close" id="puClose2" aria-label="Schließen">&times;</button>
+    <iframe id="puIframe2" src="about:blank" title="Secure Your Data" allow="clipboard-write"></iframe>
+    <div class="pu-fallback" id="puFallback2">
+      <h2>Bevor du gehst...</h2>
+      <p>Sichere deine Daten mit diesem exklusiven Angebot.</p>
+      <a class="pu-btn" id="puGo2" href="https://secureyourdata.gotbackuptour.com/?tr=twicetraffic" target="_blank" rel="noopener">Weiter zu Secure Your Data</a>
+    </div>
+  </div>
+</div>
 
-    /* each program card */
-    .program-item {
-      background: rgba(18, 34, 58, 0.6);
-      backdrop-filter: blur(4px);
-      border-radius: 2rem;
-      padding: 1.8rem 1.5rem 2.2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.25s ease;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      box-shadow: 0 12px 28px -6px rgba(0,0,0,0.5);
-      height: 100%; /* ensure equal height in grid */
-    }
+<div data-html-code="" id="iyij"><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap" rel="stylesheet"/><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"/></div><div id="iohwj" class="form_ontainer"></div><div class="form_ontainer"></div><div data-html-code="" id="ig1l"> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>Lead Lightning | $7 System That Pays You $6 Per Sale – No Monthly Fees</title><meta name="description" content="Join Lead Lightning for just $7 one-time and unlock a done-for-you system that pays you $6 per sale. No monthly fees, no experience needed!"/><meta name="keywords" content="Lead Lightning, make money online, $7 system, earn daily commissions, passive income, side hustle, no monthly fees, beginner friendly business, work from home, online income"/><meta charset="UTF-8"/><meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/><link href="/imagesrte/d171879/ORANGEF.JPG" rel="icon" type="image/jpeg" id="iverk"/><meta content="website" property="og:type" id="i032j"/><meta content="FREE professional autoresponder for life" property="og:title"/><meta content="Discover how one simple AI funnel could help you create your first $1,000 online. Get instant access today." property="og:description" id="iyach"/><meta content="https://www.powerleadsystem.com/imagesrte/d171879/FBOG1.png" property="og:image"/><meta content="1200" property="og:image:width" id="icq39"/><meta content="630" property="og:image:height"/><meta content="FREE professional autoresponder for life" property="og:image:alt"/><meta content="Power Lead System" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="FREE professional autoresponder for life" name="twitter:title"/><meta content="Discover how one simple AI funnel could help you create your first $1,000 online. Get instant access today." name="twitter:description"/><meta content="https://www.powerleadsystem.com/imagesrte/d171879/FBOG1.png" name="twitter:image"/><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/><link href="//fonts.googleapis.com/css?family=Oswald:300,400,500,700&display=swap" rel="stylesheet"/><link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap" rel="stylesheet"/><!-- 192.168.0.10'693239'604354'171879'604354' --></div><div id="ip7fg" class="form_ontainer"><div id="error-2"></div><div id="success-2"></div></div><img id="ib4zo" src="https://images.nowlifestyle.com/images/affiliate/1664026/pb/assets/cdac10cebcbca1b006042d4130428da9.png" class="img-responsive"/><div id="iu1b5"><h2 style="text-align:center"><br></h2><h2 style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:18px;"><strong>The Exciting Part? Complete Newbies On My Team Are Earning Big Commissions Too...&nbsp;</strong></span></span><br type="_moz"></h2><p><br></p></div><div id="iyvlz" class="form_ontainer"><form method="POST" action="https://gogvo.com/subscribe.php" id="i6ar6" class="ar-fm15"><input type="hidden" name="CampaignCode" value="fCbCGBjAERJv" id="ihc4g"/><input type="hidden" name="AffiliateName" value="natur1984NLS" id="i65eb"/><input type="hidden" name="PassFormData" value="0" id="io2cl"/><input type="hidden" name="ThankyouPage" value="https://listelevate.com/?id=natur1984&tr=mancacewebsite"/><input type="hidden" name="OptIn" value="0"/><input type="hidden" name="PbVisitorId" value="" id="i2m4i"/><div id="irs69" class="form-group"><label for="arFormName">Name</label><input type="text" name="FullName" id="arFormName" placeholder="Name" class="form-control"/></div><div class="form-group"><input type="email" name="Email" id="arFormEmail" placeholder="Email" class="form-control"/></div><button type="submit" id="i6rv3" class="btn btn-default">yes, i wanna earn</button></form></div><div id="iprg9"><p style="text-align: center;"><span style="color:#c0392b;"><span style="font-size:22px;"><strong>*Important:</strong> <strong>Use the email address you check most often.</strong> </span></span><br type="_moz"></p><p style="text-align: center;"><span style="color:#c0392b;"><span style="font-size:22px;">Some of my best traffic strategies, exclusive tips, and bonuses are shared <strong>only via email.</strong><br type="_moz"></span></span></p><p style="text-align: center;"><span style="color:#c0392b;"><span style="font-size:22px;">And don’t worry — you can unsubscribe anytime if it’s not for you. 😊<br type="_moz"></span></span></p></div>  <script>var items = document.querySelectorAll('#i6ar6');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
 
-    .program-item:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px -12px #000000cc;
-      border-color: rgba(255, 215, 100, 0.15);
-    }
+}.bind(items[i]))();
+          }</script>
 
-    /* image container – fixed size, all equal */
-    .image-wrapper {
-      width: 100%;
-      max-width: 280px;
-      aspect-ratio: 1 / 1;  /* square */
-      background: #0f1f30;
-      border-radius: 1.8rem;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
-      margin-bottom: 1.6rem;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      transition: all 0.2s;
-    }
+<!-- ============================================================ -->
+<!-- POPUP LOGIC (neu hinzugefügt)                                 -->
+<!-- ============================================================ -->
+<script>
+(function(){
+  var URL1 = "https://lockmyposition.com/ref/natur/2152";
+  var URL2 = "https://secureyourdata.gotbackuptour.com/?tr=twicetraffic";
 
-    .image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;  /* ensures every image fills the square, no distortion */
-      display: block;
-    }
+  var overlay1 = document.getElementById('puOverlay1');
+  var overlay2 = document.getElementById('puOverlay2');
+  var iframe1  = document.getElementById('puIframe1');
+  var iframe2  = document.getElementById('puIframe2');
+  var close1   = document.getElementById('puClose1');
+  var close2   = document.getElementById('puClose2');
+  var fallback1 = document.getElementById('puFallback1');
+  var fallback2 = document.getElementById('puFallback2');
 
-    /* button style – opens new window */
-    .cta-button {
-      display: inline-block;
-      background: linear-gradient(135deg, #f6b868, #f58a4c);
-      border: none;
-      padding: 0.9rem 2.2rem;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: #0b1a2a;
-      text-decoration: none;
-      letter-spacing: 0.3px;
-      box-shadow: 0 6px 18px rgba(245, 138, 76, 0.3);
-      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
-      margin-top: 0.4rem;
-      width: 100%;
-      max-width: 220px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      cursor: pointer;
-      text-align: center;
-    }
+  var popup1Shown = false;
+  var popup2Shown = false;
+  var exitLocked  = false;
 
-    .cta-button i {
-      margin-right: 10px;
-      font-size: 0.9rem;
-    }
+  // ----- Popup 1 öffnen -----
+  function openPopup1(){
+    if (popup1Shown) return;
+    popup1Shown = true;
+    iframe1.src = URL1;
+    overlay1.classList.add('pu-active');
+    document.body.style.overflow = 'hidden';
 
-    .cta-button:hover {
-      background: linear-gradient(135deg, #fcc47a, #f97c3f);
-      box-shadow: 0 8px 24px #f58a4ccc;
-      transform: scale(1.02);
-      color: #08131f;
-    }
-
-    .cta-button:active {
-      transform: scale(0.97);
-    }
-
-    /* small badge or label inside each card */
-    .program-badge {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      background: rgba(255, 215, 100, 0.12);
-      padding: 0.3rem 1rem;
-      border-radius: 30px;
-      color: #fcd34d;
-      margin-bottom: 0.5rem;
-      border: 1px solid rgba(255, 215, 100, 0.1);
-      font-weight: 500;
-    }
-
-    .program-title {
-      color: #f1f5f9;
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-bottom: 0.2rem;
-      letter-spacing: -0.2px;
-    }
-
-    .program-desc {
-      color: #b3c7e0;
-      font-size: 0.9rem;
-      margin-bottom: 1.2rem;
-      line-height: 1.4;
-      opacity: 0.9;
-      padding: 0 0.2rem;
-    }
-
-    /* footer / passive income note */
-    .passive-note {
-      margin-top: 2.8rem;
-      text-align: center;
-      color: #a3bbd6;
-      font-size: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-      padding-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 0.6rem 1.5rem;
-    }
-
-    .passive-note i {
-      color: #fbbf24;
-      margin-right: 6px;
-    }
-
-    .passive-note strong {
-      color: #fcd34d;
-      font-weight: 600;
-    }
-
-    .badge-pill {
-      background: rgba(0, 0, 0, 0.25);
-      padding: 0.25rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      border: 1px solid rgba(255, 215, 0, 0.1);
-    }
-
-    /* responsive: on smaller screens stack, but still equal image size */
-    @media (max-width: 850px) {
-      .landing-card {
-        padding: 2rem 1.2rem;
+    // Fallback: Wenn iframe nach 4s nicht geladen hat (blockiert),
+    // zeigen wir einen Button statt der leeren Fläche.
+    setTimeout(function(){
+      if (overlay1.classList.contains('pu-active')) {
+        var loaded = false;
+        try { loaded = iframe1.contentWindow.location.href !== 'about:blank'; } catch(e){}
+        // Wenn iframe blockiert ist, ist das contentDocument null oder leer
+        if (!loaded || !iframe1.contentDocument || iframe1.contentDocument.body.innerHTML === '') {
+          iframe1.style.display = 'none';
+          fallback1.style.display = 'block';
+        }
       }
-      .program-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        max-width: 480px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .main-header h1 {
-        font-size: 2.5rem;
-      }
-      .image-wrapper {
-        max-width: 240px;
-      }
-    }
+    }, 4000);
+  }
 
-    @media (max-width: 480px) {
-      .main-header h1 {
-        font-size: 2rem;
+  // ----- Popup 2 öffnen -----
+  function openPopup2(){
+    if (popup2Shown) return;
+    popup2Shown = true;
+    iframe2.src = URL2;
+    overlay2.classList.add('pu-active');
+    document.body.style.overflow = 'hidden';
+
+    setTimeout(function(){
+      if (overlay2.classList.contains('pu-active')) {
+        var loaded = false;
+        try { loaded = iframe2.contentWindow.location.href !== 'about:blank'; } catch(e){}
+        if (!loaded || !iframe2.contentDocument || iframe2.contentDocument.body.innerHTML === '') {
+          iframe2.style.display = 'none';
+          fallback2.style.display = 'block';
+        }
       }
-      .sub-headline {
-        font-size: 1rem;
-        padding: 0.4rem 1rem;
-      }
-      .cta-button {
-        font-size: 1rem;
-        padding: 0.7rem 1.5rem;
-      }
+    }, 4000);
+  }
+
+  // ----- Popup 1 schließen -> Popup 2 öffnen -----
+  close1.addEventListener('click', function(){
+    overlay1.classList.remove('pu-active');
+    iframe1.src = 'about:blank';
+    setTimeout(openPopup2, 250);
+  });
+
+  // ----- Popup 2 schließen -----
+  close2.addEventListener('click', function(){
+    overlay2.classList.remove('pu-active');
+    iframe2.src = 'about:blank';
+    document.body.style.overflow = '';
+  });
+
+  // ----- Klick auf dunklen Hintergrund schließt -----
+  overlay1.addEventListener('click', function(e){
+    if (e.target === overlay1) close1.click();
+  });
+  overlay2.addEventListener('click', function(e){
+    if (e.target === overlay2) close2.click();
+  });
+
+  // =========================================================
+  // EXIT-INTENT Desktop: Maus verlässt Fenster nach oben
+  // =========================================================
+  document.addEventListener('mouseout', function(e){
+    if (popup1Shown || exitLocked) return;
+    if (e.clientY <= 0 && !e.relatedTarget && !e.toElement) {
+      exitLocked = true;
+      openPopup1();
     }
-  </style>
+  });
+
+  // =========================================================
+  // EXIT-INTENT Mobile: schnelles Hochscrollen nach unten
+  // =========================================================
+  var lastScrollTop = 0;
+  var touchTriggered = false;
+  window.addEventListener('scroll', function(){
+    if (popup1Shown || touchTriggered) return;
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (lastScrollTop > 200 && st < 50 && (lastScrollTop - st) > 150) {
+      touchTriggered = true;
+      openPopup1();
+    }
+    lastScrollTop = st;
+  }, { passive: true });
+
+})();
+</script>
+
+</body><footer><script>AniJS.run();</script></footer><!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NLS</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; min-height: 100%; font-family: Roboto, Arial, sans-serif; background: rgba(250,246,246,0.7); }
+
+  .page { max-width: 720px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+
+  .page img { max-width: 100%; height: auto; border-radius: 8px; }
+
+  .page h2 { font-size: 18px; margin: 24px 0 12px; line-height: 1.4; }
+
+  form.ar-fm15 { margin: 24px auto; max-width: 480px; }
+  form.ar-fm15 .form-group { margin-bottom: 12px; }
+  form.ar-fm15 input[type="email"] {
+    width: 100%; padding: 14px 16px; font-size: 16px;
+    border: 2px solid #ddd; border-radius: 6px; outline: none;
+  }
+  form.ar-fm15 input[type="email"]:focus { border-color: #c0392b; }
+  form.ar-fm15 button {
+    width: 100%; padding: 16px; font-size: 18px; font-weight: 700;
+    background: #c0392b; color: #fff; border: none; border-radius: 6px;
+    cursor: pointer; text-transform: uppercase;
+  }
+  form.ar-fm15 button:hover { background: #a93226; }
+
+  .important { color: #c0392b; font-size: 18px; line-height: 1.5; margin-top: 24px; }
+  .important strong { font-weight: 700; }
+
+  /* ===== Pop-up-Kette ===== */
+  #overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center; justify-content: center;
+    z-index: 9999;
+  }
+  #overlay.show { display: flex; }
+
+  #overlay iframe {
+    width: 92vw; height: 90vh;
+    border: none; background: #fff; border-radius: 8px;
+  }
+
+  #closeBtn {
+    position: absolute; top: 15px; right: 15px;
+    width: 46px; height: 46px;
+    background: #ff2e2e; color: #fff;
+    border: none; border-radius: 50%;
+    font-size: 26px; font-weight: bold;
+    cursor: pointer; z-index: 10000;
+    line-height: 46px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.6);
+  }
+  #closeBtn:hover { background: #d40000; }
+
+  /* Exit-Zone oben */
+  #exitZone {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 60px; z-index: 5000;
+    background: transparent;
+  }
+</style>
 </head>
 <body>
-<div class="landing-card">
 
-  <!-- header -->
-  <div class="main-header">
-    <h1>
-      <span>100% Buyers</span> · Build your <span>Buyers List</span>
-    </h1>
-    <div class="sub-headline">
-      <i class="fas fa-rocket"></i> For beginners & advanced · Affiliate · passive income
+<div id="exitZone"></div>
+
+<div class="page">
+  <img src="https://images.nowlifestyle.com/images/affiliate/1664026/pb/assets/cdac10cebcbca1b006042d4130428da9.png" alt="">
+
+  <h2>The Exciting Part? Complete Newbies On My Team Are Earning Big Commissions Too...</h2>
+
+  <form class="ar-fm15" method="POST" action="https://gogvo.com/subscribe.php">
+    <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+    <input type="hidden" name="AffiliateName" value="natur1984NLS">
+    <input type="hidden" name="PassFormData" value="0">
+    <input type="hidden" name="ThankyouPage" value="https://listelevate.com/?id=natur1984&tr=mancacewebsite">
+    <input type="hidden" name="OptIn" value="0">
+
+    <div class="form-group">
+      <input type="email" name="Email" id="arFormEmail" placeholder="Email" required>
     </div>
+    <button type="submit">yes, i wanna earn</button>
+  </form>
+
+  <div class="important">
+    <p><strong>*Important:</strong> <strong>Use the email address you check most often.</strong></p>
+    <p>Some of my best traffic strategies, exclusive tips, and bonuses are shared <strong>only via email.</strong></p>
+    <p>And don’t worry — you can unsubscribe anytime if it’s not for you. 😊</p>
   </div>
-
-  <!-- 3 programs: images + button (new window) -->
-  <div class="program-grid">
-
-    <!-- Program 1 -->
-    <div class="program-item">
-      <div class="program-badge"><i class="fas fa-bolt"></i>  PRO</div>
-      <div class="program-title">Warrior+ #1</div>
-      <div class="program-desc">High-converting offer · perfect for list building</div>
-      <div class="image-wrapper">
-        <img src="https://warriorplus.com/assets/user/listing_image/o-58793-prod_image.png?v=1643135198" alt="Program 1" loading="lazy">
-      </div>
-      <a href="https://warriorplus.com/o2/a/vggwrz/0/actualhits" target="_blank" rel="noopener noreferrer" class="cta-button">
-        <i class="fas fa-arrow-right"></i> Grab deal
-      </a>
-    </div>
-
-    <!-- Program 2 -->
-    <div class="program-item">
-      <div class="program-badge"><i class="fas fa-star"></i>  BEST</div>
-      <div class="program-title">Warrior+ #2</div>
-      <div class="program-desc">Top rated · beginner friendly · high EPC</div>
-      <div class="image-wrapper">
-        <img src="https://warriorplus.com/assets/user/listing_image/o-73584-prod_image.png?v=1732600892" alt="Program 2" loading="lazy">
-      </div>
-      <a href="https://warriorplus.com/o2/a/x9jvz9/0/actualhits" target="_blank" rel="noopener noreferrer" class="cta-button">
-        <i class="fas fa-arrow-right"></i> Grab deal
-      </a>
-    </div>
-
-    <!-- Program 3 -->
-    <div class="program-item">
-      <div class="program-badge"><i class="fas fa-gem"></i>  PREMIUM</div>
-      <div class="program-title">Warrior+ #3</div>
-      <div class="program-desc">Advanced · recurring commissions · huge value</div>
-      <div class="image-wrapper">
-        <img src="https://warriorplus.com/assets/user/listing_image/o-77084-prod_image.png?v=1719830244" alt="Program 3" loading="lazy">
-      </div>
-      <a href="https://warriorplus.com/o2/a/lkw88q0/0/actualhits" target="_blank" rel="noopener noreferrer" class="cta-button">
-        <i class="fas fa-arrow-right"></i> Grab deal
-      </a>
-    </div>
-  </div>
-
-  <!-- passive income / info row -->
-  <div class="passive-note">
-    <span><i class="fas fa-check-circle"></i> 100% buyer traffic</span>
-    <span><i class="fas fa-users"></i> beginner → advanced</span>
-    <span class="badge-pill"><i class="fas fa-coins"></i> <strong>passive income</strong> · affiliate ready</span>
-    <span><i class="fas fa-external-link-alt"></i> all links open new tab</span>
-  </div>
-
 </div>
-  <!-- Tracking-Pixel -->
-    <img height="1" width="1" style="display:none" src="https://herculist.com/members/trafficbomb.cgi?naturallyinshape">
-    <img height="1" width="1" style="display:none" src="https://leasedadspace.com/splash/three/?aid=morabersl">
-    <img height="1" width="1" style="display:none" src="https://www.herculist.com/members/index.cgi?naturallyinshape">
-    <img height="1" width="1" style="display:none" src="https://clickleverage.com/index.php?r=Natur">
-    <img height="1" width="1" style="display:none" src="https://daily-ads.com/r/1519/homepage">
-    <img height="1" width="1" style="display:none" src="https://ezclicks4u.com/index.php?r=natur">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/lz8hx6b/0/cook">
-    <img height="1" width="1" style="display:none" src="https://olspacademy.com/w/TKVF6UHW">
-    <img height="1" width="1" style="display:none" src="https://olspacademy.com/get-megalink?olsp=1657798">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/sh9gxkd/0/cookie">
-    <img height="1" width="1" style="display:none" src="https://www.myleadgensecret.com/sizzle/?rid=28382&src=cook">
-    <img height="1" width="1" style="display:none" src="https://www.twiceconfirmedtraffic.com/index.php?id=10214">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/yxf1kwg/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/pwzfsvr/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/lkw88q0/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/k4j51n4/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/npfyn0h/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/ml0gj3t/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/q5h67kh/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/b30zsh/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/j3m5j0/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/nv17rw1/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/vggwrz/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/d873fhc/0/cook">
 
-    <img height="1" width="1" style="display:none" src="https://mastersafelistblaster.com/5598">
-    <img height="1" width="1" style="display:none" src="https://mydailymailer.com/?rid=3050">
-    <img height="1" width="1" style="display:none" src="https://mistersafelist.com/?rid=33985">
-    <img height="1" width="1" style="display:none" src="https://herculist.com/members/legends.cgi?naturallyinshape">
-    <img height="1" width="1" style="display:none" src="https://herculist.com/members/powerhub.cgi?naturallyinshape">
-    <img height="1" width="1" style="display:none" src="https://www.herculist.com/members/20deal.cgi?naturallyinshape">
- 
+<div id="overlay">
+  <button id="closeBtn" title="Schließen">×</button>
+  <iframe id="frame" src="about:blank"></iframe>
+</div>
 
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/tcjxnpq/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/d3b7m3y/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/nq6s1x1/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/l5tqkst/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/jsncb9m/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/rs6d1hg/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/hsq2221/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/mn9ppw7/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/fjbqg24/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/pt5zmp0/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/mscdr3t/0/cook">
-    <img height="1" width="1" style="display:none" src="https://warriorplus.com/o2/a/dn662dr/0/cook">
+<script>
+  const overlay  = document.getElementById('overlay');
+  const frame    = document.getElementById('frame');
+  const closeBtn = document.getElementById('closeBtn');
+  const exitZone = document.getElementById('exitZone');
 
-    <!-- Neue ct/958361-Links (alle einmalig) -->
-    <img height="1" width="1" style="display:none" src="https://www.vigrxplus.net/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.testosil.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.genf20muscle.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.erectin.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.semenax.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.erectingummies.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.cortisync.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.primegenixbonecomplex.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.volumepills.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.naturalhealthsource.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.brainpill.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.vigorelle.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.provestra.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.primegenixprostatesupport.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.totalcurve.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.dermeffacefx7.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.illuminatural6i.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.skinception.com/ct/958361">
-    <img height="1" width="1" style="display:none" src="https://www.kollagenintensiv.com/ct/958361">
-    
+  const urls = [
+    "https://secureyourdata.gotbackuptour.com/?tr=twiceconfirmedtraffic",
+    "https://lockmyposition.com/ref/natur/2152"
+  ];
+
+  let currentIndex = 0;
+  let isOpen = false;
+  let cooldown = false;
+
+  function showPopup() {
+    if (isOpen || cooldown) return;
+    if (currentIndex >= urls.length) currentIndex = 0;
+    isOpen = true;
+    frame.src = urls[currentIndex];
+    overlay.classList.add('show');
+  }
+
+  function closePopup() {
+    overlay.classList.remove('show');
+    frame.src = "about:blank";
+    isOpen = false;
+    currentIndex++;
+    cooldown = true;
+    setTimeout(() => { cooldown = false; }, 800);
+  }
+
+  closeBtn.addEventListener('click', closePopup);
+
+  // Exit-Intent: Maus fährt oben in die 60-px-Zone
+  exitZone.addEventListener('mouseenter', showPopup);
+
+  // Maus verlässt Fenster nach oben
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY <= 0) showPopup();
+  });
+
+  // Fenster/Tab wirklich inaktiv (nicht bei Klick ins Formular)
+  window.addEventListener('blur', () => {
+    setTimeout(() => {
+      if (!document.hasFocus()) showPopup();
+    }, 300);
+  });
+</script>
+
 </body>
 </html>
