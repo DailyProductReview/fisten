@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Willkommen</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; font-family: sans-serif; background:#000; }
+
+  iframe#mainFrame {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  #overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center; justify-content: center;
+    z-index: 9999;
+  }
+  #overlay.show { display: flex; }
+
+  #overlay iframe {
+    width: 92vw; height: 90vh;
+    border: none; background: #fff;
+    border-radius: 8px;
+  }
+
+  #closeBtn {
+    position: absolute; top: 15px; right: 15px;
+    width: 46px; height: 46px;
+    background: #ff2e2e; color: #fff;
+    border: none; border-radius: 50%;
+    font-size: 26px; font-weight: bold;
+    cursor: pointer; z-index: 10000;
+    line-height: 46px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.6);
+  }
+  #closeBtn:hover { background: #d40000; }
+</style>
+</head>
+<body>
+
+<iframe id="mainFrame" src="https://natur1984.sendshark.com/pb/ambassador"></iframe>
+
+<div id="overlay">
+  <button id="closeBtn" title="Schließen">×</button>
+  <iframe id="frame" src="about:blank"></iframe>
+</div>
+
+<script>
+  const overlay  = document.getElementById('overlay');
+  const frame    = document.getElementById('frame');
+  const closeBtn = document.getElementById('closeBtn');
+
+  const urls = [
+    "https://secureyourdata.gotbackuptour.com/?tr=twiceconfirmedtraffic",
+    "https://lockmyposition.com/ref/natur/2152"
+  ];
+
+  let currentIndex = 0;
+  let isOpen = false;
+  let cooldown = false;
+
+  function showPopup() {
+    if (isOpen || cooldown) return;
+    if (currentIndex >= urls.length) currentIndex = 0;
+
+    isOpen = true;
+    frame.src = urls[currentIndex];
+    overlay.classList.add('show');
+  }
+
+  function closePopup() {
+    overlay.classList.remove('show');
+    frame.src = "about:blank";
+    isOpen = false;
+    currentIndex++;
+
+    cooldown = true;
+    setTimeout(() => { cooldown = false; }, 800);
+  }
+
+  closeBtn.addEventListener('click', closePopup);
+
+  // 1) Pop-up automatisch nach kurzer Zeit (garantiert sichtbar)
+  setTimeout(showPopup, 2500);
+
+  // 2) Exit-Intent: Maus verlässt Fenster nach oben
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY <= 0) showPopup();
+  });
+
+  // 3) Fenster/Tab verliert Fokus (Nutzer will schließen)
+  window.addEventListener('blur', () => showPopup());
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) showPopup();
+  });
+
+  // 4) Tastatur: Strg+W / Alt+F4 Vorbereitung (kann Browser nicht blocken, aber Fokus-Trigger greift)
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey && e.key.toLowerCase() === 'w') || (e.altKey && e.key === 'F4')) {
+      showPopup();
+    }
+  });
+
+  // 5) Mobile: nach oben wischen
+  window.addEventListener('scroll', () => {
+    if (window.scrollY <= 2) showPopup();
+  }, { passive: true });
+</script>
+
+</body>
+</html>
