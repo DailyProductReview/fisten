@@ -39,7 +39,7 @@
     left: 0;
   }
 
-  /* Headline – smaller again to free up room for the image */
+  /* Headline */
   .headline {
     text-align: center;
     margin: 0 0 6px 0;
@@ -60,7 +60,7 @@
     display: block;
   }
 
-  /* Image – bigger again, still fully visible */
+  /* Image */
   .hero-img {
     display: block;
     width: auto;
@@ -114,9 +114,114 @@
     .optin-form .form-control { height: 34px; }
     .optin-form .btn { height: 38px; font-size: 14px; }
   }
+
+  /* ============================================================ */
+  /* POPUP STYLES                                                  */
+  /* ============================================================ */
+  .pu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.78);
+    z-index: 99998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  }
+  .pu-overlay.pu-active { display: flex; }
+
+  .pu-box {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 85vh;
+    max-height: 700px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: puFadeIn .35s ease;
+  }
+  @keyframes puFadeIn {
+    from { opacity: 0; transform: scale(.92); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .pu-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    transition: transform .2s, background .2s;
+  }
+  .pu-close:hover { background: #c0392b; transform: rotate(90deg) scale(1.1); }
+
+  .pu-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .pu-fallback {
+    display: none;
+    padding: 40px 25px;
+    text-align: center;
+    font-family: Muli, sans-serif;
+  }
+  .pu-fallback h2 { margin-top: 0; color: #222; }
+  .pu-fallback p  { color: #555; margin-bottom: 20px; }
+  .pu-fallback a.pu-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #27ae60;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .pu-fallback a.pu-btn:hover { background: #219150; }
 </style>
 </head>
 <body>
+
+<!-- ============================================================ -->
+<!-- POPUP 1 – LockMyPosition (Exit-Intent)                        -->
+<!-- ============================================================ -->
+<div class="pu-overlay" id="puOverlay1">
+  <div class="pu-box">
+    <button class="pu-close" id="puClose1" aria-label="Close">&times;</button>
+    <iframe id="puIframe1" src="about:blank" title="Lock My Position" allow="clipboard-write"></iframe>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- POPUP 2 – SecureYourData (after closing popup 1)              -->
+<!-- ============================================================ -->
+<div class="pu-overlay" id="puOverlay2">
+  <div class="pu-box">
+    <button class="pu-close" id="puClose2" aria-label="Close">&times;</button>
+    <iframe id="puIframe2" src="about:blank" title="Secure Your Data" allow="clipboard-write"></iframe>
+    <div class="pu-fallback" id="puFallback2">
+      <h2>Before you go...</h2>
+      <p>Secure your data with this exclusive offer.</p>
+      <a class="pu-btn" id="puGo2" href="https://secureyourdata.gotbackuptour.com/?tr=twicetraffic" target="_blank" rel="noopener">Continue to Secure Your Data</a>
+    </div>
+  </div>
+</div>
 
 <div class="top-bar"></div>
 
@@ -150,6 +255,95 @@
   </form>
 
 </div>
+
+<!-- ============================================================ -->
+<!-- POPUP LOGIC                                                   -->
+<!-- ============================================================ -->
+<script>
+(function(){
+  var URL1 = "https://lockmyposition.com/ref/natur/2152";
+  var URL2 = "https://secureyourdata.gotbackuptour.com/?tr=twicetraffic";
+
+  var overlay1 = document.getElementById('puOverlay1');
+  var overlay2 = document.getElementById('puOverlay2');
+  var iframe1  = document.getElementById('puIframe1');
+  var iframe2  = document.getElementById('puIframe2');
+  var close1   = document.getElementById('puClose1');
+  var close2   = document.getElementById('puClose2');
+  var fallback2 = document.getElementById('puFallback2');
+
+  var popup1Shown = false;
+  var popup2Shown = false;
+  var exitLocked  = false;
+
+  function openPopup1(){
+    if (popup1Shown) return;
+    popup1Shown = true;
+    iframe1.src = URL1;
+    overlay1.classList.add('pu-active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function openPopup2(){
+    if (popup2Shown) return;
+    popup2Shown = true;
+    iframe2.src = URL2;
+    overlay2.classList.add('pu-active');
+    document.body.style.overflow = 'hidden';
+
+    setTimeout(function(){
+      if (overlay2.classList.contains('pu-active')) {
+        var loaded = false;
+        try { loaded = iframe2.contentWindow.location.href !== 'about:blank'; } catch(e){}
+        if (!loaded || !iframe2.contentDocument || iframe2.contentDocument.body.innerHTML === '') {
+          iframe2.style.display = 'none';
+          fallback2.style.display = 'block';
+        }
+      }
+    }, 4000);
+  }
+
+  close1.addEventListener('click', function(){
+    overlay1.classList.remove('pu-active');
+    iframe1.src = 'about:blank';
+    setTimeout(openPopup2, 250);
+  });
+
+  close2.addEventListener('click', function(){
+    overlay2.classList.remove('pu-active');
+    iframe2.src = 'about:blank';
+    document.body.style.overflow = '';
+  });
+
+  overlay1.addEventListener('click', function(e){
+    if (e.target === overlay1) close1.click();
+  });
+  overlay2.addEventListener('click', function(e){
+    if (e.target === overlay2) close2.click();
+  });
+
+  document.addEventListener('mouseout', function(e){
+    if (popup1Shown || exitLocked) return;
+    if (e.clientY <= 0 && !e.relatedTarget && !e.toElement) {
+      exitLocked = true;
+      openPopup1();
+    }
+  });
+
+  var lastScrollTop = 0;
+  var touchTriggered = false;
+  window.addEventListener('scroll', function(){
+    if (popup1Shown || touchTriggered) return;
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (lastScrollTop > 200 && st < 50 && (lastScrollTop - st) > 150) {
+      touchTriggered = true;
+      openPopup1();
+    }
+    lastScrollTop = st;
+  }, { passive: true });
+
+})();
+</script>
 
 </body>
 </html>
