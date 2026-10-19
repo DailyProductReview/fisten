@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>💰 CASH MACHINE · 3$ payments autopilot</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            height: 100%; width: 100%;
+            overflow: hidden;
+            background: #1e1e1e;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .page {
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            padding: 8px;
+            background: #121212;
+            border: 6px solid #ffcc00;
+            text-align: center;
+            color: #f0f0f0;
+        }
+        .container {
+            width: 100%; max-width: 900px;
+            background: #000;
+            padding: 8px 14px;
+            border: 4px solid #ff5500;
+            box-shadow: 0 0 0 3px #fff, 0 0 0 6px #000;
+        }
+        h1 {
+            font-size: clamp(1.4rem, 6vw, 3rem);
+            color: #ffd700;
+            text-transform: uppercase;
+            font-weight: 900;
+            background: #1a1a1a;
+            display: inline-block;
+            padding: 0 10px;
+            border: 3px dashed #ffaa00;
+            margin-bottom: 4px;
+            text-shadow: 2px 2px 0 #b34700;
+        }
+        .cash-machine {
+            font-size: clamp(1.6rem, 8vw, 3.8rem);
+            color: #00ff99;
+            background: #003300;
+            padding: 2px 14px;
+            display: inline-block;
+            border: 4px solid #00cc44;
+            margin: 4px 0;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #004d00;
+        }
+        .three-dollar {
+            font-size: clamp(1.2rem, 5vw, 2.2rem);
+            background: #550000;
+            color: #ffee00;
+            padding: 2px 12px;
+            border: 3px solid #ff0000;
+            display: inline-block;
+            margin-bottom: 4px;
+            font-weight: 900;
+        }
+        .value-props {
+            display: flex; flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 12px;
+            margin: 6px 0;
+            font-size: clamp(0.8rem, 3vw, 1.1rem);
+            font-weight: bold;
+        }
+        .value-props span {
+            background: #2a2a2a;
+            padding: 2px 10px;
+            border: 2px solid #ffaa00;
+        }
+
+        /* FORM */
+        .form-zone {
+            background: #1e1e1e;
+            border: 3px solid #00cc00;
+            padding: 8px;
+            margin: 6px 0 0 0;
+            width: 100%;
+        }
+        .form-zone form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            width: 100%;
+        }
+        .form-zone input[type="hidden"] { display: none; }
+
+        .email-input {
+            width: 90%;
+            max-width: 420px;
+            padding: 10px 14px;
+            font-size: clamp(1rem, 3.5vw, 1.15rem);
+            border: 3px solid #ffcc00;
+            background: #fff;
+            color: #000;
+            font-weight: bold;
+            text-align: center;
+            outline: none;
+        }
+        .email-input:focus {
+            border-color: #00ff99;
+            box-shadow: 0 0 0 3px #00ff99;
+        }
+        .submit-btn {
+            width: 90%;
+            max-width: 420px;
+            padding: 12px;
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            background: #ff5500;
+            color: #fff;
+            border: 3px solid #ffcc00;
+            cursor: pointer;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0 #000;
+        }
+        .submit-btn:hover {
+            background: #00cc44;
+            color: #000;
+        }
+        .form-zone img {
+            display: inline-block;
+            max-height: 40px;
+            max-width: 100%;
+            border: 2px solid #ffcc00;
+            background: #fff;
+            padding: 2px;
+            margin-top: 4px;
+        }
+        .disclaimer {
+            font-size: clamp(0.6rem, 2.2vw, 0.8rem);
+            color: #aaa;
+            margin-top: 4px;
+        }
+        .highlight {
+            color: #ffff00;
+            background: #400000;
+            padding: 0 6px;
+            font-weight: bold;
+        }
+
+        @media (max-height: 600px) {
+            h1 { font-size: 1.2rem; }
+            .cash-machine { font-size: 1.6rem; }
+            .three-dollar { font-size: 1rem; }
+            .value-props { display: none; } /* hide on tiny screens to keep email visible */
+            .email-input, .submit-btn { padding: 6px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="container">
+            <h1>🔥 EARN MULTIPLE $3 PAYMENTS</h1>
+            <div class="cash-machine">YOUR OWN CASH MACHINE</div>
+            <div class="three-dollar">💰 3$ PAYMENTS ON AUTOPILOT 💰</div>
+
+            <div class="value-props">
+                <span>✅ MULTIPLE PAYMENTS</span>
+                <span>✅ AUTOPILOT</span>
+                <span>✅ 3$ PER EARNING</span>
+            </div>
+
+            <!-- FORM mit sichtbarem E-Mail-Feld + Submit -->
+            <div class="form-zone">
+                <form action="https://gogvo.com/show_form.php?id=25235424" method="post" id="cashForm">
+                    <!-- Hidden fields (exakt wie gegeben) -->
+                    <input type="hidden" name="AffiliateName" value="natur1984NLS">
+                    <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+                    <input type="hidden" name="TrackParam" value="new_form">
+                    <input type="hidden" name="FormId" value="25235424">
+                    <input type="hidden" name="AffiliateName" value="natur1984NLS">
+                    <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+                    <input type="hidden" name="TrackParam" value="new_form">
+                    <input type="hidden" name="FormId" value="25235424">
+
+                    <!-- SICHTBARES E-MAIL-FELD -->
+                    <input
+                        type="email"
+                        name="email"
+                        class="email-input"
+                        placeholder="ENTER YOUR EMAIL"
+                        required
+                        autocomplete="email"
+                    >
+
+                    <!-- SICHTBARER SUBMIT-BUTTON -->
+                    <button type="submit" class="submit-btn">
+                        💸 GET MY $3 PAYMENTS 💸
+                    </button>
+
+                    <!-- Tracking-Bild (sichtbar) -->
+                    <img src="https://gogvo.com/show_form.php?id=25235424&amp;TrackParam=new_form" alt="tracking">
+                </form>
+                <div class="disclaimer">⚠️ 100% autopilot – no scroll required ⚠️</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
