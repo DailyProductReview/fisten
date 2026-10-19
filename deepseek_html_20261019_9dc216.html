@@ -95,25 +95,45 @@
         }
         .form-zone input[type="hidden"] { display: none; }
 
-        .email-input {
-            width: 90%;
-            max-width: 420px;
-            padding: 10px 14px;
-            font-size: clamp(1rem, 3.5vw, 1.15rem);
+        /* NEUE FORM-STILE – angepasst für die alte Tabellenstruktur */
+        .form-zone table {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            color: #f0f0f0;
+        }
+        .form-zone table td {
+            padding: 4px 6px;
+            text-align: left;
+            vertical-align: middle;
+            font-size: clamp(0.9rem, 3.2vw, 1.1rem);
+            font-weight: bold;
+        }
+        .form-zone table label {
+            color: #ffcc00;
+            display: inline-block;
+        }
+        .form-zone table input[type="text"] {
+            width: 100%;
+            max-width: 280px;
+            padding: 10px 12px;
+            font-size: clamp(1rem, 3.5vw, 1.1rem);
             border: 3px solid #ffcc00;
             background: #fff;
             color: #000;
             font-weight: bold;
             text-align: center;
             outline: none;
+            border-radius: 0;
         }
-        .email-input:focus {
+        .form-zone table input[type="text"]:focus {
             border-color: #00ff99;
             box-shadow: 0 0 0 3px #00ff99;
         }
-        .submit-btn {
-            width: 90%;
-            max-width: 420px;
+        .form-zone table input[type="submit"] {
+            width: 100%;
+            max-width: 280px;
             padding: 12px;
             font-size: clamp(1rem, 4vw, 1.3rem);
             font-weight: 900;
@@ -124,11 +144,15 @@
             cursor: pointer;
             letter-spacing: 1px;
             text-shadow: 1px 1px 0 #000;
+            margin-top: 4px;
+            border-radius: 0;
+            transition: background 0.15s;
         }
-        .submit-btn:hover {
+        .form-zone table input[type="submit"]:hover {
             background: #00cc44;
             color: #000;
         }
+
         .form-zone img {
             display: inline-block;
             max-height: 40px;
@@ -136,12 +160,12 @@
             border: 2px solid #ffcc00;
             background: #fff;
             padding: 2px;
-            margin-top: 4px;
+            margin-top: 8px;
         }
         .disclaimer {
             font-size: clamp(0.6rem, 2.2vw, 0.8rem);
             color: #aaa;
-            margin-top: 4px;
+            margin-top: 6px;
         }
         .highlight {
             color: #ffff00;
@@ -150,12 +174,37 @@
             font-weight: bold;
         }
 
+        /* responsive anpassung für die tabelle */
+        @media (max-width: 480px) {
+            .form-zone table,
+            .form-zone table tbody,
+            .form-zone table tr,
+            .form-zone table td {
+                display: block;
+                width: 100%;
+            }
+            .form-zone table td {
+                padding: 4px 0;
+                text-align: center;
+            }
+            .form-zone table label {
+                display: block;
+                margin-bottom: 2px;
+            }
+            .form-zone table input[type="text"],
+            .form-zone table input[type="submit"] {
+                max-width: 100%;
+            }
+        }
+
         @media (max-height: 600px) {
             h1 { font-size: 1.2rem; }
             .cash-machine { font-size: 1.6rem; }
             .three-dollar { font-size: 1rem; }
-            .value-props { display: none; } /* hide on tiny screens to keep email visible */
-            .email-input, .submit-btn { padding: 6px; }
+            .value-props { display: none; }
+            .form-zone table input[type="text"],
+            .form-zone table input[type="submit"] { padding: 6px; }
+            .form-zone table td { padding: 2px 4px; }
         }
     </style>
 </head>
@@ -172,36 +221,29 @@
                 <span>✅ 3$ PER EARNING</span>
             </div>
 
-            <!-- FORM mit sichtbarem E-Mail-Feld + Submit -->
+            <!-- NEUE FORM (exakt nach Vorgabe, mit angepasstem Styling) -->
             <div class="form-zone">
-                <form action="https://gogvo.com/show_form.php?id=25235424" method="post" id="cashForm">
-                    <!-- Hidden fields (exakt wie gegeben) -->
+                <form method="POST" action="https://gogvo.com/subscribe.php">
                     <input type="hidden" name="AffiliateName" value="natur1984NLS">
                     <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
                     <input type="hidden" name="TrackParam" value="new_form">
-                    <input type="hidden" name="FormId" value="25235424">
-                    <input type="hidden" name="AffiliateName" value="natur1984NLS">
-                    <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
-                    <input type="hidden" name="TrackParam" value="new_form">
-                    <input type="hidden" name="FormId" value="25235424">
-
-                    <!-- SICHTBARES E-MAIL-FELD -->
-                    <input
-                        type="email"
-                        name="email"
-                        class="email-input"
-                        placeholder="ENTER YOUR EMAIL"
-                        required
-                        autocomplete="email"
-                    >
-
-                    <!-- SICHTBARER SUBMIT-BUTTON -->
-                    <button type="submit" class="submit-btn">
-                        💸 GET MY $3 PAYMENTS 💸
-                    </button>
-
-                    <!-- Tracking-Bild (sichtbar) -->
-                    <img src="https://gogvo.com/show_form.php?id=25235424&amp;TrackParam=new_form" alt="tracking">
+                    <input type="hidden" name="FormId" value="25235157">
+                    <table align="center">
+                        <tr>
+                            <td>
+                                <label for="email">Please enter your email:</label>
+                            </td>
+                            <td>
+                                <input type="text" name="Email" id="email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <input type="submit" value="Submit">
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="https://gogvo.com/show_form.php?id=25235157&TrackParam=new_form" alt="tracking">
                 </form>
                 <div class="disclaimer">⚠️ 100% autopilot – no scroll required ⚠️</div>
             </div>
