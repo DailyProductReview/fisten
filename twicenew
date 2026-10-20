@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn $9,97 Into $500 Daily</title>
+    <style>
+        /* Allgemeine Einstellungen */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Verhindert Scrollen auf Desktop */
+        }
+
+        /* Der Hintergrund mit dem goldenen Schein */
+        .background-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #000000 0%, #000000 20%, #8a6318 50%, #000000 80%, #000000 100%);
+            z-index: -1;
+        }
+
+        /* Die graue Box in der Mitte */
+        .container {
+            background-color: #363d46; /* Dunkles Grau */
+            padding: 50px 40px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 650px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Überschriften */
+        h1 {
+            color: #ffffff;
+            font-size: 38px;
+            font-weight: 500;
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 35px 0;
+        }
+
+        /* Styling für das Formular */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Versteckt die Tabelle, damit wir die Inputs mit CSS stylen können */
+        form table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Versteckt die Labels und Tabellenzellen-Ränder */
+        form td, form tr {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        form label {
+            display: none; /* Label wird ausgeblendet, da der Placeholder genutzt wird */
+        }
+
+        /* Das E-Mail Eingabefeld */
+        input[type="text"] {
+            width: 100%;
+            padding: 18px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+            outline: none;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: inherit;
+        }
+
+        /* Der rote Submit-Button */
+        input[type="submit"] {
+            background-color: #e53935; /* Rotes Design */
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 18px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            font-family: inherit;
+            text-transform: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #c62828; /* Dunkleres Rot beim Hovern */
+        }
+
+        /* Footer Text */
+        .footer-text {
+            margin-top: 25px;
+            color: #a0a0a0;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        /* Versteckt das Tracking-Pixel-Bild */
+        form img {
+            display: none;
+        }
+
+        /* Responsive Design für Handys */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 16px;
+            }
+            input[type="text"], input[type="submit"] {
+                font-size: 16px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hintergrund-Effekt -->
+    <div class="background-wrapper"></div>
+
+    <!-- Haupt-Container -->
+    <div class="container">
+        
+        <h1>TURN $9,97 INTO $500 DAILY!!</h1>
+        
+        <h2>(With An Automated AI System That<br>Works For You 24/7)</h2>
+
+        <!-- DEIN E-MAIL CODE (angepasst für das Design) -->
+        <form method="POST" action="https://gogvo.com/subscribe.php">
+            <input type="hidden" name="AffiliateName" value="natur1984NLS">
+            <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+            <input type="hidden" name="TrackParam" value="new_form">
+            <input type="hidden" name="FormId" value="25258696">
+            <input type="hidden" name="TrackerName" value="twiceconfirmed">
+            
+            <table align="center">
+                <tr>
+                    <td>
+                        <label for="email">Please enter your email:</label>
+                    </td>
+                    <td>
+                        <!-- Placeholder hinzugefügt, damit es wie im Bild aussieht -->
+                        <input type="text" name="Email" placeholder="Enter Your Best Email Address Here..." required>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <!-- Button-Text geändert, um dem Bild zu entsprechen -->
+                        <input type="submit" value="I'm Ready! Set Up My System!">
+                    </td>
+                </tr>
+            </table>
+            <img src="https://gogvo.com/show_form.php?id=25258696&TrackParam=new_form">
+        </form>
+
+        <!-- Disclaimer Text unten -->
+        <div class="footer-text">
+            We'll never sell, rent, or share your email address EVER!<br>
+            terms and conditions, privacy policy, & income disclosure
+        </div>
+
+    </div>
+
+</body>
+</html>
