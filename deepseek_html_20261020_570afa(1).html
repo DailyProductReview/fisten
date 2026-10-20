@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Your Email</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #ffffff;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #000000;
+      margin-bottom: 40px;
+    }
+
+    /* Unified field styling */
+    .email-input {
+      width: 100%;
+      padding: 18px 20px;
+      font-size: 1.1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      outline: none;
+      color: #333;
+      background: white;
+    }
+
+    .email-input::placeholder {
+      color: #888;
+    }
+
+    .email-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 20px;
+      background-color: #2563eb;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    .disclaimer {
+      margin-top: 25px;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* hide the tracking image but keep it functional */
+    .tracking-pixel {
+      display: none;
+    }
+
+    /* ensure no extra table borders / spacing */
+    .gogvo-form-wrapper table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .gogvo-form-wrapper td {
+      padding: 0 0 10px 0;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    /* label styling (optional, keep visual consistency) */
+    .gogvo-form-wrapper label {
+      font-weight: 500;
+      color: #1e1e1e;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    /* make the email input inside the table look like our .email-input */
+    .gogvo-form-wrapper input[name="Email"] {
+      width: 100%;
+      padding: 18px 20px;
+      font-size: 1.1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      color: #333;
+      background: white;
+      margin: 0;
+    }
+
+    .gogvo-form-wrapper input[name="Email"]:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    /* submit input styled like button */
+    .gogvo-form-wrapper input[type="submit"] {
+      width: 100%;
+      padding: 20px;
+      background-color: #2563eb;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-top: 5px;
+    }
+
+    .gogvo-form-wrapper input[type="submit"]:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* remove default table centering */
+    .gogvo-form-wrapper td[align="center"] {
+      text-align: center;
+    }
+
+    /* ensure spacing around form */
+    .gogvo-form-wrapper {
+      margin-top: 10px;
+    }
+
+    /* layout tweaks for the label/input row */
+    .gogvo-form-wrapper tr:first-child td:first-child {
+      width: 40%;
+      min-width: 150px;
+      text-align: right;
+      padding-right: 15px;
+    }
+
+    .gogvo-form-wrapper tr:first-child td:last-child {
+      width: 60%;
+    }
+
+    /* Mobile adjustment */
+    @media (max-width: 500px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.4rem; margin-bottom: 30px; }
+      .gogvo-form-wrapper tr:first-child td:first-child {
+        text-align: left;
+        display: block;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 5px;
+      }
+      .gogvo-form-wrapper tr:first-child td:last-child {
+        display: block;
+        width: 100%;
+      }
+      .gogvo-form-wrapper td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Don't Forget To Confirm!</h1>
+    <h2>Please confirm to continue</h2>
+
+    <!-- === INTEGRATED GOGVO SUBSCRIPTION FORM (FormId 25258697) === -->
+    <div class="gogvo-form-wrapper">
+      <form method="POST" action="https://gogvo.com/subscribe.php">
+        <!-- Hidden fields (preserved exactly) -->
+        <input type="hidden" name="AffiliateName" value="natur1984NLS">
+        <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+        <input type="hidden" name="TrackParam" value="new_form">
+        <input type="hidden" name="FormId" value="25258697">
+
+        <table align="center">
+          <tr>
+            <td>
+              <label for="email">Please enter your email:</label>
+            </td>
+            <td>
+              <input type="text" name="Email" id="email" placeholder="Confirm Your Email Address" required>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" colspan="2">
+              <input type="submit" value="Confirm My Email">
+            </td>
+          </tr>
+        </table>
+
+        <!-- Tracking pixel (hidden, still loads) -->
+        <img src="https://gogvo.com/show_form.php?id=25258697&TrackParam=new_form" class="tracking-pixel" alt="" width="1" height="1">
+      </form>
+    </div>
+
+    <p class="disclaimer">
+      * You will receive a confirmation link at the email address you entered above.
+    </p>
+  </div>
+
+</body>
+</html>
