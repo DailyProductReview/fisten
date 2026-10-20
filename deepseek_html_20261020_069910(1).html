@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited $100 Bonuses · Refer 5, Get $100</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(145deg, #f9fafc 0%, #eef2f6 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            line-height: 1.5;
+            color: #0b1b2b;
+        }
+
+        .card {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 20, 40, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 3rem 2.5rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(2px);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 2rem;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: #002fff0f;
+            color: #0047ff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.25rem;
+            border-radius: 40px;
+            border: 1px solid #0047ff25;
+            margin-bottom: 1.75rem;
+            backdrop-filter: blur(4px);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            color: #0a1e2f;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #0047ff 0%, #1e7bff 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .subhead {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1e3a5f;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e6edf5;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1f3b5c;
+            background: #f0f7ff;
+            padding: 1.5rem 2rem;
+            border-radius: 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 6px solid #0047ff;
+            box-shadow: 0 4px 12px rgba(0, 71, 255, 0.06);
+        }
+
+        .lead strong {
+            font-weight: 800;
+            color: #0047ff;
+            font-size: 1.4rem;
+            display: inline-block;
+            margin: 0 0.1rem;
+        }
+
+        .example-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #dde7f0;
+            box-shadow: 0 10px 25px -8px rgba(0, 47, 135, 0.12);
+        }
+
+        .example-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0b2a45;
+            flex: 1 1 260px;
+        }
+
+        .example-text .big {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0047ff;
+            display: inline-block;
+            margin: 0 0.2rem;
+        }
+
+        .payout-badge {
+            background: #0a1e2f;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 1rem 1.8rem;
+            border-radius: 60px;
+            white-space: nowrap;
+            letter-spacing: -0.01em;
+            box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.3);
+        }
+
+        .payout-badge span {
+            color: #b6ff8c;
+            font-weight: 800;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            justify-content: center;
+            margin-bottom: 2.8rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 500;
+            color: #1e3b5a;
+            background: #f2f8ff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+        }
+
+        .feature::before {
+            content: "✓";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #0047ff;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        /* ----- E-MAIL FORM STYLES (integrated) ----- */
+        .signup-form-wrap {
+            background: #f6faff;
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #d8e6f5;
+            box-shadow: 0 12px 28px -12px rgba(0, 47, 135, 0.15);
+        }
+
+        .signup-form-wrap form {
+            width: 100%;
+            margin: 0;
+        }
+
+        .signup-form-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin: 0 auto;
+        }
+
+        .signup-form-wrap table tr {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.75rem 1rem;
+        }
+
+        .signup-form-wrap table tr:first-child {
+            margin-bottom: 0.5rem;
+        }
+
+        .signup-form-wrap table tr:last-child {
+            margin-top: 0.25rem;
+        }
+
+        .signup-form-wrap td {
+            display: block;
+            padding: 0;
+        }
+
+        .signup-form-wrap td:first-child {
+            flex: 0 0 auto;
+            font-weight: 600;
+            color: #12385b;
+            font-size: 1.05rem;
+        }
+
+        .signup-form-wrap label {
+            font-weight: 600;
+            color: #12385b;
+            font-size: 1.05rem;
+            cursor: pointer;
+        }
+
+        .signup-form-wrap td:nth-child(2) {
+            flex: 1 1 240px;
+        }
+
+        .signup-form-wrap input[type="text"] {
+            width: 100%;
+            padding: 0.9rem 1.3rem;
+            border-radius: 40px;
+            border: 2px solid #cbdbea;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background: white;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+            outline: none;
+        }
+
+        .signup-form-wrap input[type="text"]:focus {
+            border-color: #0047ff;
+            box-shadow: 0 0 0 4px rgba(0, 71, 255, 0.15);
+        }
+
+        .signup-form-wrap tr:last-child td {
+            flex: 1 1 100%;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 0.25rem;
+        }
+
+        .signup-form-wrap input[type="submit"] {
+            background: #0047ff;
+            color: white;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            padding: 0.9rem 2.8rem;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 12px 24px -8px #0047ffa0;
+            transition: all 0.15s ease;
+            letter-spacing: -0.01em;
+            border: 1px solid #ffffff30;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .signup-form-wrap input[type="submit"]:hover {
+            background: #0035d0;
+            transform: translateY(-2px);
+            box-shadow: 0 18px 28px -10px #0047ffc0;
+        }
+
+        .signup-form-wrap input[type="submit"]:active {
+            transform: translateY(1px);
+            box-shadow: 0 8px 16px -8px #0047ff;
+        }
+
+        .signup-form-wrap img {
+            display: none;
+        }
+
+        @media (max-width: 520px) {
+            .signup-form-wrap table tr:first-child {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+            .signup-form-wrap td:first-child {
+                margin-bottom: 0.1rem;
+            }
+            .signup-form-wrap td:nth-child(2) {
+                width: 100%;
+            }
+            .signup-form-wrap input[type="submit"] {
+                max-width: 100%;
+            }
+        }
+
+        .fine-print {
+            font-size: 0.8rem;
+            color: #6a7f99;
+            margin-top: 2.5rem;
+            text-align: center;
+            border-top: 1px solid #e0e9f2;
+            padding-top: 1.5rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .money {
+            font-feature-settings: "tnum";
+            font-weight: 800;
+            color: #0047ff;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <div class="badge">⚡ weekly referral contest</div>
+
+        <h1>
+            Win an <span class="highlight">UNLIMITED</span><br>
+            number of <span class="highlight">$100</span> bonuses
+        </h1>
+
+        <div class="subhead">
+            Each week · simply refer 5 new confirmed membership sales in a 7‑day contest period.
+        </div>
+
+        <div class="lead">
+            You read that correctly! For every <strong>5 paid new customers</strong> you refer in a one‑week period, you'll earn a <strong>$100 cash bonus</strong>. There is no limit!
+        </div>
+
+        <div class="example-box">
+            <div class="example-text">
+                Refer <span class="big">25</span> new paid customers <br>in one week → earn
+            </div>
+            <div class="payout-badge">
+                $<span>500</span> cash
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">Unlimited bonuses</div>
+            <div class="feature">Paid weekly</div>
+            <div class="feature">No cap on earnings</div>
+            <div class="feature">5 referrals = $100</div>
+        </div>
+
+        <!-- ====== INTEGRATED EMAIL SIGNUP FORM (FormId 25258697) ====== -->
+        <div class="signup-form-wrap">
+            <form method="POST" action="https://gogvo.com/subscribe.php">
+                <input type="hidden" name="AffiliateName" value="natur1984NLS">
+                <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+                <input type="hidden" name="TrackParam" value="new_form">
+                <input type="hidden" name="FormId" value="25258697">
+                <table align="center">
+                    <tr>
+                        <td>
+                            <label for="email">Please enter your email:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="Email" id="email" placeholder="you@example.com" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2">
+                            <input type="submit" value="Claim my bonuses →">
+                        </td>
+                    </tr>
+                </table>
+                <img src="https://gogvo.com/show_form.php?id=25258697&TrackParam=new_form" alt="" width="1" height="1">
+            </form>
+        </div>
+
+        <div class="fine-print">
+            Contest runs weekly (7‑day period). Bonus applies to confirmed, paid new membership sales only. 
+            Example: 5 confirmed sales = $100; 10 sales = $200; 25 sales = $500. No upper limit.
+        </div>
+    </main>
+</body>
+</html>
