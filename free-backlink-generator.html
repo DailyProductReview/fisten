@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Backlink Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f6f8;--surface:#fff;--ink:#14213d;--muted:#5d6678;--line:#e1e4ea;--accent:#2f5bea;--accent-ink:#fff;--df:#136c40;--df-bg:#e1f4ea;--nf:#7a5200;--nf-bg:#fdf0d2;--hi:#2f5bea;--hi-bg:#e6ecfe;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1420;--surface:#171e2e;--ink:#e8ecf5;--muted:#98a2b8;--line:#2a344a;--accent:#7b9bff;--accent-ink:#0f1420;--df:#6fdba0;--df-bg:#143626;--nf:#f1c46b;--nf-bg:#3a2d10;--hi:#9db4ff;--hi-bg:#1f2b52;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1420;--surface:#171e2e;--ink:#e8ecf5;--muted:#98a2b8;--line:#2a344a;--accent:#7b9bff;--accent-ink:#0f1420;--df:#6fdba0;--df-bg:#143626;--nf:#f1c46b;--nf-bg:#3a2d10;--hi:#9db4ff;--hi-bg:#1f2b52;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+main{max-width:860px;margin:0 auto;padding:48px 18px 64px;text-align:center}
+h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:0 0 12px}
+.sub{color:var(--muted);max-width:520px;margin:0 auto 28px}
+.form{display:flex;gap:10px;max-width:680px;margin:0 auto}
+input{flex:1;min-width:0;font:inherit;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink)}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+input.bad{border-color:#d33}
+button{font:inherit;cursor:pointer}
+.go{padding:14px 22px;border:0;border-radius:12px;background:var(--accent);color:var(--accent-ink);font-weight:800;white-space:nowrap}
+.go:disabled{opacity:.6;cursor:wait}
+.err{color:#d33;font-size:.9rem;min-height:1.4em;margin:8px 0 0}
+.prog{max-width:680px;margin:14px auto 0;display:none;text-align:left}
+.prog.on{display:block}
+.bar{height:10px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .15s linear}
+.prog p{font-size:.85rem;color:var(--muted);margin:6px 0 0}
+#results{display:none;margin-top:36px;text-align:left}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.stat{padding:14px 8px;text-align:center}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat b{display:block;font-size:1.6rem;font-weight:800;line-height:1.1}
+.stat span{font-size:.8rem;color:var(--muted)}
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0 12px}
+.tools .sp{flex:1}
+.f{padding:8px 14px;border:1.5px solid var(--line);border-radius:99px;background:var(--surface);color:var(--ink);font-weight:600;font-size:.9rem}
+.f[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.all{padding:8px 16px;border:1.5px solid var(--accent);border-radius:99px;background:transparent;color:var(--accent);font-weight:800;font-size:.9rem}
+.all:hover{background:var(--accent);color:var(--accent-ink)}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+li{display:grid;grid-template-columns:40px 1fr auto auto auto auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.av{width:40px;height:40px;border-radius:10px;background:var(--hi-bg);color:var(--hi);display:grid;place-items:center;font-weight:800}
+.nm{min-width:0}
+.nm b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nm small{color:var(--muted)}
+.tag{font-size:.78rem;font-weight:800;padding:3px 9px;border-radius:99px}
+.da{background:var(--hi-bg);color:var(--hi)}
+.df{background:var(--df-bg);color:var(--df)}
+.nf{background:var(--nf-bg);color:var(--nf)}
+.visit{padding:7px 14px;border-radius:9px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:700;font-size:.88rem}
+.cp{padding:7px 12px;border:1.5px solid var(--line);border-radius:9px;background:transparent;color:var(--ink);font-weight:600;font-size:.88rem}
+.cp.ok{border-color:var(--df);color:var(--df)}
+.note{color:var(--muted);font-size:.8rem;text-align:center;margin-top:22px}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;font-weight:600;font-size:.9rem;opacity:0;pointer-events:none;transition:.2s}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:640px){
+.form{flex-direction:column}
+li{grid-template-columns:40px 1fr auto;grid-template-areas:"a n d" "f f f" "v v c";row-gap:10px}
+.av{grid-area:a}.nm{grid-area:n}.da.tag{grid-area:d}.fl{grid-area:f;justify-self:start}.visit{grid-area:v;text-align:center}.cp{grid-area:c}
+li{grid-template-areas:"a n d" "f f f" "v v v" "c c c"}
+.stat b{font-size:1.25rem}.stat span{font-size:.7rem}
+}
+@media (prefers-reduced-motion:reduce){.bar i,#toast{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Free Backlink Generator</h1>
+  <p class="sub">Enter your website address and get a ready list of 40+ high-authority sites where you can publish a link back to it.</p>
+  <div class="form">
+    <input id="url" type="text" inputmode="url" autocomplete="url" placeholder="https://yourwebsite.com" aria-label="Your website URL">
+    <button class="go" id="go">Generate backlinks</button>
+  </div>
+  <p class="err" id="err" role="alert"></p>
+  <div class="prog" id="prog"><div class="bar"><i id="fill"></i></div><p id="ptxt">Starting…</p></div>
+
+  <section id="results" aria-live="polite">
+    <div class="stats">
+      <div class="stat"><b id="sTotal">0</b><span>Total links</span></div>
+      <div class="stat"><b id="sHigh">0</b><span>High DA (90+)</span></div>
+      <div class="stat"><b id="sDf">0</b><span>Dofollow</span></div>
+      <div class="stat"><b id="sNf">0</b><span>Nofollow</span></div>
+    </div>
+    <div class="tools">
+      <button class="f" data-f="all" aria-pressed="true">All</button>
+      <button class="f" data-f="df" aria-pressed="false">Dofollow</button>
+      <button class="f" data-f="nf" aria-pressed="false">Nofollow</button>
+      <button class="f" data-f="hi" aria-pressed="false">High DA</button>
+      <span class="sp"></span>
+      <button class="all" id="copyAll">Copy All</button>
+    </div>
+    <ul id="list"></ul>
+    <p class="note">Domain Authority scores and link attributes are approximate and can change; sites may also change their submission pages. Always check the rules of each platform before posting.</p>
+  </section>
+</main>
+<div id="toast"></div>
+<script>
+// [name, DA, dofollow(1)/nofollow(0), submission URL, category]
+var SITES=[
+["Reddit",97,0,"https://www.reddit.com/submit","Community"],
+["Medium",95,0,"https://medium.com/new-story","Blogging"],
+["Pinterest",94,0,"https://www.pinterest.com/pin-creation-tool/","Social"],
+["WordPress.com",94,1,"https://wordpress.com/start","Blogging"],
+["Tumblr",94,0,"https://www.tumblr.com/new/text","Blogging"],
+["Quora",93,0,"https://www.quora.com/","Q&A"],
+["LinkedIn",98,0,"https://www.linkedin.com/post/new/","Social"],
+["Blogger",99,1,"https://www.blogger.com/","Blogging"],
+["Facebook",96,0,"https://www.facebook.com/","Social"],
+["X (Twitter)",94,0,"https://twitter.com/compose/post","Social"],
+["YouTube",100,0,"https://studio.youtube.com/","Video"],
+["Google Sites",100,1,"https://sites.google.com/new","Website"],
+["Weebly",93,1,"https://www.weebly.com/","Website"],
+["Wix",93,1,"https://www.wix.com/","Website"],
+["Flickr",93,0,"https://www.flickr.com/","Images"],
+["Behance",93,1,"https://www.behance.net/","Portfolio"],
+["Dribbble",92,1,"https://dribbble.com/","Portfolio"],
+["GitHub",96,0,"https://github.com/new","Developer"],
+["GitHub Gist",96,0,"https://gist.github.com/","Developer"],
+["Substack",91,1,"https://substack.com/","Newsletter"],
+["Vimeo",96,0,"https://vimeo.com/upload","Video"],
+["SlideShare",95,1,"https://www.slideshare.net/upload","Documents"],
+["Scribd",93,0,"https://www.scribd.com/upload-document","Documents"],
+["Issuu",91,1,"https://issuu.com/","Documents"],
+["About.me",91,1,"https://about.me/","Profile"],
+["Gravatar",94,1,"https://gravatar.com/","Profile"],
+["Disqus",92,0,"https://disqus.com/","Community"],
+["Goodreads",92,0,"https://www.goodreads.com/","Community"],
+["Mix",91,1,"https://mix.com/","Bookmarking"],
+["Product Hunt",91,0,"https://www.producthunt.com/posts/new","Directory"],
+["Hacker News",90,0,"https://news.ycombinator.com/submit","Community"],
+["DEV Community",90,1,"https://dev.to/new","Developer"],
+["Hashnode",85,1,"https://hashnode.com/","Developer"],
+["Ghost",90,1,"https://ghost.org/","Blogging"],
+["Strikingly",85,1,"https://www.strikingly.com/","Website"],
+["Diigo",90,0,"https://www.diigo.com/","Bookmarking"],
+["Pearltrees",88,1,"https://www.pearltrees.com/","Bookmarking"],
+["Crunchbase",91,0,"https://www.crunchbase.com/","Directory"],
+["Yelp for Business",94,0,"https://biz.yelp.com/","Directory"],
+["Trello",92,0,"https://trello.com/","Productivity"],
+["Notion",94,1,"https://www.notion.so/","Productivity"],
+["Imgur",92,0,"https://imgur.com/upload","Images"],
+["Telegraph",88,1,"https://telegra.ph/","Blogging"],
+["LiveJournal",92,1,"https://www.livejournal.com/","Blogging"],
+["Mastodon",88,0,"https://mastodon.social/","Social"],
+["Flipboard",93,0,"https://flipboard.com/","Social"],
+["Vocal Media",72,1,"https://vocal.media/","Blogging"]
+];
+var $=function(i){return document.getElementById(i)};
+var cur="all",userUrl="",busy=false;
+
+function validate(v){
+  v=v.trim();
+  if(!/^https?:\/\//i.test(v))return null;
+  try{var u=new URL(v);if(!/^https?:$/.test(u.protocol)||u.hostname.indexOf(".")<1||/\s/.test(v))return null;return u.href}catch(e){return null}
+}
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove("on")},1600)}
+function copy(text,done){
+  function fb(){var a=document.createElement("textarea");a.value=text;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy");done(true)}catch(e){done(false)}document.body.removeChild(a)}
+  try{if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(function(){done(true)},fb)}else fb()}catch(e){fb()}
+}
+function visible(){
+  return SITES.filter(function(s){
+    return cur==="all"||(cur==="df"&&s[2]===1)||(cur==="nf"&&s[2]===0)||(cur==="hi"&&s[1]>=90)
+  })
+}
+function render(){
+  var l=$("list");l.innerHTML="";
+  visible().forEach(function(s){
+    var li=document.createElement("li");
+    li.innerHTML='<div class="av"></div><div class="nm"><b></b><small></small></div><span class="tag da"></span><span class="tag fl"></span><a class="visit" target="_blank" rel="noopener noreferrer">Visit</a><button class="cp" type="button">Copy</button>';
+    li.querySelector(".av").textContent=s[0].charAt(0);
+    li.querySelector("b").textContent=s[0];
+    li.querySelector("small").textContent=s[4];
+    li.querySelector(".da").textContent="DA "+s[1];
+    var f=li.querySelector(".fl");f.textContent=s[2]?"Dofollow":"Nofollow";f.classList.add(s[2]?"df":"nf");
+    li.querySelector(".visit").href=s[3];
+    li.querySelector(".visit").setAttribute("aria-label","Visit "+s[0]+" submission page");
+    var b=li.querySelector(".cp");b.setAttribute("aria-label","Copy "+s[0]+" link");
+    b.onclick=function(){copy(s[3],function(ok){if(ok){b.textContent="Copied";b.classList.add("ok");setTimeout(function(){b.textContent="Copy";b.classList.remove("ok")},1400)}else toast("Copy failed. Select the link manually.")})};
+    l.appendChild(li);
+  });
+}
+function stats(){
+  $("sTotal").textContent=SITES.length;
+  $("sHigh").textContent=SITES.filter(function(s){return s[1]>=90}).length;
+  $("sDf").textContent=SITES.filter(function(s){return s[2]===1}).length;
+  $("sNf").textContent=SITES.filter(function(s){return s[2]===0}).length;
+}
+function generate(){
+  if(busy)return;
+  var u=validate($("url").value);
+  if(!u){$("url").classList.add("bad");$("err").textContent="Enter a full address starting with http:// or https://, for example https://example.com";return}
+  $("url").classList.remove("bad");$("err").textContent="";
+  userUrl=u;busy=true;$("go").disabled=true;$("results").style.display="none";
+  $("prog").classList.add("on");
+  var p=0,msgs=["Checking your URL…","Matching high-authority sites…","Collecting submission pages…","Sorting by Domain Authority…","Finishing up…"];
+  var iv=setInterval(function(){
+    p=Math.min(100,p+2+Math.random()*4);
+    $("fill").style.width=p+"%";
+    $("ptxt").textContent=msgs[Math.min(4,Math.floor(p/20))]+" "+Math.floor(p)+"%";
+    if(p>=100){
+      clearInterval(iv);
+      SITES.sort(function(a,b){return b[1]-a[1]});
+      stats();render();
+      $("results").style.display="block";
+      setTimeout(function(){$("prog").classList.remove("on");$("fill").style.width="0";busy=false;$("go").disabled=false;$("results").scrollIntoView({behavior:"smooth",block:"start"})},300);
+    }
+  },60);
+}
+$("go").onclick=generate;
+$("url").addEventListener("keydown",function(e){if(e.key==="Enter")generate()});
+document.querySelectorAll(".f").forEach(function(b){
+  b.onclick=function(){
+    cur=b.getAttribute("data-f");
+    document.querySelectorAll(".f").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+    render();
+  }
+});
+$("copyAll").onclick=function(){
+  var txt=visible().map(function(s){return s[0]+" (DA "+s[1]+", "+(s[2]?"dofollow":"nofollow")+"): "+s[3]}).join("\n");
+  txt="Backlink opportunities for "+userUrl+"\n\n"+txt;
+  copy(txt,function(ok){toast(ok?"Copied "+visible().length+" links":"Copy failed. Try again.")});
+};
+</script>
+</body>
+</html>
