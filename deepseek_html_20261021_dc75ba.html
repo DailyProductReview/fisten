@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almost Done</title>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background: linear-gradient(135deg, #eef3ff 0%, #f7f9fc 50%, #eafaf0 100%);
+    color: #1a1a1a;
+}
+
+.container{
+    background: #fff;
+    width: 100%;
+    max-width: 480px;
+    padding: 36px 28px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.10);
+    text-align: center;
+    animation: fadeUp .7s ease-out both;
+}
+
+@keyframes fadeUp{
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Countdown-Balken oben */
+.countdown-bar{
+    background: #fff4e5;
+    border: 1px solid #ffd9a8;
+    color: #b35c00;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.countdown-bar .clock{ font-variant-numeric: tabular-nums; }
+
+.pulse-dot{
+    width: 8px; height: 8px;
+    background: #e8590c;
+    border-radius: 50%;
+    animation: blink 1.2s infinite;
+}
+@keyframes blink{ 0%,100%{opacity:1;} 50%{opacity:.25;} }
+
+h1{
+    font-size: 26px;
+    line-height: 1.28;
+    margin-bottom: 14px;
+    letter-spacing: -0.2px;
+}
+
+h1 .highlight{ color: #1a8f3c; }
+
+.subtitle{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 24px;
+}
+
+/* Bonus-Badge */
+.bonus{
+    display: inline-block;
+    font-weight: 700;
+    color: #fff;
+    background: #1a8f3c;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 1.05em;
+    animation: pulseGlow 2.2s ease-in-out infinite;
+}
+@keyframes pulseGlow{
+    0%,100% { box-shadow: 0 0 0 0 rgba(26,143,60,.55); }
+    50%     { box-shadow: 0 0 0 9px rgba(26,143,60,0); }
+}
+
+/* Formular */
+form{ margin-top: 6px; }
+
+input[type="email"]{
+    width: 100%;
+    padding: 16px;
+    font-size: 17px;
+    border: 2px solid #d5dbe3;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: border-color .2s, box-shadow .2s;
+}
+input[type="email"]:focus{
+    outline: none;
+    border-color: #2f63d6;
+    box-shadow: 0 0 0 4px rgba(47,99,214,.15);
+}
+
+input[type="submit"]{
+    width: 100%;
+    padding: 18px 12px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+    background: #2f63d6;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .15s ease, background .2s, box-shadow .2s;
+    box-shadow: 0 6px 18px rgba(47,99,214,.30);
+}
+input[type="submit"]:hover{
+    background: #244fb0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(47,99,214,.40);
+}
+input[type="submit"]:active{
+    transform: translateY(0);
+}
+
+/* Social Proof */
+.social-proof{
+    font-size: 13px;
+    color: #666;
+    margin: 16px 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.social-proof .dot{
+    width: 8px; height: 8px;
+    background: #1a8f3c;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+/* Trust Badges */
+.trust{
+    margin-top: 18px;
+    font-size: 12.5px;
+    color: #777;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.trust span{ white-space: nowrap; }
+
+.note{
+    margin-top: 14px;
+    font-size: 12px;
+    color: #999;
+    line-height: 1.4;
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 400px){
+    .container{ padding: 28px 20px; }
+    h1{ font-size: 23px; }
+    .subtitle{ font-size: 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Countdown / Dringlichkeit -->
+    <div class="countdown-bar">
+        <span class="pulse-dot"></span>
+        <span>Your <strong>$500 Bonus</strong> expires in</span>
+        <span class="clock" id="clock">15:00</span>
+    </div>
+
+    <h1>
+        Get The <span class="highlight">#1 Secret</span> To Building A Massive Online Audience — <em>Free</em>
+    </h1>
+
+    <p class="subtitle">
+        Join the exclusive newsletter that reveals the exact strategies insiders use.
+        Enter your email and claim your <span class="bonus">$500 Bonus</span> instantly.
+    </p>
+
+    <form method="POST" action="https://gogvo.com/subscribe.php">
+        <input type="hidden" name="AffiliateName" value="natur1984NLS">
+        <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+        <input type="hidden" name="TrackParam" value="new_form">
+        <input type="hidden" name="FormId" value="25258798">
+
+        <input
+            type="email"
+            name="Email"
+            placeholder="Enter your best email address"
+            required
+            autocomplete="email"
+            aria-label="Email address">
+
+        <input type="submit" value="Join This Email Newsletter Now!">
+
+        <div class="social-proof">
+            <span class="dot"></span>
+            <span>12,847 people joined this week</span>
+        </div>
+
+        <div class="trust">
+            <span>🔒 100% Free</span>
+            <span>🚫 No Spam</span>
+            <span>↩️ Unsubscribe Anytime</span>
+        </div>
+
+        <p class="note">* Your bonus will be sent to the email you entered above.</p>
+
+        <img src="https://gogvo.com/show_form.php?id=25258798&TrackParam=new_form" alt="" style="display:none;">
+    </form>
+
+</div>
+
+<script>
+    // 15-Minuten-Countdown (läuft beim Laden der Seite)
+    (function(){
+        var total = 15 * 60; // Sekunden
+        var clock = document.getElementById('clock');
+        var timer = setInterval(function(){
+            total--;
+            if (total < 0) { total = 0; }
+            var m = Math.floor(total / 60);
+            var s = total % 60;
+            clock.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+            if (total === 0) { clearInterval(timer); }
+        }, 1000);
+    })();
+</script>
+
+</body>
+</html>
