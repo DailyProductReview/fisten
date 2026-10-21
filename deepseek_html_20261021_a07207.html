@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Almost Done</title>
+
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f2f2f2;
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    text-align:center;
+    background:white;
+    padding:60px;
+    border-radius:8px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    width:500px;
+}
+
+h1{
+    font-size:56px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    font-size:26px;
+    margin-bottom:40px;
+}
+
+/* NEU: Hervorhebung für den Bonus */
+.bonus{
+    font-weight:bold;
+    color:#1a8f3c; /* kräftiges Grün = Geld, Vertrauen, Zustimmung */
+    font-size:1.15em;
+}
+
+input[type="text"]{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    font-size:18px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    box-sizing:border-box;
+}
+
+button,
+input[type="submit"]{
+    width:100%;
+    padding:18px;
+    font-size:22px;
+    font-weight:bold;
+    background:#2f63d6;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover,
+input[type="submit"]:hover{
+    background:#244fb0;
+}
+
+.note{
+    margin-top:25px;
+    font-size:16px;
+    color:#333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Almost Done!</h1>
+<div class="subtitle">Enter Your Email To Get Your <span class="bonus">$500 Bonus</span></div>
+
+<form method="POST" action="https://gogvo.com/subscribe.php">
+    <input type="hidden" name="AffiliateName" value="natur1984NLS">
+    <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+    <input type="hidden" name="TrackParam" value="new_form">
+    <input type="hidden" name="FormId" value="25258798">
+    <table align="center">
+        <tr>
+            <td>
+                <label for="email">Please enter your email:</label>
+            </td>
+            <td>
+                <input type="text" name="Email">
+            </td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+    <img src="https://gogvo.com/show_form.php?id=25258798&TrackParam=new_form">
+</form>
+
+<div class="note">
+* Your bonuses will be sent to the email you entered above.
+</div>
+
+</div>
+
+</body>
+</html>
