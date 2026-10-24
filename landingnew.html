@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>List Elevate — Others Build Your List. You Make Money.</title>
+<meta name="description" content="Let your referrals build your email list for you — and earn 25% lifetime commissions plus a 25% matching check. Get the $500 Email Marketing Mastery course free today.">
+
+<style>
+/* ============================================================
+   BASE
+   ============================================================ */
+:root{
+  --ink:#0b1020;
+  --ink-soft:#26304a;
+  --muted:#5b657c;
+  --line:#e2e8f2;
+  --bg:#ffffff;
+  --bg-soft:#f4f7fc;
+  --accent:#ffb020;
+  --accent-2:#ff9f0a;
+  --green:#0f9d58;
+  --max:1080px;
+  --radius:16px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+img{max-width:100%;display:block;height:auto;}
+
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;letter-spacing:-.02em;}
+
+p{margin:0 0 1em;}
+
+.container{
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.section{padding:64px 0;}
+.section--soft{background:var(--bg-soft);}
+
+.section-head{max-width:640px;margin:0 auto 36px;text-align:center;}
+.section-head h2{font-size:clamp(1.6rem,4.2vw,2.3rem);}
+.section-head p{color:var(--muted);font-size:1.05rem;margin:0;}
+
+.eyebrow{
+  display:inline-block;
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent-2);
+  margin-bottom:12px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-block;
+  font-family:inherit;
+  font-weight:800;
+  text-decoration:none;
+  text-align:center;
+  border:0;
+  cursor:pointer;
+  border-radius:999px;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-primary{
+  background:linear-gradient(180deg,#ffc247,#ff9f0a);
+  color:#20160a;
+  padding:18px 36px;
+  font-size:1.05rem;
+  box-shadow:0 12px 30px rgba(255,159,10,.38);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 18px 38px rgba(255,159,10,.48);
+}
+
+.btn:focus-visible{outline:3px solid #7aa7ff;outline-offset:3px;}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:100vh;
+  min-height:100svh;
+  padding:40px 20px 160px;
+  color:#fff;
+  overflow:hidden;
+  background:
+    radial-gradient(1100px 560px at 50% -12%, #22305a 0%, rgba(34,48,90,0) 62%),
+    radial-gradient(700px 400px at 85% 110%, rgba(255,159,10,.16) 0%, rgba(255,159,10,0) 60%),
+    linear-gradient(180deg,#0b1020 0%,#070a14 100%);
+}
+
+.hero-inner{
+  width:100%;
+  max-width:840px;
+  position:relative;
+  z-index:2;
+}
+
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:36px;
+  text-decoration:none;
+  color:#fff;
+}
+
+.logo-mark{
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  border-radius:11px;
+  background:linear-gradient(180deg,#ffc247,#ff9f0a);
+  color:#20160a;
+  flex:none;
+}
+
+.logo-text{
+  font-size:1.05rem;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.logo-text em{
+  font-style:normal;
+  color:var(--accent);
+}
+
+.hero h1{
+  font-size:clamp(2rem,6.2vw,3.6rem);
+  font-weight:900;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  background:linear-gradient(180deg,#ffd27a,#ff9f0a);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero-sub{
+  font-size:clamp(1rem,2.6vw,1.2rem);
+  color:#b9c6e0;
+  max-width:620px;
+  margin:0 auto 34px;
+}
+
+.scroll-cue{
+  position:absolute;
+  left:50%;
+  bottom:88px;
+  transform:translateX(-50%);
+  z-index:3;
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  color:#8fa1c4;
+  text-decoration:none;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.scroll-cue svg{
+  animation:bounce 1.9s ease-in-out infinite;
+}
+
+.scroll-cue:hover{color:#fff;}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(9px);}
+}
+
+/* ============================================================
+   ANGSCHNITTENER ABSCHNITT
+   ============================================================ */
+.results-wrap{
+  position:relative;
+  z-index:4;
+  margin-top:-70px;
+  padding-bottom:8px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:0 24px 60px rgba(11,16,32,.13);
+  padding:32px 24px;
+}
+
+/* ============================================================
+   ERGEBNISSE
+   ============================================================ */
+.results-grid{
+  display:grid;
+  gap:32px;
+  align-items:center;
+}
+
+@media (min-width:900px){
+  .results-grid{grid-template-columns:1.05fr .95fr;gap:48px;}
+}
+
+.results-grid h2{
+  font-size:clamp(1.5rem,3.8vw,2.1rem);
+  margin-bottom:20px;
+}
+
+.results-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:16px;
+}
+
+.results-list li{
+  display:flex;
+  gap:12px;
+  font-size:.99rem;
+  color:var(--ink-soft);
+}
+
+.tick{
+  flex:none;
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  margin-top:2px;
+  border-radius:50%;
+  background:#e6f7ee;
+  color:var(--green);
+  font-size:.8rem;
+  font-weight:900;
+}
+
+.results-list strong{color:var(--ink);}
+
+.results-figure{
+  margin:0;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow:0 16px 40px rgba(11,16,32,.10);
+}
+
+.results-figure figcaption{
+  font-size:.78rem;
+  color:var(--muted);
+  padding:10px 14px;
+  background:var(--bg-soft);
+  border-top:1px solid var(--line);
+}
+
+/* ============================================================
+   SOCIAL PROOF
+   ============================================================ */
+.subhead{
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-align:center;
+  margin:0 0 18px;
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials{
+  display:grid;
+  gap:18px;
+}
+
+@media (min-width:820px){
+  .testimonials{grid-template-columns:repeat(2,1fr);}
+}
+
+.quote{
+  display:flex;
+  gap:16px;
+  margin:0;
+  padding:24px;
+  border-radius:var(--radius);
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 10px 26px rgba(11,16,32,.06);
+}
+
+.quote-avatar{
+  flex:none;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#e8eef8;
+  border:2px solid #fff;
+  box-shadow:0 4px 12px rgba(11,16,32,.14);
+}
+
+.quote-body{margin:0;}
+
+.quote-text{
+  margin:0 0 10px;
+  font-size:.95rem;
+  color:var(--ink-soft);
+}
+
+.quote-name{
+  display:block;
+  font-weight:800;
+  font-size:.92rem;
+  color:var(--ink);
+}
+
+.quote-role{
+  display:block;
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+/* ============================================================
+   WAS DU BEKOMMST
+   ============================================================ */
+.get-grid{
+  display:grid;
+  gap:32px;
+  align-items:start;
+}
+
+.checklist{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:14px;
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.checklist li{
+  display:flex;
+  gap:12px;
+  font-size:.98rem;
+  color:var(--ink-soft);
+}
+
+.checklist strong{color:var(--ink);}
+
+/* ============================================================
+   BONUS-BAND / COUNTDOWN
+   ============================================================ */
+.bonus{
+  background:linear-gradient(135deg,#0b1020 0%,#16203a 100%);
+  color:#fff;
+  border-radius:22px;
+  padding:40px 24px;
+  text-align:center;
+  box-shadow:0 24px 60px rgba(11,16,32,.22);
+}
+
+.bonus h2{font-size:clamp(1.4rem,3.8vw,2rem);margin-bottom:10px;}
+.bonus p{color:#b9c6e0;margin:0 auto 26px;max-width:560px;}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:26px;
+  flex-wrap:wrap;
+}
+
+.cd-unit{
+  min-width:74px;
+  padding:12px 10px;
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.cd-unit strong{
+  display:block;
+  font-size:1.5rem;
+  font-weight:900;
+  color:#ffc247;
+  font-variant-numeric:tabular-nums;
+}
+
+.cd-unit small{
+  display:block;
+  font-size:.68rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#9fb0d0;
+  margin-top:2px;
+}
+
+/* ============================================================
+   SIGNUP / FORMULAR
+   ============================================================ */
+.signup{
+  background:linear-gradient(180deg,#0b1020 0%,#070a14 100%);
+  color:#fff;
+  padding:72px 0;
+}
+
+.signup .section-head h2{color:#fff;}
+.signup .section-head p{color:#b9c6e0;}
+
+.form-wrap{
+  max-width:480px;
+  margin:0 auto;
+  padding:28px 22px;
+  border-radius:20px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.signup-form table{
+  width:100%;
+  border-collapse:collapse;
+  margin:0;
+}
+
+.signup-form td{
+  display:block;
+  padding:0 0 16px;
+}
+
+.signup-form label{
+  display:block;
+  font-weight:800;
+  font-size:.92rem;
+  margin-bottom:6px;
+  color:#fff;
+}
+
+.signup-form .hint{
+  display:block;
+  font-weight:400;
+  font-size:.8rem;
+  color:#9fb0d0;
+  margin-top:3px;
+  line-height:1.4;
+}
+
+.signup-form input[type=text],
+.signup-form input[type=email],
+.signup-form input[type=tel]{
+  width:100%;
+  padding:15px 16px;
+  border-radius:12px;
+  border:2px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.07);
+  color:#fff;
+  font-size:1rem;
+  font-family:inherit;
+  transition:border-color .15s ease, background .15s ease;
+}
+
+.signup-form input::placeholder{color:#7e8cab;}
+
+.signup-form input:focus{
+  outline:none;
+  border-color:var(--accent);
+  background:rgba(255,255,255,.11);
+}
+
+.signup-form input[type=submit]{
+  width:100%;
+  cursor:pointer;
+  border:0;
+  border-radius:999px;
+  padding:18px 24px;
+  font-size:1.03rem;
+  font-weight:800;
+  font-family:inherit;
+  color:#20160a;
+  background:linear-gradient(180deg,#ffc247,#ff9f0a);
+  box-shadow:0 12px 30px rgba(255,159,10,.35);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+
+.signup-form input[type=submit]:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 38px rgba(255,159,10,.46);
+}
+
+.form-note{
+  margin:14px 0 0;
+  font-size:.78rem;
+  color:#8fa1c4;
+  text-align:center;
+}
+
+.phone-box{
+  max-width:480px;
+  margin:22px auto 0;
+  padding:16px 20px;
+  border-radius:14px;
+  background:rgba(255,176,32,.12);
+  border:1px solid rgba(255,176,32,.4);
+  text-align:center;
+}
+
+.phone-box span{
+  display:block;
+  font-size:.8rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#ffc247;
+  font-weight:800;
+  margin-bottom:4px;
+}
+
+.phone-box a{
+  color:#fff;
+  font-size:1.25rem;
+  font-weight:900;
+  text-decoration:none;
+  letter-spacing:.01em;
+}
+
+.phone-box a:hover{text-decoration:underline;}
+
+.guarantee{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  max-width:480px;
+  margin:24px auto 0;
+  padding:14px 18px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.05);
+  color:#dfe7f5;
+  font-size:.88rem;
+  text-align:left;
+}
+
+.guarantee strong{display:block;color:#fff;font-size:.95rem;}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{
+  max-width:760px;
+  margin:0 auto;
+}
+
+.faq details{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:0;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+
+.faq details[open]{
+  border-color:#c9d7ee;
+  box-shadow:0 10px 26px rgba(11,16,32,.07);
+}
+
+.faq summary{
+  cursor:pointer;
+  list-style:none;
+  padding:18px 52px 18px 20px;
+  font-weight:800;
+  font-size:1rem;
+  position:relative;
+  color:var(--ink);
+}
+
+.faq summary::-webkit-details-marker{display:none;}
+
+.faq summary::after{
+  content:"+";
+  position:absolute;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--accent-2);
+  line-height:1;
+}
+
+.faq details[open] summary::after{content:"–";}
+
+.faq .answer{
+  padding:0 20px 20px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.faq .answer p:last-child{margin-bottom:0;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{
+  background:#070a14;
+  color:#8fa1c4;
+  padding:36px 0;
+  font-size:.82rem;
+}
+
+.footer-inner{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  align-items:center;
+  text-align:center;
+}
+
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  justify-content:center;
+}
+
+.footer a{color:#b9c6e0;text-decoration:none;}
+.footer a:hover{color:#fff;text-decoration:underline;}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .scroll-cue svg{animation:none;}
+  .btn-primary:hover{transform:none;}
+  .signup-form input[type=submit]:hover{transform:none;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     1. HERO
+     ============================================================ -->
+<header class="hero">
+  <div class="hero-inner">
+
+    <a class="logo" href="#top" aria-label="List Elevate — home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+             stroke="currentColor" stroke-width="2.6"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 17l6-6 4 4 6-8"/>
+        </svg>
+      </span>
+      <span class="logo-text">List <em>Elevate</em></span>
+    </a>
+
+    <h1>Others Build Your List. <span>You Make Money.</span></h1>
+
+    <p class="hero-sub">Your referrals build your email list for you — while you collect 25% lifetime commissions plus a 25% matching check.</p>
+
+    <a class="btn btn-primary" href="#signup">Get Free Access + $500 Bonus</a>
+
+  </div>
+
+  <a class="scroll-cue" href="#results" aria-label="Scroll down to see the results">
+    Scroll
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none"
+         stroke="currentColor" stroke-width="2.4"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 5v14M6 13l6 6 6-6"/>
+    </svg>
+  </a>
+</header>
+
+
+<!-- ============================================================
+     2. RESULTS YOU CAN EXPECT
+     ============================================================ -->
+<main id="top">
+
+<section class="results-wrap" id="results" aria-labelledby="results-title">
+  <div class="container">
+    <div class="card">
+      <div class="results-grid">
+
+        <div>
+          <span class="eyebrow">Results you can expect</span>
+          <h2 id="results-title">Real numbers, not promises.</h2>
+
+          <ul class="results-list">
+            <li>
+              <span class="tick" aria-hidden="true">✓</span>
+              <div><strong>Add up to 2,500 leads a day — without doing the work.</strong> 100 active referrals at 25 leads a day each fills your list for you.</div>
+            </li>
+            <li>
+              <span class="tick" aria-hidden="true">✓</span>
+              <div><strong>Earn 25% lifetime commissions on every direct referral.</strong> You get paid for as long as they stay active.</div>
+            </li>
+            <li>
+              <span class="tick" aria-hidden="true">✓</span>
+              <div><strong>Double it with a 25% matching check.</strong> If a referral makes $10,000, you get $2,500. No cap, no limit.</div>
+            </li>
+            <li>
+              <span class="tick" aria-hidden="true">✓</span>
+              <div><strong>Reach 99% inbox deliverability.</strong> Send up to 600,000 emails per hour with the included software.</div>
+            </li>
+            <li>
+              <span class="tick" aria-hidden="true">✓</span>
+              <div><strong>Get your $500 Email Marketing Mastery course free.</strong> No upsell, no hidden step.</div>
+            </li>
+            <li>
+              <span class="tick" aria-hidden="true">✓</span>
+              <div><strong>Set up in minutes.</strong> No technical skills and no list-building experience needed.</div>
+            </li>
+          </ul>
+        </div>
+
+        <figure class="results-figure">
+          <img src="https://images.nowlifestyle.com/images/admin/pb/assets/9beaad75f15243ad34f9b383c237a12e.png"
+               alt="List Elevate dashboard showing a growing email list and daily commission earnings"
+               width="600" height="440" loading="lazy">
+          <figcaption>Your list and your commissions grow in the same dashboard.</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     3. TRUST / SOCIAL PROOF
+     ============================================================ -->
+<section class="section section--soft" id="trust" aria-labelledby="trust-title">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">Trusted by list builders</span>
+      <h2 id="trust-title">Real marketers. Real results.</h2>
+      <p>List Elevate is used by beginners and by seven-figure email marketers. Here is the proof.</p>
+    </div>
+
+    <p class="subhead">What email marketers say</p>
+    <div class="testimonials">
+
+      <figure class="quote">
+        <img class="quote-avatar"
+             src="https://images.nowlifestyle.com/images/admin/pb/assets/f37cea41f2ff3373d27a817447c487f5.jpg"
+             alt="Portrait of Richard Weberg, seven-figure list builder" width="60" height="60" loading="lazy">
+        <div class="quote-body">
+          <blockquote class="quote-text">“My son and I have made millions from our list building. With List Elevate we are sure going to make millions more in a much faster and cost effective way. For the novice to the advanced email marketer this is great!”</blockquote>
+          <span class="quote-name">Richard Weberg</span>
+          <span class="quote-role">7 Figure List Builder</span>
+        </div>
+      </figure>
+
+      <figure class="quote">
+        <img class="quote-avatar"
+             src="https://nowlifestyle.com//images/pb/pb_assets/admin/71ead1bb970d957.jpg"
+             alt="Portrait of Anthony Morrison, nine-figure list builder" width="60" height="60" loading="lazy">
+        <div class="quote-body">
+          <blockquote class="quote-text">“I have generated and continue to generate millions of dollars online through email marketing. List Elevate is going to take my list building to a whole new level!”</blockquote>
+          <span class="quote-name">Anthony Morrison</span>
+          <span class="quote-role">9 Figure List Builder</span>
+        </div>
+      </figure>
+
+      <figure class="quote">
+        <img class="quote-avatar"
+             src="https://nowlifestyle.com//images/pb/pb_assets/admin/9fc79afe612f2b8.jpg"
+             alt="Portrait of Tissa Godavitarne, seven-figure list builder" width="60" height="60" loading="lazy">
+        <div class="quote-body">
+          <blockquote class="quote-text">“Over the years I have made millions online. It took me years to build my list. I wish List Elevate was around a few years ago. I know my income is about to triple with this viral list building system.”</blockquote>
+          <span class="quote-name">Tissa Godavitarne</span>
+          <span class="quote-role">7 Figure List Builder</span>
+        </div>
+      </figure>
+
+      <figure class="quote">
+        <img class="quote-avatar"
+             src="https://nowlifestyle.com//images/pb/pb_assets/admin/3585b52adb75e3.png"
+             alt="Portrait of Donalyn Zaborski, list and social media builder" width="60" height="60" loading="lazy">
+        <div class="quote-body">
+          <blockquote class="quote-text">“Leveraging others to help build my list is amazing. I have been doing a great job list building by myself, but with leveraging others this is a real game changer for me!”</blockquote>
+          <span class="quote-name">Donalyn Zaborski</span>
+          <span class="quote-role">List and Social Media Builder</span>
+        </div>
+      </figure>
+
+      <figure class="quote">
+        <img class="quote-avatar"
+             src="https://images.nowlifestyle.com/images/admin/pb/assets/636f2fc2ad2ce613dbc6985e1a1cc60c.jpg"
+             alt="Portrait of Bob Beckett, seven-figure list builder" width="60" height="60" loading="lazy">
+        <div class="quote-body">
+          <blockquote class="quote-text">“Building big email lists has been the primary staple of all my online businesses for over the last decade. List Elevate will speed my process up in a way I have never seen before!”</blockquote>
+          <span class="quote-name">Bob Beckett</span>
+          <span class="quote-role">7 Figure List Builder</span>
+        </div>
+      </figure>
+
+      <figure class="quote">
+        <div class="quote-body">
+          <blockquote class="quote-text">“Email marketing is our primary business tool. List Elevate will be added to our list building arsenal. Speeding up our list and income growth is number one. You can not beat the price point!”</blockquote>
+          <span class="quote-name">Janet and Don Legere</span>
+          <span class="quote-role">7 Figure List Building Couple</span>
+        </div>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     4. WHAT EXACTLY YOU GET
+     ============================================================ -->
+<section class="section" id="what-you-get" aria-labelledby="get-title">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">What exactly you get</span>
+      <h2 id="get-title">Everything included. Nothing held back.</h2>
+      <p>One system that builds your list, sends your emails and pays you — starting today.</p>
+    </div>
+
+    <div class="get-grid">
+      <ul class="checklist">
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><strong>Viral list-building system.</strong> Others build your list for you — every referral they generate lands on your list too.</div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><strong>Email marketing software included.</strong> 99% inbox deliverability, no extra tool needed.</div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><strong>Ultra-fast sending.</strong> Up to 600,000 emails per hour.</div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><strong>Customer-for-life program.</strong> Unlimited income potential from every referral you bring in.</div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><strong>Drag &amp; drop editor.</strong> Build beautiful emails in minutes.</div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><strong>Subscriber filtering.</strong> Resend to openers and clickers only.</div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><strong>Full API access.</strong> Connect the tools you already use.</div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><strong>Email Marketing Mastery — $500 value, free today.</strong> The complete course is included with your account.</div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><strong>2 months free.</strong> Plus a 30-day money-back guarantee.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BONUS + COUNTDOWN
+     ============================================================ -->
+<section class="section section--soft" aria-labelledby="bonus-title">
+  <div class="container">
+    <div class="bonus">
+
+      <h2 id="bonus-title">Email Marketing Mastery — your $500 super bonus</h2>
+      <p>Learn the setups, starting points and triggers behind a profitable mailing campaign. Free with your account, today only.</p>
+
+      <div class="countdown" data-countdown aria-label="Time left for the opening day special">
+        <span class="cd-unit"><strong data-cd="days">00</strong><small>days</small></span>
+        <span class="cd-unit"><strong data-cd="hours">20</strong><small>hours</small></span>
+        <span class="cd-unit"><strong data-cd="minutes">13</strong><small>min</small></span>
+        <span class="cd-unit"><strong data-cd="seconds">43</strong><small>sec</small></span>
+      </div>
+
+      <a class="btn btn-primary" href="#signup">Grab Your $500 Bonus Free</a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     5. FORMULAR + TELEFONNUMMER
+     ============================================================ -->
+<section class="signup" id="signup" aria-labelledby="signup-title">
+  <div class="container">
+
+    <div class="section-head">
+      <h2 id="signup-title">Start free and claim your $500 bonus</h2>
+      <p>Enter your email. We send your access link and your bonus within a few minutes.</p>
+    </div>
+
+    <div class="form-wrap">
+
+      <form class="signup-form"
+            method="POST"
+            action="https://gogvo.com/subscribe.php"
+            aria-label="Free signup form">
+
+        <input type="hidden" name="AffiliateName" value="natur1984NLS">
+        <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+        <input type="hidden" name="TrackParam" value="new_form">
+        <input type="hidden" name="FormId" value="25258696">
+        <input type="hidden" name="TrackerName" value="twiceconfirmed">
+
+        <table>
+          <tr>
+            <td>
+              <label for="email">
+                Email address
+                <span class="hint">(required — we send your login link, access data and the $500 bonus here)</span>
+              </label>
+            </td>
+            <td>
+              <input id="email" type="email" name="Email" required
+                     placeholder="you@example.com" autocomplete="email">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="Get Free Access + $500 Bonus">
+            </td>
+          </tr>
+        </table>
+
+        <p class="form-note">No spam. Unsubscribe at any time.</p>
+
+        <img src="https://gogvo.com/show_form.php?id=25258696&amp;TrackParam=new_form"
+             alt="" width="1" height="1" style="position:absolute;left:-9999px;" aria-hidden="true">
+      </form>
+
+    </div>
+
+    <div class="phone-box">
+      <span>Questions? Call us</span>
+      <a href="tel:+15551234567">+1 555 123 4567</a>
+    </div>
+
+    <div class="guarantee">
+      <span aria-hidden="true">🛡️</span>
+      <div>
+        <strong>30-day money-back guarantee</strong>
+        100% satisfaction. If it is not for you, you get your money back.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     6. FAQ
+     ============================================================ -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">Before you sign up</span>
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <p>The answers you need before you decide.</p>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>What does List Elevate cost?</summary>
+        <div class="answer">
+          <p>[PLACEHOLDER: exact price and plan details]. You get your first 2 months free, then [PLACEHOLDER: monthly price]. No setup fee.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How long does the setup take?</summary>
+        <div class="answer">
+          <p>A few minutes. You enter your email, confirm it and your account is ready. You do not need any technical skills or any prior list-building experience.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I actually get paid?</summary>
+        <div class="answer">
+          <p>Two ways, both starting from month 2 and both for life. First: 25% residual commissions on every direct referral, for as long as they stay active. Second: a 25% matching check on everything your referrals earn. If a referral makes $10,000, you get $2,500. There is no cap on the number of referrals.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I cancel at any time?</summary>
+        <div class="answer">
+          <p>Yes. [PLACEHOLDER: cancellation policy — e.g. cancel in your account with one click, no notice period]. Cancelling takes less than a minute and there is no minimum term.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is there a free trial?</summary>
+        <div class="answer">
+          <p>You get 2 months free plus the $500 Email Marketing Mastery course at no cost today. If it does not work for you, the 30-day money-back guarantee covers you.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How secure is my data?</summary>
+        <div class="answer">
+          <p>[PLACEHOLDER: data security details — e.g. GDPR-compliant, encrypted storage, SSL-secured checkout]. We never sell your data.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Who is List Elevate not for?</summary>
+        <div class="answer">
+          <p>It is not for you if you want to buy a finished email list, if you never plan to send an email, or if you expect income without referring a single person. List Elevate gives you the system and the leverage — you still have to invite people in.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p style="margin:0;">© [PLACEHOLDER: 2025] List Elevate. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Legal links">
+      <a href="[PLACEHOLDER: /imprint]">Imprint</a>
+      <a href="[PLACEHOLDER: /privacy]">Privacy</a>
+      <a href="[PLACEHOLDER: /terms]">Terms</a>
+      <a href="[PLACEHOLDER: /earnings-disclaimer]">Earnings Disclaimer</a>
+    </nav>
+  </div>
+</footer>
+
+
+<script>
+/* Countdown — reine Anzeige, kein Einfluss auf das Formular.
+   Startet bei 20 Stunden 13 Minuten 43 Sekunden ab Seitenaufruf. */
+(function () {
+  var deadline = Date.now() + (20 * 3600 + 13 * 60 + 43) * 1000;
+  var boxes = document.querySelectorAll('[data-countdown]');
+  if (!boxes.length) return;
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function tick() {
+    var diff = Math.max(0, deadline - Date.now());
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+
+    for (var i = 0; i < boxes.length; i++) {
+      boxes[i].querySelector('[data-cd="days"]').textContent = pad(d);
+      boxes[i].querySelector('[data-cd="hours"]').textContent = pad(h);
+      boxes[i].querySelector('[data-cd="minutes"]').textContent = pad(m);
+      boxes[i].querySelector('[data-cd="seconds"]').textContent = pad(s);
+    }
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+
+</body>
+</html>
