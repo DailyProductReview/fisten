@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Woke up to 26 sales from this amazing program</title>
+<style>
+  :root { --red:#ff1a1a; --bg:#07070a; --text:#f2f2f2; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(ellipse at top,#1a1a22 0%,var(--bg) 65%);
+    color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    padding:24px; text-align:center;
+  }
+  .wrap { width:100%; max-width:640px; }
+  h1 { font-size:clamp(1.8rem,5.5vw,3rem); line-height:1.15; font-weight:800; margin-bottom:14px; }
+  h1 span { color:var(--red); text-shadow:0 0 18px rgba(255,26,26,.6); }
+  .sub { color:#a9a9b3; margin-bottom:34px; font-size:1.05rem; }
+
+  .scanner {
+    position:relative; height:14px; width:100%; border-radius:8px; margin:0 auto 34px;
+    background:#1a0505; border:1px solid #3a0a0a; overflow:hidden;
+    box-shadow:0 0 25px rgba(255,26,26,.25) inset;
+  }
+  .scanner::before {
+    content:""; position:absolute; top:0; bottom:0; width:22%;
+    background:linear-gradient(90deg,transparent,rgba(255,26,26,.5),#ff3b3b,rgba(255,26,26,.5),transparent);
+    box-shadow:0 0 22px 6px rgba(255,26,26,.8);
+    animation:kitt 1.6s ease-in-out infinite alternate;
+  }
+  @keyframes kitt { from { left:-4%; } to { left:82%; } }
+
+  form {
+    background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
+    border-radius:16px; padding:28px 22px;
+  }
+  label { display:block; margin-bottom:12px; font-weight:600; }
+  input[type=email] {
+    width:100%; padding:14px 16px; font-size:1rem; border-radius:10px;
+    border:1px solid #333; background:#0e0e13; color:#fff; outline:none;
+  }
+  input[type=email]:focus { border-color:var(--red); box-shadow:0 0 0 3px rgba(255,26,26,.25); }
+  input[type=submit] {
+    margin-top:16px; width:100%; padding:15px; font-size:1.05rem; font-weight:700;
+    border:0; border-radius:10px; cursor:pointer; color:#fff;
+    background:linear-gradient(180deg,#ff3b3b,#c40000);
+    box-shadow:0 0 20px rgba(255,26,26,.45); transition:transform .15s, box-shadow .15s;
+  }
+  input[type=submit]:hover { transform:translateY(-2px); box-shadow:0 0 30px rgba(255,26,26,.7); }
+  .track { position:absolute; width:1px; height:1px; opacity:0; }
+
+  /* Click-to-enter overlay (needed so the browser allows sound) */
+  #gate {
+    position:fixed; inset:0; z-index:100; display:none; flex-direction:column;
+    align-items:center; justify-content:center; gap:22px; cursor:pointer;
+    background:rgba(7,7,10,.96); color:#fff; text-align:center; padding:24px;
+  }
+  #gate .big { font-size:clamp(1.6rem,5vw,2.4rem); font-weight:800; }
+  #gate .btn {
+    padding:16px 34px; border-radius:999px; font-size:1.1rem; font-weight:700;
+    background:linear-gradient(180deg,#ff3b3b,#c40000); box-shadow:0 0 28px rgba(255,26,26,.6);
+    animation:pulse 1.4s infinite;
+  }
+  @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+
+  #sound {
+    position:fixed; right:16px; bottom:16px; z-index:10; padding:10px 16px;
+    border-radius:999px; border:1px solid #444; background:rgba(20,20,26,.9);
+    color:#fff; cursor:pointer; font-size:.95rem;
+  }
+
+  /* Audio-only YouTube player (kept inside the viewport so browsers don't block it) */
+  #player { position:fixed; left:0; bottom:0; width:200px; height:200px; opacity:.01; pointer-events:none; z-index:-1; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="big">🔊 Turn your sound on</div>
+  <div class="btn">Click here to enter</div>
+</div>
+
+<div id="player"></div>
+<button id="sound" type="button">🔇 Sound off</button>
+
+<main class="wrap">
+  <h1>Woke up to <span>26 sales</span> from this amazing program</h1>
+  <p class="sub">Enter your email now and find out how it works.</p>
+
+  <div class="scanner" aria-hidden="true"></div>
+
+  <form method="POST" action="https://gogvo.com/subscribe.php">
+    <input type="hidden" name="AffiliateName" value="natur1984NLS">
+    <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+    <input type="hidden" name="TrackParam" value="new_form">
+    <input type="hidden" name="FormId" value="25259279">
+
+    <label for="email">Please enter your email:</label>
+    <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+    <input type="submit" value="Submit">
+
+    <img class="track" src="https://gogvo.com/show_form.php?id=25259279&TrackParam=new_form" alt="">
+  </form>
+</main>
+
+<script>
+  var VIDEO_ID = "5BsFnk83NMI";
+  var player, ready = false, entered = false, soundOn = false;
+  var btn = document.getElementById("sound");
+  var gate = document.getElementById("gate");
+
+  var tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("player", {
+      videoId: VIDEO_ID,
+      playerVars: { autoplay:1, loop:1, playlist:VIDEO_ID, controls:0, playsinline:1, origin:location.origin },
+      events: {
+        onReady: function (e) {
+          ready = true;
+          // Try to start WITH sound straight away
+          e.target.unMute();
+          e.target.setVolume(75);
+          e.target.playVideo();
+          setTimeout(function () {
+            var playing = player.getPlayerState() === YT.PlayerState.PLAYING;
+            if (playing && !player.isMuted()) {
+              entered = true; soundOn = true;
+              btn.textContent = "🔊 Sound on";
+            } else if (!entered) {
+              // Browser blocked sound: keep it running muted and ask for one click
+              player.mute(); player.playVideo();
+              gate.style.display = "flex";
+            }
+          }, 1500);
+        }
+      }
+    });
+  }
+
+  function startSound() {
+    if (!ready) return;
+    player.unMute();
+    player.setVolume(75);
+    player.playVideo();
+    soundOn = true;
+    btn.textContent = "🔊 Sound on";
+  }
+
+  // One click lets the browser play sound immediately
+  function enter() {
+    entered = true;
+    gate.style.display = "none";
+    startSound();
+  }
+  // First click / tap / key / scroll anywhere turns the sound on
+  ["pointerdown","touchstart","keydown","wheel"].forEach(function (ev) {
+    window.addEventListener(ev, function () { if (!entered) enter(); }, { passive:true });
+  });
+
+  btn.addEventListener("click", function () {
+    if (!ready) return;
+    if (soundOn) { player.mute(); soundOn = false; btn.textContent = "🔇 Sound off"; }
+    else startSound();
+  });
+</script>
+</body>
+</html>
