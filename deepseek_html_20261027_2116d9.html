@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build An Email List – Make A Fortune | List Elevate</title>
+<meta name="description" content="Leverage others to build a massive money-making list while you get paid 200% commissions. Grab your $500 Email Marketing Mastery Super Bonus FREE today.">
+<style>
+  :root{
+    --bg:#0b1020;
+    --bg2:#121a33;
+    --card:#161f3d;
+    --ink:#eaf0ff;
+    --muted:#a8b4d4;
+    --accent:#ffcc00;
+    --accent2:#ff8a00;
+    --green:#22c55e;
+    --red:#ef4444;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  section{padding:64px 0}
+  h1,h2,h3{line-height:1.2;letter-spacing:-.5px}
+  h1{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800}
+  h2{font-size:clamp(1.5rem,3.6vw,2.2rem);font-weight:800;margin-bottom:18px}
+  h3{font-size:1.15rem;font-weight:700;margin-bottom:8px}
+  p{color:var(--muted);margin-bottom:14px}
+  strong{color:var(--ink)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 380px at 50% -10%, rgba(255,204,0,.18), transparent 70%),
+      linear-gradient(180deg,#0b1020 0%, #0e1530 100%);
+    text-align:center;
+    padding:72px 0 56px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .kicker{
+    display:inline-block;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+    color:var(--accent);
+    background:rgba(255,204,0,.1);
+    border:1px solid rgba(255,204,0,.35);
+    padding:7px 16px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1 span{
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero .sub{
+    font-size:clamp(1rem,2.2vw,1.22rem);
+    max-width:720px;
+    margin:18px auto 10px;
+    color:#c9d4f0;
+  }
+  .hero .sub2{
+    max-width:720px;margin:0 auto 28px;color:var(--muted);font-size:.98rem;
+  }
+
+  /* ---------- COUNTDOWN ---------- */
+  .countdown{
+    display:flex;justify-content:center;gap:10px;margin:26px 0 30px;flex-wrap:wrap;
+  }
+  .cd-box{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:var(--radius);
+    min-width:76px;
+    padding:10px 8px;
+    box-shadow:0 6px 22px rgba(0,0,0,.35);
+  }
+  .cd-num{
+    font-size:1.7rem;font-weight:800;color:var(--accent);
+    font-variant-numeric:tabular-nums;display:block;line-height:1.1;
+  }
+  .cd-lbl{font-size:.66rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-block;
+    background:linear-gradient(180deg,var(--accent) 0%, var(--accent2) 100%);
+    color:#20160a;
+    font-weight:900;
+    font-size:clamp(.95rem,2.2vw,1.1rem);
+    text-decoration:none;
+    padding:18px 38px;
+    border-radius:999px;
+    letter-spacing:.3px;
+    text-transform:uppercase;
+    box-shadow:0 10px 30px rgba(255,150,0,.32), inset 0 1px 0 rgba(255,255,255,.5);
+    transition:transform .15s ease, box-shadow .15s ease;
+    border:none;
+    cursor:pointer;
+    text-align:center;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,150,0,.45), inset 0 1px 0 rgba(255,255,255,.5)}
+  .btn:active{transform:translateY(0)}
+  .btn-sm{font-size:.9rem;padding:15px 30px}
+  .btn-note{display:block;margin-top:14px;font-size:.82rem;color:var(--muted)}
+  .cta-center{text-align:center}
+
+  /* ---------- CARDS / GRID ---------- */
+  .card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:var(--radius);
+    padding:26px;
+  }
+  .grid{display:grid;gap:18px}
+  .grid-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+
+  /* ---------- PROBLEM ---------- */
+  .problem{background:#0e1530}
+  .problem .card{border-left:4px solid var(--red)}
+  .x-list{list-style:none;margin-top:6px}
+  .x-list li{
+    position:relative;padding-left:30px;margin-bottom:12px;color:var(--muted);
+  }
+  .x-list li::before{
+    content:"✕";position:absolute;left:0;top:0;
+    color:var(--red);font-weight:900;
+  }
+
+  /* ---------- ANSWER ---------- */
+  .check-list{list-style:none}
+  .check-list li{
+    position:relative;padding-left:32px;margin-bottom:12px;color:var(--muted);
+  }
+  .check-list li::before{
+    content:"✓";position:absolute;left:0;top:0;
+    color:var(--green);font-weight:900;font-size:1.05rem;
+  }
+
+  /* ---------- STEPS ---------- */
+  .steps{counter-reset:step}
+  .step{
+    display:flex;gap:18px;align-items:flex-start;
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:var(--radius);
+    padding:24px;
+    margin-bottom:16px;
+  }
+  .step-num{
+    flex:0 0 46px;height:46px;border-radius:50%;
+    background:linear-gradient(180deg,var(--accent),var(--accent2));
+    color:#20160a;font-weight:900;font-size:1.25rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step h3{margin-bottom:4px}
+  .step p{margin:0}
+
+  /* ---------- HIGHLIGHT BOX ---------- */
+  .highlight{
+    background:linear-gradient(135deg, rgba(255,204,0,.14), rgba(255,138,0,.07));
+    border:1px solid rgba(255,204,0,.35);
+    border-radius:var(--radius);
+    padding:26px;
+    text-align:center;
+  }
+  .highlight .big{
+    font-size:clamp(1.3rem,3.4vw,1.9rem);
+    font-weight:900;color:var(--accent);line-height:1.3;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .quote{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:var(--radius);
+    padding:24px;
+  }
+  .quote p{font-style:italic;color:#cfd9f2}
+  .quote .who{font-style:normal;font-weight:800;color:var(--ink);font-size:.92rem;margin-top:12px}
+  .quote .role{font-size:.8rem;color:var(--accent);font-weight:700;letter-spacing:.4px}
+
+  /* ---------- BONUS ---------- */
+  .bonus{
+    background:
+      radial-gradient(700px 300px at 50% 0%, rgba(34,197,94,.15), transparent 70%),
+      #0e1530;
+    text-align:center;
+  }
+  .bonus .value{
+    display:inline-block;background:var(--green);color:#052e16;
+    font-weight:900;padding:6px 16px;border-radius:999px;font-size:.85rem;
+    margin-bottom:18px;letter-spacing:.5px;
+  }
+
+  /* ---------- GUARANTEE ---------- */
+  .guarantee{
+    display:flex;gap:22px;align-items:center;justify-content:center;
+    flex-wrap:wrap;text-align:left;
+    background:var(--card);
+    border:1px solid rgba(34,197,94,.35);
+    border-radius:var(--radius);
+    padding:26px;
+  }
+  .seal{
+    flex:0 0 92px;height:92px;border-radius:50%;
+    border:3px solid var(--green);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--green);font-weight:900;line-height:1.1;text-align:center;
+    font-size:.72rem;letter-spacing:.5px;text-transform:uppercase;
+  }
+  .seal span{font-size:1.5rem;display:block;margin-bottom:2px}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{
+    text-align:center;
+    background:linear-gradient(180deg,#0b1020,#121a33);
+    border-top:1px solid rgba(255,255,255,.06);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:#080c18;
+    padding:34px 0;
+    text-align:center;
+    font-size:.82rem;
+    color:#6f7ea6;
+    border-top:1px solid rgba(255,255,255,.06);
+  }
+  footer a{color:#8fa1cc;text-decoration:none;margin:0 6px}
+  footer a:hover{color:var(--accent)}
+  .disc{max-width:760px;margin:16px auto 0;font-size:.74rem;line-height:1.7;color:#5b688c}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Opening Day Special — Free $500 Bonus</span>
+    <h1>Build An Email List.<br><span>Make A Fortune.</span></h1>
+    <p class="sub">
+      Leverage others to build a massive money-making list — while you get paid
+      <strong>200% commissions!</strong>
+    </p>
+    <p class="sub2">
+      Grab your <strong>$500.00 Email Marketing Mastery Super Bonus</strong> FREE today.
+      Quicker, faster, easier than ever.
+    </p>
+
+    <div class="countdown" id="cd1">
+      <div class="cd-box"><span class="cd-num" id="d1">00</span><span class="cd-lbl">Days</span></div>
+      <div class="cd-box"><span class="cd-num" id="h1">09</span><span class="cd-lbl">Hours</span></div>
+      <div class="cd-box"><span class="cd-num" id="m1">57</span><span class="cd-lbl">Minutes</span></div>
+      <div class="cd-box"><span class="cd-num" id="s1">08</span><span class="cd-lbl">Seconds</span></div>
+    </div>
+
+    <a class="btn" href="https://listelevate.com/?id=natur1984&tr=twicelistelevate" target="_blank" rel="noopener">
+      Grab Your $500 Bonus Now →
+    </a>
+    <span class="btn-note">100% Satisfaction Guaranteed · 30-Day Money Back Guarantee</span>
+  </div>
+</header>
+
+<!-- ============ PROBLEM ============ -->
+<section class="problem">
+  <div class="wrap">
+    <h2>The Problem</h2>
+    <p>Every marketer knows the same truth: <strong>the money is in the list.</strong> But building one from scratch is brutal.</p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Doing it alone doesn't work</h3>
+        <ul class="x-list">
+          <li>You spend months writing emails nobody opens.</li>
+          <li>You buy traffic that never converts.</li>
+          <li>You trade hours for a handful of subscribers.</li>
+          <li>You burn out before your list ever becomes profitable.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The math is against you</h3>
+        <ul class="x-list">
+          <li>1 lead at a time = 1 person's effort.</li>
+          <li>No leverage = no exponential growth.</li>
+          <li>No list = no repeat sales, no passive income.</li>
+          <li>You stay stuck on the treadmill forever.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANSWER ============ -->
+<section>
+  <div class="wrap">
+    <h2>The Answer: Leverage</h2>
+    <p>
+      Stop building your list <em>alone</em>. The fastest list builders on earth don't build their list —
+      <strong>other people build it for them.</strong>
+    </p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Others build your list</h3>
+        <ul class="check-list">
+          <li>Your referrals generate leads — and those leads land on <strong>your</strong> list.</li>
+          <li>The people they refer land on your list too.</li>
+          <li>One referral can become hundreds of subscribers.</li>
+          <li>Your list grows while you sleep.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>And you get paid for it</h3>
+        <ul class="check-list">
+          <li><strong>200% commissions</strong> on your referrals.</li>
+          <li>25% residual commissions for life.</li>
+          <li>25% matching check on everything your referrals earn.</li>
+          <li>Unlimited, leveraged, passive income.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUTION / HOW IT WORKS ============ -->
+<section style="background:#0e1530">
+  <div class="wrap">
+    <h2>The Solution: List Elevate</h2>
+    <p>It's really simple, really fun, and really powerful. Here's the whole system:</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Join List Elevate today</h3>
+          <p>Start building your list instantly — no technical skills, no prior list-building experience required.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Your referrals start building their list</h3>
+          <p>Every person they refer goes on <strong>your</strong> list too. You refer Max, Lisa, John and Mary — every lead they generate is yours.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Watch it compound — for free</h3>
+          <p>That's 305 leads added to your list for doing nothing. Now imagine 100 people building your list, each generating 25 leads a day.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight" style="margin-top:8px">
+      <p class="big">2,500 people added to your list — every single day.<br>Again, for doing nothing.</p>
+      <p style="margin-top:10px;margin-bottom:0">No other system will build your list faster and completely done for you.</p>
+    </div>
+
+    <div class="cta-center" style="margin-top:32px">
+      <a class="btn" href="https://listelevate.com/?id=natur1984&tr=twicelistelevate" target="_blank" rel="noopener">
+        Start Building My List →
+      </a>
+      <span class="btn-note">Free $500 Super Bonus included today</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S INCLUDED ============ -->
+<section>
+  <div class="wrap">
+    <h2>What's Included In Your Viral List Building System</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Massive Leverage</h3><p>Allow others to build your list for you — automatically.</p></div>
+      <div class="card"><h3>99% Inbox Deliverability</h3><p>Email marketing software included, ready to go.</p></div>
+      <div class="card"><h3>Ultra-Fast Sending</h3><p>Blast 600,000 emails per hour.</p></div>
+      <div class="card"><h3>Customer For Life</h3><p>Unlimited income potential with lifetime referrals.</p></div>
+      <div class="card"><h3>Drag &amp; Drop Editor</h3><p>Make beautiful emails in minutes — no design skills.</p></div>
+      <div class="card"><h3>Smart Segmentation</h3><p>Resend to openers and/or clickers for more sales.</p></div>
+    </div>
+
+    <div class="highlight" style="margin-top:26px">
+      <p class="big">+ Email Marketing Mastery Super Bonus — valued at $500.00 — FREE today.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section style="background:#0e1530">
+  <div class="wrap">
+    <h2>Look What Email Marketers Are Saying</h2>
+    <div class="grid grid-2">
+      <div class="quote">
+        <p>"My son and I have made millions from our list building. With List Elevate we are sure going to make millions more in a much faster and cost-effective way. For the novice to the advanced email marketer this is great!"</p>
+        <div class="who">Richard Weberg</div>
+        <div class="role">7-Figure List Builder</div>
+      </div>
+      <div class="quote">
+        <p>"I have generated and continue to generate millions of dollars online through email marketing. List Elevate is going to take my list building to a whole new level!"</p>
+        <div class="who">Anthony Morrison</div>
+        <div class="role">9-Figure List Builder</div>
+      </div>
+      <div class="quote">
+        <p>"Over the years I have made millions online. It took me years to build my list. I wish List Elevate was around a few years ago. I know my income is about to triple with this viral list building system."</p>
+        <div class="who">Tissa Godavitarne</div>
+        <div class="role">7-Figure List Builder</div>
+      </div>
+      <div class="quote">
+        <p>"Leveraging others to help build my list is amazing. I have been doing a great job list building by myself, but with leveraging others this is a real game changer for me!"</p>
+        <div class="who">Donalyn Zaborski</div>
+        <div class="role">List &amp; Social Media Builder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BONUS ============ -->
+<section class="bonus">
+  <div class="wrap">
+    <span class="value">Super Bonus — Valued at $500.00 — FREE</span>
+    <h2>Email Marketing Mastery</h2>
+    <p style="max-width:700px;margin:0 auto 22px">
+      Would you like to learn the correct set-ups, starting points and triggers to a wildly successful mailing campaign?
+      Start cashing in from your emailing efforts and set your business on autopilot — earning while you sleep.
+    </p>
+
+    <div class="grid grid-3" style="text-align:left;margin-bottom:28px">
+      <div class="card"><h3>Build It Right</h3><p>Learn the science and fundamentals of building a profitable mailing list you can put into practice immediately.</p></div>
+      <div class="card"><h3>Keep Them Hooked</h3><p>Keep your subscribers engaged and always wanting more from you.</p></div>
+      <div class="card"><h3>10× Conversions</h3><p>Turn leads into sales with proven formulas and triggers.</p></div>
+    </div>
+
+    <div class="countdown" id="cd2">
+      <div class="cd-box"><span class="cd-num" id="d2">00</span><span class="cd-lbl">Days</span></div>
+      <div class="cd-box"><span class="cd-num" id="h2">09</span><span class="cd-lbl">Hours</span></div>
+      <div class="cd-box"><span class="cd-num" id="m2">57</span><span class="cd-lbl">Minutes</span></div>
+      <div class="cd-box"><span class="cd-num" id="s2">08</span><span class="cd-lbl">Seconds</span></div>
+    </div>
+
+    <a class="btn" href="https://listelevate.com/?id=natur1984&tr=twicelistelevate" target="_blank" rel="noopener">
+      Claim My Free $500 Bonus →
+    </a>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section>
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal"><span>30</span>Day Money<br>Back</div>
+      <div>
+        <h3>100% Satisfaction Guaranteed</h3>
+        <p style="margin-bottom:0">Try List Elevate risk-free for a full 30 days. If it isn't everything we say it is, get your money back — no questions asked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap">
+    <h2>Let Others Build You A Massive List Today</h2>
+    <p style="max-width:640px;margin:0 auto 26px">
+      Faster than ever before. Free $500 Super Bonus and your ability to make 200% commissions —
+      available for a limited time only.
+    </p>
+    <a class="btn" href="https://listelevate.com/?id=natur1984&tr=twicelistelevate" target="_blank" rel="noopener">
+      Get 2 Months FREE →
+    </a>
+    <span class="btn-note">100% Satisfaction Guaranteed · 30-Day Money Back Guarantee</span>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <p style="color:#8fa1cc;margin-bottom:10px">&copy; 2025 listelevate.com</p>
+    <p>
+      <a href="#">Privacy Policy</a>|
+      <a href="#">Terms of Use</a>|
+      <a href="#">Refund Policy</a>|
+      <a href="#">Earnings Disclaimer</a>|
+      <a href="#">GDPR</a>
+    </p>
+    <p class="disc">
+      Earnings Disclaimer: Results shown are not typical and are not a guarantee of future income.
+      Any income statements are examples only. Your results depend on your own effort, experience and market conditions.
+      This page contains affiliate links and we may be compensated if you purchase through them.
+    </p>
+  </div>
+</footer>
+
+<!-- ============ COUNTDOWN SCRIPT ============ -->
+<script>
+(function () {
+  // Set the offer deadline to 10 days from first visit (stored in the browser),
+  // so the timer feels real without ever showing an expired offer.
+  var KEY = 'le_deadline';
+  var now = Date.now();
+  var deadline = parseInt(localStorage.getItem(KEY) || '0', 10);
+
+  if (!deadline || deadline < now) {
+    deadline = now + (10 * 24 * 60 * 60 * 1000); // 10 days
+    try { localStorage.setItem(KEY, String(deadline)); } catch (e) {}
+  }
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function tick() {
+    var diff = deadline - Date.now();
+    if (diff < 0) diff = 0;
+
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+
+    var sets = [['d1','h1','m1','s1'], ['d2','h2','m2','s2']];
+    sets.forEach(function (ids) {
+      var el;
+      if ((el = document.getElementById(ids[0]))) el.textContent = pad(d);
+      if ((el = document.getElementById(ids[1]))) el.textContent = pad(h);
+      if ((el = document.getElementById(ids[2]))) el.textContent = pad(m);
+      if ((el = document.getElementById(ids[3]))) el.textContent = pad(s);
+    });
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+
+</body>
+</html>
