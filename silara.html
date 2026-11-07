@@ -6,6 +6,7 @@
 <title>Zilara – Be First. Earn the Most.</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background: #0b1f14;
@@ -18,9 +19,10 @@
   /* HERO */
   .hero {
     background: linear-gradient(160deg, #0f2e1d 0%, #143d26 50%, #0b1f14 100%);
-    padding: 64px 20px 56px;
+    padding: 64px 20px 40px;
     text-align: center;
     border-bottom: 2px solid #2ecc71;
+    position: relative;
   }
   .hero .badge {
     display: inline-block;
@@ -67,6 +69,27 @@
     font-size: 13px;
     color: #8fbfa1;
     letter-spacing: 0.5px;
+  }
+
+  /* SCROLL HINT */
+  .scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 34px;
+    color: #2ecc71;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    animation: bounce 1.8s infinite;
+  }
+  .scroll-hint .arrow { font-size: 26px; line-height: 1; }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(8px); opacity: 0.6; }
   }
 
   /* SECTIONS */
@@ -192,10 +215,15 @@
   </p>
   <a href="https://zilaratour.com/index.asp?site=2516503" class="cta">JOIN FREE →</a>
   <span class="cta-sub">Free to join. Rolling 31-Day. Paid in real time.</span>
+
+  <a href="#why" class="scroll-hint">
+    <span>Scroll to see why</span>
+    <span class="arrow">⌄</span>
+  </a>
 </header>
 
 <!-- WHY -->
-<section>
+<section id="why">
   <div class="container">
     <h2>Why Zilara Pays Differently</h2>
     <p class="section-sub">No hype. Just a plan that rewards real product movement.</p>
