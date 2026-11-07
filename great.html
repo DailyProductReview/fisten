@@ -1,555 +1,405 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Start an Online Business for $14.95 a Month | GreatLife</title>
-<meta name="description" content="Join for $14.95 a month and get a global savings club, 130 lifestyle courses and done-for-you sales pages. No experience needed.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<!-- SUBJECT LINE IDEAS:
+     1) 7 ways to earn — without selling your time
+     2) What if your income didn’t depend on your clock?
+     3) 3 minutes that could change how you see income
+-->
+<title>GreatLife – 7 Powerful Ways to Earn</title>
 <style>
-/* ============================================================
-   BASE
-   ============================================================ */
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  font-size:17px;line-height:1.6;color:#0e1726;background:#fff;
-  -webkit-font-smoothing:antialiased;
-}
-img{max-width:100%;height:auto;display:block}
-h1,h2,h3{line-height:1.18;margin:0 0 .45em;letter-spacing:-.02em;font-weight:800}
-h1{font-size:clamp(2rem,7vw,3.4rem)}
-h2{font-size:clamp(1.55rem,4.6vw,2.4rem)}
-h3{font-size:1.15rem;font-weight:700}
-p{margin:0 0 1em}
-a{color:#0b6b4f}
-ul{margin:0 0 1em;padding-left:1.1em}
-li{margin-bottom:.5em}
-.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
-section{padding:60px 0}
-@media(min-width:768px){section{padding:92px 0}}
-.eyebrow{
-  display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.12em;
-  text-transform:uppercase;color:#0b6b4f;margin:0 0 12px;
-}
-.lead{font-size:1.05rem;color:#5b6675;max-width:38rem}
-.center{text-align:center}
-.center .lead{margin-left:auto;margin-right:auto}
-.soft{background:#f5f8f6}
-
-/* ============================================================
-   BUTTONS
-   ============================================================ */
-.btn{
-  display:inline-block;
-  background:#f7b733;color:#0e1726;
-  font-weight:800;font-size:1.05rem;
-  padding:18px 34px;border:0;border-radius:999px;
-  text-decoration:none;text-align:center;cursor:pointer;
-  box-shadow:0 10px 24px rgba(247,183,51,.38);
-  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-.btn:hover,.btn:focus{background:#ffc44d;transform:translateY(-2px);box-shadow:0 14px 30px rgba(247,183,51,.45)}
-.btn:active{transform:translateY(0)}
-.btn-full{display:block;width:100%}
-.btn-note{font-size:.85rem;color:#5b6675;margin:12px 0 0;text-align:center}
-
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero{
-  background:radial-gradient(1100px 620px at 50% -15%, #12805f 0%, #0b6b4f 45%, #07382a 100%);
-  color:#fff;text-align:center;
-  padding:26px 0 76px;
-  position:relative;
-}
-.hero .logo{
-  display:inline-flex;align-items:center;gap:10px;
-  font-weight:800;font-size:1.15rem;letter-spacing:.02em;
-  color:#fff;text-decoration:none;margin-bottom:44px;
-}
-.hero .logo-mark{
-  width:30px;height:30px;border-radius:9px;
-  background:#f7b733;color:#07382a;
-  display:grid;place-items:center;font-size:1rem;font-weight:900;
-}
-.hero h1{color:#fff;max-width:20ch;margin-left:auto;margin-right:auto;margin-bottom:18px}
-.hero .sub{
-  color:rgba(255,255,255,.86);
-  font-size:1.08rem;max-width:34rem;margin:0 auto 30px;
-}
-.scroll-cue{
-  display:inline-grid;place-items:center;
-  width:46px;height:46px;margin-top:42px;
-  border:2px solid rgba(255,255,255,.35);border-radius:50%;
-  color:#fff;text-decoration:none;
-  animation:float 2.2s ease-in-out infinite;
-}
-.scroll-cue:hover,.scroll-cue:focus{border-color:#f7b733;color:#f7b733}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
-
-/* ============================================================
-   TOP VIDEO BAND
-   ============================================================ */
-.band{padding-top:0;padding-bottom:0;margin-top:-34px;position:relative;z-index:2}
-.video-wrap-top{
-  position:relative;width:100%;max-width:640px;margin:0 auto;
-  aspect-ratio:16/9;border-radius:18px;overflow:hidden;
-  background:#0e1726;
-  box-shadow:0 24px 60px rgba(7,56,42,.25);
-}
-.video-wrap-top iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.top-cta{text-align:center;margin:22px 0 0}
-
-/* ============================================================
-   OFFER IMAGE (now in the middle of the page)
-   ============================================================ */
-.offer-img{
-  display:block;max-width:520px;margin:36px auto 0;
-  border-radius:16px;overflow:hidden;
-  box-shadow:0 20px 50px rgba(7,56,42,.20);
-  background:#fff;
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-.offer-img:hover,.offer-img:focus{transform:translateY(-3px);box-shadow:0 26px 60px rgba(7,56,42,.28)}
-.offer-caption{
-  text-align:center;font-size:.9rem;color:#5b6675;margin:14px 0 0;
-}
-
-/* ============================================================
-   CHECK LISTS
-   ============================================================ */
-.check-list{list-style:none;padding:0;margin:0}
-.check-list li{
-  position:relative;padding-left:38px;margin-bottom:18px;
-  font-size:1.02rem;
-}
-.check-list li::before{
-  content:"✓";
-  position:absolute;left:0;top:1px;
-  width:26px;height:26px;border-radius:50%;
-  background:#e3f4ec;color:#0b6b4f;
-  display:grid;place-items:center;
-  font-size:.85rem;font-weight:900;
-}
-.check-list li strong{display:block;color:#0e1726}
-.check-list li span{color:#5b6675;font-size:.95rem}
-
-/* ============================================================
-   CARDS
-   ============================================================ */
-.cards{display:grid;gap:18px;margin-top:36px}
-@media(min-width:820px){.cards{grid-template-columns:repeat(3,1fr);gap:22px}}
-.card{
-  background:#fff;border:1px solid #e4e8ec;border-radius:18px;
-  padding:26px 22px;
-}
-.card h3{margin-bottom:8px}
-.card p{color:#5b6675;font-size:.96rem;margin-bottom:14px}
-.card ul{margin:0;padding-left:1.1em;color:#33413c;font-size:.95rem}
-.card .tag{
-  display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.1em;
-  text-transform:uppercase;color:#0b6b4f;background:#e3f4ec;
-  padding:5px 10px;border-radius:999px;margin-bottom:14px;
-}
-
-/* ============================================================
-   COMMISSION TABLE
-   ============================================================ */
-.pay-grid{display:grid;gap:16px;margin-top:34px}
-@media(min-width:820px){.pay-grid{grid-template-columns:repeat(3,1fr)}}
-.pay{
-  border:1px solid #e4e8ec;border-left:5px solid #0b6b4f;border-radius:14px;
-  padding:22px;background:#fff;
-}
-.pay b{display:block;font-size:1.9rem;color:#0b6b4f;letter-spacing:-.03em;line-height:1}
-.pay span{display:block;font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#8a9490;margin:6px 0 10px}
-.pay p{margin:0;font-size:.95rem;color:#5b6675}
-.disclaimer{
-  font-size:.82rem;color:#8a9490;margin-top:24px;
-  border-top:1px solid #e4e8ec;padding-top:16px;
-}
-
-/* ============================================================
-   FORM
-   ============================================================ */
-.form-section{background:#07382a;color:#fff}
-.form-section h2{color:#fff}
-.form-section .lead{color:rgba(255,255,255,.8)}
-.form-grid{display:grid;gap:34px;margin-top:34px}
-@media(min-width:900px){.form-grid{grid-template-columns:1fr 1fr;gap:48px;align-items:start}}
-
-.form-card{
-  background:#fff;color:#0e1726;border-radius:20px;padding:26px 22px;
-  box-shadow:0 26px 60px rgba(0,0,0,.28);
-}
-@media(min-width:600px){.form-card{padding:32px 30px}}
-.form-card h3{margin-bottom:6px}
-.form-card .form-intro{font-size:.93rem;color:#5b6675;margin-bottom:22px}
-.field{margin-bottom:18px}
-.field label{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px}
-.field .hint{display:block;font-weight:400;font-size:.82rem;color:#8a9490;margin-top:2px}
-.field input{
-  width:100%;padding:14px 16px;font-size:1rem;font-family:inherit;
-  border:1.5px solid #d8dee4;border-radius:12px;background:#fff;color:#0e1726;
-  transition:border-color .15s ease, box-shadow .15s ease;
-}
-.field input:focus{
-  outline:0;border-color:#0b6b4f;box-shadow:0 0 0 4px rgba(11,107,79,.14);
-}
-.privacy{font-size:.8rem;color:#8a9490;margin:14px 0 0;text-align:center}
-
-/* ============================================================
-   FAQ
-   ============================================================ */
-.faq{max-width:820px;margin:36px auto 0}
-.faq details{
-  background:#fff;border:1px solid #e4e8ec;border-radius:14px;
-  margin-bottom:12px;overflow:hidden;
-}
-.faq summary{
-  cursor:pointer;list-style:none;position:relative;
-  padding:18px 52px 18px 20px;font-weight:700;font-size:1rem;
-}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{
-  content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
-  font-size:1.5rem;font-weight:700;color:#0b6b4f;line-height:1;
-}
-.faq details[open] summary::after{content:"–"}
-.faq .answer{padding:0 20px 20px;color:#5b6675;font-size:.97rem}
-.faq .answer p:last-child{margin-bottom:0}
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer{background:#0e1726;color:#9aa6b4;font-size:.82rem;padding:44px 0 56px}
-footer p{margin:0 0 12px;max-width:62rem}
-footer .brand{color:#fff;font-weight:800;font-size:.95rem;margin-bottom:16px}
+  body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+  table,td{mso-table-lspace:0pt;mso-table-rspace:0pt;}
+  img{-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;}
+  body{margin:0;padding:0;width:100%!important;height:100%!important;}
+  a{text-decoration:none;}
+  @media screen and (max-width:600px){
+    .wrap{width:100%!important;}
+    .px{padding-left:18px!important;padding-right:18px!important;}
+    .h1{font-size:27px!important;line-height:34px!important;}
+    .h2{font-size:21px!important;line-height:28px!important;}
+    .stack{display:block!important;width:100%!important;max-width:100%!important;padding-left:0!important;padding-right:0!important;}
+    .btn a{display:block!important;width:100%!important;box-sizing:border-box!important;}
+    .p16{font-size:15px!important;line-height:24px!important;}
+    .hide{display:none!important;}
+    .center-sm{text-align:center!important;}
+  }
 </style>
 </head>
-<body>
+<body style="margin:0;padding:0;background-color:#F5F3FF;">
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
-<header class="hero">
-  <div class="wrap">
-    <a class="logo" href="#join">
-      <span class="logo-mark" aria-hidden="true">G</span>
-      GreatLife
-    </a>
+<!-- PREHEADER (hidden) -->
+<div style="display:none;font-size:1px;color:#F5F3FF;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">
+  Weekly payouts. Unlimited depth. Never blocked. Watch the 3-minute video first.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+</div>
 
-    <h1>Start an Online Business for $14.95 a Month</h1>
+<!-- WRAPPER -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F5F3FF;">
+<tr>
+<td align="center" style="padding:0;">
 
-    <p class="sub">Get a global savings club, 130 lifestyle courses and done-for-you sales pages — no experience needed.</p>
+  <table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#FFFFFF;">
 
-    <a class="btn" href="#join">Join for $14.95</a>
+    <!-- ================= HEADER / LOGO ================= -->
+    <tr>
+      <td align="center" bgcolor="#4C1D95" style="background-color:#4C1D95;background-image:linear-gradient(135deg,#6D28D9 0%,#4C1D95 55%,#2E1065 100%);padding:26px 24px 26px 24px;">
+        <!-- LOGO: replace "GreatLife Logo new.png" with your hosted image URL -->
+        <img src="GreatLife Logo new.png" alt="GreatLife" width="190" style="display:block;width:190px;max-width:190px;height:auto;border:0;">
+        <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:2.5px;color:#C4B5FD;padding-top:14px;text-transform:uppercase;font-weight:700;">
+          Your Path · Your Pace · Your Life
+        </div>
+      </td>
+    </tr>
 
-    <a class="scroll-cue" href="#results" aria-label="Scroll down to see your results">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-           stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M6 9l6 6 6-6"/>
-      </svg>
-    </a>
-  </div>
-</header>
+    <!-- ================= HERO ================= -->
+    <tr>
+      <td class="px" align="center" bgcolor="#4C1D95" style="background-color:#4C1D95;background-image:linear-gradient(180deg,#4C1D95 0%,#3B0F7A 100%);padding:6px 40px 44px 40px;">
+        <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:20px;color:#FBBF24;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:14px;">
+          Just 3 Minutes
+        </div>
 
-<!-- ============================================================
-     TOP: VIDEO (replaces the former offer image)
-     Small enough that the next section is visible below.
-     ============================================================ -->
-<section class="band">
-  <div class="wrap">
-    <div class="video-wrap-top">
-      <iframe
-        title="GreatLife $14.95 membership — how the system works"
-        src="https://player.vimeo.com/video/1196006111?h=16f1659201"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-        allowfullscreen></iframe>
-    </div>
+        <h1 class="h1" style="margin:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:36px;line-height:44px;color:#FFFFFF;font-weight:800;letter-spacing:-0.5px;">
+          What if your income didn’t depend on your time?
+        </h1>
 
-    <p class="top-cta">
-      <a class="btn" href="#join">Join for $14.95 — Get Instant Access</a>
-    </p>
-  </div>
-</section>
-
-<!-- ============================================================
-     RESULTS
-     ============================================================ -->
-<section id="results">
-  <div class="wrap">
-    <p class="eyebrow">Results you can expect</p>
-    <h2>What $14.95 a month actually does for you</h2>
-    <p class="lead">No hype. Here is what changes in your week once you are in.</p>
-
-    <ul class="check-list" style="margin-top:32px">
-      <li>
-        <strong>Save thousands a year on things you already buy.</strong>
-        <span>Over 1.5 million savings locations: 150,000+ retailers, 60,000+ restaurants, 900,000+ travel partners.</span>
-      </li>
-      <li>
-        <strong>Stop paying for course after course.</strong>
-        <span>130 programs, e-courses, audio courses and e-books are included — 24/7 access, no upsells to read them.</span>
-      </li>
-      <li>
-        <strong>Get your first landing page live in under 10 minutes.</strong>
-        <span>Your lead capture pages, sales pages and funnels are built for you. You only share the link.</span>
-      </li>
-      <li>
-        <strong>Never chase a lead again.</strong>
-        <span>The email follow-up system presents, follows up and closes for you — while you sleep.</span>
-      </li>
-      <li>
-        <strong>Start a second income stream for less than one lunch.</strong>
-        <span>$14.95 a month. No inventory, no shipping, no office.</span>
-      </li>
-      <li>
-        <strong>Get paid up to 3 times a week.</strong>
-        <span>Fast Start commissions are paid out three times weekly — not once a month.</span>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============================================================
-     WHAT YOU GET (image now lives here, clickable → email form)
-     ============================================================ -->
-<section class="soft">
-  <div class="wrap">
-    <p class="eyebrow">What exactly you get</p>
-    <h2>Everything inside your $14.95 membership</h2>
-    <p class="lead">Instant access. No waiting, no shipping, no extra purchase needed to start.</p>
-
-    <div class="cards">
-      <div class="card">
-        <span class="tag">Included</span>
-        <h3>Global Savings Club</h3>
-        <p>Save money at over 1.5 million locations worldwide.</p>
-        <ul>
-          <li>150,000+ retailers</li>
-          <li>60,000+ restaurants</li>
-          <li>900,000+ travel partners</li>
-          <li>Instant access after signup</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <span class="tag">Included</span>
-        <h3>Digital Lifestyle Library</h3>
-        <p>130 programs, e-courses, audio courses and e-books.</p>
-        <ul>
-          <li>Success, health and lifestyle topics</li>
-          <li>Audio and text formats</li>
-          <li>24/7 access from any device</li>
-          <li>New content added regularly</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <span class="tag">Included</span>
-        <h3>Done-for-you sales system</h3>
-        <p>Your pages, funnels and follow-up — already built.</p>
-        <ul>
-          <li>Personalized lead capture pages</li>
-          <li>Ready-made sales pages</li>
-          <li>Email follow-up sequences</li>
-          <li>You only share your link</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Image moved here from the top. Clicking it jumps to the email field. -->
-    <a class="offer-img" href="#join" aria-label="See the membership details and join for $14.95">
-      <img
-        src="https://mygreatlifepay.com/wp-content/uploads/2026/10/14_95_Capture_Page_New_jfif.avif"
-        alt="GreatLife $14.95 membership overview: global savings club with 1.5 million locations, 130 lifestyle programs and done-for-you sales pages"
-        width="1200" height="675" loading="lazy">
-    </a>
-    <p class="offer-caption">Click the image to jump to the signup.</p>
-  </div>
-</section>
-
-<!-- ============================================================
-     HOW YOU GET PAID
-     ============================================================ -->
-<section>
-  <div class="wrap">
-    <p class="eyebrow">How you get paid</p>
-    <h2>Three ways your $14.95 membership pays you</h2>
-    <p class="lead">Straightforward, published rates — no guessing.</p>
-
-    <div class="pay-grid">
-      <div class="pay">
-        <b>$10</b>
-        <span>Fast Start</span>
-        <p>On every member you personally refer who joins as a $14.95 affiliate. Paid out 3× per week.</p>
-      </div>
-      <div class="pay">
-        <b>$5</b>
-        <span>Monthly recurring</span>
-        <p>Every month, on each of your active $14.95 members. Paid on the 15th of the following month.</p>
-      </div>
-      <div class="pay">
-        <b>$20–$60</b>
-        <span>Enrollment bonuses</span>
-        <p>$20 for a Silver order ($49.95), $40 for Gold ($99.90), $60 for Platinum ($149.85).</p>
-      </div>
-    </div>
-
-    <p class="disclaimer">
-      Income depends entirely on your own effort, activity and results. No income is promised or guaranteed.
-      Full details: <a href="https://www.greatlifecomp.com/" target="_blank" rel="noopener">greatlifecomp.com</a>.
-    </p>
-  </div>
-</section>
-
-<!-- ============================================================
-     FORM (email only)
-     ============================================================ -->
-<section class="form-section" id="join">
-  <div class="wrap">
-    <div class="form-grid">
-
-      <div>
-        <p class="eyebrow" style="color:#f7b733">Get started</p>
-        <h2>Lock in your position for $14.95</h2>
-        <p class="lead">Enter your email and we send your access link, your login details and your personal share link. That's step one of three.</p>
-
-        <p class="lead" style="margin-top:24px;font-size:.95rem">
-          Step 1: Review this page.<br>
-          Step 2: Join the team.<br>
-          Step 3: Share your link — that's it.
+        <p class="p16" style="margin:18px 0 0 0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:26px;color:#DDD6FE;">
+          7 income streams. Paid weekly, built monthly — and unlimited in depth. Never blocked.
+          <br><span style="color:#FFFFFF;font-weight:700;">Watch the short video first. Everything else makes sense after that.</span>
         </p>
-      </div>
 
-      <div class="form-card">
-        <h3>Join now — instant access</h3>
-        <p class="form-intro">Takes 30 seconds. Cancel anytime.</p>
+        <!-- CTA BUTTON -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:30px auto 0 auto;">
+          <tr>
+            <td align="center" bgcolor="#FBBF24" style="border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.25);" class="btn">
+              <a href="https://mygreatlifepay.com/ref/natur/1/" target="_blank"
+                 style="display:inline-block;padding:17px 38px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:800;color:#2E1065;text-decoration:none;border-radius:10px;letter-spacing:0.3px;">
+                ▶&nbsp; Watch the 3-Minute Video
+              </a>
+            </td>
+          </tr>
+        </table>
 
-        <form method="POST" action="https://gogvo.com/subscribe.php">
-          <input type="hidden" name="AffiliateName" value="natur1984NLS">
-          <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
-          <input type="hidden" name="TrackParam" value="new_form">
-          <input type="hidden" name="FormId" value="25259117">
-          <input type="hidden" name="TrackerName" value="twicegreatlifeworld">
-
-          <div class="field">
-            <label for="email">Email address
-              <span class="hint">(required — we send your access link and login details here)</span>
-            </label>
-            <input type="email" id="email" name="Email" required autocomplete="email"
-                   placeholder="you@example.com">
-          </div>
-
-          <button type="submit" class="btn btn-full">Join for $14.95 — Get Instant Access</button>
-
-          <p class="privacy">We use your email only for access details and updates. No spam. Unsubscribe anytime.</p>
-
-          <img src="https://gogvo.com/show_form.php?id=25259117&TrackParam=new_form"
-               width="1" height="1" alt="" aria-hidden="true">
-        </form>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     FAQ
-     ============================================================ -->
-<section>
-  <div class="wrap center">
-    <p class="eyebrow">Before you join</p>
-    <h2>Honest answers to the questions you're asking</h2>
-  </div>
-
-  <div class="wrap">
-    <div class="faq">
-
-      <details>
-        <summary>What does GreatLife cost?</summary>
-        <div class="answer">
-          <p>$14.95 per month for the affiliate membership — that includes the savings club, the 130-program library and the sales system.</p>
-          <p>Optional higher levels: Silver $49.95, Gold $99.90, Platinum $149.85 per month.</p>
+        <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#A78BFA;padding-top:14px;">
+          Watch free · No sales pitch
         </div>
-      </details>
+      </td>
+    </tr>
 
-      <details>
-        <summary>How long does setup take?</summary>
-        <div class="answer">
-          <p>About 10 minutes. You join, log in, and your lead capture pages, sales pages and email follow-up are already built for you.</p>
-          <p>All you do is share your personal link.</p>
+    <!-- ================= 3 HIGHLIGHTS ================= -->
+    <tr>
+      <td class="px" style="padding:34px 32px 10px 32px;background-color:#FFFFFF;">
+
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td class="stack" width="33.33%" valign="top" style="padding:0 5px 10px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" bgcolor="#F5F3FF" style="background-color:#F5F3FF;border-radius:14px;padding:18px 10px;">
+                    <div style="font-size:24px;line-height:28px;">💸</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;font-weight:800;color:#4C1D95;padding-top:8px;">3× per week</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:17px;color:#6B6480;padding-top:3px;">fresh payouts</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+
+            <td class="stack" width="33.33%" valign="top" style="padding:0 5px 10px 5px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" bgcolor="#ECFDF5" style="background-color:#ECFDF5;border-radius:14px;padding:18px 10px;">
+                    <div style="font-size:24px;line-height:28px;">🚀</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;font-weight:800;color:#047857;padding-top:8px;">Unlimited depth</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:17px;color:#6B6480;padding-top:3px;">never blocked</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+
+            <td class="stack" width="33.33%" valign="top" style="padding:0 0 10px 5px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" bgcolor="#FEF3C7" style="background-color:#FEF3C7;border-radius:14px;padding:18px 10px;">
+                    <div style="font-size:24px;line-height:28px;">🏆</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;font-weight:800;color:#B45309;padding-top:8px;">7 ways to earn</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:17px;color:#6B6480;padding-top:3px;">one simple system</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- ================= SECTION: 7 WAYS ================= -->
+    <tr>
+      <td class="px" style="padding:26px 32px 6px 32px;background-color:#FFFFFF;">
+        <h2 class="h2" style="margin:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:26px;line-height:34px;color:#2E1065;font-weight:800;letter-spacing:-0.3px;">
+          7 powerful ways to earn
+        </h2>
+        <p class="p16" style="margin:10px 0 0 0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:24px;color:#6B6480;">
+          One membership. Multiple income streams — weekly, monthly, and one-time.
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="px" style="padding:14px 32px 8px 32px;background-color:#FFFFFF;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+
+          <!-- 1 -->
+          <tr>
+            <td valign="top" style="padding:10px 0;border-bottom:1px solid #EDE9FE;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="40" valign="top" style="padding-right:12px;">
+                    <div style="width:34px;height:34px;line-height:34px;text-align:center;background-color:#EDE9FE;border-radius:9px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:800;color:#5B21B6;">1</div>
+                  </td>
+                  <td valign="top">
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:22px;font-weight:800;color:#2E1065;">Weekly Fast Start Bonuses</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#6B6480;padding-top:2px;">Paid 3 times weekly — up to 6 figures.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- 2 -->
+          <tr>
+            <td valign="top" style="padding:10px 0;border-bottom:1px solid #EDE9FE;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="40" valign="top" style="padding-right:12px;">
+                    <div style="width:34px;height:34px;line-height:34px;text-align:center;background-color:#EDE9FE;border-radius:9px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:800;color:#5B21B6;">2</div>
+                  </td>
+                  <td valign="top">
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:22px;font-weight:800;color:#2E1065;">Weekly Unlimited Generations</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#6B6480;padding-top:2px;">Coded team enrollments — up to 6 figures.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- 3 -->
+          <tr>
+            <td valign="top" style="padding:10px 0;border-bottom:1px solid #EDE9FE;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="40" valign="top" style="padding-right:12px;">
+                    <div style="width:34px;height:34px;line-height:34px;text-align:center;background-color:#EDE9FE;border-radius:9px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:800;color:#5B21B6;">3</div>
+                  </td>
+                  <td valign="top">
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:22px;font-weight:800;color:#2E1065;">Monthly Matrix Commissions</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#6B6480;padding-top:2px;">2×14 levels + roll-up &amp; compression — up to 6 figures.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- 4 -->
+          <tr>
+            <td valign="top" style="padding:10px 0;border-bottom:1px solid #EDE9FE;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="40" valign="top" style="padding-right:12px;">
+                    <div style="width:34px;height:34px;line-height:34px;text-align:center;background-color:#EDE9FE;border-radius:9px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:800;color:#5B21B6;">4</div>
+                  </td>
+                  <td valign="top">
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:22px;font-weight:800;color:#2E1065;">Monthly Unlimited Generations</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#6B6480;padding-top:2px;">Team product sales — up to 7 figures.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- 5 -->
+          <tr>
+            <td valign="top" style="padding:10px 0;border-bottom:1px solid #EDE9FE;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="40" valign="top" style="padding-right:12px;">
+                    <div style="width:34px;height:34px;line-height:34px;text-align:center;background-color:#EDE9FE;border-radius:9px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:800;color:#5B21B6;">5</div>
+                  </td>
+                  <td valign="top">
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:22px;font-weight:800;color:#2E1065;">Monthly Lifestyle Bonuses</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#6B6480;padding-top:2px;">Live your greatest life — up to $15,000 a month.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- 6 -->
+          <tr>
+            <td valign="top" style="padding:10px 0;border-bottom:1px solid #EDE9FE;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="40" valign="top" style="padding-right:12px;">
+                    <div style="width:34px;height:34px;line-height:34px;text-align:center;background-color:#EDE9FE;border-radius:9px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:800;color:#5B21B6;">6</div>
+                  </td>
+                  <td valign="top">
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:22px;font-weight:800;color:#2E1065;">One-Time Achievement Bonuses</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#6B6480;padding-top:2px;">$200,000 cash — or a new Mercedes / BMW.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- 7 -->
+          <tr>
+            <td valign="top" style="padding:10px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="40" valign="top" style="padding-right:12px;">
+                    <div style="width:34px;height:34px;line-height:34px;text-align:center;background-color:#EDE9FE;border-radius:9px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:800;color:#5B21B6;">7</div>
+                  </td>
+                  <td valign="top">
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:22px;font-weight:800;color:#2E1065;">Retail Commissions</div>
+                    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#6B6480;padding-top:2px;">Paid weekly on customer orders from your website.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+
+    <!-- ================= MATRIX IMAGE + ROLL-UP ================= -->
+    <tr>
+      <td class="px" style="padding:20px 32px 8px 32px;background-color:#FFFFFF;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F5F3FF;border-radius:16px;">
+          <tr>
+            <td align="center" style="padding:22px 18px;">
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:#7C3AED;padding-bottom:12px;">
+                The Matrix
+              </div>
+              <img src="https://static.wixstatic.com/media/9b2ce0_679e70ff3e1b4278ab0718f87081119d~mv2.jpg/v1/fill/w_1529,h_1024,al_c,q_85,enc_avif,quality_auto/GreatLife_NEW_MATRIX_DIAGRAM_FINAL_VERSION_jfif.jpg"
+                   alt="GreatLife 2×14 Matrix Diagram" width="350" style="display:block;width:350px;max-width:100%;height:auto;border:0;border-radius:12px;">
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:20px;color:#6B6480;padding-top:14px;max-width:420px;">
+                Your position locks in immediately. As new members join, they’re placed <strong style="color:#2E1065;">under</strong> existing positions. The earlier you lock in, the higher you sit.
+              </div>
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:20px;color:#2E1065;font-weight:700;padding-top:10px;">
+                Roll-up &amp; compression maximize every active position.
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- ================= CAR BONUS IMAGE ================= -->
+    <tr>
+      <td class="px" style="padding:18px 32px 8px 32px;background-color:#FFFFFF;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FFFBEB;border-radius:16px;border:1px solid #FDE68A;">
+          <tr>
+            <td align="center" style="padding:20px 18px;">
+              <!-- Replace with hosted MERCEDES_BMW_BONUS.jfif URL -->
+              <img src="MERCEDES_BMW_BONUS.jfif" alt="Mercedes or BMW bonus" width="350" style="display:block;width:350px;max-width:100%;height:auto;border:0;border-radius:12px;">
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:18px;line-height:24px;font-weight:800;color:#92400E;padding-top:14px;">
+                $200,000 cash — or the car
+              </div>
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#6B6480;padding-top:4px;max-width:420px;">
+                Paid for and delivered directly to your door when you hit the qualification.
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- ================= VIP BENEFITS ================= -->
+    <tr>
+      <td class="px" style="padding:24px 32px 8px 32px;background-color:#FFFFFF;">
+        <h2 class="h2" style="margin:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:22px;line-height:30px;color:#2E1065;font-weight:800;">
+          Included with your membership
+        </h2>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding-top:8px;">
+          <tr>
+            <td valign="top" width="50%" style="padding:8px 8px 8px 0;">
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:22px;color:#2E1065;">
+                <span style="color:#7C3AED;font-weight:800;">✓</span> Global Savings Membership (1.5M+ locations)
+              </div>
+            </td>
+            <td valign="top" width="50%" style="padding:8px 0 8px 8px;">
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:22px;color:#2E1065;">
+                <span style="color:#7C3AED;font-weight:800;">✓</span> Personal library of e-courses, audio &amp; e-books
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" width="50%" style="padding:8px 8px 8px 0;">
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:22px;color:#2E1065;">
+                <span style="color:#7C3AED;font-weight:800;">✓</span> Capture pages, funnels &amp; websites
+              </div>
+            </td>
+            <td valign="top" width="50%" style="padding:8px 0 8px 8px;">
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:22px;color:#2E1065;">
+                <span style="color:#7C3AED;font-weight:800;">✓</span> Top 2×14 permanent matrix position
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- ================= CTA #2 ================= -->
+    <tr>
+      <td class="px" align="center" style="padding:26px 32px 34px 32px;background-color:#FFFFFF;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#4C1D95;background-image:linear-gradient(135deg,#6D28D9 0%,#4C1D95 100%);border-radius:18px;">
+          <tr>
+            <td align="center" style="padding:30px 24px;">
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:22px;line-height:30px;font-weight:800;color:#FFFFFF;letter-spacing:-0.2px;">
+                Start living YOUR GreatLife today
+              </div>
+              <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:21px;color:#DDD6FE;padding-top:8px;max-width:400px;">
+                Watch the short overview first — then decide if it fits your goals.
+              </div>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:20px auto 0 auto;">
+                <tr>
+                  <td align="center" bgcolor="#FBBF24" style="border-radius:10px;" class="btn">
+                    <a href="https://mygreatlifepay.com/ref/natur/1/" target="_blank"
+                       style="display:inline-block;padding:16px 34px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:800;color:#2E1065;text-decoration:none;border-radius:10px;">
+                      ▶&nbsp; Watch the Overview
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- ================= FOOTER ================= -->
+    <tr>
+      <td class="px" bgcolor="#F5F3FF" style="background-color:#F5F3FF;padding:26px 32px 30px 32px;">
+        <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:18px;color:#7C7791;text-align:center;">
+          GreatLife Worldwide, LLC. © 2026 All rights reserved.<br>
+          No income claims or guarantees are made or implied. Individual results and incomes are determined by each person’s efforts to build and promote their business. Please refer to the compensation plan to understand the unlimited depth, never blocked, weekly and monthly generational coded bonuses (certain qualifications apply).
         </div>
-      </details>
-
-      <details>
-        <summary>Can I cancel anytime?</summary>
-        <div class="answer">
-          <p>Yes. It's a monthly membership — no long contract. You can cancel your membership at any time from your account.</p>
+        <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;line-height:18px;color:#7C7791;text-align:center;padding-top:12px;">
+          You are receiving this email because you opted in. <a href="#" style="color:#7C3AED;text-decoration:underline;">Unsubscribe</a>
         </div>
-      </details>
+      </td>
+    </tr>
 
-      <details>
-        <summary>Is there a free trial?</summary>
-        <div class="answer">
-          <p>There is no free trial. The entry price is $14.95 for the first month.</p>
-        </div>
-      </details>
+  </table>
 
-      <details>
-        <summary>How secure is my data?</summary>
-        <div class="answer">
-          <p>Your signup and payment run through established payment and form providers over encrypted connections.</p>
-          <p>We never sell your data.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Who is this not for?</summary>
-        <div class="answer">
-          <p>This is not for you if you want guaranteed income without doing anything. Nothing here is guaranteed — it depends on your effort.</p>
-          <p>It is also not for you if you are not willing to share a link or talk to people. The system does the presenting, but you have to send the traffic.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Do I need experience or a website?</summary>
-        <div class="answer">
-          <p>No. No experience, no website, no product to ship. Your pages are provided.</p>
-        </div>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
-<footer>
-  <div class="wrap">
-    <p class="brand">GreatLife Worldwide, LLC.</p>
-    <p>© 2026 GreatLife Worldwide, LLC. All rights reserved.</p>
-    <p>No income claims or guarantees are made or implied. Individual results and incomes are determined by each person's effort in building and promoting their business. Please refer to the compensation plan for details on depth, generational bonuses and qualifications.</p>
-    <p>These statements have not been evaluated by the Food and Drug Administration. Any products and information are not intended to diagnose, treat, cure or prevent any disease. Always consult your doctor or healthcare professional before taking any supplement.</p>
-  </div>
-</footer>
-
-<!-- Focus the email field when a CTA / image jumps to #join -->
-<script>
-document.querySelectorAll('a[href="#join"]').forEach(function(a){
-  a.addEventListener('click', function(){
-    setTimeout(function(){
-      var el = document.getElementById('email');
-      if (el) el.focus({preventScroll:true});
-    }, 500);
-  });
-});
-</script>
+</td>
+</tr>
+</table>
 
 </body>
 </html>
