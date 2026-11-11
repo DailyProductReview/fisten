@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weiterleitung</title>
+    <style>
+        /* Schwarzer Hintergrund, keine sichtbaren Elemente, keine Schrift */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            overflow: hidden; /* Verhindert Scrollbalken */
+        }
+        /* Der Tracking-Pixel bleibt unsichtbar */
+        img {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Unsichtbares Tracking-Bild (1x1) – verursacht keine sichtbare Darstellung -->
+    <img height="1" width="1" style="display:none" src="https://Zilara.com/2516503" alt="">
+
+    <script>
+        (function() {
+            // Liste der Ziel-URLs (Rotator)
+            // Hier kann eine beliebige Anzahl von URLs eingetragen werden.
+            // Der Besucher wird zufällig zu einer davon weitergeleitet.
+            const ziele = [
+                "https://Zilara.com/2516503"
+                // Weitere URLs können hier hinzugefügt werden, z.B.:
+                // "https://beispiel.com/anderer-link",
+                // "https://beispiel.com/dritter-link"
+            ];
+
+            // Wähle zufällig eine URL aus
+            const zufallsIndex = Math.floor(Math.random() * ziele.length);
+            const zielUrl = ziele[zufallsIndex];
+
+            // Sofortige Weiterleitung (ohne Verzögerung)
+            // window.location.replace verhindert, dass die aktuelle Seite im Verlauf bleibt.
+            // Falls Sie stattdessen einen Eintrag im Verlauf wünschen, verwenden Sie window.location.href.
+            window.location.replace(zielUrl);
+        })();
+    </script>
+
+    <!-- Optional: Ein noscript-Fallback für Benutzer ohne JavaScript (unwahrscheinlich, aber möglich) -->
+    <noscript>
+        <!-- Falls JavaScript deaktiviert ist, wird diese Meta-Weiterleitung verwendet (erste URL in der Liste) -->
+        <meta http-equiv="refresh" content="0; url=https://Zilara.com/2516503">
+    </noscript>
+</body>
+</html>
