@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>AffiliateSpark — Paste A Link, Let AI Make The Video</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#080b14;
+    --bg2:#0d1220;
+    --card:#111827;
+    --line:rgba(255,255,255,.09);
+    --txt:#e8ecf6;
+    --muted:#9aa5bd;
+    --lime:#c6ff3d;
+    --lime2:#8ef000;
+    --orange:#ff8a3d;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html,body{height:100%;}
+
+  body{
+    background:var(--bg);
+    color:var(--txt);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* ---------- Background FX ---------- */
+  .bg-fx{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .bg-fx::before{
+    content:'';
+    position:absolute;
+    top:-280px; left:-180px;
+    width:900px; height:900px;
+    background:radial-gradient(circle, rgba(198,255,61,.16) 0%, rgba(198,255,61,0) 62%);
+    filter:blur(20px);
+  }
+  .bg-fx::after{
+    content:'';
+    position:absolute;
+    bottom:-400px; right:-250px;
+    width:1000px; height:1000px;
+    background:radial-gradient(circle, rgba(90,120,255,.18) 0%, rgba(90,120,255,0) 65%);
+    filter:blur(20px);
+  }
+  .grid-lines{
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 65% at 50% 30%, #000 20%, transparent 78%);
+    -webkit-mask-image:radial-gradient(ellipse 80% 65% at 50% 30%, #000 20%, transparent 78%);
+  }
+
+  /* ---------- Layout ---------- */
+  .wrap{
+    position:relative;
+    z-index:1;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 0 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-weight:800;
+    font-size:19px;
+    letter-spacing:-.4px;
+  }
+  .brand .dot{
+    width:32px;height:32px;border-radius:9px;
+    background:linear-gradient(135deg,var(--lime),var(--lime2));
+    display:grid;place-items:center;
+    color:#0a0f00;
+    font-size:17px;
+    font-weight:900;
+    box-shadow:0 0 22px rgba(198,255,61,.4);
+  }
+  .brand span.accent{color:var(--lime);}
+
+  .badge-live{
+    display:flex;align-items:center;gap:9px;
+    font-size:13px;font-weight:600;
+    color:var(--muted);
+    background:rgba(255,255,255,.045);
+    border:1px solid var(--line);
+    padding:9px 16px;
+    border-radius:999px;
+  }
+  .pulse-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--lime);
+    box-shadow:0 0 0 0 rgba(198,255,61,.65);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(198,255,61,.6);}
+    70%{box-shadow:0 0 0 11px rgba(198,255,61,0);}
+    100%{box-shadow:0 0 0 0 rgba(198,255,61,0);}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+    padding:74px 0 84px;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    font-size:12.5px;
+    font-weight:800;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--lime);
+    background:rgba(198,255,61,.08);
+    border:1px solid rgba(198,255,61,.24);
+    padding:9px 17px;
+    border-radius:999px;
+    margin-bottom:28px;
+  }
+
+  h1{
+    font-size:58px;
+    line-height:1.05;
+    letter-spacing:-2.6px;
+    font-weight:900;
+    margin-bottom:24px;
+  }
+  h1 .hl{
+    background:linear-gradient(100deg,var(--lime) 0%, #8ef000 45%, #5dffb0 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .sub{
+    font-size:18.5px;
+    line-height:1.62;
+    color:var(--muted);
+    max-width:520px;
+    margin-bottom:34px;
+  }
+  .sub strong{color:#dfe6f5;font-weight:700;}
+
+  /* ---------- Feature bullets ---------- */
+  .bullets{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:40px;
+  }
+  .bullets li{
+    display:flex;
+    align-items:flex-start;
+    gap:13px;
+    font-size:16px;
+    line-height:1.45;
+    color:#cfd7e8;
+  }
+  .check{
+    flex:0 0 auto;
+    width:23px;height:23px;
+    border-radius:50%;
+    background:rgba(198,255,61,.13);
+    border:1px solid rgba(198,255,61,.35);
+    display:grid;place-items:center;
+    margin-top:1px;
+  }
+  .check svg{width:12px;height:12px;stroke:var(--lime);stroke-width:3.4;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ---------- CTA ---------- */
+  .cta-block{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+
+  .cta-btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    padding:23px 46px;
+    border-radius:16px;
+    font-family:inherit;
+    font-size:19px;
+    font-weight:900;
+    letter-spacing:.2px;
+    color:#0a1100;
+    text-decoration:none;
+    background:linear-gradient(135deg,#d7ff5c 0%, #b6ff2e 42%, #8ef000 100%);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.22) inset,
+      0 16px 46px -10px rgba(166,255,40,.55),
+      0 0 0 6px rgba(198,255,61,.07);
+    transition:transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .25s, filter .2s;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  .cta-btn::after{
+    content:'';
+    position:absolute;
+    top:0; left:-130%;
+    width:60%; height:100%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,.65), transparent);
+    transform:skewX(-22deg);
+    animation:shine 3.4s ease-in-out infinite;
+  }
+  @keyframes shine{
+    0%,55%{left:-130%;}
+    85%,100%{left:150%;}
+  }
+  .cta-btn:hover{
+    transform:translateY(-3px) scale(1.022);
+    filter:brightness(1.06);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.3) inset,
+      0 22px 60px -8px rgba(166,255,40,.75),
+      0 0 0 8px rgba(198,255,61,.1);
+  }
+  .cta-btn:active{transform:translateY(-1px) scale(1.0);}
+  .cta-btn svg{width:21px;height:21px;stroke:#0a1100;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+  .cta-note{
+    font-size:14px;
+    line-height:1.55;
+    color:var(--muted);
+  }
+  .cta-note b{color:#e8ecf6;font-weight:700;display:block;font-size:14.5px;margin-bottom:2px;}
+
+  /* ---------- Image side ---------- */
+  .visual{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .visual::before{
+    content:'';
+    position:absolute;
+    inset:-8% -6%;
+    background:radial-gradient(circle at 50% 50%, rgba(198,255,61,.16), rgba(90,120,255,.09) 45%, transparent 70%);
+    filter:blur(28px);
+    z-index:0;
+  }
+  .shot{
+    position:relative;
+    z-index:1;
+    width:100%;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.13);
+    background:var(--card);
+    box-shadow:
+      0 40px 90px -25px rgba(0,0,0,.9),
+      0 0 0 1px rgba(255,255,255,.05),
+      0 0 70px -18px rgba(198,255,61,.28);
+    transform:perspective(1500px) rotateY(-5deg) rotateX(2deg);
+    transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .shot:hover{transform:perspective(1500px) rotateY(0deg) rotateX(0deg) scale(1.015);}
+  .shot img{display:block;width:100%;height:auto;}
+
+  .float-tag{
+    position:absolute;
+    z-index:2;
+    display:flex;align-items:center;gap:8px;
+    font-size:12.5px;font-weight:800;
+    padding:10px 15px;
+    border-radius:11px;
+    background:rgba(13,18,32,.92);
+    border:1px solid rgba(255,255,255,.13);
+    box-shadow:0 14px 34px -10px rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+    white-space:nowrap;
+    letter-spacing:.1px;
+  }
+  .float-tag .ico{font-size:14px;line-height:1;}
+  .tag-1{top:14px; left:-26px; color:var(--lime); animation:float 5s ease-in-out infinite;}
+  .tag-2{bottom:34px; right:-22px; color:#9fb4ff; animation:float 5s ease-in-out infinite .9s;}
+  @keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-11px);}
+  }
+
+  /* ---------- Bottom strip ---------- */
+  .strip{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:rgba(255,255,255,.018);
+  }
+  .strip-inner{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    padding:0;
+  }
+  .stat{
+    padding:30px 26px;
+    text-align:center;
+    border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{
+    font-size:26px;font-weight:900;letter-spacing:-.9px;
+    color:#fff;margin-bottom:5px;
+  }
+  .stat .num .u{color:var(--lime);}
+  .stat .lbl{
+    font-size:12.5px;font-weight:600;color:var(--muted);
+    letter-spacing:.5px;text-transform:uppercase;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:34px 0 44px;
+    text-align:center;
+  }
+  footer p{
+    font-size:12.5px;
+    line-height:1.7;
+    color:#5d6780;
+    max-width:760px;
+    margin:0 auto;
+  }
+
+  /* ---------- Responsive fallback (still PC-first) ---------- */
+  @media (max-width:1080px){
+    h1{font-size:46px;letter-spacing:-2px;}
+    .hero{gap:44px;}
+    .cta-btn{padding:20px 34px;font-size:17px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-fx"><div class="grid-lines"></div></div>
+
+<div class="wrap">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="dot">A</div>
+      Affiliate<span class="accent">Spark</span>
+    </div>
+    <div class="badge-live">
+      <span class="pulse-dot"></span>
+      Launch price ends Sunday, Nov 15
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- LEFT: COPY -->
+    <div class="copy">
+
+      <div class="eyebrow">For YouTube Affiliates</div>
+
+      <h1>Paste A Link.<br>Let AI Make<br>The Video. <span class="hl">Collect The Commission.</span></h1>
+
+      <p class="sub">
+        Drop in any product link and instantly see the <strong>real keywords buyers are searching</strong>.
+        Then follow the Masterclass to build a faceless AI video — no camera, no mic, no subscribers required.
+      </p>
+
+      <ul class="bullets">
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+          See live search volume, CPC and 0–100 keyword difficulty instantly
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+          Spot phrases where 5 or fewer channels actually compete
+        </li>
+        <li>
+          <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+          Make faceless affiliate videos — no camera, no mic, no editing timeline
+        </li>
+      </ul>
+
+      <div class="cta-block">
+        <a class="cta-btn" href="https://warriorplus.com/o2/a/mwldlbm/0" target="_blank" rel="noopener">
+          Watch How It Works — Enter Here
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <div class="cta-note">
+          <b>One-time $37 · 100 scans included</b>
+          14-day money-back guarantee
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: IMAGE -->
+    <div class="visual">
+      <div class="float-tag tag-1"><span class="ico">🔥</span> 5 or fewer competitors</div>
+      <div class="shot">
+        <img src="https://warriorplus.com/assets/user/listing_image/o-95957-prod_image.png?v=1793200247"
+             alt="AffiliateSpark — Paste a link, let AI make the video, collect the commission">
+      </div>
+      <div class="float-tag tag-2"><span class="ico">🎯</span> Buyer-intent keywords</div>
+    </div>
+
+  </section>
+
+</div>
+
+<!-- STAT STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-inner">
+      <div class="stat"><div class="num">700<span class="u">+</span></div><div class="lbl">Keywords per scan</div></div>
+      <div class="stat"><div class="num">100</div><div class="lbl">Lifetime scans</div></div>
+      <div class="stat"><div class="num">$37</div><div class="lbl">One-time payment</div></div>
+      <div class="stat"><div class="num">14<span class="u">-day</span></div><div class="lbl">Money-back guarantee</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="wrap">
+  <p>
+    Results shown are not typical and are not a promise of earnings. Your results depend on your effort, niche and consistency.
+    This page contains affiliate links and we may earn a commission if you purchase through them, at no extra cost to you.
+  </p>
+</footer>
+
+</body>
+</html>
