@@ -7,7 +7,6 @@
 <meta name="description" content="Zilara pays 30% commission from day one — no PV, no rank, no team building. Volume never flushes. Real-time payouts. Free to join.">
 <style>
   :root{
-    /* NEW: gold + dark navy palette */
     --bg:#080b12;
     --bg-2:#0c1119;
     --bg-3:#0a0e17;
@@ -109,48 +108,111 @@
   }
   .hero p.sub strong{color:#fff}
 
-  /* MONEY PREVIEW CARD */
-  .money-preview{
-    max-width:560px;margin:0 auto 30px;
+  /* ---------- DUAL PREVIEW CARDS ---------- */
+  .preview-grid{
+    display:grid;gap:16px;
+    grid-template-columns:1fr;
+    max-width:700px;margin:0 auto 30px;
+    text-align:left;
+  }
+  @media(min-width:700px){.preview-grid{grid-template-columns:1fr 1fr}}
+
+  .preview-card{
     background:linear-gradient(180deg,#0f1725,#0b1220);
     border:1px solid var(--line-2);
     border-radius:16px;overflow:hidden;
     box-shadow:0 24px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);
-    text-align:left;
   }
-  .mp-head{
+  .preview-card .pc-head{
     background:linear-gradient(90deg,rgba(245,185,66,.16),rgba(245,185,66,.04));
     border-bottom:1px solid var(--line-2);
-    padding:14px 20px;
-    font-size:12px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;
+    padding:13px 18px;
+    font-size:11.5px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;
     color:var(--gold-2);
     display:flex;align-items:center;gap:10px;
   }
-  .mp-head .dot{
+  .preview-card .pc-head .dot{
     width:8px;height:8px;border-radius:50%;background:var(--green);
     box-shadow:0 0 8px rgba(46,204,113,.9);
   }
+  .preview-card .pc-head .dot.gold{
+    background:var(--gold);box-shadow:0 0 8px rgba(245,185,66,.9);
+  }
+
+  /* money rows */
   .mp-row{
     display:grid;grid-template-columns:1fr auto auto;
     gap:12px;align-items:center;
-    padding:14px 20px;
+    padding:13px 18px;
     border-top:1px solid var(--line);
-    font-size:14.5px;color:var(--soft);
+    font-size:14px;color:var(--soft);
   }
   .mp-row:first-of-type{border-top:none}
   .mp-row strong{
-    color:var(--gold-2);font-size:18px;font-weight:900;
+    color:var(--gold-2);font-size:17px;font-weight:900;
     font-variant-numeric:tabular-nums;
     text-shadow:0 0 20px rgba(245,185,66,.35);
   }
   .mp-row em{
-    color:var(--muted);font-style:normal;font-size:13px;
-    font-variant-numeric:tabular-nums;min-width:78px;text-align:right;
+    color:var(--muted);font-style:normal;font-size:12.5px;
+    font-variant-numeric:tabular-nums;min-width:72px;text-align:right;
   }
-  .mp-foot{
-    padding:12px 20px 16px;
-    font-size:11px;color:#6f8296;line-height:1.5;
+
+  /* 15-level rows */
+  .lvl-row{
+    display:grid;grid-template-columns:auto 1fr auto;
+    gap:10px;align-items:center;
+    padding:9px 18px;
     border-top:1px solid var(--line);
+    font-size:13px;
+    font-variant-numeric:tabular-nums;
+  }
+  .lvl-row:first-of-type{border-top:none}
+  .lvl-row .lvl{
+    color:var(--muted);font-weight:800;font-size:11.5px;
+    letter-spacing:.5px;min-width:48px;
+  }
+  .lvl-row .people{
+    color:var(--soft);font-size:12.5px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .lvl-row .bar{
+    flex:1;height:5px;border-radius:10px;
+    background:#1c2739;overflow:hidden;position:relative;
+    min-width:40px;
+  }
+  .lvl-row .bar i{
+    position:absolute;left:0;top:0;bottom:0;
+    background:linear-gradient(90deg,var(--gold-deep),var(--gold-2));
+    border-radius:10px;
+  }
+  .lvl-row .payout{
+    color:var(--gold-2);font-weight:900;font-size:13px;
+    min-width:78px;text-align:right;
+  }
+  .lvl-row.top{
+    background:linear-gradient(90deg,rgba(245,185,66,.12),rgba(245,185,66,.02));
+    border-top:1px solid rgba(245,185,66,.35);
+    padding:12px 18px;
+  }
+  .lvl-row.top .lvl{color:var(--gold-2);font-size:12px}
+  .lvl-row.top .payout{
+    font-size:18px;
+    text-shadow:0 0 24px rgba(245,185,66,.55);
+  }
+
+  .pc-foot{
+    padding:10px 18px 14px;
+    font-size:10.5px;color:#6f8296;line-height:1.5;
+    border-top:1px solid var(--line);
+  }
+  .pc-highlight{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:10px 18px;
+    background:rgba(46,204,113,.08);
+    border-top:1px solid rgba(46,204,113,.3);
+    font-size:12px;color:var(--green);font-weight:800;
+    letter-spacing:.4px;text-transform:uppercase;
   }
 
   /* GOLD CTA */
@@ -245,7 +307,6 @@
     margin-bottom:36px;max-width:660px;margin-left:auto;margin-right:auto;
   }
 
-  /* Reveal — failsafe: visible by default, hidden only when .js is on html */
   .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
   .js .reveal.in{opacity:1;transform:none}
 
@@ -279,11 +340,8 @@
   .col.bad li::before{content:"✕";color:#e05a5a}
   .col.good li::before{content:"✓";color:var(--green)}
 
-  /* BENEFITS GRID */
-  .benefits{
-    display:grid;gap:14px;
-    grid-template-columns:1fr;
-  }
+  /* BENEFITS */
+  .benefits{display:grid;gap:14px;grid-template-columns:1fr}
   @media(min-width:560px){.benefits{grid-template-columns:1fr 1fr}}
   @media(min-width:860px){.benefits{grid-template-columns:1fr 1fr 1fr}}
   .benefit{
@@ -291,7 +349,6 @@
     border-top:3px solid var(--gold);
     border-radius:14px;padding:22px 20px;
     transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
-    position:relative;
   }
   .benefit:hover{
     transform:translateY(-4px);
@@ -325,7 +382,7 @@
   .step h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:4px}
   .step p{font-size:14.5px;color:var(--soft)}
 
-  /* STREAMS TABLE */
+  /* STREAMS */
   .streams{background:var(--bg-2)}
   .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line-2)}
   table{width:100%;border-collapse:collapse;min-width:520px}
@@ -530,28 +587,100 @@
     and the deepest matrix pays the longest.
   </p>
 
-  <!-- MONEY PREVIEW -->
-  <div class="money-preview">
-    <div class="mp-head"><span class="dot"></span> What the matrix can pay — early member preview</div>
-    <div class="mp-row">
-      <span>100 active members</span>
-      <strong>$50/mo</strong>
-      <em>$600/yr</em>
+  <!-- ============ DUAL PREVIEW: MONEY + 15 LEVELS ============ -->
+  <div class="preview-grid">
+
+    <!-- Card 1: Matrix earnings at a glance -->
+    <div class="preview-card">
+      <div class="pc-head"><span class="dot"></span> What the matrix pays — early preview</div>
+      <div class="mp-row">
+        <span>100 active members</span>
+        <strong>$50/mo</strong>
+        <em>$600/yr</em>
+      </div>
+      <div class="mp-row">
+        <span>500 active members</span>
+        <strong>$250/mo</strong>
+        <em>$3,000/yr</em>
+      </div>
+      <div class="mp-row">
+        <span>2,000 active members</span>
+        <strong>$1,000/mo</strong>
+        <em>$12,000/yr</em>
+      </div>
+      <div class="pc-foot">
+        Community stream only — 5% of the first 10 BV per order, one order per member per month.
+        Illustrative, not a guarantee.
+      </div>
     </div>
-    <div class="mp-row">
-      <span>500 active members</span>
-      <strong>$250/mo</strong>
-      <em>$3,000/yr</em>
+
+    <!-- Card 2: 15-level depth calculation -->
+    <div class="preview-card">
+      <div class="pc-head"><span class="dot gold"></span> 15 levels deep — how depth compounds</div>
+
+      <div class="lvl-row">
+        <span class="lvl">LVL 1</span>
+        <span class="people">
+          2 people
+          <span class="bar"><i style="width:3%"></i></span>
+        </span>
+        <span class="payout">$1 / mo</span>
+      </div>
+      <div class="lvl-row">
+        <span class="lvl">LVL 3</span>
+        <span class="people">
+          8 people
+          <span class="bar"><i style="width:9%"></i></span>
+        </span>
+        <span class="payout">$4 / mo</span>
+      </div>
+      <div class="lvl-row">
+        <span class="lvl">LVL 5</span>
+        <span class="people">
+          32 people
+          <span class="bar"><i style="width:18%"></i></span>
+        </span>
+        <span class="payout">$16 / mo</span>
+      </div>
+      <div class="lvl-row">
+        <span class="lvl">LVL 8</span>
+        <span class="people">
+          256 people
+          <span class="bar"><i style="width:35%"></i></span>
+        </span>
+        <span class="payout">$128 / mo</span>
+      </div>
+      <div class="lvl-row">
+        <span class="lvl">LVL 10</span>
+        <span class="people">
+          1,024 people
+          <span class="bar"><i style="width:55%"></i></span>
+        </span>
+        <span class="payout">$512 / mo</span>
+      </div>
+      <div class="lvl-row">
+        <span class="lvl">LVL 12</span>
+        <span class="people">
+          4,096 people
+          <span class="bar"><i style="width:78%"></i></span>
+        </span>
+        <span class="payout">$2,048 / mo</span>
+      </div>
+      <div class="lvl-row top">
+        <span class="lvl">LVL 15</span>
+        <span class="people">
+          32,768 people
+          <span class="bar"><i style="width:100%"></i></span>
+        </span>
+        <span class="payout">$16,384 / mo</span>
+      </div>
+      <div class="pc-highlight">💡 Depth = income. The deepest level alone pays $16,384/mo</div>
+      <div class="pc-foot">
+        Based on a 2×15 binary matrix where each member places 2 personally referred people and each
+        orders 10 BV/mo. Payout = 5% × 10 BV = $0.50 per order. Illustrative only — not a guarantee.
+      </div>
     </div>
-    <div class="mp-row">
-      <span>2,000 active members</span>
-      <strong>$1,000/mo</strong>
-      <em>$12,000/yr</em>
-    </div>
-    <div class="mp-foot">
-      Community stream only — 5% of the first 10 BV per order, one order per member per month.
-      Illustrative, not a guarantee. Full disclaimer below.
-    </div>
+
   </div>
 
   <a href="https://zilaratour.com/index.asp?site=2516503" class="cta">JOIN FREE — EARN ON ORDER #1 →</a>
