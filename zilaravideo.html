@@ -1,142 +1,1434 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zilara Tour</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter from Zilara — Two Numbers Before You Decide</title>
+<meta name="description" content="Order #1 pays 30%. Level 15 pays $16,384. Same plan. Both real. Here is the honest statement — no rank, no team required to start, no fake countdown.">
+<style>
+  :root{
+    /* V5 PALETTE: burgundy + cream + gold leaf + crimson accent */
+    --paper:#f5eedc;
+    --paper-2:#ede3cc;
+    --paper-3:#e6dabf;
+    --ink:#1a1310;
+    --ink-2:#2a1f1a;
+    --burgundy:#4a1420;
+    --burgundy-2:#6b1f30;
+    --burgundy-deep:#330d17;
+    --gold:#b8945c;
+    --gold-2:#d4a876;
+    --crimson:#c8102e;
+    --crimson-2:#a50d26;
+    --muted:#7a6b58;
+    --muted-2:#9c8a72;
+    --line:#d9cdb3;
+    --line-2:#c9b896;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Georgia,'Iowan Old Style','Palatino Linotype','Times New Roman',serif;
+    background:var(--paper);color:var(--ink);line-height:1.7;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    font-size:17px;
+  }
+  .container{max-width:760px;margin:0 auto;padding:0 24px}
+  .container-wide{max-width:920px;margin:0 auto;padding:0 24px}
 
-    body {
-      background: #000;
-      color: #fff;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 24px;
-      text-align: center;
-    }
+  .mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-feature-settings:"tnum" 1;letter-spacing:-.3px}
+  .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
 
-    /* Video / Thumbnail Container 16:9 */
-    .video-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 960px;
-      padding-bottom: 56.25%;
-      height: 0;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #111;
-      box-shadow: 0 0 60px rgba(255, 255, 255, 0.08);
-    }
+  /* MASTHEAD */
+  .masthead{
+    background:var(--burgundy);
+    color:var(--paper);
+    border-bottom:3px double var(--gold);
+    position:sticky;top:0;z-index:60;
+    padding:10px 20px;
+  }
+  .masthead-inner{
+    max-width:920px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;flex-wrap:wrap;
+  }
+  .masthead .brand{
+    font-family:Georgia,serif;
+    font-size:18px;font-weight:400;letter-spacing:6px;
+    color:var(--gold-2);
+    text-transform:uppercase;
+  }
+  .masthead .meta{
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--gold);
+  }
+  .masthead .meta .dot{
+    display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:var(--gold-2);margin-right:6px;vertical-align:middle;
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1}
+    50%{opacity:.4}
+  }
+  .masthead .cta-link{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--burgundy);background:var(--gold-2);
+    padding:7px 14px;border-radius:2px;text-decoration:none;font-weight:700;
+    transition:background .15s;
+  }
+  .masthead .cta-link:hover{background:var(--paper)}
 
-    .video-wrap iframe,
-    .video-wrap a {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
+  /* HERO */
+  .hero{
+    background:var(--burgundy);
+    color:var(--paper);
+    padding:60px 20px 72px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--burgundy-deep);
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(184,148,92,.12), transparent 70%),
+      radial-gradient(ellipse 40% 40% at 90% 100%, rgba(200,16,46,.08), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;text-align:center}
 
-    .video-wrap iframe { border: 0; display: block; }
+  .hero-kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold-2);
+    padding:6px 14px;
+    border:1px solid var(--gold);
+    border-radius:2px;
+    margin-bottom:28px;
+  }
+  .hero-kicker::before,.hero-kicker::after{
+    content:"";width:16px;height:1px;background:var(--gold);
+  }
 
-    /* Thumbnail-Fallback */
-    .thumb {
-      display: block;
-      background-size: cover;
-      background-position: center;
-      text-decoration: none;
-    }
+  .hero h1{
+    font-family:Georgia,serif;
+    font-weight:400;
+    font-size:clamp(32px,6.4vw,54px);
+    line-height:1.1;
+    letter-spacing:-1.5px;
+    margin-bottom:20px;
+    color:var(--paper);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-2);
+  }
+  .hero h1 .num{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-weight:700;
+    letter-spacing:-2px;
+    color:var(--gold-2);
+  }
+  .hero h1 .num.crimson{color:#ff7088}
 
-    .thumb::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-      transition: background 0.2s ease;
-    }
+  .hero .deck{
+    font-family:Georgia,serif;
+    font-size:clamp(16px,2.2vw,19px);
+    font-style:italic;
+    color:var(--paper-2);
+    max-width:620px;
+    margin:0 auto 32px;
+    line-height:1.55;
+  }
+  .hero .deck strong{font-style:normal;color:var(--paper);font-weight:700}
 
-    .thumb:hover::after { background: rgba(0, 0, 0, 0.15); }
+  /* CTA */
+  .cta{
+    display:inline-block;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:14px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--burgundy);background:var(--gold-2);
+    padding:18px 40px;
+    text-decoration:none;font-weight:700;
+    border:1px solid var(--gold);
+    border-radius:2px;
+    box-shadow:0 4px 0 var(--gold);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 0 var(--gold);
+    background:var(--paper);
+  }
+  .cta-sub{
+    display:block;margin-top:16px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:1.2px;
+    color:var(--gold);
+    text-transform:uppercase;
+  }
 
-    /* Play-Button */
-    .play {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 84px;
-      height: 84px;
-      transform: translate(-50%, -50%);
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: 50%;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
+  .hero-trust{
+    display:flex;justify-content:center;flex-wrap:wrap;
+    gap:14px 28px;margin-top:32px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:1.2px;text-transform:uppercase;
+    color:var(--gold);
+  }
+  .hero-trust span::before{
+    content:"✓";
+    color:var(--gold-2);
+    font-weight:900;
+    margin-right:6px;
+  }
 
-    .play::before {
-      content: "";
-      margin-left: 6px;
-      border-style: solid;
-      border-width: 16px 0 16px 26px;
-      border-color: transparent transparent transparent #000;
-    }
+  /* STATEMENT PANEL — the receipt */
+  .statement-wrap{
+    max-width:600px;margin:48px auto 0;
+    position:relative;
+    filter:drop-shadow(0 20px 40px rgba(0,0,0,.4));
+  }
+  .statement{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:2px;
+    overflow:hidden;
+    position:relative;
+    text-align:left;
+  }
+  /* Zigzag torn bottom edge */
+  .statement::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:-8px;
+    height:16px;
+    background:
+      linear-gradient(135deg,var(--paper) 25%,transparent 25%) 0 0/16px 16px repeat-x,
+      linear-gradient(225deg,var(--paper) 25%,transparent 25%) 0 0/16px 16px repeat-x;
+  }
+  .stmt-head{
+    background:var(--burgundy);
+    color:var(--paper);
+    padding:16px 24px;
+    border-bottom:2px solid var(--gold);
+  }
+  .stmt-head .row1{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--gold-2);font-weight:700;
+  }
+  .stmt-head .row2{
+    font-family:Georgia,serif;
+    font-size:20px;letter-spacing:-.3px;
+    margin-top:2px;
+  }
+  .stmt-head .row3{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:10.5px;letter-spacing:1.4px;
+    color:var(--gold);
+    margin-top:6px;
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
 
-    .thumb:hover .play {
-      transform: translate(-50%, -50%) scale(1.08);
-      background: #fff;
-    }
+  .stmt-body{padding:20px 24px 8px}
+  .stmt-cols{
+    display:grid;grid-template-columns:36px 1fr 100px;
+    gap:12px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--gold);
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line-2);
+    font-weight:700;
+  }
+  .stmt-cols .c1{text-align:left}
+  .stmt-cols .c2{text-align:left}
+  .stmt-cols .c3{text-align:right}
 
-    /* CTA Button */
-    .cta {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 18px 52px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #000;
-      background: #fff;
-      border-radius: 999px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
+  .stmt-rows{
+    display:flex;flex-direction:column;
+    padding:6px 0 4px;
+  }
+  .stmt-row{
+    display:grid;grid-template-columns:36px 1fr 100px;
+    gap:12px;align-items:baseline;
+    padding:6px 0;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:13px;
+    border-bottom:1px dashed var(--line);
+  }
+  .stmt-row:last-child{border-bottom:none}
+  .stmt-row .r-lvl{color:var(--muted);font-size:11.5px;font-weight:700}
+  .stmt-row .r-ppl{color:var(--ink-2)}
+  .stmt-row .r-ppl strong{color:var(--ink);font-weight:700}
+  .stmt-row .r-amt{color:var(--crimson);font-weight:700;text-align:right}
+  .stmt-row.mid .r-amt{color:var(--crimson-2)}
+  .stmt-row.peak{
+    background:rgba(200,16,46,.06);
+    margin:0 -12px;padding:10px 12px;
+    border-top:1px solid var(--line-2);
+    border-bottom:none;
+  }
+  .stmt-row.peak .r-lvl,
+  .stmt-row.peak .r-ppl,
+  .stmt-row.peak .r-amt{
+    color:var(--crimson);
+    font-weight:900;
+    font-size:14px;
+  }
 
-    .cta:hover, .cta:focus-visible {
-      transform: translateY(-2px);
-      background: #f0f0f0;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
-      outline: none;
-    }
-    .cta:active { transform: translateY(0); }
+  .stmt-total{
+    padding:14px 24px;
+    background:var(--paper-2);
+    border-top:2px solid var(--burgundy);
+    border-bottom:1px solid var(--line-2);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+  }
+  .stmt-total .lbl{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--burgundy);font-weight:700;
+  }
+  .stmt-total .lbl small{display:block;font-size:9.5px;letter-spacing:1px;color:var(--muted);margin-top:2px;font-weight:400}
+  .stmt-total .big{
+    font-size:26px;font-weight:900;color:var(--crimson);
+    letter-spacing:-1px;
+  }
+  .stmt-total .big small{font-size:.5em;color:var(--muted);font-weight:400;letter-spacing:0}
 
-    @media (max-width: 480px) {
-      .cta { width: 100%; max-width: 340px; padding: 16px 24px; font-size: 0.95rem; }
-      .play { width: 64px; height: 64px; }
-      .play::before { border-width: 12px 0 12px 20px; }
-    }
-  </style>
+  .stmt-foot{
+    padding:12px 24px 22px;
+    background:var(--paper-2);
+    font-family:Georgia,serif;
+    font-size:11.5px;font-style:italic;
+    color:var(--muted);
+    line-height:1.5;
+    border-top:1px solid var(--line);
+  }
+
+  /* LETTER */
+  .letter{
+    padding:64px 24px 48px;
+    background:var(--paper);
+  }
+  .letter-inner{max-width:680px;margin:0 auto}
+
+  .letter-body p{
+    font-size:18px;
+    line-height:1.75;
+    color:var(--ink-2);
+    margin-bottom:22px;
+  }
+  .letter-body p:first-child::first-letter{
+    font-family:Georgia,serif;
+    font-size:72px;
+    line-height:.9;
+    float:left;
+    padding:6px 12px 0 0;
+    color:var(--burgundy);
+    font-weight:400;
+  }
+  .letter-body p strong{color:var(--ink);font-weight:700}
+  .letter-body p em{
+    font-style:italic;
+    color:var(--burgundy);
+    font-weight:400;
+  }
+
+  /* PULL QUOTE */
+  .pullquote{
+    margin:44px 0;
+    padding:8px 0 8px 32px;
+    border-left:3px solid var(--gold);
+    font-family:Georgia,serif;
+    font-style:italic;
+    font-size:22px;
+    line-height:1.5;
+    color:var(--burgundy);
+    position:relative;
+  }
+  .pullquote::before{
+    content:"\201C";
+    position:absolute;top:-8px;left:16px;
+    font-size:64px;line-height:1;
+    color:var(--gold);
+    font-family:Georgia,serif;
+  }
+  .pullquote cite{
+    display:block;
+    margin-top:14px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-style:normal;
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* SECTION HEADING (editorial) */
+  .section-head{
+    text-align:center;
+    margin-bottom:44px;
+    position:relative;
+  }
+  .section-head::after{
+    content:"";
+    display:block;
+    width:60px;height:2px;
+    background:var(--gold);
+    margin:22px auto 0;
+  }
+  .section-head h2{
+    font-family:Georgia,serif;
+    font-weight:400;
+    font-size:clamp(26px,4vw,36px);
+    line-height:1.15;
+    letter-spacing:-.6px;
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .section-head h2 em{
+    color:var(--burgundy);
+    font-style:italic;
+  }
+  .section-head .sub{
+    font-family:Georgia,serif;
+    font-style:italic;
+    color:var(--muted);
+    font-size:16px;
+    max-width:580px;
+    margin:0 auto;
+    line-height:1.6;
+  }
+
+  /* COMPARE — two editorial columns */
+  .compare-section{
+    padding:64px 24px;
+    background:var(--paper-2);
+    border-top:1px solid var(--line-2);
+    border-bottom:1px solid var(--line-2);
+  }
+  .compare-grid{
+    display:grid;gap:0;
+    grid-template-columns:1fr;
+    max-width:820px;margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--line-2);
+    box-shadow:0 4px 20px rgba(74,20,32,.08);
+  }
+  @media(min-width:640px){.compare-grid{grid-template-columns:1fr 1fr}}
+  .col{padding:32px 28px;position:relative}
+  .col:not(:last-child){
+    border-bottom:1px solid var(--line-2);
+  }
+  @media(min-width:640px){
+    .col:not(:last-child){border-bottom:none;border-right:1px solid var(--line-2)}
+  }
+  .col h3{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    font-weight:700;margin-bottom:20px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+  }
+  .col.bad h3{color:var(--crimson)}
+  .col.good h3{color:var(--burgundy)}
+  .col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .col li{
+    font-family:Georgia,serif;
+    font-size:15.5px;
+    color:var(--ink-2);
+    padding-left:24px;
+    position:relative;
+    line-height:1.55;
+  }
+  .col li::before{
+    position:absolute;left:0;top:2px;
+    font-size:13px;font-weight:900;
+  }
+  .col.bad li::before{content:"✕";color:var(--crimson)}
+  .col.good li::before{content:"✓";color:var(--burgundy)}
+
+  /* BENEFITS */
+  .benefits-section{padding:64px 24px}
+  .benefits{
+    display:grid;gap:0;
+    grid-template-columns:1fr;
+    max-width:880px;margin:0 auto;
+    border:1px solid var(--line-2);
+    background:var(--paper);
+  }
+  @media(min-width:560px){.benefits{grid-template-columns:1fr 1fr}}
+  @media(min-width:860px){.benefits{grid-template-columns:1fr 1fr 1fr}}
+  .benefit{
+    padding:28px 24px;
+    border-bottom:1px solid var(--line-2);
+    border-right:1px solid var(--line-2);
+    background:var(--paper);
+    position:relative;
+    transition:background .2s;
+  }
+  .benefit:hover{background:var(--paper-2)}
+  .benefit .num{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:1.5px;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .benefit h3{
+    font-family:Georgia,serif;
+    font-size:17px;
+    color:var(--burgundy);
+    margin-bottom:8px;
+    font-weight:400;
+    letter-spacing:-.2px;
+  }
+  .benefit p{
+    font-family:Georgia,serif;
+    font-size:14.5px;
+    color:var(--muted);
+    line-height:1.55;
+  }
+
+  /* STEPS */
+  .steps-section{
+    padding:64px 24px;
+    background:var(--burgundy);
+    color:var(--paper);
+  }
+  .steps-section .section-head h2{color:var(--paper)}
+  .steps-section .section-head h2 em{color:var(--gold-2)}
+  .steps-section .section-head .sub{color:var(--paper-2)}
+  .steps-section .section-head::after{background:var(--gold)}
+
+  .steps{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+  .step{
+    display:grid;grid-template-columns:60px 1fr;
+    gap:24px;
+    padding:28px 0;
+    border-bottom:1px solid var(--burgundy-2);
+    align-items:start;
+  }
+  .step:last-child{border-bottom:none}
+  .step .num{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:28px;font-weight:700;
+    color:var(--gold-2);
+    letter-spacing:-1px;
+    line-height:1;
+    padding-top:6px;
+    border-right:1px solid var(--gold);
+    padding-right:20px;
+    text-align:center;
+  }
+  .step h3{
+    font-family:Georgia,serif;
+    font-size:20px;font-weight:400;
+    color:var(--paper);
+    margin-bottom:6px;
+    letter-spacing:-.2px;
+  }
+  .step p{
+    font-family:Georgia,serif;
+    font-size:15px;
+    color:var(--paper-2);
+    line-height:1.65;
+  }
+
+  /* STREAMS TABLE */
+  .streams-section{padding:64px 24px}
+  .table-wrap{
+    max-width:820px;margin:0 auto;
+    border:1px solid var(--line-2);
+    background:var(--paper);
+    overflow-x:auto;
+  }
+  table{width:100%;border-collapse:collapse;min-width:520px}
+  thead th{
+    background:var(--burgundy);
+    color:var(--gold-2);
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;
+    text-align:left;padding:14px 18px;
+    font-weight:700;
+    border-bottom:2px solid var(--gold);
+  }
+  tbody td{
+    padding:16px 18px;
+    font-family:Georgia,serif;
+    font-size:15px;
+    color:var(--ink-2);
+    border-top:1px solid var(--line);
+    line-height:1.55;
+  }
+  tbody tr:nth-child(even){background:var(--paper-2)}
+  tbody td:first-child{
+    color:var(--crimson);
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-weight:900;
+    width:38px;
+  }
+  tbody td strong{color:var(--burgundy);font-weight:700}
+
+  /* PV */
+  .pv-section{
+    padding:64px 24px;
+    background:var(--paper-2);
+    border-top:1px solid var(--line-2);
+  }
+  .pv-tiers{
+    max-width:700px;margin:0 auto;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .tier{
+    background:var(--paper);
+    border:1px solid var(--line-2);
+    border-left:4px solid var(--burgundy);
+    padding:24px 26px;
+    display:flex;align-items:flex-start;gap:24px;
+  }
+  .tier .badge{
+    flex-shrink:0;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:16px;font-weight:700;
+    color:var(--paper);background:var(--burgundy);
+    padding:12px 16px;min-width:88px;text-align:center;
+    letter-spacing:-.5px;
+  }
+  .tier p{
+    font-family:Georgia,serif;
+    font-size:15.5px;
+    color:var(--ink-2);
+    line-height:1.6;
+  }
+  .tier p strong{color:var(--burgundy);font-weight:700}
+
+  /* CALC */
+  .calc-section{
+    padding:64px 24px;
+    background:var(--burgundy);
+    color:var(--paper);
+  }
+  .calc-section .section-head h2{color:var(--paper)}
+  .calc-section .section-head h2 em{color:var(--gold-2)}
+  .calc-section .section-head .sub{color:var(--paper-2)}
+  .calc-section .section-head::after{background:var(--gold)}
+
+  .calc{
+    max-width:640px;margin:0 auto;
+    background:var(--burgundy-deep);
+    border:1px solid var(--burgundy-2);
+    padding:36px 32px;
+    border-radius:2px;
+    box-shadow:0 12px 32px rgba(0,0,0,.3);
+  }
+  .calc label{
+    display:block;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:8px;
+    text-align:center;
+    font-weight:700;
+  }
+  .slider-val{
+    display:block;text-align:center;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:36px;font-weight:900;
+    color:var(--paper);
+    letter-spacing:-1.5px;
+    margin-bottom:8px;
+  }
+  input[type=range]{
+    -webkit-appearance:none;appearance:none;
+    width:100%;height:6px;
+    border-radius:0;
+    background:var(--burgundy-2);
+    outline:none;margin:16px 0 32px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;
+    width:24px;height:24px;
+    border-radius:50%;
+    background:var(--gold-2);
+    cursor:pointer;
+    box-shadow:0 0 0 4px rgba(184,148,92,.2);
+    border:2px solid var(--burgundy-deep);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:22px;height:22px;border-radius:50%;
+    border:2px solid var(--burgundy-deep);
+    background:var(--gold-2);cursor:pointer;
+    box-shadow:0 0 0 4px rgba(184,148,92,.2);
+  }
+  .calc-out{
+    background:var(--paper);
+    color:var(--ink);
+    padding:26px;
+    text-align:center;
+    border:1px solid var(--gold);
+  }
+  .calc-out .amount{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:clamp(38px,8vw,52px);font-weight:900;
+    color:var(--crimson);
+    line-height:1;
+    letter-spacing:-2px;
+  }
+  .calc-out .per{
+    font-family:Georgia,serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--muted);
+    margin-top:8px;
+  }
+  .calc-out .year{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:12px;letter-spacing:.5px;
+    color:var(--ink-2);
+    margin-top:16px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+  }
+  .calc-out .year b{color:var(--burgundy);font-weight:900}
+  .calc small{
+    display:block;text-align:center;
+    font-family:Georgia,serif;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--paper-2);
+    margin-top:20px;
+    line-height:1.6;
+    opacity:.8;
+  }
+
+  /* FAQ */
+  .faq-section{padding:64px 24px}
+  .faq{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+  details{
+    border-bottom:1px solid var(--line-2);
+    padding:0;
+    background:var(--paper);
+  }
+  details:first-child{border-top:1px solid var(--line-2)}
+  summary{
+    cursor:pointer;
+    padding:22px 4px;
+    font-family:Georgia,serif;
+    font-size:18px;
+    color:var(--ink);
+    list-style:none;
+    display:flex;justify-content:space-between;gap:20px;align-items:center;
+    font-weight:400;
+    transition:color .15s;
+  }
+  summary:hover{color:var(--burgundy)}
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    color:var(--gold);
+    font-size:22px;font-weight:400;
+    line-height:1;
+    flex-shrink:0;
+  }
+  details[open] summary::after{content:"−"}
+  details[open] summary{color:var(--burgundy)}
+  details p{
+    padding:0 4px 22px;
+    font-family:Georgia,serif;
+    font-size:15.5px;
+    color:var(--muted);
+    line-height:1.7;
+    max-width:600px;
+  }
+
+  /* FINAL */
+  .final{
+    padding:80px 24px 72px;
+    background:var(--burgundy);
+    color:var(--paper);
+    text-align:center;
+    border-top:3px double var(--gold);
+    position:relative;
+    overflow:hidden;
+  }
+  .final::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,148,92,.12), transparent 70%);
+    pointer-events:none;
+  }
+  .final-inner{max-width:680px;margin:0 auto;position:relative;z-index:2}
+  .final h2{
+    font-family:Georgia,serif;
+    font-weight:400;
+    font-size:clamp(28px,4.5vw,40px);
+    line-height:1.15;
+    letter-spacing:-1px;
+    margin-bottom:20px;
+  }
+  .final h2 em{color:var(--gold-2);font-style:italic}
+  .final p{
+    font-family:Georgia,serif;
+    font-size:17px;
+    color:var(--paper-2);
+    margin-bottom:18px;
+    line-height:1.7;
+  }
+  .final p:last-of-type{margin-bottom:32px}
+
+  .signature{
+    margin-top:44px;
+    padding-top:28px;
+    border-top:1px solid var(--burgundy-2);
+    font-family:Georgia,serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:16px;
+  }
+  .signature .sig-line{
+    font-family:Georgia,serif;
+    font-size:28px;
+    color:var(--gold-2);
+    margin-bottom:6px;
+    font-style:italic;
+    font-weight:400;
+    letter-spacing:-.5px;
+  }
+  .signature .sig-name{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--paper-2);
+    font-style:normal;
+  }
+
+  .ps{
+    max-width:600px;
+    margin:36px auto 0;
+    font-family:Georgia,serif;
+    font-size:14.5px;
+    font-style:italic;
+    color:var(--gold);
+    line-height:1.6;
+  }
+  .ps strong{color:var(--gold-2);font-style:normal;font-weight:700}
+
+  /* FOOTER */
+  footer{
+    background:var(--burgundy-deep);
+    padding:44px 24px 100px;
+    text-align:center;
+    font-family:Georgia,serif;
+    color:var(--paper-2);
+    font-size:13px;
+    line-height:1.7;
+    border-top:1px solid var(--burgundy-2);
+  }
+  @media(min-width:760px){footer{padding-bottom:44px}}
+  .disclosure{
+    max-width:760px;
+    margin:0 auto 24px;
+    padding:20px 24px;
+    background:rgba(0,0,0,.2);
+    border-left:2px solid var(--gold);
+    text-align:left;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--muted-2);
+    line-height:1.65;
+  }
+  .disclosure strong{
+    display:block;
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-style:normal;
+    font-size:10.5px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  footer .copy{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* STICKY MOBILE CTA */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:var(--burgundy-deep);
+    border-top:2px solid var(--gold);
+    transform:translateY(120%);transition:transform .3s ease;
+    box-shadow:0 -4px 20px rgba(0,0,0,.4);
+  }
+  .sticky-cta.show{transform:none}
+  .sticky-cta a{
+    display:block;text-align:center;text-decoration:none;
+    background:var(--gold-2);
+    color:var(--burgundy);
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-weight:700;font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;
+    padding:16px;border-radius:2px;
+  }
+  @media(min-width:760px){.sticky-cta{display:none}}
+
+  /* Reveal */
+  .js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .js .reveal.in{opacity:1;transform:none}
+</style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-  <div class="video-wrap">
-    <a class="thumb"
-       href="https://www.youtube.com/watch?v=R0iw4EvAu8Q"
-       target="_blank" rel="noopener"
-       style="background-image:url('https://img.youtube.com/vi/R0iw4EvAu8Q/maxresdefault.jpg');">
-      <span class="play"></span>
-    </a>
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <span class="brand">Zilara</span>
+    <span class="meta">
+      <span><span class="dot"></span>Statement of Opportunity</span>
+      <span>Est. Green Organics, LLC</span>
+    </span>
+    <a href="#join" class="cta-link">Join Free →</a>
   </div>
+</div>
 
-  <a class="cta" href="https://zilaratour.com/index.asp?site=2516503" target="_blank" rel="noopener">
-    Discover Now
-  </a>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Two Numbers. Same Plan.</div>
+
+    <h1>
+      Order #1 pays <span class="num">30%</span>.<br>
+      Level 15 pays <em><span class="num crimson">$16,384</span></em>.
+    </h1>
+
+    <p class="deck">
+      Zilara pays <strong>30% retail commission on your first order</strong> — no rank, no team, no PV threshold.
+      Then your <strong>15-level matrix</strong> pays 5% per level, per order, every month.
+      Volume never flushes. Payouts hit in real time.
+    </p>
+
+    <!-- STATEMENT PANEL -->
+    <div class="statement-wrap reveal">
+      <div class="statement">
+        <div class="stmt-head">
+          <div class="row1">Zilara Community Statement</div>
+          <div class="row2">Monthly Matrix Payout</div>
+          <div class="row3">
+            <span>Period: <span id="stmtPeriod">—</span></span>
+            <span>Levels 01–15 · 10 BV each</span>
+          </div>
+        </div>
+
+        <div class="stmt-body">
+          <div class="stmt-cols">
+            <div class="c1">Level</div>
+            <div class="c2">Members</div>
+            <div class="c3">Payout</div>
+          </div>
+          <div class="stmt-rows" id="stmtRows">
+            <!-- JS fills -->
+          </div>
+        </div>
+
+        <div class="stmt-total">
+          <div>
+            <div class="lbl">Total matrix</div>
+            <div class="lbl"><small>Community stream · monthly</small></div>
+          </div>
+          <div class="big">$32,767<small> /mo</small></div>
+        </div>
+
+        <div class="stmt-foot">
+          Illustrative only. Assumes a fully filled 15-level matrix — requires tens of thousands of active members below you, which most people never build. Actual earnings vary widely and are typically far smaller. See income disclosure at the bottom.
+        </div>
+      </div>
+    </div>
+
+    <a href="https://zilaratour.com/index.asp?site=2516503" class="cta" style="margin-top:40px">Start Free — Earn on Order #1 →</a>
+    <span class="cta-sub">No card · No purchase required · Cancel anytime</span>
+
+    <div class="hero-trust">
+      <span>Free to join</span>
+      <span>30% on order #1</span>
+      <span>15-level matrix</span>
+      <span>Real-time payouts</span>
+    </div>
+  </div>
+</header>
+
+<!-- LETTER -->
+<section class="letter">
+  <div class="letter-inner">
+    <div class="letter-body reveal">
+      <p>
+        If you've ever built a team, shared a product, done the work — and then watched your check
+        shrink because a cycle reset or an upline went quiet — this page is for you. Not as hype.
+        As a straightforward walk-through of two things: <strong>what the plan pays on Order #1</strong>,
+        and <strong>what the matrix pays as it fills</strong>. Both numbers are real. Neither is a promise.
+      </p>
+
+      <p>
+        Most plans are built to reward the people who got there first. They require rank before pay,
+        they flush volume every cycle, and they quietly let inactivity kill your earnings. It's not
+        you. It's the <em>plan design</em>. Zilara inverts the order: <strong>you're paid on your first
+        order, before any rank, any PV, any team.</strong>
+      </p>
+
+      <p>
+        Above is a statement of what a fully filled matrix would pay — laid out level by level,
+        the way a real earnings statement lays it out. It's not a projection of what you'll earn.
+        It's a map of <em>how the math compounds with depth</em>. If you build depth, you earn from it.
+        If you don't, you earn from the smaller levels you do build.
+      </p>
+
+      <div class="pullquote reveal">
+        The plan pays you for what you actually do — not for what you promise to build later.
+        <cite>— The Zilara design principle</cite>
+      </div>
+
+      <p>
+        Below, you'll see exactly how Zilara differs from a typical plan, the nine structural features
+        that make it pay faster and deeper, and a calculator so you can run the numbers yourself.
+        If it fits, join free. If it doesn't, close the tab — no harm done. But read it honestly first,
+        because the only thing that actually costs you here is a position you take too late.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare-section">
+  <div class="container-wide">
+    <div class="section-head reveal">
+      <h2>What a typical plan does. <em>And what we do instead.</em></h2>
+      <p class="sub">Two columns. Same industry. Very different design choices.</p>
+    </div>
+
+    <div class="compare-grid reveal">
+      <div class="col bad">
+        <h3>Typical MLM</h3>
+        <ul>
+          <li>Qualify for rank before you earn anything</li>
+          <li>Volume flushes to zero every cycle</li>
+          <li>Inactive upline = your earnings are frozen</li>
+          <li>Paid once a month — if at all</li>
+          <li>Rewards recruiting, not product movement</li>
+          <li>You start over every qualification period</li>
+        </ul>
+      </div>
+      <div class="col good">
+        <h3>Zilara</h3>
+        <ul>
+          <li>30% commission on your very first order</li>
+          <li>Volume carries over — it never flushes</li>
+          <li>Compression passes earnings to the next active person</li>
+          <li>Commissions credited in real time, as orders process</li>
+          <li>Pays on real product movement</li>
+          <li>Rolling 31-day qualification — no calendar reset</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div class="container-wide">
+    <div class="section-head reveal">
+      <h2>Nine <em>structural</em> reasons this plan pays more.</h2>
+      <p class="sub">Not slogans. Design choices, one by one.</p>
+    </div>
+
+    <div class="benefits reveal">
+      <div class="benefit">
+        <div class="num">01 / Retail</div>
+        <h3>30% retail — day one</h3>
+        <p>No PV. No rank. No team. Your first customer order pays you immediately.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">02 / Volume</div>
+        <h3>Volume never flushes</h3>
+        <p>Team volume carries over cycle to cycle. What you build stays built.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">03 / Compression</div>
+        <h3>Compression protects you</h3>
+        <p>Inactive upline? Earnings pass to the next active person. You're never blocked.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">04 / Rolling</div>
+        <h3>Rolling 31-day qualification</h3>
+        <p>Your last 31 days define your status. No calendar reset on the 1st.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">05 / Matrix</div>
+        <h3>2×15 Community matrix</h3>
+        <p>5% per level on the first 10 BV of every order — 15 levels deep.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">06 / Payouts</div>
+        <h3>Real-time payouts</h3>
+        <p>Commissions hit as orders process. Not monthly. Not "pending."</p>
+      </div>
+      <div class="benefit">
+        <div class="num">07 / Match</div>
+        <h3>Leadership match — up to 50%</h3>
+        <p>Earn up to 50% of your tree's earnings, 9 generations deep.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">08 / STAR</div>
+        <h3>Unlimited STAR bonuses</h3>
+        <p>$50–$200 bonuses as your grid fills monthly. No cap on stacking.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">09 / Free</div>
+        <h3>Free to join — zero risk</h3>
+        <p>No card. No obligation. Earn on your first order before spending a dollar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>How this <em>actually</em> starts.</h2>
+      <p class="sub">Three steps. No maze, no qualification ladder.</p>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="num">01</div>
+        <div>
+          <h3>Join free. Lock your position.</h3>
+          <p>No cost to join. You get your position in the structure, your referral link, and access to the plan. The earlier you join, the more matrix depth you sit above.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <div>
+          <h3>Share the product. Earn 30%.</h3>
+          <p>Every personally referred customer order pays you 30% of BV — from day one. No PV requirement. No rank. No team needed before you earn.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <div>
+          <h3>Let the streams stack — if you want.</h3>
+          <p>As your structure grows, Community levels, Team cycles, Match, STAR bonuses, and Leadership bonuses stack on top. Optional, but that's where the depth pays.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STREAMS -->
+<section class="streams-section">
+  <div class="container-wide">
+    <div class="section-head reveal">
+      <h2>Six streams on <em>one order</em>.</h2>
+      <p class="sub">A single order can move through multiple streams at once.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Stream</th><th>What You Get</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Retail Rewards</strong></td><td>30% of BV on every personally referred customer order</td></tr>
+          <tr><td>2</td><td><strong>Community (Matrix)</strong></td><td>5% per level, 15 levels deep, on the first 10 BV per order</td></tr>
+          <tr><td>3</td><td><strong>Team (Binary)</strong></td><td>$10 per cycle (100 BV left + 100 BV right)</td></tr>
+          <tr><td>4</td><td><strong>Leadership Match</strong></td><td>Up to 50% of your tree's earnings, 9 generations deep</td></tr>
+          <tr><td>5</td><td><strong>STAR Bonus</strong></td><td>Unlimited $50–$200 bonuses as your grid fills monthly</td></tr>
+          <tr><td>6</td><td><strong>Leadership Bonus</strong></td><td>One-time rank bonuses from $100 to $100,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PV -->
+<section class="pv-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>PV unlocks <em>the depth</em>.</h2>
+      <p class="sub">Retail commission works before you hit any threshold. PV opens the matrix.</p>
+    </div>
+
+    <div class="pv-tiers reveal">
+      <div class="tier">
+        <div class="badge">10 BV</div>
+        <p><strong>Retail Rewards + Community Levels 1–15.</strong> The matrix opens. Every order in your structure can pay you across 15 levels.</p>
+      </div>
+      <div class="tier">
+        <div class="badge">50 BV</div>
+        <p><strong>Everything above + Team (Binary).</strong> Your left and right teams can cycle — $10 per 100 BV left + 100 BV right.</p>
+      </div>
+      <div class="tier">
+        <div class="badge">100 BV</div>
+        <p><strong>Everything above + STAR eligibility + Match + Leadership Bonuses.</strong> This is where the full plan opens up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALC -->
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Run the <em>numbers</em> yourself.</h2>
+      <p class="sub">Every person in your matrix who orders 10 BV a month pays you $0.50, at every level, 15 levels deep.</p>
+    </div>
+
+    <div class="calc reveal">
+      <label for="people">People ordering in your matrix</label>
+      <span class="slider-val" id="peopleVal">500</span>
+      <input type="range" id="people" min="100" max="5000" step="100" value="500" aria-label="People in your matrix">
+
+      <div class="calc-out">
+        <div class="amount" id="earn">$250</div>
+        <div class="per">per month — Community earnings alone</div>
+        <div class="year">That's <b id="earnYear">$3,000</b> per year, on repeat orders.</div>
+      </div>
+      <small>Illustrative only. Based on 5% of the first 10 BV per order, one order per member per month. Not an income guarantee — see income disclosure below.</small>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Straight <em>answers</em>.</h2>
+      <p class="sub">The questions people actually ask before they click.</p>
+    </div>
+
+    <div class="faq reveal">
+      <details>
+        <summary>Do I have to buy anything to join?</summary>
+        <p>No. Joining is completely free — no cost, no obligation. You can start referring customers and earning 30% retail commission without any purchase requirement. Purchasing PV is what unlocks the deeper matrix and team streams, but it is optional.</p>
+      </details>
+      <details>
+        <summary>How fast do I actually get paid?</summary>
+        <p>In real time. Commissions are credited as orders are processed — not at the end of a month, and never "pending" for weeks.</p>
+      </details>
+      <details>
+        <summary>What happens if my upline goes inactive?</summary>
+        <p>Compression kicks in. Your earnings pass up to the next active participant in the structure — you're never blocked by someone else's inactivity.</p>
+      </details>
+      <details>
+        <summary>Why does starting early matter so much?</summary>
+        <p>Because the matrix is 15 levels deep, and every person who joins under you stays in your structure permanently. The earlier you position, the more of that depth you sit above — and the longer it pays. This is a structural fact of how matrices work, not a marketing line.</p>
+      </details>
+      <details>
+        <summary>Do I need a big team to earn?</summary>
+        <p>No. Retail commission is 30% from day one, without a team. The matrix and binary streams exist for people who choose to build, but you don't need a downline to earn on your own customers.</p>
+      </details>
+      <details>
+        <summary>Is this a get-rich-quick scheme?</summary>
+        <p>No. Zilara pays on real product movement and requires consistent activity. Results depend entirely on your effort and the effort of your team. Anyone promising guaranteed income is lying to you.</p>
+      </details>
+      <details>
+        <summary>What if I join and decide it's not for me?</summary>
+        <p>Joining is free, so there's no financial risk in looking. You can explore the plan, the products, and the back office before deciding how much you want to build.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final" id="join">
+  <div class="final-inner">
+    <h2>Those who start first <em>earn the most</em>.</h2>
+    <p>
+      Every cycle you wait, someone else takes a position above you. Every level of depth you don't capture
+      is depth someone else gets paid on. That's not a threat — it's simply how matrix plans work.
+    </p>
+    <p>
+      Joining is free. You earn 30% from day one. You get paid in real time.
+      The only thing waiting costs you is position.
+    </p>
+
+    <a href="https://zilaratour.com/index.asp?site=2516503" class="cta">Start Free Now →</a>
+    <span class="cta-sub">No cost · No obligation · Just real products and real commissions</span>
+
+    <div class="signature">
+      <div class="sig-line">— The Zilara team</div>
+      <div class="sig-name">Green Organics, LLC</div>
+    </div>
+
+    <p class="ps">
+      <strong>P.S.</strong> If you're still on the fence, run the calculator above with a number you
+      actually believe you could build. If that number feels worth it, join. If it doesn't, this isn't
+      the plan for you — and that's fine. What I'd avoid is joining because the page told you to.
+      Join because the math does.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="disclosure">
+    <strong>Income Disclosure</strong>
+    This page is an illustrative explanation of the Zilara income opportunity and is not a guarantee of earnings.
+    The 15-level matrix figures assume a fully filled matrix requiring tens of thousands of active members below you,
+    and take significant time and effort to build. Most participants never fill a matrix of that size, and many earn
+    little or nothing. Income figures shown are hypothetical examples based on stated commission rates — they are not
+    typical results. Actual earnings vary widely and depend on individual effort, market conditions, personal sales,
+    team performance, and continued activity. Most participants in direct-selling / network-marketing programs do not
+    earn a profit, and many earn nothing at all. Full compensation plan details: Zilara.com/pdf/compensationdetailed.pdf
+  </div>
+  <div class="copy">
+    Zilara is a brand of Green Organics, LLC · © <span id="year"></span> Zilara · All rights reserved
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://zilaratour.com/index.asp?site=2516503">Start Free — Earn on Order #1 →</a>
+</div>
+
+<!-- STATEMENT BUILDER -->
+<script>
+(function(){
+  var PER_PERSON = 0.5;
+  var container = document.getElementById('stmtRows');
+  if (!container) return;
+
+  // Current period in statement head
+  var periodEl = document.getElementById('stmtPeriod');
+  if (periodEl){
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var now = new Date();
+    periodEl.textContent = months[now.getMonth()] + ' ' + now.getFullYear();
+  }
+
+  function money(n){
+    if (n >= 1000) return '$' + Math.round(n).toLocaleString('en-US');
+    if (n % 1 === 0) return '$' + n.toLocaleString('en-US') + '.00';
+    return '$' + n.toFixed(2);
+  }
+  function people(n){ return n.toLocaleString('en-US'); }
+  function lvl(n){ return (n < 10 ? '0' + n : '' + n); }
+
+  // Show levels 1-4, then a "…" row, then levels 13-15 with L15 as peak
+  var showLevels = [1, 2, 3, 4];
+  var showTail = [13, 14, 15];
+
+  function buildRow(l){
+    var ppl = Math.pow(2, l);
+    var pay = ppl * PER_PERSON;
+    var cls = 'stmt-row' + (l === 15 ? ' peak' : '');
+    return '<div class="' + cls + '">' +
+      '<div class="r-lvl">L' + lvl(l) + '</div>' +
+      '<div class="r-ppl"><strong>' + people(ppl) + '</strong> members</div>' +
+      '<div class="r-amt">' + money(pay) + '</div>' +
+    '</div>';
+  }
+
+  showLevels.forEach(function(l){
+    container.insertAdjacentHTML('beforeend', buildRow(l));
+  });
+
+  // ellipsis row
+  container.insertAdjacentHTML('beforeend',
+    '<div class="stmt-row" style="border-bottom:1px dashed var(--line);padding:4px 0">' +
+      '<div class="r-lvl" style="color:var(--muted-2)">···</div>' +
+      '<div class="r-ppl" style="color:var(--muted);font-style:italic">levels 5–12 · · ·</div>' +
+      '<div class="r-amt" style="color:var(--muted)">···</div>' +
+    '</div>'
+  );
+
+  showTail.forEach(function(l){
+    container.insertAdjacentHTML('beforeend', buildRow(l));
+  });
+})();
+</script>
+
+<!-- REVEAL -->
+<script>
+(function(){
+  var items = document.querySelectorAll('.reveal');
+  try{
+    if (!('IntersectionObserver' in window)){
+      items.forEach(function(i){ i.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+    items.forEach(function(i){ io.observe(i); });
+  }catch(e){
+    items.forEach(function(i){ i.classList.add('in'); });
+  }
+  setTimeout(function(){
+    try{
+      document.querySelectorAll('.reveal:not(.in)').forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 1.3) el.classList.add('in');
+      });
+    }catch(e){}
+  }, 1500);
+})();
+</script>
+
+<!-- CALC -->
+<script>
+(function(){
+  try{
+    var slider = document.getElementById('people');
+    var peopleVal = document.getElementById('peopleVal');
+    var earn = document.getElementById('earn');
+    var earnYear = document.getElementById('earnYear');
+    if (!slider) return;
+    function fmt(n){ return '$' + n.toLocaleString('en-US',{maximumFractionDigits:0}); }
+    function update(){
+      var n = parseInt(slider.value,10);
+      var monthly = n * 0.5;
+      peopleVal.textContent = n.toLocaleString('en-US');
+      earn.textContent = fmt(monthly);
+      earnYear.textContent = fmt(monthly*12);
+    }
+    slider.addEventListener('input', update);
+    update();
+  }catch(e){}
+})();
+</script>
+
+<!-- STICKY -->
+<script>
+(function(){
+  try{
+    var bar = document.getElementById('stickyCta');
+    var hero = document.querySelector('.hero');
+    if (!bar || !hero) return;
+    window.addEventListener('scroll', function(){
+      var trigger = hero.offsetHeight * 0.8;
+      if (window.scrollY > trigger) bar.classList.add('show');
+      else bar.classList.remove('show');
+    },{passive:true});
+  }catch(e){}
+})();
+</script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
