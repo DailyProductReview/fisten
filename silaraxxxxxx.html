@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Launch — Get In Before the Crowd | 30% From Day One + 2×15 Matrix</title>
+<meta name="description" content="A new product launches now. Free to join, 30% commission from day one. Early movers build the deepest 2×15 Matrix. Get in before the crowd.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #fffbf5;
+    color: #1c1917;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 28px 20px 64px; }
+
+  .stripe {
+    background: #1c1917;
+    color: #fbbf24;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    background: #ffedd5;
+    color: #9a3412;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: 38px;
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 18px;
+  }
+  h1 em {
+    font-style: normal;
+    background: linear-gradient(180deg, transparent 60%, #fde68a 60%);
+    padding: 0 2px;
+  }
+
+  .lead {
+    font-size: 18px;
+    color: #44403c;
+    margin-bottom: 26px;
+  }
+  .lead strong { color: #1c1917; }
+
+  .urgency-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #ffffff;
+    border: 2px solid #fbbf24;
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 30px;
+  }
+  .urgency-bar .label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9a3412;
+    margin-bottom: 2px;
+  }
+  .urgency-bar .value {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1c1917;
+  }
+  .urgency-bar .value span { color: #dc2626; }
+  .urgency-bar .icon {
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .steps {
+    margin-bottom: 32px;
+  }
+  .steps h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    background: #ffffff;
+    border: 1px solid #f5f5f4;
+    border-radius: 14px;
+    padding: 18px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .step-num {
+    flex: 0 0 40px;
+    height: 40px;
+    background: #1c1917;
+    color: #fbbf24;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-body h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+  .step-body p {
+    font-size: 14px;
+    color: #57534e;
+  }
+
+  .matrix-card {
+    background: #ecfdf5;
+    border: 1.5px solid #6ee7b7;
+    border-radius: 16px;
+    padding: 24px 22px;
+    margin-bottom: 30px;
+  }
+  .matrix-card h2 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #065f46;
+    margin-bottom: 10px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .matrix-card p {
+    font-size: 15px;
+    color: #065f46;
+    margin-bottom: 14px;
+  }
+  .matrix-card .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .stat {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .stat .big {
+    font-size: 22px;
+    font-weight: 800;
+    color: #047857;
+    display: block;
+    line-height: 1.1;
+  }
+  .stat .small {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .form-card {
+    background: #ffffff;
+    border: 1.5px solid #e7e5e4;
+    border-radius: 18px;
+    padding: 30px 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+  .form-card h2 {
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .form-card p.form-note {
+    font-size: 14px;
+    color: #78716c;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .trust {
+    font-size: 13px;
+    color: #78716c;
+    text-align: center;
+    margin-bottom: 34px;
+  }
+
+  .final-cta {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 800;
+    color: #1c1917;
+    margin-bottom: 26px;
+    line-height: 1.4;
+  }
+  .final-cta em {
+    font-style: normal;
+    color: #dc2626;
+  }
+
+  .disclaimer {
+    font-size: 11px;
+    color: #a8a29e;
+    line-height: 1.6;
+    border-top: 1px solid #e7e5e4;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 30px; }
+    .lead { font-size: 16px; }
+    .wrap { padding: 22px 16px 48px; }
+    .urgency-bar .value { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="stripe">⚡ New Launch — The Window Is Open Right Now</div>
+
+  <span class="eyebrow">Early Mover Access · Free to Join</span>
+
+  <h1>The First Movers Will <em>Win Big</em>. Be One of Them.</h1>
+
+  <p class="lead">
+    A brand-new product is launching as we speak. The people who get in first lock in the best positions,
+    build the deepest <strong>2×15 Community Matrix</strong>, and earn
+    <strong>30% commission from day one</strong>. Free to join. Paid in real time. No retail requirements,
+    no team building required. <strong>The earlier you move, the more you earn.</strong>
+  </p>
+
+  <div class="urgency-bar">
+    <div>
+      <div class="label">Status</div>
+      <div class="value"><span>●</span> Positions opening now — early spots go first</div>
+    </div>
+    <div class="icon">⏳</div>
+  </div>
+
+  <div class="steps">
+    <h2>How It Works in 3 Simple Steps</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Join free — no cost, no catch</h3>
+        <p>Lock in your position today. Zero cost to start, zero retail requirement, zero team building required.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Earn 30% from your very first order</h3>
+        <p>Every order from your personally referred customers pays you 30% of its business volume — paid in real time.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Let your 2×15 Matrix compound</h3>
+        <p>Earn 5% per level, up to 15 levels deep, on every order flowing through your Community structure. Shared placement means you benefit from your whole organization — not just your own effort.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="matrix-card">
+    <h2>Why Early Entry Is the Whole Game</h2>
+    <p>
+      In a <strong>2×15 matrix</strong>, every new level multiplies the number of people whose activity can pay you.
+      The earlier you join, the more time your structure has to fill — and the more people end up below you as the product scales.
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <span class="big">5%</span>
+        <span class="small">Per Level Earned</span>
+      </div>
+      <div class="stat">
+        <span class="big">15</span>
+        <span class="small">Levels Deep</span>
+      </div>
+      <div class="stat">
+        <span class="big">30%</span>
+        <span class="small">Retail From Day 1</span>
+      </div>
+      <div class="stat">
+        <span class="big">$0</span>
+        <span class="small">To Get Started</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h2>Claim Your Early Spot — Free</h2>
+    <p class="form-note">Drop your email below. Get instant access before the next wave of movers arrives.</p>
+
+    <!-- YOUR EMAIL FORM CODE -->
+    <script>const formData = 'eyJGb3JtSWQiOjI1MjYxNDE4LCJNYWlsU2VydmVJZCI6MjQ5ODU4NzIsIk5hbWUiOiJzaWxhciIsIlNob3dDb3VudCI6MCwiU3VibWlzc2lvbnMiOjAsIkZvcm1GaWVsZHMiOnsiRmlyc3ROYW1lIjp7InZhbHVlIjoiRmlyc3QgTmFtZSIsImNoZWNrZWQiOiIwIiwicmVxdWlyZWQiOiIwIn0sIkxhc3ROYW1lIjp7InZhbHVlIjoiTGFzdCBOYW1lIiwiY2hlY2tlZCI6IjAiLCJyZXF1aXJlZCI6IjAifSwiRnVsbE5hbWUiOnsidmFsdWUiOiJGdWxsIE5hbWUiLCJjaGVja2VkIjoiMCIsInJlcXVpcmVkIjoiMCJ9LCJFbWFpbCI6eyJ2YWx1ZSI6IlBsZWFzZSBlbnRlciB5b3VyIGVtYWlsIiwiY2hlY2tlZCI6IjEiLCJyZXF1aXJlZCI6IjEifX0sIlRoYW5reW91UGFnZSI6Imh0dHBzOlwvXC9yZWJyYW5keHByZXNzLmNvbVwvci5waHA/cD1yNDIxNzAmYW1wO3U9NCZhbXA7aWQ9MjUxNjUwMyIsIlNpZ25lZFVwUGFnZSI6Imh0dHBzOlwvXC9yZWJyYW5keHByZXNzLmNvbVwvci5waHA/cD1yNDIxNzAmdT00JmlkPTI1MTY1MDMiLCJJc0RvdWJsZU9wdEluIjowLCJQYXNzRm9ybURhdGEiOjAsIlRyYWNrZXJOYW1lIjoic2lsYXJhIiwiT3B0aW5TZW5kcyI6MCwiT3B0aW5GYWlsZWQiOjAsIlN1Ym1pdFZhbHVlIjoiU3VibWl0IiwiVXNlZEluIjoiIiwiQWN0aW9uIjoiaHR0cHM6XC9cL2dvZ3ZvLmNvbVwvc3Vic2NyaWJlLnBocCIsIkNhbXBhaWduQ29kZSI6ImZDYkNHQmpBRVJKdiIsIkFmZmlsaWF0ZU5hbWUiOiJuYXR1cjE5ODROTFMiLCJJbWFnZVNyYyI6Imh0dHBzOlwvXC9nb2d2by5jb21cL3Nob3dfZm9ybS5waHA/aWQ9MjUyNjE0MTgmVHJhY2tQYXJhbT1uZXdfZm9ybSJ9';</script>
+    <script src='https://gogvo.com/js/generate_form.js'></script>
+    <div id='25261418-form'></div>
+    <!-- /YOUR EMAIL FORM CODE -->
+
+  </div>
+
+  <p class="trust">🔒 Email stays private. No spam. Unsubscribe anytime.</p>
+
+  <p class="final-cta">The launch is happening <em>now</em>. Every day you wait, someone else takes a position above you.</p>
+
+  <p class="disclaimer">
+    Income is not guaranteed and results vary. Earnings examples are for illustration only and do not represent
+    actual or typical earnings.
+  </p>
+
+</div>
+
+</body>
+</html>
