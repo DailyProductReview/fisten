@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Launch Window Is Open — First Movers Build the Deepest 2×15 Matrix | 30% From Day One</title>
+<meta name="description" content="A new product is launching now. Free to join, 30% commission from day one, paid in real time. Early movers build the deepest 2×15 Community Matrix.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #0b1120;
+    color: #e5e7eb;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 28px 20px 64px; }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #7f1d1d;
+    color: #fecaca;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 26px;
+    text-align: center;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(239,68,68,0.7);
+    animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(239,68,68,0); }
+    100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+    color: #ffffff;
+  }
+  h1 span { color: #34d399; }
+
+  .lead {
+    font-size: 18px;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+  }
+  .lead strong { color: #ffffff; }
+
+  .offer-box {
+    background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+    border: 1px solid #1f2937;
+    border-radius: 18px;
+    padding: 24px 22px;
+    margin-bottom: 30px;
+  }
+  .offer-box h2 {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #34d399;
+    margin-bottom: 16px;
+  }
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .offer-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed #1f2937;
+  }
+  .offer-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .offer-num {
+    flex: 0 0 34px;
+    height: 34px;
+    background: #064e3b;
+    color: #6ee7b7;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .offer-item p {
+    font-size: 15px;
+    color: #e5e7eb;
+  }
+  .offer-item p strong { color: #ffffff; }
+  .offer-item p span { color: #94a3b8; display: block; font-size: 13px; margin-top: 2px; }
+
+  .matrix-highlight {
+    background: #052e16;
+    border: 1px solid #065f46;
+    border-radius: 16px;
+    padding: 22px 20px;
+    margin-bottom: 30px;
+  }
+  .matrix-highlight h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #6ee7b7;
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .matrix-highlight p {
+    font-size: 15px;
+    color: #d1fae5;
+    margin-bottom: 12px;
+  }
+  .matrix-highlight ul {
+    list-style: none;
+  }
+  .matrix-highlight li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ecfdf5;
+  }
+  .matrix-highlight li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #34d399;
+    font-weight: 800;
+  }
+
+  .form-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+  .form-card h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .form-card p.form-note {
+    font-size: 14px;
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .trust {
+    font-size: 13px;
+    color: #94a3b8;
+    text-align: center;
+    margin-bottom: 34px;
+  }
+
+  .final-cta {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 28px;
+    line-height: 1.4;
+  }
+  .final-cta span { color: #fbbf24; }
+
+  .disclaimer {
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.6;
+    border-top: 1px solid #1f2937;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 29px; }
+    .lead { font-size: 16px; }
+    .wrap { padding: 22px 16px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="dot"></span> Launch Window Open — Early Positions Locking In Now
+  </div>
+
+  <h1>First Movers Build the Deepest <span>2×15 Matrix</span> — And Get Paid 30% From Day One</h1>
+
+  <p class="lead">
+    A brand-new product is launching right now. The people who move first lock in the best positions,
+    build the deepest structures, and ride the growth. <strong>Free to join. Paid in real time.
+    No retail requirements. No team building required.</strong> This is the window before everyone else arrives.
+  </p>
+
+  <div class="offer-box">
+    <h2>What You Get — Immediately</h2>
+    <div class="offer-grid">
+      <div class="offer-item">
+        <div class="offer-num">1</div>
+        <p><strong>30% commission from day one</strong><span>No Personal Volume, no rank, no team building required.</span></p>
+      </div>
+      <div class="offer-item">
+        <div class="offer-num">2</div>
+        <p><strong>Free to join — zero cost to start</strong><span>Start earning without spending a cent.</span></p>
+      </div>
+      <div class="offer-item">
+        <div class="offer-num">3</div>
+        <p><strong>Paid in real time</strong><span>Commissions hit as orders come in — not months later.</span></p>
+      </div>
+      <div class="offer-item">
+        <div class="offer-num">4</div>
+        <p><strong>Your own 2×15 Community Matrix</strong><span>Earn 5% per level, up to 15 levels deep.</span></p>
+      </div>
+      <div class="offer-item">
+        <div class="offer-num">5</div>
+        <p><strong>Volume never flushes</strong><span>Team volume carries over cycle to cycle while you're active.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="matrix-highlight">
+    <h3>Why the Early Mover Wins — The 2×15 Matrix</h3>
+    <p>
+      The Community is a <strong>2×15 matrix</strong>. You earn <strong>5% per level</strong> on the first 10 BV of every
+      order flowing through your structure — across <strong>15 levels</strong>. Shared placement means your earnings
+      grow from your own activity <em>and</em> the activity of your entire organization.
+      The earlier you're in, the more time your matrix has to fill before the crowd arrives.
+    </p>
+    <ul>
+      <li><strong>15 levels deep:</strong> 5% per level on the first 10 BV of every order.</li>
+      <li><strong>Shared placement:</strong> you benefit from activity across your whole structure.</li>
+      <li><strong>Unlock all 15 levels</strong> with just 10 BV monthly Personal Volume.</li>
+      <li><strong>Compression protects you:</strong> inactive uplines never block your earnings.</li>
+      <li><strong>Team Binary:</strong> 100 BV left + 100 BV right = 1 Team Cycle. Volume carries over.</li>
+    </ul>
+  </div>
+
+  <div class="form-card">
+    <h2>Lock In Your Early Position</h2>
+    <p class="form-note">Enter your email to get instant access before the next wave joins.</p>
+
+    <!-- YOUR EMAIL FORM CODE -->
+    <script>const formData = 'eyJGb3JtSWQiOjI1MjYxNDE4LCJNYWlsU2VydmVJZCI6MjQ5ODU4NzIsIk5hbWUiOiJzaWxhciIsIlNob3dDb3VudCI6MCwiU3VibWlzc2lvbnMiOjAsIkZvcm1GaWVsZHMiOnsiRmlyc3ROYW1lIjp7InZhbHVlIjoiRmlyc3QgTmFtZSIsImNoZWNrZWQiOiIwIiwicmVxdWlyZWQiOiIwIn0sIkxhc3ROYW1lIjp7InZhbHVlIjoiTGFzdCBOYW1lIiwiY2hlY2tlZCI6IjAiLCJyZXF1aXJlZCI6IjAifSwiRnVsbE5hbWUiOnsidmFsdWUiOiJGdWxsIE5hbWUiLCJjaGVja2VkIjoiMCIsInJlcXVpcmVkIjoiMCJ9LCJFbWFpbCI6eyJ2YWx1ZSI6IlBsZWFzZSBlbnRlciB5b3VyIGVtYWlsIiwiY2hlY2tlZCI6IjEiLCJyZXF1aXJlZCI6IjEifX0sIlRoYW5reW91UGFnZSI6Imh0dHBzOlwvXC9yZWJyYW5keHByZXNzLmNvbVwvci5waHA/cD1yNDIxNzAmYW1wO3U9NCZhbXA7aWQ9MjUxNjUwMyIsIlNpZ25lZFVwUGFnZSI6Imh0dHBzOlwvXC9yZWJyYW5keHByZXNzLmNvbVwvci5waHA/cD1yNDIxNzAmdT00JmlkPTI1MTY1MDMiLCJJc0RvdWJsZU9wdEluIjowLCJQYXNzRm9ybURhdGEiOjAsIlRyYWNrZXJOYW1lIjoic2lsYXJhIiwiT3B0aW5TZW5kcyI6MCwiT3B0aW5GYWlsZWQiOjAsIlN1Ym1pdFZhbHVlIjoiU3VibWl0IiwiVXNlZEluIjoiIiwiQWN0aW9uIjoiaHR0cHM6XC9cL2dvZ3ZvLmNvbVwvc3Vic2NyaWJlLnBocCIsIkNhbXBhaWduQ29kZSI6ImZDYkNHQmpBRVJKdiIsIkFmZmlsaWF0ZU5hbWUiOiJuYXR1cjE5ODROTFMiLCJJbWFnZVNyYyI6Imh0dHBzOlwvXC9nb2d2by5jb21cL3Nob3dfZm9ybS5waHA/aWQ9MjUyNjE0MTgmVHJhY2tQYXJhbT1uZXdfZm9ybSJ9';</script>
+    <script src='https://gogvo.com/js/generate_form.js'></script>
+    <div id='25261418-form'></div>
+    <!-- /YOUR EMAIL FORM CODE -->
+
+  </div>
+
+  <p class="trust">🔒 Your email stays private. No spam. Unsubscribe anytime.</p>
+
+  <p class="final-cta">Every day you wait, someone else takes a spot above you.<br><span>Lock in your 2×15 Matrix position now.</span></p>
+
+  <p class="disclaimer">
+    Income is not guaranteed and results vary. Earnings examples are for illustration only and do not represent
+    actual or typical earnings.
+  </p>
+
+</div>
+
+</body>
+</html>
