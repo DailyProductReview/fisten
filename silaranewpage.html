@@ -24,6 +24,7 @@
     background: #05060f;
   }
 
+  /* Exciting animated background: electric blue/purple glow + lightning flashes */
   body::before {
     content: "";
     position: fixed;
@@ -37,6 +38,7 @@
     animation: bgPulse 6s ease-in-out infinite;
   }
 
+  /* Lightning / electric flash overlay */
   body::after {
     content: "";
     position: fixed;
@@ -73,7 +75,7 @@
 
   .container {
     width: 100%;
-    max-width: 640px;
+    max-width: 560px;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -98,40 +100,36 @@
     font-style: italic;
   }
 
-  /* Bigger, sharper image box */
   .image-box {
-    width: 520px;
+    width: 350px;
+    height: 250px;
     max-width: 100%;
-    margin: 0 auto 36px;
-    border-radius: 16px;
+    margin: 0 auto 32px;
+    border-radius: 14px;
     overflow: hidden;
     position: relative;
     box-shadow:
-      0 0 0 1px rgba(120, 170, 255, 0.45),
-      0 0 30px rgba(79, 140, 255, 0.7),
-      0 0 80px rgba(160, 80, 255, 0.4);
+      0 0 0 1px rgba(120, 170, 255, 0.4),
+      0 0 25px rgba(79, 140, 255, 0.6),
+      0 0 60px rgba(160, 80, 255, 0.35);
     animation: boxGlow 3s ease-in-out infinite;
-    background: #0a0f24;
   }
 
   .image-box img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    filter: contrast(1.08) saturate(1.1) brightness(1.03);
   }
 
   @keyframes boxGlow {
-    0%, 100% { box-shadow: 0 0 0 1px rgba(120,170,255,0.45), 0 0 30px rgba(79,140,255,0.7), 0 0 80px rgba(160,80,255,0.4); }
-    50%      { box-shadow: 0 0 0 1px rgba(160,200,255,0.75), 0 0 45px rgba(79,140,255,1), 0 0 110px rgba(160,80,255,0.6); }
+    0%, 100% { box-shadow: 0 0 0 1px rgba(120,170,255,0.4), 0 0 25px rgba(79,140,255,0.6), 0 0 60px rgba(160,80,255,0.35); }
+    50%      { box-shadow: 0 0 0 1px rgba(160,200,255,0.7), 0 0 40px rgba(79,140,255,0.9), 0 0 90px rgba(160,80,255,0.55); }
   }
 
+  /* Form styling */
   form {
-    max-width: 460px;
+    max-width: 420px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
