@@ -24,6 +24,245 @@
     background: #05060f;
   }
 
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(79, 140, 255, 0.35), transparent 45%),
+      radial-gradient(circle at 80% 30%, rgba(160, 80, 255, 0.30), transparent 50%),
+      radial-gradient(circle at 50% 90%, rgba(0, 200, 255, 0.25), transparent 55%),
+      linear-gradient(160deg, #05060f 0%, #0a0f24 50%, #05060f 100%);
+    z-index: -2;
+    animation: bgPulse 6s ease-in-out infinite;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(120deg,
+      transparent 40%,
+      rgba(180, 220, 255, 0.85) 47%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(180, 220, 255, 0.85) 53%,
+      transparent 60%);
+    background-size: 300% 300%;
+    background-position: 120% 0;
+    z-index: -1;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    animation: lightning 7s ease-in-out infinite;
+    opacity: 0;
+  }
+
+  @keyframes bgPulse {
+    0%, 100% { opacity: 1; filter: brightness(1); }
+    50%      { opacity: 0.9; filter: brightness(1.15); }
+  }
+
+  @keyframes lightning {
+    0%, 88%, 100% { opacity: 0; background-position: 120% 0; }
+    89%           { opacity: 1; background-position: -20% 0; }
+    90%           { opacity: 0.2; }
+    91%           { opacity: 1; background-position: 140% 0; }
+    93%           { opacity: 0; }
+    95%           { opacity: 0.7; background-position: -40% 0; }
+    96%           { opacity: 0; }
+  }
+
+  .container {
+    width: 100%;
+    max-width: 640px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #ffffff, #9ec5ff, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(79, 140, 255, 0.45);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: #c8d4f0;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  /* Bigger, sharper image box */
+  .image-box {
+    width: 520px;
+    max-width: 100%;
+    margin: 0 auto 36px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 0 0 1px rgba(120, 170, 255, 0.45),
+      0 0 30px rgba(79, 140, 255, 0.7),
+      0 0 80px rgba(160, 80, 255, 0.4);
+    animation: boxGlow 3s ease-in-out infinite;
+    background: #0a0f24;
+  }
+
+  .image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    filter: contrast(1.08) saturate(1.1) brightness(1.03);
+  }
+
+  @keyframes boxGlow {
+    0%, 100% { box-shadow: 0 0 0 1px rgba(120,170,255,0.45), 0 0 30px rgba(79,140,255,0.7), 0 0 80px rgba(160,80,255,0.4); }
+    50%      { box-shadow: 0 0 0 1px rgba(160,200,255,0.75), 0 0 45px rgba(79,140,255,1), 0 0 110px rgba(160,80,255,0.6); }
+  }
+
+  form {
+    max-width: 460px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  form table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  form table tr {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  form table td {
+    text-align: left;
+  }
+
+  form label {
+    font-size: 0.9rem;
+    color: #c8d4f0;
+  }
+
+  form input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    border: 1px solid rgba(120, 170, 255, 0.4);
+    border-radius: 8px;
+    background: rgba(15, 22, 45, 0.85);
+    color: #fff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  form input[type="text"]:focus {
+    border-color: #4f8cff;
+    box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.25);
+  }
+
+  form input[type="submit"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #4f8cff, #a050ff);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 0 20px rgba(79, 140, 255, 0.6);
+  }
+
+  form input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(160, 80, 255, 0.9);
+  }
+
+  form img {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+  <main class="container">
+    <h1>First Movers Build the Deepest 2×15 Matrix</h1>
+    <p class="subtitle">"These are some results from one of our members after 56 days."</p>
+
+    <div class="image-box">
+      <img src="https://images.nowlifestyle.com/images/affiliate/1664026/pb/assets/38b80dbf392e1d1596fad84eb318bf73.png" alt="Results after 56 days">
+    </div>
+
+    <form method="POST" action="https://gogvo.com/subscribe.php">
+      <input type="hidden" name="AffiliateName" value="natur1984NLS">
+      <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+      <input type="hidden" name="TrackParam" value="new_form">
+      <input type="hidden" name="FormId" value="25261418">
+      <input type="hidden" name="TrackerName" value="silara">
+      <table align="center">
+        <tr>
+          <td>
+            <label for="email">Please enter your email:</label>
+          </td>
+          <td>
+            <input type="text" name="Email" id="email">
+          </td>
+        </tr>
+        <tr>
+          <td align="center" colspan="2">
+            <input type="submit" value="Submit">
+          </td>
+        </tr>
+      </table>
+      <img src="https://gogvo.com/show_form.php?id=25261418&TrackParam=new_form">
+    </form>
+  </main>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Movers Build the Deepest 2×15 Matrix</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    padding: 24px;
+    position: relative;
+    overflow-x: hidden;
+    background: #05060f;
+  }
+
   /* Exciting animated background: electric blue/purple glow + lightning flashes */
   body::before {
     content: "";
