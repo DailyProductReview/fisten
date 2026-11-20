@@ -3,109 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zilara Opportunity - Start with the Product</title>
+    <title>Zilara Opportunity · Product‑first plan</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #e67e22;
-            --text-color: #333;
-            --bg-color: #f4f6f8;
+            --primary: #2c3e50;
+            --accent: #e67e22;
+            --text: #333;
+            --bg: #f4f6f8;
+            --card: #ffffff;
+            --soft-accent: #fff4e6;
+            --border-light: #eee;
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html, body {
             height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* kein Scrollen */
-        }
-
-        body {
+            overflow: hidden;   /* no scroll */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background: var(--bg);
+            color: var(--text);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
+            padding: 8px;
         }
 
         .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px;
             max-height: 98vh;
-            background: #fff;
-            padding: 18px 28px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            background: var(--card);
+            padding: 16px 24px;
+            border-radius: 20px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: all 0.2s;
         }
 
         h1 {
-            color: var(--primary-color);
-            font-size: 1.35rem;
-            margin: 0 0 4px 0;
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin: 0 0 2px;
             line-height: 1.2;
             text-align: center;
+            font-weight: 700;
         }
 
         h2 {
-            color: var(--accent-color);
-            font-size: 1.05rem;
-            margin: 0 0 10px 0;
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin: 0 0 8px;
             font-weight: 600;
             text-align: center;
         }
 
         .hero-section {
             display: flex;
-            gap: 20px;
+            gap: 18px;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
-        /* Bild 300 x 250 */
         .hero-image {
-            width: 300px;
-            height: 250px;
-            min-width: 300px;
+            width: 260px;
+            height: 217px;
+            min-width: 260px;
             object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
         }
 
         .hero-text {
             flex: 1;
-            font-size: 0.92rem;
-            line-height: 1.35;
         }
 
         .hero-text p {
-            margin: 0 0 8px 0;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            line-height: 1.35;
         }
 
         .benefits-box {
-            background-color: #fff4e6;
-            border-left: 5px solid var(--accent-color);
+            background: var(--soft-accent);
+            border-left: 5px solid var(--accent);
             padding: 10px 14px;
-            border-radius: 4px;
+            border-radius: 8px;
             margin-top: 6px;
         }
 
         .benefits-box ul {
             list-style: none;
-            padding: 0;
-            margin: 0;
         }
 
         .benefits-box li {
             margin-bottom: 5px;
-            font-size: 0.92rem;
+            font-size: 0.87rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .benefits-box li:last-child {
@@ -113,47 +115,52 @@
         }
 
         .benefits-box li strong {
-            color: var(--primary-color);
+            color: var(--primary);
+            font-weight: 700;
         }
 
         .extra-info {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-align: center;
             margin: 4px 0;
             line-height: 1.3;
+            color: #2c3e50;
         }
 
         .tagline {
-            font-size: 0.95rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary);
             text-align: center;
-            margin: 6px 0;
+            margin: 6px 0 6px;
         }
 
         .cta-button {
             display: block;
             width: fit-content;
-            margin: 8px auto;
-            background-color: var(--primary-color);
+            margin: 6px auto;
+            background: var(--primary);
             color: #fff;
-            padding: 10px 28px;
-            font-size: 1rem;
-            font-weight: bold;
+            padding: 9px 30px;
+            font-size: 0.95rem;
+            font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.15s;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+            letter-spacing: 0.3px;
         }
 
         .cta-button:hover {
-            background-color: var(--accent-color);
+            background: var(--accent);
             transform: translateY(-2px);
         }
 
         .footer-note {
             text-align: center;
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             color: #777;
             margin: 4px 0;
         }
@@ -161,8 +168,8 @@
         .ps-note {
             text-align: center;
             font-style: italic;
-            font-size: 0.8rem;
-            border-top: 1px solid #eee;
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border-light);
             padding-top: 6px;
             margin-top: 6px;
             color: #555;
@@ -170,22 +177,225 @@
 
         .ps-note em {
             font-style: normal;
-            font-weight: bold;
+            font-weight: 700;
         }
 
-        /* Kleine Bildschirme: Bild schrumpfen, aber Layout halten */
-        @media (max-height: 720px) {
-            h1 { font-size: 1.15rem; }
-            h2 { font-size: 0.95rem; }
-            .hero-image { width: 260px; height: 217px; min-width: 260px; }
-            .hero-text, .benefits-box li { font-size: 0.85rem; }
-            .container { padding: 12px 20px; }
-            .cta-button { padding: 8px 22px; font-size: 0.9rem; }
+        /* --- NEUE BENEFIT- & INFO-ZEILE (Who we are / Why Zilara) --- */
+        .benefit-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 16px;
+            justify-content: space-between;
+            margin: 6px 0 4px;
+            font-size: 0.73rem;
+            line-height: 1.4;
+        }
+
+        .benefit-col {
+            flex: 1 1 180px;
+            background: #f9fafc;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid #e9edf2;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .benefit-col h4 {
+            color: var(--primary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 6px;
+            font-weight: 700;
+            border-bottom: 1px solid #e0e6ed;
+            padding-bottom: 3px;
+        }
+
+        .benefit-col ul {
+            list-style: none;
+        }
+
+        .benefit-col li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            font-size: 0.72rem;
+        }
+
+        .benefit-col li:last-child {
+            margin-bottom: 0;
+        }
+
+        .green-check {
+            color: #2e7d32;
+            font-weight: 700;
+            font-size: 0.8rem;
+            line-height: 1.2;
+            flex-shrink: 0;
+        }
+
+        .accent-badge {
+            background: #eef2f6;
+            color: #1f3a4b;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 1px 8px;
+            font-size: 0.65rem;
+            margin-left: 4px;
+        }
+
+        /* Modal Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 16px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 450px;
+            width: 100%;
+            border-radius: 24px;
+            padding: 28px 24px 22px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            position: relative;
+            animation: fadeUp 0.25s ease;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0.7; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 28px;
+            font-weight: 300;
+            line-height: 1;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.15s;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal-content h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .modal-content p {
+            font-size: 0.9rem;
+            text-align: center;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .modal-form label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+
+        .modal-form input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #d0d9e2;
+            border-radius: 60px;
+            font-size: 1rem;
+            transition: border 0.2s;
+            outline: none;
+        }
+
+        .modal-form input[type="text"]:focus {
+            border-color: var(--accent);
+        }
+
+        .modal-form input[type="submit"] {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .modal-form input[type="submit"]:hover {
+            background: var(--accent);
+            transform: scale(1.01);
+        }
+
+        .modal-form .track-img {
+            display: none;
+        }
+
+        /* responsive adjustments */
+        @media (max-height: 760px) {
+            .container {
+                padding: 10px 18px;
+            }
+            h1 { font-size: 1.05rem; }
+            h2 { font-size: 0.85rem; margin-bottom: 6px; }
+            .hero-image { width: 220px; height: 184px; min-width: 220px; }
+            .hero-text p { font-size: 0.82rem; }
+            .benefits-box li { font-size: 0.8rem; }
+            .benefit-col { padding: 7px 10px; }
+            .benefit-col li { font-size: 0.68rem; }
+            .benefit-col h4 { font-size: 0.7rem; }
+            .cta-button { padding: 8px 24px; font-size: 0.85rem; }
+            .extra-info, .tagline { font-size: 0.75rem; }
+            .footer-note { font-size: 0.65rem; }
+            .ps-note { font-size: 0.68rem; }
+            .benefit-grid { gap: 8px; }
+        }
+
+        @media (max-height: 680px) {
+            .hero-image { width: 180px; height: 150px; min-width: 180px; }
+            h1 { font-size: 0.95rem; }
+            h2 { font-size: 0.78rem; }
+            .benefits-box { padding: 6px 10px; }
+            .benefits-box li { font-size: 0.72rem; }
+            .benefit-col li { font-size: 0.63rem; }
+            .benefit-col h4 { font-size: 0.65rem; }
+            .cta-button { padding: 7px 18px; font-size: 0.78rem; }
+            .modal-content { padding: 22px 18px; }
         }
 
         @media (max-width: 700px) {
-            .hero-section { flex-direction: column; }
-            .hero-image { width: 300px; height: 250px; min-width: 300px; }
+            .hero-section { flex-direction: column; align-items: center; }
+            .hero-image { width: 100%; max-width: 280px; height: auto; min-width: unset; }
+            .benefit-grid { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
@@ -193,38 +403,136 @@
 
     <div class="container">
 
+        <!-- HEADER -->
         <div>
             <h1>What if getting started didn't mean building a team first?</h1>
             <h2>With Zilara, start with the product.</h2>
         </div>
 
-        <div class="hero-section">
-            <img src="https://i.imgur.com/FYCBtzg_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="Zilara Opportunity" class="hero-image">
-            <div class="hero-text">
-                <p>You can earn <strong>30% of the Business Volume (BV)</strong> on orders placed by customers you personally refer.</p>
-                <div class="benefits-box">
+        <!-- HERO + BENEFITS + NEUE INFO-ZEILE -->
+        <div>
+            <div class="hero-section">
+                <img src="https://i.imgur.com/FYCBtzg_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="Zilara Opportunity" class="hero-image">
+                <div class="hero-text">
+                    <p>You can earn <strong>30% of the Business Volume (BV)</strong> on orders placed by customers you personally refer.</p>
+                    <div class="benefits-box">
+                        <ul>
+                            <li>✅ <span><strong>No Personal Volume</strong> required</span></li>
+                            <li>✅ <span><strong>No Rank</strong> required</span></li>
+                            <li>✅ <span><strong>No Team-Building</strong> required for Retail Rewards</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEUE BENEFIT GRID: Who we are & weitere Vorteile (mit grünen Haken) -->
+            <div class="benefit-grid">
+                <!-- WHO WE ARE / About us -->
+                <div class="benefit-col">
+                    <h4>🌿 WHO WE ARE</h4>
                     <ul>
-                        <li>✅ <span><strong>No Personal Volume</strong> required</span></li>
-                        <li>✅ <span><strong>No Rank</strong> required</span></li>
-                        <li>✅ <span><strong>No Team-Building</strong> required for Retail Rewards</span></li>
+                        <li><span class="green-check">✔</span> Green Organics, LLC brand – built on whole‑plant integrity</li>
+                        <li><span class="green-check">✔</span> Product‑first compensation plan</li>
+                        <li><span class="green-check">✔</span> Rewards real product movement & consistent activity</li>
+                        <li><span class="green-check">✔</span> Long‑term leadership focus</li>
+                    </ul>
+                </div>
+                <!-- WHY ZILARA / Builder benefits -->
+                <div class="benefit-col">
+                    <h4>⚡ WHY ZILARA</h4>
+                    <ul>
+                        <li><span class="green-check">✔</span> <strong>No requirements on retail</strong> – 30% from day one</li>
+                        <li><span class="green-check">✔</span> <strong>Community (2×15 matrix)</strong> – leveraged income</li>
+                        <li><span class="green-check">✔</span> <strong>Volume never flushes</strong> – binary carries over</li>
+                        <li><span class="green-check">✔</span> <strong>Compression protects you</strong> – no blocking by inactive upline</li>
+                        <li><span class="green-check">✔</span> <strong>Rolling 31‑day qualification</strong> – no calendar reset</li>
+                    </ul>
+                </div>
+                <!-- SIX WAYS TO EARN / Volume unlocks -->
+                <div class="benefit-col">
+                    <h4>💰 SIX WAYS TO EARN</h4>
+                    <ul>
+                        <li><span class="green-check">✔</span> Retail Rewards <span class="accent-badge">30% BV</span></li>
+                        <li><span class="green-check">✔</span> Community Matrix <span class="accent-badge">5% ×15 levels</span></li>
+                        <li><span class="green-check">✔</span> Team Binary <span class="accent-badge">10% weaker leg</span></li>
+                        <li><span class="green-check">✔</span> STAR Bonus & Leadership Match</li>
+                        <li><span class="green-check">✔</span> 10 BV PV unlocks Retail + Community</li>
+                        <li><span class="green-check">✔</span> 50 BV PV adds Team Binary</li>
+                        <li><span class="green-check">✔</span> 100 BV PV adds STAR, Match, Leadership</li>
                     </ul>
                 </div>
             </div>
-        </div>
 
-        <div>
+            <!-- EXTRA INFO + CTA -->
             <p class="extra-info"><strong>And there's more:</strong> Zilara offers additional ways to earn through its Community, Team, STAR, and Leadership programs—each with its own qualifications.</p>
             <p class="tagline">One product-first starting point. More ways to grow as you choose.</p>
 
-            <a href="https://dailyproductreview.github.io/fisten/silaranewpage" class="cta-button">DISCOVER THE ZILARA OPPORTUNITY</a>
+            <button id="openModalBtn" class="cta-button">DISCOVER THE ZILARA OPPORTUNITY</button>
 
             <p class="footer-note">No hype. Just see the plan, understand the requirements, and decide whether it’s right for you.</p>
             <div class="ps-note">
                 <strong>PS:</strong> Financial freedom means waking up without money worries. That's the life I'm building. — <em>Cassy</em>
             </div>
         </div>
-
     </div>
 
+    <!-- MODAL (POPUP) MIT DEM GOGVO FORMULAR -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <h3>Get the full Zilara plan</h3>
+            <p>Enter your email and we’ll send you the details.</p>
+
+            <!-- Original gogvo form – angepasst, aber intakt -->
+            <form class="modal-form" method="POST" action="https://gogvo.com/subscribe.php">
+                <input type="hidden" name="AffiliateName" value="natur1984NLS">
+                <input type="hidden" name="CampaignCode" value="fCbCGBjAERJv">
+                <input type="hidden" name="TrackParam" value="new_form">
+                <input type="hidden" name="FormId" value="25261566">
+                <input type="hidden" name="TrackerName" value="silara tp">
+
+                <label for="emailModal">Your email address</label>
+                <input type="text" id="emailModal" name="Email" placeholder="you@example.com" required>
+
+                <input type="submit" value="Send me the opportunity details">
+                <!-- tracking pixel hidden but kept -->
+                <img src="https://gogvo.com/show_form.php?id=25261566&TrackParam=new_form" style="display:none;" alt="">
+            </form>
+            <p style="font-size:0.7rem; color:#999; text-align:center; margin-top:14px;">No spam. Unsubscribe anytime.</p>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const modal = document.getElementById('modalOverlay');
+            const openBtn = document.getElementById('openModalBtn');
+            const closeBtn = document.getElementById('closeModalBtn');
+
+            // Öffnen
+            openBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.add('active');
+            });
+
+            // Schließen über X
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+
+            // Schließen bei Klick auf Overlay
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            // Optional: ESC zum Schließen
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
