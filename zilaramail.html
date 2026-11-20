@@ -9,70 +9,92 @@
             --primary-color: #2c3e50;
             --accent-color: #e67e22;
             --text-color: #333;
-            --bg-color: #f9f9f9;
+            --bg-color: #f4f6f8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* kein Scrollen */
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            padding: 10px;
         }
 
         .container {
-            max-width: 800px;
+            width: 100%;
+            max-width: 900px;
+            max-height: 98vh;
             background: #fff;
-            padding: 40px;
+            padding: 18px 28px;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         h1 {
             color: var(--primary-color);
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+            font-size: 1.35rem;
+            margin: 0 0 4px 0;
             line-height: 1.2;
+            text-align: center;
         }
 
         h2 {
             color: var(--accent-color);
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 25px;
+            font-size: 1.05rem;
+            margin: 0 0 10px 0;
             font-weight: 600;
+            text-align: center;
         }
 
         .hero-section {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             gap: 20px;
-            margin-bottom: 30px;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
-        /* Image size set to 300x250 as requested */
+        /* Bild 300 x 250 */
         .hero-image {
             width: 300px;
             height: 250px;
+            min-width: 300px;
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
+        .hero-text {
+            flex: 1;
+            font-size: 0.92rem;
+            line-height: 1.35;
+        }
+
+        .hero-text p {
+            margin: 0 0 8px 0;
+        }
+
         .benefits-box {
             background-color: #fff4e6;
             border-left: 5px solid var(--accent-color);
-            padding: 20px;
-            margin: 20px 0;
-            text-align: left;
+            padding: 10px 14px;
             border-radius: 4px;
+            margin-top: 6px;
         }
 
         .benefits-box ul {
@@ -82,35 +104,45 @@
         }
 
         .benefits-box li {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: start;
-            gap: 10px;
+            margin-bottom: 5px;
+            font-size: 0.92rem;
+        }
+
+        .benefits-box li:last-child {
+            margin-bottom: 0;
         }
 
         .benefits-box li strong {
             color: var(--primary-color);
         }
 
-        .highlight {
-            background-color: #ffeaa7;
-            padding: 2px 5px;
-            border-radius: 3px;
+        .extra-info {
+            font-size: 0.85rem;
+            text-align: center;
+            margin: 4px 0;
+            line-height: 1.3;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
             font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 6px 0;
         }
 
         .cta-button {
-            display: inline-block;
+            display: block;
+            width: fit-content;
+            margin: 8px auto;
             background-color: var(--primary-color);
             color: #fff;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 10px 28px;
+            font-size: 1rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-top: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
@@ -120,47 +152,56 @@
         }
 
         .footer-note {
-            margin-top: 30px;
-            font-size: 0.9rem;
+            text-align: center;
+            font-size: 0.78rem;
             color: #777;
+            margin: 4px 0;
         }
 
         .ps-note {
-            margin-top: 20px;
+            text-align: center;
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             border-top: 1px solid #eee;
-            padding-top: 15px;
+            padding-top: 6px;
+            margin-top: 6px;
             color: #555;
         }
 
-        @media (min-width: 768px) {
-            .hero-section {
-                flex-direction: row;
-                text-align: left;
-                justify-content: center;
-            }
-            .hero-text {
-                flex: 1;
-            }
+        .ps-note em {
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        /* Kleine Bildschirme: Bild schrumpfen, aber Layout halten */
+        @media (max-height: 720px) {
+            h1 { font-size: 1.15rem; }
+            h2 { font-size: 0.95rem; }
+            .hero-image { width: 260px; height: 217px; min-width: 260px; }
+            .hero-text, .benefits-box li { font-size: 0.85rem; }
+            .container { padding: 12px 20px; }
+            .cta-button { padding: 8px 22px; font-size: 0.9rem; }
+        }
+
+        @media (max-width: 700px) {
+            .hero-section { flex-direction: column; }
+            .hero-image { width: 300px; height: 250px; min-width: 300px; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
-        <!-- HEADLINE -->
-        <h1>What if getting started didn't mean building a team first?</h1>
-        <h2>With Zilara, start with the product.</h2>
+
+        <div>
+            <h1>What if getting started didn't mean building a team first?</h1>
+            <h2>With Zilara, start with the product.</h2>
+        </div>
 
         <div class="hero-section">
-            <!-- IMAGE: 300x250 -->
             <img src="https://i.imgur.com/FYCBtzg_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="Zilara Opportunity" class="hero-image">
-            
             <div class="hero-text">
                 <p>You can earn <strong>30% of the Business Volume (BV)</strong> on orders placed by customers you personally refer.</p>
-                
                 <div class="benefits-box">
                     <ul>
                         <li>✅ <span><strong>No Personal Volume</strong> required</span></li>
@@ -171,22 +212,16 @@
             </div>
         </div>
 
-        <!-- BONUS INFO -->
-        <p><strong>And there's more:</strong> Zilara offers additional ways to earn through Community, Team, STAR, and Leadership programs—each with its own qualifications.</p>
-        
-        <p style="font-size: 1.1rem; font-weight: bold; color: var(--primary-color);">
-            One product-first starting point. More ways to grow as you choose.
-        </p>
+        <div>
+            <p class="extra-info"><strong>And there's more:</strong> Zilara offers additional ways to earn through its Community, Team, STAR, and Leadership programs—each with its own qualifications.</p>
+            <p class="tagline">One product-first starting point. More ways to grow as you choose.</p>
 
-        <!-- CTA BUTTON -->
-        <a href="https://dailyproductreview.github.io/fisten/silaranewpage" class="cta-button">DISCOVER THE ZILARA OPPORTUNITY</a>
+            <a href="https://dailyproductreview.github.io/fisten/silaranewpage" class="cta-button">DISCOVER THE ZILARA OPPORTUNITY</a>
 
-        <p class="footer-note">No hype. Just see the plan, understand the requirements, and decide whether it’s right for you.</p>
-
-        <!-- P.S. -->
-        <div class="ps-note">
-            <strong>PS:</strong> Financial freedom means waking up without money worries. That's the life I'm building.<br><br>
-            <em>— Cassy</em>
+            <p class="footer-note">No hype. Just see the plan, understand the requirements, and decide whether it’s right for you.</p>
+            <div class="ps-note">
+                <strong>PS:</strong> Financial freedom means waking up without money worries. That's the life I'm building. — <em>Cassy</em>
+            </div>
         </div>
 
     </div>
