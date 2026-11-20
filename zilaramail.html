@@ -1,29 +1,195 @@
-<p><span style="font-size:14px">What if getting started didn&rsquo;t mean having to build a team first?</span></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zilara Opportunity - Start with the Product</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+        }
 
-<p><span style="font-size:14px">With <strong>Zilara</strong>, you can start with the product.</span></p>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-<p><span style="font-size:14px">You can earn <strong>30% of the business volume (BV)</strong> on orders placed by customers you personally refer&mdash;</span></p>
+        .container {
+            max-width: 800px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
 
-<p><span style="font-size:14px">with <strong>no personal volume, rank, or team-building requirement</strong> for Retail Rewards.</span></p>
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
 
-<p><span style="font-size:14px"><u>And there&rsquo;s more: </u></span></p>
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
 
-<p><span style="font-size:14px">Zilara offers additional ways to earn through its Community, Team, STAR, and </span></p>
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
 
-<p><span style="font-size:14px">Leadership programs, each with its own qualifications.</span></p>
+        /* Image size set to 300x250 as requested */
+        .hero-image {
+            width: 300px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
 
-<p><span style="font-size:14px"><strong>One product-first starting point. More ways to grow as you choose.</strong></span></p>
+        .benefits-box {
+            background-color: #fff4e6;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 4px;
+        }
 
-<p><span style="font-size:14px">Take a look at how the plan works:</span></p>
+        .benefits-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-<p>✅<span style="font-size:14px">&nbsp;<a href="https://dailyproductreview.github.io/fisten/silaranewpage"><strong>DISCOVER THE ZILARA OPPORTUNITY</strong></a></span>✅</p>
+        .benefits-box li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
 
-<p><span style="font-size:14px">No hype. Just see the plan, understand the requirements, and decide whether it&rsquo;s right for you.</span></p>
+        .benefits-box li strong {
+            color: var(--primary-color);
+        }
 
-<p><span style="font-size:14px">PS:&nbsp;</span>&nbsp;✅&nbsp;Financial freedom means waking up without money worries. That&#39;s the life I&#39;m building.</p>
+        .highlight {
+            background-color: #ffeaa7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
 
-<p><span style="font-size:14px"><img alt="" src="https://i.imgur.com/FYCBtzg_d.png?maxwidth=520&amp;shape=thumb&amp;fidelity=high" style="height:170px; width:122px" /></span></p>
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-<p><span style="font-size:14px"><em>Cassy</em></span></p>
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
 
-<p>&nbsp;</p>
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .ps-note {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            color: #555;
+        }
+
+        @media (min-width: 768px) {
+            .hero-section {
+                flex-direction: row;
+                text-align: left;
+                justify-content: center;
+            }
+            .hero-text {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADLINE -->
+        <h1>What if getting started didn't mean building a team first?</h1>
+        <h2>With Zilara, start with the product.</h2>
+
+        <div class="hero-section">
+            <!-- IMAGE: 300x250 -->
+            <img src="https://i.imgur.com/FYCBtzg_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="Zilara Opportunity" class="hero-image">
+            
+            <div class="hero-text">
+                <p>You can earn <strong>30% of the Business Volume (BV)</strong> on orders placed by customers you personally refer.</p>
+                
+                <div class="benefits-box">
+                    <ul>
+                        <li>✅ <span><strong>No Personal Volume</strong> required</span></li>
+                        <li>✅ <span><strong>No Rank</strong> required</span></li>
+                        <li>✅ <span><strong>No Team-Building</strong> required for Retail Rewards</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- BONUS INFO -->
+        <p><strong>And there's more:</strong> Zilara offers additional ways to earn through Community, Team, STAR, and Leadership programs—each with its own qualifications.</p>
+        
+        <p style="font-size: 1.1rem; font-weight: bold; color: var(--primary-color);">
+            One product-first starting point. More ways to grow as you choose.
+        </p>
+
+        <!-- CTA BUTTON -->
+        <a href="https://dailyproductreview.github.io/fisten/silaranewpage" class="cta-button">DISCOVER THE ZILARA OPPORTUNITY</a>
+
+        <p class="footer-note">No hype. Just see the plan, understand the requirements, and decide whether it’s right for you.</p>
+
+        <!-- P.S. -->
+        <div class="ps-note">
+            <strong>PS:</strong> Financial freedom means waking up without money worries. That's the life I'm building.<br><br>
+            <em>— Cassy</em>
+        </div>
+
+    </div>
+
+</body>
+</html>
